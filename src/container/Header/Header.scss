@@ -21,13 +21,13 @@
   height: 100%;
   flex-direction: row;
   padding: 6rem 2rem 0;
-  @media screen and (min-width:2000px) {
+  @media screen and (min-width: 2000px) {
     padding-top: 8rem;
   }
-  @media screen and (max-width:1200px) {
+  @media screen and (max-width: 1200px) {
     flex-direction: column;
   }
-  @media screen and (max-width:400px) {
+  @media screen and (max-width: 400px) {
     padding: 6rem 1rem 2rem;
   }
 }
@@ -39,7 +39,7 @@
   justify-content: flex-start;
   align-items: flex-start;
   height: 100%;
-  @media screen and (max-width:2000px) {
+  @media screen and (max-width: 2000px) {
     width: 100%;
     margin-right: 0rem;
   }
@@ -101,17 +101,17 @@
     }
   }
   div:nth-child(1) {
-    width: 100px;
-    height: 100px;
-  }
-  div:nth-child(2) {
-    margin: 1.75rem;
     width: 150px;
     height: 150px;
   }
-  div:nth-child(3) {
+  div:nth-child(2) {
+    margin: 1.75rem;
     width: 70px;
     height: 70px;
+  }
+  div:nth-child(3) {
+    width: 100px;
+    height: 100px;
   }
   @media screen and (min-width: 2000px) {
     div:nth-child(1) {
@@ -119,8 +119,8 @@
       height: 400px;
     }
     div:nth-child(2) {
-      width: 170px;
-      height: 170px;
+      width: 150px;
+      height: 150px;
     }
     div:nth-child(3) {
       width: 200px;
