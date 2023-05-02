@@ -14,9 +14,14 @@ const Navbar = () => {
       <ul className="app__navbar-links">
         {["home", "about", "work", "skills", "testimonials", "contact"].map(
           (item) => (
-            <li className="app__flex p-text" key={`link-${item}`}>
+            <motion.li
+              className="app__flex p-text"
+              key={`link-${item}`}
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.5, type: "tween" }}
+            >
               <a href={`#${item}`}>{item}</a>
-            </li>
+            </motion.li>
           )
         )}
       </ul>
@@ -37,11 +42,15 @@ const Navbar = () => {
                 "testimonials",
                 "contact",
               ].map((item) => (
-                <li key={item}>
+                <motion.li
+                  key={item}
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.5, type: "tween" }}
+                >
                   <a href={`#${item}`} onClick={() => setToggle(false)}>
                     {item}
                   </a>
-                </li>
+                </motion.li>
               ))}
             </ul>
           </motion.div>

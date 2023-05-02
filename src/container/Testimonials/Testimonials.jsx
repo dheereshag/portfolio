@@ -34,7 +34,11 @@ const Testimonials = () => {
     <>
       {testimonials.length && (
         <>
-          <div className="app__testimonials-item app__flex">
+          <motion.div
+            className="app__testimonials-item app__flex"
+            whileHover={{ scale: 1.01 }}
+            transition={{ duration: 0.5, type: "tween" }}
+          >
             <img
               src={urlFor(testimonials[currentIndex].image)}
               alt="testimonial"
@@ -46,9 +50,11 @@ const Testimonials = () => {
                 <h5 className="p-text">{testimonials[currentIndex].company}</h5>
               </div>
             </div>
-          </div>
+          </motion.div>
           <div className="app__testimonials-btns app__flex">
-            <div
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              transition={{ duration: 0.5, type: "tween" }}
               className="app__flex"
               onClick={() =>
                 handleClick(
@@ -59,8 +65,10 @@ const Testimonials = () => {
               }
             >
               <HiChevronLeft />
-            </div>
-            <div
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              transition={{ duration: 0.5, type: "tween" }}
               className="app__flex"
               onClick={() =>
                 handleClick(
@@ -71,7 +79,7 @@ const Testimonials = () => {
               }
             >
               <HiChevronRight />
-            </div>
+            </motion.div>
           </div>
         </>
       )}
