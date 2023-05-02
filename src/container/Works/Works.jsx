@@ -30,25 +30,26 @@ const Works = () => {
       }
     }, 500);
   };
+
   return (
     <>
       <h2 className="head-text">
         My Creative <span>Portfolio</span> section
       </h2>
       <div className="app__work-filter">
-        {["UI/UX", "Web App", "Mobile App", "React JS", "All"].map(
-          (item, index) => (
-            <div
-              key={index}
-              onClick={() => handleWorkFilter(item)}
-              className={`app__work-filter-item app__flex p-text ${
-                activeFilter === item ? "item-active" : ""
-              }`}
-            >
-              {item}
-            </div>
-          )
-        )}
+        {["ui/ux", "web app", "mobile app", "all"].map((item, index) => (
+          <motion.div
+            key={index}
+            onClick={() => handleWorkFilter(item)}
+            className={`app__work-filter-item app__flex p-text ${
+              activeFilter === item ? "item-active" : ""
+            }`}
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.5, type: "tween" }}
+          >
+            {item}
+          </motion.div>
+        ))}
       </div>
       <motion.div
         animate={animateCard}
@@ -82,6 +83,7 @@ const Works = () => {
                     whileHover={{ scale: [1, 0.9] }}
                     transition={{
                       duration: 0.25,
+                      type: "tween",
                     }}
                     className="app__flex"
                   >
@@ -94,6 +96,7 @@ const Works = () => {
                     whileHover={{ scale: [1, 0.9] }}
                     transition={{
                       duration: 0.25,
+                      type: "tween",
                     }}
                     className="app__flex"
                   >
@@ -114,9 +117,12 @@ const Works = () => {
               </p>
               <div className="app__work-tag app__flex">
                 {work?.tags?.slice(0, -1).map((tag, index) => (
-                  <p key={index} className="p-text">
-                    {tag}
-                  </p>
+                  <React.Fragment key={index}>
+                    <p className="p-text">{tag}</p>
+                    {index < work?.tags?.length - 2 && (
+                      <span className="pipe-separator p-text"> | </span>
+                    )}
+                  </React.Fragment>
                 ))}
               </div>
             </div>
