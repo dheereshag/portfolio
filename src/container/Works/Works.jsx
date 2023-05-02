@@ -56,12 +56,12 @@ const Works = () => {
         className="app__work-portfolio"
       >
         {filterWorks.map((work, index) => (
-          <motion.a
+          <motion.div
             className="app__work-item app__flex"
             key={index}
-            href={work?.projectLink}
-            target="_blank"
-            rel="noreferrer"
+            onClick={() =>
+              window.open(work?.projectLink, "_blank", "noreferrer")
+            }
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.5, type: "tween" }}
           >
@@ -120,7 +120,7 @@ const Works = () => {
                 ))}
               </div>
             </div>
-          </motion.a>
+          </motion.div>
         ))}
       </motion.div>
     </>
