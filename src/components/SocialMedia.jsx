@@ -8,19 +8,19 @@ const SocialMedia = () => {
     <div className="app__social">
       <motion.div
         whileHover={{ scale: 1.2 }}
-        transition={{ duration: 0.3, ease: "easeInOut" }}
+        transition={{ duration: 0.3, type: "tween" }}
       >
         <BsTwitter />
       </motion.div>
       <motion.div
         whileHover={{ scale: 1.2 }}
-        transition={{ duration: 0.3, ease: "easeInOut" }}
+        transition={{ duration: 0.3, type: "tween" }}
       >
         <FaFacebookF />
       </motion.div>
       <motion.div
         whileHover={{ scale: 1.2 }}
-        transition={{ duration: 0.3, ease: "easeInOut" }}
+        transition={{ duration: 0.3, type: "tween" }}
       >
         <BsInstagram />
       </motion.div>

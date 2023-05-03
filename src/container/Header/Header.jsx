@@ -9,7 +9,7 @@ const scaleVariants = {
     opacity: [0, 1],
     transition: {
       duration: 1,
-      ease: "easeInOut",
+      type: "tween",
     },
   },
 };
