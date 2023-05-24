@@ -1,24 +1,12 @@
 import React from "react";
-import { motion } from "framer-motion";
 import { AppWrap } from "../../wrapper";
 import { images } from "../../constants";
 import "./Header.scss";
-const scaleVariants = {
-  whileInView: {
-    scale: [0, 1],
-    opacity: [0, 1],
-    transition: {
-      duration: 1,
-      type: "tween",
-    },
-  },
-};
+
 const Header = () => {
   return (
     <div id="home" className="app__header app__flex">
-      <motion.div
-        className="app__header-info animate__animated animate__fadeInLeft"
-      >
+      <div className="app__header-info animate__animated animate__fadeInLeft animate__delay-1s">
         <div className="app__header-badge">
           <div className="badge-cmp app__flex">
             <span>👋🏻</span>
@@ -32,33 +20,23 @@ const Header = () => {
             <p className="p-text">freelancer</p>
           </div>
         </div>
-      </motion.div>
-      <motion.div
-        whileInView={{ opacity: [0, 1] }}
-        transition={{ duration: 2, delayChildren: 0.5 }}
-        className="app__header-img"
-      >
+      </div>
+      <div className="app__header-img">
         <img src={images.profile} alt="profile_bg" />
-        <motion.img
-          whileInView={{ scale: [0, 1] }}
-          transition={{ duration: 1, type: "tween" }}
-          className="overlay_circle"
+        <img
+          className="overlay_circle animate__animated animate__zoomIn animate__slow"
           src={images.circle}
           alt="profile_circle"
         />
-      </motion.div>
+      </div>
 
-      <motion.div
-        whileInView={scaleVariants.whileInView}
-        className="app__header-circles"
-        variants={scaleVariants}
-      >
+      <div className="app__header-circles animate__animated animate__zoomIn">
         {[images.node, images.react, images.python].map((circle, index) => (
           <div className="circle-cmp app__flex" key={`circle-${index}`}>
             <img src={circle} alt="circle" className="hvr-buzz" />
           </div>
         ))}
-      </motion.div>
+      </div>
     </div>
   );
 };
