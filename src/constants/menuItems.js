@@ -3,7 +3,6 @@ export const menuItems = [
   "about",
   "work",
   "skills",
-  "testimonials",
   "contact",
 ];
 export default menuItems;
