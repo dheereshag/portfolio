@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { HiMenuAlt4, HiX } from "react-icons/hi";
-import { motion } from "framer-motion";
+import { SocialMedia } from "../index";
 
 import "./Navbar.scss";
 import { images } from "../../constants";
@@ -14,6 +14,15 @@ const navbarArr = [
 ];
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
+  const [animateOut, setAnimateOut] = useState(false);
+
+  const closeMenu = () => {
+    setAnimateOut(true);
+    setTimeout(() => {
+      setToggle(false);
+      setAnimateOut(false);
+    }, 500);
+  };
   return (
     <nav className="app__navbar">
       <a className="app__navbar-logo" href="#home">
@@ -29,8 +38,12 @@ const Navbar = () => {
       <div className="app__navbar-menu">
         <HiMenuAlt4 onClick={() => setToggle(true)} />
         {toggle && (
-          <div className="animate__animated animate__fadeInRight">
-            <HiX onClick={() => setToggle(false)} />
+          <div
+            className={`menu-container animate__animated ${
+              animateOut ? "animate__fadeOutRight" : "animate__fadeInRight"
+            }`}
+          >
+            <HiX onClick={closeMenu} />
             <ul>
               {navbarArr.map((item) => (
                 <li key={item} className="hvr-grow">
