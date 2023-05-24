@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
 import "./About.scss";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { client, urlFor } from "../../client";
@@ -21,11 +20,8 @@ const About = () => {
       </h2>
       <div className="app__profiles">
         {skills.map((skill, index) => (
-          <motion.div
-            whileInView={{ opacity: 1 }}
-            whileHover={{ scale: 1.1 }}
-            transition={{ duration: 0.5, type: "tween" }}
-            className="app__profile-item"
+          <div
+            className="app__profile-item hvr-forward"
             key={skill.title + index}
           >
             <img src={urlFor(skill.image)} alt={skill.title} />
@@ -35,7 +31,7 @@ const About = () => {
             <p className="p-text" style={{ marginTop: 10 }}>
               {skill.description}
             </p>
-          </motion.div>
+          </div>
         ))}
       </div>
     </>
