@@ -55,28 +55,30 @@ const Contact = () => {
       </div>
       {!isFormSubmitted ? (
         <form className="app__contact-form">
-          <div>
-            <input
-              className="p-text hvr-box-shadow-inset"
-              type="text"
-              placeholder="Your Name"
-              value={name}
-              name="name"
-              onChange={handleChangeInput}
-              required
-            />
-          </div>
-          <div>
-            <input
-              className="p-text hvr-box-shadow-inset"
-              type="text"
-              placeholder="Your Email"
-              value={email}
-              name="email"
-              onChange={handleChangeInput}
-              required
-            />
-          </div>
+          <section>
+            <div>
+              <input
+                className="p-text hvr-box-shadow-inset"
+                type="text"
+                placeholder="Your Name"
+                value={name}
+                name="name"
+                onChange={handleChangeInput}
+                required
+              />
+            </div>
+            <div>
+              <input
+                className="p-text hvr-box-shadow-inset"
+                type="email"
+                placeholder="Your Email"
+                value={email}
+                name="email"
+                onChange={handleChangeInput}
+                required
+              />
+            </div>
+          </section>
           <div>
             <textarea
               className="p-text hvr-box-shadow-inset"
