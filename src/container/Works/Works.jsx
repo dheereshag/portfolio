@@ -92,7 +92,7 @@ const Works = () => {
               <p
                 className="p-text"
                 style={{
-                  marginTop: 10,
+                  marginTop: "0.5rem",
                 }}
               >
                 {work?.description}
