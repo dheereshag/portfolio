@@ -4,6 +4,14 @@ import { motion } from "framer-motion";
 
 import "./Navbar.scss";
 import { images } from "../../constants";
+const navbarArr = [
+  "home",
+  "about",
+  "work",
+  "skills",
+  "testimonials",
+  "contact",
+];
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   return (
@@ -12,48 +20,27 @@ const Navbar = () => {
         <img src={images.logo} alt="logo" />
       </a>
       <ul className="app__navbar-links">
-        {["home", "about", "work", "skills", "testimonials", "contact"].map(
-          (item) => (
-            <motion.li
-              className="app__flex p-text"
-              key={`link-${item}`}
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.5, type: "tween" }}
-            >
-              <a href={`#${item}`}>{item}</a>
-            </motion.li>
-          )
-        )}
+        {navbarArr.map((item) => (
+          <li className="app__flex p-text hvr-grow" key={`link-${item}`}>
+            <a href={`#${item}`}>{item}</a>
+          </li>
+        ))}
       </ul>
       <div className="app__navbar-menu">
         <HiMenuAlt4 onClick={() => setToggle(true)} />
         {toggle && (
-          <motion.div
-            whileInView={{ x: [300, 0] }}
-            transition={{ duration: 0.85, type: "tween" }}
-          >
+          <div className="animate__animated animate__fadeInRight">
             <HiX onClick={() => setToggle(false)} />
             <ul>
-              {[
-                "home",
-                "about",
-                "work",
-                "skills",
-                "testimonials",
-                "contact",
-              ].map((item) => (
-                <motion.li
-                  key={item}
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.5, type: "tween" }}
-                >
+              {navbarArr.map((item) => (
+                <li key={item} className="hvr-grow">
                   <a href={`#${item}`} onClick={() => setToggle(false)}>
                     {item}
                   </a>
-                </motion.li>
+                </li>
               ))}
             </ul>
-          </motion.div>
+          </div>
         )}
       </div>
     </nav>
