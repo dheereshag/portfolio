@@ -56,8 +56,11 @@ const Header = () => {
         variants={scaleVariants}
       >
         {[images.node, images.react, images.python].map((circle, index) => (
-          <div className="circle-cmp app__flex" key={`circle-${index}`}>
-            <img src={circle} alt="circle" />
+          <div
+            className="circle-cmp app__flex"
+            key={`circle-${index}`}
+          >
+            <img src={circle} alt="circle" className="hvr-buzz"/>
           </div>
         ))}
       </motion.div>

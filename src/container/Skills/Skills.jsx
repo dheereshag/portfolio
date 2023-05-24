@@ -44,14 +44,10 @@ const Skills = () => {
                 className="app__flex"
                 style={{ backgroundColor: "var(--icon-background-color)" }}
               >
-                <motion.img
+                <img
                   src={urlFor(skill.icon)}
                   alt={skill.name}
-                  whileHover={{
-                    scale: [1, 1.1, 1, 1.1, 1],
-                    rotate: [0, -2, 0, 2, 0],
-                    transition: { duration: 0.15, loop: Infinity },
-                  }}
+                  className="hvr-buzz"
                 />
               </div>
               <p className="p-text">{skill.name}</p>
