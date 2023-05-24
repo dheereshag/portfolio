@@ -1,6 +1,7 @@
 import React from "react";
 import { AppWrap } from "../../wrapper";
 import { images } from "../../constants";
+import { motion } from "framer-motion";
 import "./Header.scss";
 
 const Header = () => {
@@ -30,13 +31,23 @@ const Header = () => {
         />
       </div>
 
-      <div className="app__header-circles animate__animated animate__zoomIn">
+      <motion.div className="app__header-circles animate__animated animate__zoomIn">
         {[images.node, images.react, images.python].map((circle, index) => (
-          <div className="circle-cmp app__flex" key={`circle-${index}`}>
-            <img src={circle} alt="circle" className="hvr-buzz" />
-          </div>
+          <motion.div
+            className="circle-cmp app__flex"
+            key={`circle-${index}`}
+            drag
+            dragConstraints={{
+              top: -50,
+              left: -50,
+              right: 50,
+              bottom: 50,
+            }}
+          >
+            <img src={circle} alt="circle" style={{ pointerEvents: "none" }} />
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };
