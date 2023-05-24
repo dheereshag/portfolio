@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
 import { images } from "../../constants";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { client } from "../../client";
@@ -38,69 +37,50 @@ const Contact = () => {
     <>
       <h2 className="head-text">Take a coffee and chat with me</h2>
       <div className="app__contact-cards">
-        <motion.div
-          className="app__contact-card"
-          whileHover={{ scale: 1.05 }}
-          transition={{ duration: 0.5, type: "tween" }}
-        >
+        <div className="app__contact-card hvr-shrink">
           <img src={images.email} alt="email" />
           <a href="mailto:da11@iitbbs.ac.in" className="p-text">
             da11@iitbbs.ac.in
           </a>
-        </motion.div>
-        <motion.div
-          className="app__contact-card"
-          whileHover={{ scale: 1.05 }}
-          transition={{ duration: 0.5, type: "tween" }}
-        >
+        </div>
+        <div className="app__contact-card hvr-shrink">
           <img src={images.mobile} alt="mobile" />
           <a href="tel:+91 9411245528" className="p-text">
             +91 9411245528
           </a>
-        </motion.div>
+        </div>
       </div>
       {!isFormSubmitted ? (
         <div className="app__contact-form app__flex">
-          <motion.div
-            className="app__flex"
-            whileHover={{ scale: 1.01 }}
-            transition={{ duration: 0.5, type: "tween" }}
-          >
+          <div className="app__flex">
             <input
-              className="p-text"
+              className="p-text hvr-box-shadow-inset"
               type="text"
               placeholder="Your Name"
               value={name}
               name="name"
               onChange={handleChangeInput}
             />
-          </motion.div>
-          <motion.div
-            className="app__flex"
-            whileHover={{ scale: 1.01 }}
-            transition={{ duration: 0.5, type: "tween" }}
-          >
+          </div>
+          <div className="app__flex">
             <input
-              className="p-text"
+              className="p-text hvr-box-shadow-inset"
               type="text"
               placeholder="Your Email"
               value={email}
               name="email"
               onChange={handleChangeInput}
             />
-          </motion.div>
-          <motion.div
-            whileHover={{ scale: 1.01 }}
-            transition={{ duration: 0.5, type: "tween" }}
-          >
+          </div>
+          <div className="app__flex">
             <textarea
-              className="p-text"
+              className="p-text hvr-box-shadow-inset"
               placeholder="Your Message"
               value={message}
               name="message"
               onChange={handleChangeInput}
             />
-          </motion.div>
+          </div>
           <button type="button" className="p-text" onClick={handleSubmit}>
             {loading ? "Sending..." : "Send Message"}
           </button>

@@ -35,7 +35,7 @@
     }
 
     &:hover {
-      box-shadow: 0 0 25px #fef4f5;
+      box-shadow: 0 0 2rem #fef4f5;
     }
 
     @media screen and (max-width: 450px) {
@@ -76,9 +76,9 @@
     textarea {
       height: 170px;
     }
-    &:hover {
-      box-shadow: 0 0 25px var(--primary-color);
-    }
+    // &:hover {
+    //   box-shadow: 0 0 25px var(--primary-color);
+    // }
   }
   button {
     border-radius: 10px;
