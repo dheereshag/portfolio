@@ -17,9 +17,7 @@ const Header = () => {
   return (
     <div id="home" className="app__header app__flex">
       <motion.div
-        whileInView={{ x: [-100, 0], opacity: [0, 1] }}
-        transition={{ duration: 2 }}
-        className="app__header-info"
+        className="app__header-info animate__animated animate__fadeInLeft"
       >
         <div className="app__header-badge">
           <div className="badge-cmp app__flex">
@@ -56,11 +54,8 @@ const Header = () => {
         variants={scaleVariants}
       >
         {[images.node, images.react, images.python].map((circle, index) => (
-          <div
-            className="circle-cmp app__flex"
-            key={`circle-${index}`}
-          >
-            <img src={circle} alt="circle" className="hvr-buzz"/>
+          <div className="circle-cmp app__flex" key={`circle-${index}`}>
+            <img src={circle} alt="circle" className="hvr-buzz" />
           </div>
         ))}
       </motion.div>
