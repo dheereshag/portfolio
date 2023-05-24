@@ -20,6 +20,9 @@ const Contact = () => {
   };
 
   const handleSubmit = () => {
+    if (!name || !email || !message) {
+      return;
+    }
     setLoading(true);
     const contact = {
       _type: "contact",
@@ -37,13 +40,13 @@ const Contact = () => {
     <>
       <h2 className="head-text">Take a coffee and chat with me</h2>
       <div className="app__contact-cards">
-        <div className="app__contact-card hvr-shrink">
+        <div className="app__contact-card hvr-shrink" id="email">
           <img src={images.email} alt="email" />
           <a href="mailto:da11@iitbbs.ac.in" className="p-text">
             da11@iitbbs.ac.in
           </a>
         </div>
-        <div className="app__contact-card hvr-shrink">
+        <div className="app__contact-card hvr-shrink" id="phone">
           <img src={images.mobile} alt="mobile" />
           <a href="tel:+91 9411245528" className="p-text">
             +91 9411245528
@@ -51,8 +54,8 @@ const Contact = () => {
         </div>
       </div>
       {!isFormSubmitted ? (
-        <div className="app__contact-form app__flex">
-          <div className="app__flex">
+        <form className="app__contact-form">
+          <div>
             <input
               className="p-text hvr-box-shadow-inset"
               type="text"
@@ -60,9 +63,10 @@ const Contact = () => {
               value={name}
               name="name"
               onChange={handleChangeInput}
+              required
             />
           </div>
-          <div className="app__flex">
+          <div>
             <input
               className="p-text hvr-box-shadow-inset"
               type="text"
@@ -70,21 +74,23 @@ const Contact = () => {
               value={email}
               name="email"
               onChange={handleChangeInput}
+              required
             />
           </div>
-          <div className="app__flex">
+          <div>
             <textarea
               className="p-text hvr-box-shadow-inset"
               placeholder="Your Message"
               value={message}
               name="message"
               onChange={handleChangeInput}
+              required
             />
           </div>
-          <button type="button" className="p-text" onClick={handleSubmit}>
+          <button type="submit" className="p-text" onClick={handleSubmit}>
             {loading ? "Sending..." : "Send Message"}
           </button>
-        </div>
+        </form>
       ) : (
         <div>
           <h3 className="head-text">Thank you for getting in touch!</h3>
