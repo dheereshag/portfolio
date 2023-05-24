@@ -37,15 +37,15 @@ const Works = () => {
         My Creative <span>Portfolio</span> section
       </h2>
       <div className="app__work-filter">
-        {["ui/ux", "web app", "mobile app", "all"].map((item, index) => (
+        {["ui/ux", "web app", "all"].map((item, index) => (
           <motion.div
             key={index}
             onClick={() => handleWorkFilter(item)}
             className={`app__work-filter-item app__flex p-text ${
               activeFilter === item ? "item-active" : ""
             }`}
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.5, type: "tween" }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
           >
             {item}
           </motion.div>
@@ -57,14 +57,12 @@ const Works = () => {
         className="app__work-portfolio"
       >
         {filterWorks.map((work, index) => (
-          <motion.div
+          <motion.a
             className="app__work-item app__flex hvr-grow"
             key={index}
-            onClick={() =>
-              window.open(work?.projectLink, "_blank", "noreferrer")
-            }
-            // whileHover={{ scale: 1.05 }}
-            // transition={{ duration: 0.5, type: "tween" }}
+            href={work?.projectLink}
+            target="_blank"
+            style={{ textDecoration: "none" }}
           >
             <div className="app__work-img app__flex">
               <img src={urlFor(work.image)} alt={work.name} />
@@ -78,28 +76,12 @@ const Works = () => {
                 className="app__work-hover app__flex"
               >
                 <a href={work?.projectLink} target="_blank" rel="noreferrer">
-                  <motion.div
-                    whileInView={{ scale: [0, 1] }}
-                    whileHover={{ scale: [1, 0.9] }}
-                    transition={{
-                      duration: 0.25,
-                      type: "tween",
-                    }}
-                    className="app__flex"
-                  >
+                  <motion.div className="app__flex hvr-shrink">
                     <AiFillEye />
                   </motion.div>
                 </a>
                 <a href={work?.codeLink} target="_blank" rel="noreferrer">
-                  <motion.div
-                    whileInView={{ scale: [0, 1] }}
-                    whileHover={{ scale: [1, 0.9] }}
-                    transition={{
-                      duration: 0.25,
-                      type: "tween",
-                    }}
-                    className="app__flex"
-                  >
+                  <motion.div className="app__flex hvr-shrink">
                     <AiFillGithub />
                   </motion.div>
                 </a>
@@ -126,7 +108,7 @@ const Works = () => {
                 ))}
               </div>
             </div>
-          </motion.div>
+          </motion.a>
         ))}
       </motion.div>
     </>
