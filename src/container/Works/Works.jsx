@@ -58,13 +58,13 @@ const Works = () => {
       >
         {filterWorks.map((work, index) => (
           <motion.div
-            className="app__work-item app__flex"
+            className="app__work-item app__flex hvr-grow"
             key={index}
             onClick={() =>
               window.open(work?.projectLink, "_blank", "noreferrer")
             }
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.5, type: "tween" }}
+            // whileHover={{ scale: 1.05 }}
+            // transition={{ duration: 0.5, type: "tween" }}
           >
             <div className="app__work-img app__flex">
               <img src={urlFor(work.image)} alt={work.name} />

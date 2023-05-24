@@ -1,5 +1,5 @@
 import React from "react";
-import { NavigationDots, SocialMedia } from "../components";
+import { NavigationDots, SocialMedia,Footer } from "../components";
 
 const AppWrap = (Component, idName, classNames) =>
   function HOC() {
@@ -8,10 +8,7 @@ const AppWrap = (Component, idName, classNames) =>
         <SocialMedia classStyles={"app__social"}/>
         <div className="app__wrapper app__flex">
           <Component />
-          <div className="copyright">
-            <p className="p-text">@2023 Dheeresh</p>
-            <p className="p-text">All rights reserved</p>
-          </div>
+          <Footer />
         </div>
         <NavigationDots active={idName} />
       </div>
