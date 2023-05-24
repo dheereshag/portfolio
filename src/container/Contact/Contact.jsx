@@ -37,9 +37,9 @@ const Contact = () => {
   return (
     <>
       <h2 className="head-text">Take a coffee and chat with me</h2>
-      <div className="app__footer-cards">
+      <div className="app__contact-cards">
         <motion.div
-          className="app__footer-card"
+          className="app__contact-card"
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.5, type: "tween" }}
         >
@@ -49,7 +49,7 @@ const Contact = () => {
           </a>
         </motion.div>
         <motion.div
-          className="app__footer-card"
+          className="app__contact-card"
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.5, type: "tween" }}
         >
@@ -60,7 +60,7 @@ const Contact = () => {
         </motion.div>
       </div>
       {!isFormSubmitted ? (
-        <div className="app__footer-form app__flex">
+        <div className="app__contact-form app__flex">
           <motion.div
             className="app__flex"
             whileHover={{ scale: 1.01 }}
@@ -115,7 +115,7 @@ const Contact = () => {
 };
 
 export default AppWrap(
-  MotionWrap(Contact, "app__footer"),
+  MotionWrap(Contact, "app__contact"),
   "contact",
   "app__white-bg"
 );
