@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { AiFillEye, AiFillGithub } from "react-icons/ai";
+import { SiNextdotjs, SiWeb3Dotjs, SiTailwindcss } from "react-icons/si";
 import { motion } from "framer-motion";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
@@ -57,12 +58,11 @@ const Works = () => {
         className="app__work-portfolio"
       >
         {filterWorks.map((work, index) => (
-          <motion.a
+          <motion.div
             className="app__work-item app__flex hvr-grow"
             key={index}
-            href={work?.projectLink}
+            onClick={() => window.open(work?.projectLink, "_blank")}
             target="_blank"
-            style={{ textDecoration: "none" }}
           >
             <div className="app__work-img app__flex">
               <img src={urlFor(work.image)} alt={work.name} />
@@ -88,15 +88,6 @@ const Works = () => {
               </motion.div>
             </div>
             <div className="app__work-content app__flex">
-              <h4 className="bold-text">{work?.title}</h4>
-              <p
-                className="p-text"
-                style={{
-                  marginTop: "0.5rem",
-                }}
-              >
-                {work?.description}
-              </p>
               <div className="app__work-tag app__flex">
                 {work?.tags?.slice(0, -1).map((tag, index) => (
                   <React.Fragment key={index}>
@@ -107,8 +98,15 @@ const Works = () => {
                   </React.Fragment>
                 ))}
               </div>
+              <div className="app__work-info">
+                <aside>
+                  <h4 className="bold-text">{work?.title}</h4>
+                  <p className="p-text">{work?.description}</p>
+                </aside>
+                <SiWeb3Dotjs />
+              </div>
             </div>
-          </motion.a>
+          </motion.div>
         ))}
       </motion.div>
     </>

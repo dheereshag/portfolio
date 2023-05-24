@@ -111,10 +111,7 @@
   width: 100%;
   position: relative;
   flex-direction: column;
-  h4 {
-    margin-top: 1rem;
-    line-height: 1.5;
-  }
+
   .app__work-tag {
     position: absolute;
     padding: 0.5rem 1rem;
@@ -126,3 +123,10 @@
 .pipe-separator {
   margin: 0 5px; /* Adjust the amount of spacing around the pipe separator */
 }
+.app__work-info {
+  display: flex;
+  margin-top: 1rem;
+  align-items: center;
+  gap:2rem;
+}
+
