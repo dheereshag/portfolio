@@ -67,7 +67,10 @@ const Skills = () => {
                       className="app__skills-exp-work"
                     >
                       <h4 className="bold-text">{work?.name}</h4>
-                      <p className="p-text">{work?.company}</p>
+                      <div className="flex items-center -mt-8">
+                        <p className="p-text mr-1">{work?.company}</p>
+                        <i className={`ci ci-${work?.icon} ci-${work?.size}`} />
+                      </div>
                     </motion.div>
                   </Tippy>
                 ))}

@@ -16,9 +16,13 @@ export default {
     },
     {
       name: 'icon',
-      title: 'Icon & Size',
-      type: 'array',
-      of: [{type: 'icons'}],
+      title: 'Icon',
+      type: 'string',
+    },
+    {
+      name: 'size',
+      title: 'Size',
+      type: 'string',
     },
   ],
 }

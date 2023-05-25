@@ -18,7 +18,7 @@ const Works = () => {
     client.fetch(query).then((data) => {
       setWorks(data);
       setFilterWorks(data);
-      const techStackArray = data.map((work) => work.techStack); // Extracting techStack array from each work object
+      const techStackArray = data.map((work) => work.icons); // Extracting techStack array from each work object
       setIcons((prevIcons) => [...prevIcons, ...techStackArray]); // Pushing techStack array into icons array
     });
   }, []);
@@ -31,7 +31,7 @@ const Works = () => {
 
     return () => clearInterval(interval);
   }, [icons]);
-
+  // console.log("icons", icons);
   const handleWorkFilter = (item) => {
     setActiveFilter(item);
     setAnimateCard({ y: [null, 50], opacity: 0 });
@@ -124,7 +124,10 @@ const Works = () => {
                     exit={{ opacity: 0, scale: 0 }}
                     transition={{ duration: 0.5, type: "tween" }}
                   >
-                    <IconComponent name={icons[index][currentIndex]} />
+                    <IconComponent
+                      name={icons[index][currentIndex]?.icon}
+                      size={icons[index][currentIndex]?.size}
+                    />
                   </motion.div>
                 </AnimatePresence>
               </div>
@@ -135,8 +138,8 @@ const Works = () => {
     </>
   );
 };
-const IconComponent = ({ name }) => {
-  return <i className={`ci ci-${name} ci-2x`} />;
+const IconComponent = ({ name, size }) => {
+  return <i className={`ci ci-${name} ci-${size}`} />;
 };
 
 export default AppWrap(
