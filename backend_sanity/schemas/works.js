@@ -46,16 +46,10 @@ export default {
       ],
     },
     {
-      name: 'techStack',
-      title: 'Tech Stack',
+      name: 'icons',
+      title: 'Icons & Sizes',
       type: 'array',
-      of: [
-        {
-          name: 'tech',
-          title: 'Tech',
-          type: 'string',
-        },
-      ],
+      of: [{type: 'icons'}],
     },
   ],
 }

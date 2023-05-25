@@ -5,6 +5,7 @@ import about from './about'
 import experiences from './experiences'
 import workExperience from './workExperience'
 import contact from './contact'
+import icons from './icons'
 export const schemaTypes = [
   works,
   testimonials,
@@ -13,4 +14,5 @@ export const schemaTypes = [
   experiences,
   workExperience,
   contact,
+  icons,
 ]
