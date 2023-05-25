@@ -91,10 +91,10 @@ const Contact = () => {
           </div>
           <button
             type="submit"
-            className="p-text font-pacifico"
+            className="p-text"
             onClick={handleSubmit}
           >
-            <span className="font-pacifico">{loading ? "Sending..." : "Send Message"}</span>
+            <span className="font-poppins text-md">{loading ? "Sending..." : "Send Message"}</span>
           </button>
         </form>
       ) : (

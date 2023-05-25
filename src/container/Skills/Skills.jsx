@@ -40,7 +40,7 @@ const Skills = () => {
                 style={{ backgroundColor: "var(--icon-background-color)" }}
               >
                 <i
-                  className={`ci ci-${skill.icon} ci-${skill.size} ${skill.style} hvr-buzz`}
+                  className={`ci ci-${skill.icon} ci-${skill.size} hvr-buzz`}
                 ></i>
               </motion.div>
               <p className="p-text">{skill.name}</p>
