@@ -35,9 +35,9 @@ const Works = () => {
 
   const handleWorkFilter = (item) => {
     setActiveFilter(item);
-    setAnimateCard({ y: [null,100], opacity: 0 });
+    setAnimateCard({ y: [null, 50], opacity: 0 });
     setTimeout(() => {
-      setAnimateCard({ y: [null,0], opacity: 1 });
+      setAnimateCard({ y: [null, 0], opacity: 1 });
       if (item === "All") {
         setFilterWorks(works);
       } else {
@@ -68,7 +68,7 @@ const Works = () => {
       </div>
       <motion.div
         animate={animateCard}
-        transition={{ duration: 0.5, delayChildren: 0.5 }}
+        transition={{ duration: 0.5, type: "tween" }}
         className="app__work-portfolio"
       >
         {filterWorks.map((work, index) => (
