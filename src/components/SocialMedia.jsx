@@ -12,7 +12,7 @@ const SocialMedia = ({ classStyles }) => {
           rel="noopener noreferrer"
           className="hvr-grow-rotate"
         >
-          <i className={`ci ci-${icon.name} ci-sm`}></i>
+          <i className={`ci ci-${icon.name} ci-xl`}></i>
         </a>
       ))}
     </div>

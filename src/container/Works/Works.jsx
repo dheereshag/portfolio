@@ -136,7 +136,7 @@ const Works = () => {
   );
 };
 const IconComponent = ({ name }) => {
-  return <i className={`ci ci-${name} ci-md`} />;
+  return <i className={`ci ci-${name} ci-2x`} />;
 };
 
 export default AppWrap(

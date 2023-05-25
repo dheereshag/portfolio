@@ -1,7 +1,7 @@
 const headerIcons = [
-  { name: "nextjs", size: "4xl" },
-  { name: "tailwind", size: "lg" },
-  { name: "python", size: "2xl" },
+  { name: "nextjs", size: "8x" },
+  { name: "tailwind", size: "2xl" },
+  { name: "python", size: "4x" },
 ];
 
 export default headerIcons;
