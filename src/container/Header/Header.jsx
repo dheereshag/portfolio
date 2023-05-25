@@ -34,7 +34,7 @@ const Header = () => {
       <motion.div className="app__header-circles animate__animated animate__zoomIn">
         {[images.node, images.react, images.python].map((circle, index) => (
           <motion.div
-            className="circle-cmp app__flex"
+            className="app__flex"
             key={`circle-${index}`}
             drag
             dragConstraints={{

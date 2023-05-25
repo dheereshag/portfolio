@@ -1,19 +1,20 @@
 import React from "react";
+import { socialIcons } from "../constants";
+
 const SocialMedia = ({ classStyles }) => {
   return (
     <div className={classStyles}>
-      <a href="" className="hvr-grow-rotate">
-        <i className="ci ci-github"></i>
-      </a>
-      <a href="" className="hvr-grow-rotate">
-        <i className="ci ci-linkedin"></i>
-      </a>
-      <a href="" className="hvr-grow-rotate">
-        <i className="ci ci-leetcode"></i>
-      </a>
-      <a href="" className="hvr-grow-rotate">
-        <i className="ci ci-discord"></i>
-      </a>
+      {socialIcons.map((icon) => (
+        <a
+          key={icon.name}
+          href={icon.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hvr-grow-rotate"
+        >
+          <i className={`ci ci-${icon.name} ci-sm`}></i>
+        </a>
+      ))}
     </div>
   );
 };
