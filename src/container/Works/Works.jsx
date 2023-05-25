@@ -26,7 +26,7 @@ const Works = () => {
   useEffect(() => {
     if (!icons) return;
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % icons[0].length);
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % icons[0]?.length);
     }, 2000); // Change the interval duration as needed
 
     return () => clearInterval(interval);

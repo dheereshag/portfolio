@@ -42,13 +42,13 @@ const Contact = () => {
       <div className="app__contact-cards">
         <div className="app__contact-card hvr-shrink" id="email">
           <img src={images.email} alt="email" />
-          <a href="mailto:da11@iitbbs.ac.in" className="p-text">
+          <a href="mailto:da11@iitbbs.ac.in" className="p-text font-pacifico">
             da11@iitbbs.ac.in
           </a>
         </div>
         <div className="app__contact-card hvr-shrink" id="phone">
           <img src={images.mobile} alt="mobile" />
-          <a href="tel:+91 9411245528" className="p-text">
+          <a href="tel:+91 9411245528" className="p-text font-pacifico">
             +91 9411245528
           </a>
         </div>
@@ -89,8 +89,12 @@ const Contact = () => {
               required
             />
           </div>
-          <button type="submit" className="p-text" onClick={handleSubmit}>
-            {loading ? "Sending..." : "Send Message"}
+          <button
+            type="submit"
+            className="p-text font-pacifico"
+            onClick={handleSubmit}
+          >
+            <span className="font-pacifico">{loading ? "Sending..." : "Send Message"}</span>
           </button>
         </form>
       ) : (

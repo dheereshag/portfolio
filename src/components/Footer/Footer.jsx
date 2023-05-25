@@ -14,13 +14,13 @@ const Footer = () => {
   return (
     <div className="copyright">
       <div>
-        <p className="p-text">@</p>
-        <motion.p
-          className="p-text"
+        <strong className="p-text">@</strong>
+        <motion.strong
+          className="p-text font-poppins"
           onViewportEnter={() => setIsInView(true)}
         >
           {rounded}
-        </motion.p>
+        </motion.strong>
 
         <p className="p-text">&#10240;Dheeresh</p>
       </div>
