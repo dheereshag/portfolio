@@ -38,7 +38,9 @@ const Contact = () => {
 
   return (
     <>
-      <h2 className="head-text">Take a coffee and chat with me</h2>
+      <h2 className=" font-poppins text-neutral-500">
+        Take a coffee and chat with me
+      </h2>
       <div className="app__contact-cards">
         <div className="app__contact-card hvr-shrink" id="email">
           <img src={images.email} alt="email" />
@@ -103,7 +105,7 @@ const Contact = () => {
         </form>
       ) : (
         <div>
-          <h3 className="head-text">Thank you for getting in touch!</h3>
+          <h3 className="">Thank you for getting in touch!</h3>
         </div>
       )}
     </>

@@ -18,7 +18,7 @@ const About = () => {
 
   return (
     <>
-      <h2 className="head-text">
+      <h2 className="">
         I know that <span>Good Apps</span>
         <br />
         means <span>Good Business</span>
