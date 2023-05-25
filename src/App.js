@@ -1,6 +1,6 @@
 import React from "react";
 
-import { About, Contact, Header, Skills, Testimonials, Works } from "./container";
+import { About, Contact, Header, Skills, Works } from "./container";
 
 import { Navbar } from "./components";
 import "./App.scss";
