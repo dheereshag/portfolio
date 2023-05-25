@@ -6,27 +6,32 @@ import { AppWrap, MotionWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
 import "./Works.scss";
 
-const icons = ["web3js", "solidity", "nextjs", "infura"];
 const Works = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % icons.length);
-    }, 2000); // Change the interval duration as needed
-
-    return () => clearInterval(interval);
-  }, []);
   const [activeFilter, setActiveFilter] = useState("All");
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
-  const [works, setWorks] = useState([]);
   const [filterWorks, setFilterWorks] = useState([]);
+  const [icons, setIcons] = useState([]);
+  const [works, setWorks] = useState([]);
+  const [loopLength, setLoopLength] = useState(0);
   useEffect(() => {
     const query = `*[_type == "works"]`;
     client.fetch(query).then((data) => {
       setWorks(data);
       setFilterWorks(data);
+      const techStackArray = data.map((work) => work.techStack); // Extracting techStack array from each work object
+      setIcons((prevIcons) => [...prevIcons, ...techStackArray]); // Pushing techStack array into icons array
+      setLoopLength(icons[0].length); // Setting the length of icons array
     });
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % loopLength);
+    }, 2000); // Change the interval duration as needed
+
+    return () => clearInterval(interval);
   }, []);
 
   const handleWorkFilter = (item) => {
@@ -41,7 +46,7 @@ const Works = () => {
       }
     }, 500);
   };
-  // console.log("works", works);
+  console.log("icons", icons);
   return (
     <>
       <h2 className="head-text">
@@ -115,13 +120,13 @@ const Works = () => {
                 </aside>
                 <AnimatePresence>
                   <motion.div
-                    key={currentIndex}
+                    key={`${index}-${currentIndex}`}
                     initial={{ opacity: 0, scale: 0 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0 }}
                     transition={{ duration: 0.5, type: "tween" }}
                   >
-                    <IconComponent name={icons[currentIndex]} />
+                    <IconComponent name={icons[index][currentIndex]} />
                   </motion.div>
                 </AnimatePresence>
               </div>
