@@ -10,7 +10,7 @@ const Works = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const [activeFilter, setActiveFilter] = useState("All");
-  const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
+  const [animateCard, setAnimateCard] = useState({ y: [null, 0], opacity: 1 });
   const [filterWorks, setFilterWorks] = useState([]);
   const [icons, setIcons] = useState([]);
   const [works, setWorks] = useState([]);
@@ -35,9 +35,9 @@ const Works = () => {
 
   const handleWorkFilter = (item) => {
     setActiveFilter(item);
-    setAnimateCard({ y: 100, opacity: 0 });
+    setAnimateCard({ y: [null,100], opacity: 0 });
     setTimeout(() => {
-      setAnimateCard({ y: 0, opacity: 1 });
+      setAnimateCard({ y: [null,0], opacity: 1 });
       if (item === "All") {
         setFilterWorks(works);
       } else {
