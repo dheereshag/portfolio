@@ -1,7 +1,7 @@
 export const menuItems = [
   "home",
   "about",
-  "work",
+  "projects",
   "skills",
   "contact",
 ];

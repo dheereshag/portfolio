@@ -144,6 +144,6 @@ const IconComponent = ({ name, size }) => {
 
 export default AppWrap(
   MotionWrap(Works, "app__works"),
-  "work",
+  "projects",
   "app__primary-bg"
 );
