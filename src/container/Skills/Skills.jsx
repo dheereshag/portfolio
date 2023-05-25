@@ -2,28 +2,18 @@ import "./Skills.scss";
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { AppWrap, MotionWrap } from "../../wrapper";
-import { urlFor, client } from "../../client";
+import { client } from "../../client";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
 import "tippy.js/animations/scale.css";
-
+import { skills } from "../../constants";
 const Skills = () => {
   const [experiences, setExperiences] = useState([]);
-  const [skills, setSkills] = useState([]);
 
   useEffect(() => {
     const query = '*[_type == "experiences"]';
-
     client.fetch(query).then((data) => {
       setExperiences(data);
-    });
-  }, []);
-
-  useEffect(() => {
-    const query = '*[_type == "skills"]';
-
-    client.fetch(query).then((data) => {
-      setSkills(data);
     });
   }, []);
 
@@ -32,7 +22,6 @@ const Skills = () => {
       <h2 className="head-text">Skills & Experiences</h2>
       <div className="app__skills-container">
         <motion.div className="app__skills-list">
-          {console.log("skills", skills)}
           {skills.map((skill) => (
             <motion.div
               whileInView={{ opacity: [0, 1] }}
@@ -44,11 +33,9 @@ const Skills = () => {
                 className="app__flex"
                 style={{ backgroundColor: "var(--icon-background-color)" }}
               >
-                <img
-                  src={urlFor(skill.icon)}
-                  alt={skill.name}
-                  className="hvr-buzz"
-                />
+                <i
+                  className={`ci ci-${skill.icon} ci-${skill.size} ${skill.style} hvr-buzz`}
+                ></i>
               </div>
               <p className="p-text">{skill.name}</p>
             </motion.div>

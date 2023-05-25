@@ -3,7 +3,7 @@ import { AppWrap } from "../../wrapper";
 import { images } from "../../constants";
 import { motion } from "framer-motion";
 import "./Header.scss";
-
+import headerIcons from "../../constants/headerIcons";
 const Header = () => {
   return (
     <div id="home" className="app__header app__flex">
@@ -32,7 +32,7 @@ const Header = () => {
       </div>
 
       <motion.div className="app__header-circles animate__animated animate__zoomIn">
-        {[images.node, images.react, images.python].map((circle, index) => (
+        {headerIcons.map((icon, index) => (
           <motion.div
             className="app__flex"
             key={`circle-${index}`}
@@ -44,7 +44,7 @@ const Header = () => {
               bottom: 50,
             }}
           >
-            <img src={circle} alt="circle" style={{ pointerEvents: "none" }} />
+            <i className={`ci ci-${icon.name} ci-${icon.size}`}></i>
           </motion.div>
         ))}
       </motion.div>
