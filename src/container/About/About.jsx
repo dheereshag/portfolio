@@ -43,7 +43,7 @@ const About = () => {
               alt={skill.title}
               onLoad={() => setIsLoaded(true)}
             />
-            <h2 className="bold-text" style={{ marginTop: 20 }}>
+            <h2 className="" style={{ marginTop: 20 }}>
               {skill.title}
             </h2>
             <p className="" style={{ marginTop: 10 }}>

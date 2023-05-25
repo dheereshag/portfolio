@@ -46,7 +46,7 @@ const Testimonials = () => {
             <div className="app__testimonials-content">
               <p className="">{testimonials[currentIndex].feedback}</p>
               <div>
-                <h4 className="bold-text">{testimonials[currentIndex].name}</h4>
+                <h4 className="">{testimonials[currentIndex].name}</h4>
                 <h5 className="">{testimonials[currentIndex].company}</h5>
               </div>
             </div>

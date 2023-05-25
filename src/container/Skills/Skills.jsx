@@ -51,7 +51,7 @@ const Skills = () => {
           {experiences?.map((experience) => (
             <div className="app__skills-exp-item" key={experience?.year}>
               <div className="app__skills-exp-year">
-                <p className="bold-text">{experience?.year}</p>
+                <p className="">{experience?.year}</p>
               </div>
               <div className="app__skills-exp-works">
                 {experience?.works?.map((work, index) => (
@@ -69,7 +69,7 @@ const Skills = () => {
                       transition={{ duration: 0.5 }}
                       className="app__skills-exp-work"
                     >
-                      <h4 className="bold-text">{work?.name}</h4>
+                      <h4 className="">{work?.name}</h4>
                       <div className="flex items-center">
                         <p className=" mr-2 text-lg">{work?.company}</p>
                         <i className={`ci ci-${work?.icon} ci-${work?.size}`} />

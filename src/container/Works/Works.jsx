@@ -113,7 +113,7 @@ const Works = () => {
               </div>
               <div className="app__work-info">
                 <aside>
-                  <h4 className="bold-text">{work?.title}</h4>
+                  <h4 className="">{work?.title}</h4>
                   <p className="">{work?.description}</p>
                 </aside>
                 <AnimatePresence>
