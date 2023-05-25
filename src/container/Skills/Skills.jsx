@@ -60,6 +60,9 @@ const Skills = () => {
                     content={work?.description}
                     animation="scale" // Use the scale animation
                     duration={[500, 500]}
+                    placement="top"
+                    arrow={true}
+                    interactive={true}
                   >
                     <motion.div
                       whileInView={{ opacity: [0, 1] }}
