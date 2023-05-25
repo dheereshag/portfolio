@@ -1,6 +1,6 @@
 import "./Skills.scss";
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, useSpring } from "framer-motion";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { client } from "../../client";
 import Tippy from "@tippyjs/react";
@@ -9,6 +9,7 @@ import "tippy.js/animations/scale.css";
 import { skills } from "../../constants";
 const Skills = () => {
   const [experiences, setExperiences] = useState([]);
+  const x = useSpring(0, { stiffness: 500, damping: 20 });
 
   useEffect(() => {
     const query = '*[_type == "experiences"]';
@@ -22,21 +23,26 @@ const Skills = () => {
       <h2 className="head-text">Skills & Experiences</h2>
       <div className="app__skills-container">
         <motion.div className="app__skills-list">
-          {skills.map((skill) => (
+          {skills.map((skill, index) => (
             <motion.div
               whileInView={{ opacity: [0, 1] }}
               transition={{ duration: 0.5 }}
               className="app__skills-item app__flex"
               key={skill.name}
+              style={{ x }}
+              drag="x"
+              onDragEnd={(event, info) => x.set(info.point.x)}
+              dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
+              dragElastic={1}
             >
-              <div
+              <motion.div
                 className="app__flex"
                 style={{ backgroundColor: "var(--icon-background-color)" }}
               >
                 <i
                   className={`ci ci-${skill.icon} ci-${skill.size} ${skill.style} hvr-buzz`}
                 ></i>
-              </div>
+              </motion.div>
               <p className="p-text">{skill.name}</p>
             </motion.div>
           ))}
