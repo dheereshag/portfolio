@@ -46,7 +46,7 @@ const About = () => {
             <h2 className="bold-text" style={{ marginTop: 20 }}>
               {skill.title}
             </h2>
-            <p className="p-text" style={{ marginTop: 10 }}>
+            <p className="" style={{ marginTop: 10 }}>
               {skill.description}
             </p>
           </motion.div>

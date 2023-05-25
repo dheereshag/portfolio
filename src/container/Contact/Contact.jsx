@@ -42,13 +42,19 @@ const Contact = () => {
       <div className="app__contact-cards">
         <div className="app__contact-card hvr-shrink" id="email">
           <img src={images.email} alt="email" />
-          <a href="mailto:da11@iitbbs.ac.in" className="p-text font-pacifico">
+          <a
+            href="mailto:da11@iitbbs.ac.in"
+            className="text-neutral-500 font-pacifico"
+          >
             da11@iitbbs.ac.in
           </a>
         </div>
         <div className="app__contact-card hvr-shrink" id="phone">
           <img src={images.mobile} alt="mobile" />
-          <a href="tel:+91 9411245528" className="p-text font-pacifico">
+          <a
+            href="tel:+91 9411245528"
+            className="text-neutral-500 font-pacifico text-sm"
+          >
             +91 9411245528
           </a>
         </div>
@@ -58,7 +64,7 @@ const Contact = () => {
           <section>
             <div>
               <input
-                className="p-text hvr-box-shadow-inset"
+                className=" hvr-box-shadow-inset"
                 type="text"
                 placeholder="Your Name"
                 value={name}
@@ -69,7 +75,7 @@ const Contact = () => {
             </div>
             <div>
               <input
-                className="p-text hvr-box-shadow-inset"
+                className=" hvr-box-shadow-inset"
                 type="email"
                 placeholder="Your Email"
                 value={email}
@@ -81,7 +87,7 @@ const Contact = () => {
           </section>
           <div>
             <textarea
-              className="p-text hvr-box-shadow-inset"
+              className=" hvr-box-shadow-inset"
               placeholder="Your Message"
               value={message}
               name="message"
@@ -89,12 +95,10 @@ const Contact = () => {
               required
             />
           </div>
-          <button
-            type="submit"
-            className="p-text"
-            onClick={handleSubmit}
-          >
-            <span className="font-poppins text-md">{loading ? "Sending..." : "Send Message"}</span>
+          <button type="submit" className="" onClick={handleSubmit}>
+            <span className="font-poppins text-md">
+              {loading ? "Sending..." : "Send Message"}
+            </span>
           </button>
         </form>
       ) : (

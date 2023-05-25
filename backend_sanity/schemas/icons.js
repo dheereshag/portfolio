@@ -10,7 +10,7 @@ export default {
     },
     {
       name: 'size',
-      title: 'Size',
+      title: 'Size & Style',
       type: 'string',
     },
   ],

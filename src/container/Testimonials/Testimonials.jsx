@@ -44,10 +44,10 @@ const Testimonials = () => {
               alt="testimonial"
             />
             <div className="app__testimonials-content">
-              <p className="p-text">{testimonials[currentIndex].feedback}</p>
+              <p className="">{testimonials[currentIndex].feedback}</p>
               <div>
                 <h4 className="bold-text">{testimonials[currentIndex].name}</h4>
-                <h5 className="p-text">{testimonials[currentIndex].company}</h5>
+                <h5 className="">{testimonials[currentIndex].company}</h5>
               </div>
             </div>
           </motion.div>

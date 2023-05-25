@@ -55,7 +55,7 @@ const Works = () => {
           <motion.div
             key={index}
             onClick={() => handleWorkFilter(item)}
-            className={`app__work-filter-item app__flex p-text ${
+            className={`app__work-filter-item app__flex  ${
               activeFilter === item ? "item-active" : ""
             }`}
             whileHover={{ scale: 1.1 }}
@@ -104,9 +104,9 @@ const Works = () => {
               <div className="app__work-tag app__flex">
                 {work?.tags?.slice(0, -1).map((tag, index) => (
                   <React.Fragment key={index}>
-                    <p className="p-text">{tag}</p>
+                    <p className="">{tag}</p>
                     {index < work?.tags?.length - 2 && (
-                      <span className="pipe-separator p-text"> | </span>
+                      <span className="pipe-separator "> | </span>
                     )}
                   </React.Fragment>
                 ))}
@@ -114,7 +114,7 @@ const Works = () => {
               <div className="app__work-info">
                 <aside>
                   <h4 className="bold-text">{work?.title}</h4>
-                  <p className="p-text">{work?.description}</p>
+                  <p className="">{work?.description}</p>
                 </aside>
                 <AnimatePresence>
                   <motion.div

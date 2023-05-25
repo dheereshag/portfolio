@@ -43,17 +43,17 @@ const Skills = () => {
                   className={`ci ci-${skill.icon} ci-${skill.size} hvr-buzz`}
                 ></i>
               </motion.div>
-              <p className="p-text">{skill.name}</p>
+              <p className="">{skill.name}</p>
             </motion.div>
           ))}
         </motion.div>
         <div className="app__skills-exp">
           {experiences?.map((experience) => (
-            <motion.div className="app__skills-exp-item" key={experience?.year}>
+            <div className="app__skills-exp-item" key={experience?.year}>
               <div className="app__skills-exp-year">
                 <p className="bold-text">{experience?.year}</p>
               </div>
-              <motion.div className="app__skills-exp-works">
+              <div className="app__skills-exp-works">
                 {experience?.works?.map((work, index) => (
                   <Tippy
                     key={`${work.name}-${index}`}
@@ -70,15 +70,15 @@ const Skills = () => {
                       className="app__skills-exp-work"
                     >
                       <h4 className="bold-text">{work?.name}</h4>
-                      <div className="flex items-center -mt-8">
-                        <p className="p-text mr-1">{work?.company}</p>
+                      <div className="flex items-center">
+                        <p className=" mr-2 text-lg">{work?.company}</p>
                         <i className={`ci ci-${work?.icon} ci-${work?.size}`} />
                       </div>
                     </motion.div>
                   </Tippy>
                 ))}
-              </motion.div>
-            </motion.div>
+              </div>
+            </div>
           ))}
         </div>
       </div>

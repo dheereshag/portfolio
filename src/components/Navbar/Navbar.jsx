@@ -20,7 +20,7 @@ const Navbar = () => {
       </a>
       <ul className="app__navbar-links">
         {menuItems.map((item) => (
-          <li className="app__flex p-text hvr-grow" key={`link-${item}`}>
+          <li className="app__flex  hvr-grow" key={`link-${item}`}>
             <a href={`#${item}`}>{item}</a>
           </li>
         ))}
