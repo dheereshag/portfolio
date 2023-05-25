@@ -14,7 +14,6 @@ const Works = () => {
   const [filterWorks, setFilterWorks] = useState([]);
   const [icons, setIcons] = useState([]);
   const [works, setWorks] = useState([]);
-  const [loopLength, setLoopLength] = useState(0);
   useEffect(() => {
     const query = `*[_type == "works"]`;
     client.fetch(query).then((data) => {
@@ -22,17 +21,17 @@ const Works = () => {
       setFilterWorks(data);
       const techStackArray = data.map((work) => work.techStack); // Extracting techStack array from each work object
       setIcons((prevIcons) => [...prevIcons, ...techStackArray]); // Pushing techStack array into icons array
-      setLoopLength(icons[0].length); // Setting the length of icons array
     });
   }, []);
 
   useEffect(() => {
+    if (!icons) return;
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % loopLength);
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % icons[0].length);
     }, 2000); // Change the interval duration as needed
 
     return () => clearInterval(interval);
-  }, []);
+  }, [icons]);
 
   const handleWorkFilter = (item) => {
     setActiveFilter(item);
@@ -46,7 +45,7 @@ const Works = () => {
       }
     }, 500);
   };
-  console.log("icons", icons);
+  console.log("icons", icons[0]?.length);
   return (
     <>
       <h2 className="head-text">
