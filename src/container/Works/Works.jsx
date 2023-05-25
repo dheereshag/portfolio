@@ -1,12 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { AiFillEye, AiFillGithub } from "react-icons/ai";
-import { SiNextdotjs, SiWeb3Dotjs, SiTailwindcss } from "react-icons/si";
-import { motion } from "framer-motion";
+import { SiWeb3Dotjs } from "react-icons/si";
+import { motion, AnimatePresence } from "framer-motion";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
 import "./Works.scss";
 
+const icons = ["web3js", "solidity", "nextjs", "infura"];
 const Works = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % icons.length);
+    }, 2000); // Change the interval duration as needed
+
+    return () => clearInterval(interval);
+  }, []);
   const [activeFilter, setActiveFilter] = useState("All");
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
   const [works, setWorks] = useState([]);
@@ -31,7 +41,7 @@ const Works = () => {
       }
     }, 500);
   };
-
+  // console.log("works", works);
   return (
     <>
       <h2 className="head-text">
@@ -103,7 +113,17 @@ const Works = () => {
                   <h4 className="bold-text">{work?.title}</h4>
                   <p className="p-text">{work?.description}</p>
                 </aside>
-                <SiWeb3Dotjs />
+                <AnimatePresence>
+                  <motion.div
+                    key={currentIndex}
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0 }}
+                    transition={{ duration: 0.5, type: "tween" }}
+                  >
+                    <IconComponent name={icons[currentIndex]} />
+                  </motion.div>
+                </AnimatePresence>
               </div>
             </div>
           </motion.div>
@@ -111,6 +131,9 @@ const Works = () => {
       </motion.div>
     </>
   );
+};
+const IconComponent = ({ name }) => {
+  return <i className={`ci ci-${name} ci-md`} />;
 };
 
 export default AppWrap(

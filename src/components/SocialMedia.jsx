@@ -1,11 +1,19 @@
 import React from "react";
-import { SiDiscord, SiTwitter, SiInstagram } from "react-icons/si";
 const SocialMedia = ({ classStyles }) => {
   return (
     <div className={classStyles}>
-      <SiTwitter className="hvr-grow-rotate" />
-      <SiDiscord className="hvr-grow-rotate" />
-      <SiInstagram className="hvr-grow-rotate" />
+      <a href="" className="hvr-grow-rotate">
+        <i className="ci ci-github"></i>
+      </a>
+      <a href="" className="hvr-grow-rotate">
+        <i className="ci ci-linkedin"></i>
+      </a>
+      <a href="" className="hvr-grow-rotate">
+        <i className="ci ci-leetcode"></i>
+      </a>
+      <a href="" className="hvr-grow-rotate">
+        <i className="ci ci-discord"></i>
+      </a>
     </div>
   );
 };

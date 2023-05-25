@@ -1,3 +1,4 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
 .app__works {
   flex: 1;
   width: 100%;
@@ -127,6 +128,12 @@
   display: flex;
   margin-top: 1rem;
   align-items: center;
-  gap:2rem;
+  position: relative;
+  aside {
+    margin-right: 1rem;
+  }
+  div {
+    position: absolute;
+    left: 13rem;
+  }
 }
-
