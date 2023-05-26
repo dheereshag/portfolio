@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { images } from "../../constants";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { client } from "../../client";
-import "./Contact.scss";
 import { motion } from "framer-motion";
 
 const Contact = () => {
@@ -123,7 +122,7 @@ const Contact = () => {
 };
 
 export default AppWrap(
-  MotionWrap(Contact, "app__contact"),
+  MotionWrap(Contact),
   "contact",
   "bg-white"
 );

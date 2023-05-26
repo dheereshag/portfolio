@@ -47,7 +47,7 @@ const Works = () => {
   console.log("icons", icons[0]?.length);
   return (
     <>
-      <h2 className="font-dm-sans text-5xl font-semibold mb-8 text-neutral-800">
+      <h2 className="font-dm-sans text-5xl font-semibold mb-8 text-gray-700">
         My Creative <span className="text-violet-800">Portfolio</span> section
       </h2>
       <div className="app__work-filter">
