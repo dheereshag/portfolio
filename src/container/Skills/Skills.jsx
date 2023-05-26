@@ -19,12 +19,12 @@ const Skills = () => {
   }, []);
 
   return (
-    <>
-      <h2 className="font-dm-sans text-5xl font-semibold mb-10 text-neutral-600">
+    <div>
+      <h2 className="font-dm-sans text-5xl font-semibold mb-10 text-gray-700 text-center">
         Skills & Experiences
       </h2>
-      <div className="app__skills-container">
-        <motion.div className="app__skills-list">
+      <div className="flex flex-col lg:flex-row gap-20">
+        <motion.div className="flex flex-1 flex-wrap justify-center">
           {skills.map((skill, index) => (
             <motion.div
               whileInView={{ opacity: [0, 1] }}
@@ -37,25 +37,24 @@ const Skills = () => {
               dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
               dragElastic={1}
             >
-              <motion.div
-                className="app__flex bg-neutral-100"
-              >
+              <motion.div className="app__flex bg-neutral-100 rounded-3xl md:w-24 md:h-24 hvr-box-shadow-inset w-20 h-20">
                 <i
-                  className={`ci ci-${skill.icon} ci-${skill.size} hvr-buzz`}
+                  className={`ci ci-${skill.icon} ci-${skill.size} w-8/12 md:w-full hvr-buzz`}
                 ></i>
               </motion.div>
-              <p className="font-poppins text-sm text-neutral-700">{skill.name}</p>
+              <p className="font-poppins text-sm text-neutral-700">
+                {skill.name}
+              </p>
             </motion.div>
           ))}
         </motion.div>
-        <div className="app__skills-exp">
+        <div className="flex flex-col flex-1">
           {experiences?.map((experience) => (
-            <div className="app__skills-exp-item" key={experience?.year}>
-              <div className="app__skills-exp-year">
-                <p className="font-bold text-violet-800 font-poppins">
-                  {experience?.year}
-                </p>
-              </div>
+            <div className="flex gap-20" key={experience?.year}>
+              <p className="font-bold text-violet-800 font-poppins">
+                {experience?.year}
+              </p>
+
               <div className="app__skills-exp-works">
                 {experience?.works?.map((work, index) => (
                   <Tippy
@@ -88,12 +87,8 @@ const Skills = () => {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
-export default AppWrap(
-  MotionWrap(Skills, "app__skills"),
-  "skills",
-  "bg-white"
-);
+export default AppWrap(MotionWrap(Skills), "skills", "bg-white");

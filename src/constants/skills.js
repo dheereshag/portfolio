@@ -12,18 +12,9 @@ const skills = [
   {
     name: "sass",
     icon: "sass-wordmark",
-    size: "4x",
+    size: "3x",
   },
-  {
-    name: "tailwind",
-    icon: "tailwind",
-    size: "4x",
-  },
-  {
-    name: "bootstrap",
-    icon: "bootstrap",
-    size: "4x",
-  },
+
   {
     name: "mui",
     icon: "mui",
@@ -40,8 +31,18 @@ const skills = [
     size: "3x",
   },
   {
+    name: "tailwind",
+    icon: "tailwind",
+    size: "2x",
+  },
+  {
     name: "pytorch",
     icon: "pytorch",
+    size: "4x",
+  },
+  {
+    name: "bootstrap",
+    icon: "bootstrap",
     size: "4x",
   },
   {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useAnimate, stagger } from "framer-motion";
 import { MenuToggle } from "./MenuToggle";
-import { images,menuItems } from "../../constants";
+import { images, menuItems } from "../../constants";
 
 function useMenuAnimation(isOpen) {
   const [scope, animate] = useAnimate();
@@ -59,12 +59,12 @@ const Navbar = () => {
         <img src={images.logo} alt="logo" className="m-6 w-20" />
       </a>
       <div ref={scope}>
-        <nav className="fixed bg-pink-50 top-0 bottom-0 right-0 w-80">
+        <nav className="fixed top-0 bottom-0 right-0 w-80">
           <ul className="flex flex-col gap-10 mt-32 ml-20">
             {menuItems.map((item, index) => (
               <a
                 key={index}
-                className="text-purple-800 text-2xl font-bold cursor-pointer font-poppins"
+                className="text-violet-800 text-3xl font-bold cursor-pointer font-poppins"
                 href={`#${item}`}
                 onClick={() => setIsOpen(!isOpen)}
               >
