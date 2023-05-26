@@ -9,9 +9,9 @@ const Header = () => {
     <div id="home" className="app__header app__flex">
       <div className="app__header-info animate__animated animate__fadeInLeft animate__delay-1s">
         <div className="app__header-badge">
-          <div className="badge-cmp app__flex">
+          <div className="badge-cmp flex items-center gap-8">
             <span>👋🏻</span>
-            <div style={{ marginLeft: 20 }}>
+            <div>
               <p className="">Hello, I am</p>
               <h1 className="">John Doe</h1>
             </div>

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "./Navbar.scss";
 import { useAnimate, stagger } from "framer-motion";
 import { MenuToggle } from "./MenuToggle";
 import { images,menuItems } from "../../constants";

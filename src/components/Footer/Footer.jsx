@@ -11,16 +11,15 @@ const Footer = () => {
     return animation.stop;
   }, [count, isInView]);
   return (
-    <div className="copyright">
+    <div className="copyright flex flex-col justify-end items-end w-full">
       <div className="flex items-baseline">
-        <div className="font-pacifico text-purple-800">@</div>
-        <motion.div
+        <p className="font-pacifico text-purple-800">@</p>
+        <motion.p
           onViewportEnter={() => setIsInView(true)}
           className="font-pacifico text-purple-800"
         >
           {rounded}
-        </motion.div>
-
+        </motion.p>
         <p className="ml-1 font-dancing-script">Dheeresh</p>
       </div>
       <p className="font-dancing-script">All rights reserved</p>
