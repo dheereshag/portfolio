@@ -23,7 +23,7 @@ const Skills = () => {
       <h2 className="font-dm-sans text-5xl font-semibold mb-20 text-gray-800 text-center">
         Skills & Experiences
       </h2>
-      <div className="flex flex-col lg:flex-row gap-20 lg:gap-40">
+      <div className="flex flex-col lg:flex-row gap-20 lg:gap-32">
         <motion.div className="flex flex-1 flex-wrap justify-center lg:justify-start gap-6">
           {skills.map((skill, index) => (
             <motion.div

@@ -11,9 +11,9 @@ const Header = () => {
         <div className="app__header-badge">
           <div className="badge-cmp flex items-center gap-8">
             <span>👋🏻</span>
-            <div>
+            <div className="font-dm-sans text-lg">
               <p className="">Hello, I am</p>
-              <h1 className="">John Doe</h1>
+              <h1 className="text-3xl text-violet-800 font-bold">John Doe</h1>
             </div>
           </div>
           <div className="tag-cmp app__flex">
