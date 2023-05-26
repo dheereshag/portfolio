@@ -3,12 +3,11 @@ import { BsEyeFill, BsGithub } from "react-icons/bs";
 import { motion, AnimatePresence } from "framer-motion";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
-import "./Works.scss";
 
 const Works = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const [activeFilter, setActiveFilter] = useState("All");
+  const [activeFilter, setActiveFilter] = useState("all");
   const [animateCard, setAnimateCard] = useState({ y: [null, 0], opacity: 1 });
   const [filterWorks, setFilterWorks] = useState([]);
   const [icons, setIcons] = useState([]);
@@ -37,7 +36,7 @@ const Works = () => {
     setAnimateCard({ y: [null, 50], opacity: 0 });
     setTimeout(() => {
       setAnimateCard({ y: [null, 0], opacity: 1 });
-      if (item === "All") {
+      if (item === "all") {
         setFilterWorks(works);
       } else {
         setFilterWorks(works.filter((work) => work.tags.includes(item)));
@@ -47,32 +46,35 @@ const Works = () => {
   console.log("icons", icons[0]?.length);
   return (
     <>
-      <h2 className="font-dm-sans text-5xl font-semibold mb-8 text-gray-700">
+      <h2 className="font-dm-sans text-5xl font-semibold text-gray-700">
         My Creative <span className="text-violet-800">Portfolio</span> section
       </h2>
-      <div className="app__work-filter">
+      <div className="gap-6 flex my-14">
         {["ui/ux", "web app", "all"].map((item, index) => (
-          <motion.div
+          <motion.button
             key={index}
             onClick={() => handleWorkFilter(item)}
-            className={`app__work-filter-item app__flex font-rubik ${
-              activeFilter === item ? "item-active" : ""
+            className={`app__work-filter-item px-5 py-2 rounded-xl font-dm-sans font-semibold hover:bg-violet-900 hover:text-white ${
+              activeFilter === item ? "bg-violet-900 text-white" : "bg-white text-gray-800"
             }`}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
             {item}
-          </motion.div>
+          </motion.button>
         ))}
       </div>
       <motion.div
         animate={animateCard}
         transition={{ duration: 0.5, type: "tween" }}
-        className="app__work-portfolio"
+        className="flex flex-wrap justify-center gap-8"
       >
         {filterWorks.map((work, index) => (
-          <motion.div className="app__work-item app__flex hvr-grow" key={index}>
-            <div className="app__work-img app__flex">
+          <motion.div
+            className="app__work-item hvr-grow-shadow w-64 lg:w-72 p-3 rounded-3xl bg-white"
+            key={index}
+          >
+            <div className="flex relative">
               <img
                 src={urlFor(work.image)}
                 alt={work.name}
@@ -105,7 +107,7 @@ const Works = () => {
                 </a>
               </motion.div>
             </div>
-            <div className="flex justify-center p-2 relative">
+            <div className="flex justify-center p-1 relative">
               <div className="flex items-center px-3 py-2 -top-7 bg-white rounded-xl absolute">
                 {work?.tags?.slice(0, -1).map((tag, index) => (
                   <React.Fragment key={index}>
@@ -118,8 +120,10 @@ const Works = () => {
               </div>
               <div className="flex items-center relative">
                 <aside className="flex flex-col mt-1 gap-1">
-                  <h4 className="font-poppins">{work?.title}</h4>
-                  <p className="font-karla">{work?.description}</p>
+                  <h4 className="font-poppins font-semibold text-violet-900">
+                    {work?.title}
+                  </h4>
+                  <p className="font-dm-sans text-sm">{work?.description}</p>
                 </aside>
                 <AnimatePresence>
                   <motion.div
