@@ -35,22 +35,6 @@
   }
 }
 
-.app__social {
-  display: flex;
-  justify-content: flex-end;
-  flex-direction: column;
-  padding: 1rem;
-  gap: 1rem;
-  svg {
-    width: 1.2rem;
-    height: 1.2rem;
-    color: var(--gray-color);
-    &:hover {
-      color: var(--secondary-color);
-      cursor: pointer;
-    }
-  }
-}
 
 .app__navigation {
   display: flex;
