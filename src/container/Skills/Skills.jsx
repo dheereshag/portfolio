@@ -20,16 +20,16 @@ const Skills = () => {
 
   return (
     <div>
-      <h2 className="font-dm-sans text-5xl font-semibold mb-10 text-gray-700 text-center">
+      <h2 className="font-dm-sans text-5xl font-semibold mb-20 text-gray-800 text-center">
         Skills & Experiences
       </h2>
-      <div className="flex flex-col lg:flex-row gap-20">
-        <motion.div className="flex flex-1 flex-wrap justify-center">
+      <div className="flex flex-col lg:flex-row gap-20 lg:gap-40">
+        <motion.div className="flex flex-1 flex-wrap justify-center lg:justify-start gap-6">
           {skills.map((skill, index) => (
             <motion.div
               whileInView={{ opacity: [0, 1] }}
               transition={{ duration: 0.5 }}
-              className="app__skills-item app__flex"
+              className="flex flex-col text-center gap-2"
               key={skill.name}
               style={{ x }}
               drag="x"
@@ -48,14 +48,13 @@ const Skills = () => {
             </motion.div>
           ))}
         </motion.div>
-        <div className="flex flex-col flex-1">
+        <div className="flex flex-col flex-1 gap-10">
           {experiences?.map((experience) => (
-            <div className="flex gap-20" key={experience?.year}>
-              <p className="font-bold text-violet-800 font-poppins">
+            <div className="flex gap-16 items-baseline" key={experience?.year}>
+              <p className="font-bold text-violet-800 font-poppins text-xl">
                 {experience?.year}
               </p>
-
-              <div className="app__skills-exp-works">
+              <div className="flex-1">
                 {experience?.works?.map((work, index) => (
                   <Tippy
                     key={`${work.name}-${index}`}
@@ -65,18 +64,18 @@ const Skills = () => {
                     placement="top"
                     arrow={true}
                     interactive={true}
-                    className="font-inter font-bold"
+                    className="font-poppins border shadow-lg px-4 py-3"
                   >
                     <motion.div
                       whileInView={{ opacity: [0, 1] }}
                       transition={{ duration: 0.5 }}
-                      className="app__skills-exp-work"
+                      className="cursor-pointer"
                     >
-                      <h4 className="font-dm-sans text-lg font-semibold text-neutral-500">
+                      <h4 className="font-poppins text-xl font-semibold text-gray-600">
                         {work?.name}
                       </h4>
-                      <div className="flex items-center -mt-5">
-                        <p className="mr-2 font-karla mb-1">{work?.company}</p>
+                      <div className="flex items-center gap-2">
+                        <p className="font-karla text-lg text-gray-600">{work?.company}</p>
                         <i className={`ci ci-${work?.icon} ci-${work?.size}`} />
                       </div>
                     </motion.div>
