@@ -38,32 +38,35 @@ const Contact = () => {
   };
 
   return (
-    <>
-      <h2 className="font-dm-sans text-5xl font-semibold mb-10 text-neutral-600 mb-18">
-        Take a coffee <span className="hvr-float">🍵</span> and chat with me
-      </h2>
-      <div className="flex flex-col justify-center md:justify-evenly my-5 md:flex-row w-10/12 md:w-full lg:w-10/12 xl:w-7/12">
-        <div className="gap-4 hvr-icon-float hvr-shrink hover:shadow-md hover:shadow-pink-50 bg-rose-100 w-full md:w-5/12 lg:w-4/12 flex items-center px-5 py-4 rounded-3xl cursor-pointer">
-          <img src={images.email} alt="email" className="hvr-icon w-9" />
-          <a
-            href="mailto:da11@iitbbs.ac.in"
-            className="text-pink-500 font-pacifico"
-          >
-            da11@iitbbs.ac.in
-          </a>
+    <div className="flex flex-col xl:flex-row gap-20 items-baseline">
+      <aside className="flex flex-col md:flex-row items-center gap-4">
+        <h2 className="font-dm-sans text-5xl font-semibold mb-10 text-neutral-600 mb-18">
+          Take a coffee <span className="hvr-float">🍵</span> and chat with me
+        </h2>
+        <div className="flex flex-col gap-5 justify-center items-center my-5 w-full">
+          <div className="w-11/12 md:w-full gap-4 hvr-icon-float hvr-shrink hover:shadow-md hover:shadow-pink-50 bg-rose-100 flex items-center px-5 py-4 rounded-3xl cursor-pointer">
+            <img src={images.email} alt="email" className="hvr-icon w-9" />
+            <a
+              href="mailto:da11@iitbbs.ac.in"
+              className="text-pink-500 font-pacifico"
+            >
+              da11@iitbbs.ac.in
+            </a>
+          </div>
+          <div className="w-11/12 md:w-full gap-4 hvr-icon-rotate hvr-shrink hover:shadow-md hover:shadow-blue-50 bg-blue-100 flex items-center px-5 py-4 rounded-3xl cursor-pointer">
+            <img src={images.mobile} alt="mobile" className="hvr-icon w-9" />
+            <a
+              href="tel:+91 9411245528"
+              className="text-blue-800 font-pacifico text-sm"
+            >
+              +91 9411245528
+            </a>
+          </div>
         </div>
-        <div className="gap-4 hvr-icon-rotate hvr-shrink hover:shadow-md hover:shadow-blue-50 bg-blue-100 w-full md:w-5/12 lg:w-4/12 flex items-center px-5 py-4 rounded-3xl cursor-pointer">
-          <img src={images.mobile} alt="mobile" className="hvr-icon w-9" />
-          <a
-            href="tel:+91 9411245528"
-            className="text-blue-800 font-pacifico text-sm"
-          >
-            +91 9411245528
-          </a>
-        </div>
-      </div>
+      </aside>
+
       {!isFormSubmitted ? (
-        <form className="w-full lg:w-10/12 xl:w-7/12">
+        <form className="w-full xl:w-7/12">
           <section className="flex flex-col md:flex-row gap-4">
             <div className="w-full">
               <input
@@ -115,7 +118,7 @@ const Contact = () => {
           <h3 className="">Thank you for getting in touch!</h3>
         </div>
       )}
-    </>
+    </div>
   );
 };
 
