@@ -3,6 +3,7 @@ import { images } from "../../constants";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { client } from "../../client";
 import "./Contact.scss";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -62,7 +63,7 @@ const Contact = () => {
         </div>
       </div>
       {!isFormSubmitted ? (
-        <form className="app__contact-form">
+        <form className="app__contact-form w-7/12">
           <section>
             <div>
               <input
@@ -98,11 +99,15 @@ const Contact = () => {
               required
             />
           </div>
-          <button type="submit" className="" onClick={handleSubmit}>
-            <span className="font-inter text-base">
-              {loading ? "Sending..." : "Send Message"}
-            </span>
-          </button>
+          <motion.button
+            type="submit"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            className="bg-violet-800 rounded-3xl font-inter text-base text-white px-5 py-4 mt-2 shadow-md hover:shadow-violet-400/50 hover:bg-violet-900 transition-all duration-300"
+            onClick={handleSubmit}
+          >
+            {loading ? "Sending..." : "Send Message"}
+          </motion.button>
         </form>
       ) : (
         <div>
@@ -116,5 +121,5 @@ const Contact = () => {
 export default AppWrap(
   MotionWrap(Contact, "app__contact"),
   "contact",
-  "app__white-bg"
+  "bg-white"
 );

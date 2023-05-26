@@ -5,7 +5,7 @@ const AppWrap = (Component, idName, classNames) =>
   function HOC() {
     return (
       <div id={idName} className={`app__container ${classNames}`}>
-        <SocialMedia classStyles={"flex flex-col justify-end p-4 gap-2"} />
+        <SocialMedia classStyles={"flex-col justify-end gap-2 p-4 hidden md:flex"} />
         <div className="app__wrapper app__flex">
           <Component />
           <Footer />
