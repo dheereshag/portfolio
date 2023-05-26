@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { AiFillEye, AiFillGithub } from "react-icons/ai";
+import { BsEyeFill, BsGithub } from "react-icons/bs";
 import { motion, AnimatePresence } from "framer-motion";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
@@ -71,12 +71,13 @@ const Works = () => {
         className="app__work-portfolio"
       >
         {filterWorks.map((work, index) => (
-          <motion.div
-            className="app__work-item app__flex hvr-grow"
-            key={index}
-          >
+          <motion.div className="app__work-item app__flex hvr-grow" key={index}>
             <div className="app__work-img app__flex">
-              <img src={urlFor(work.image)} alt={work.name} />
+              <img
+                src={urlFor(work.image)}
+                alt={work.name}
+                className="rounded-3xl object-cover"
+              />
               <motion.div
                 whileHover={{ opacity: [0, 1] }}
                 transition={{
@@ -84,35 +85,41 @@ const Works = () => {
                   type: "tween",
                   staggerChildren: 0.5,
                 }}
-                className="app__work-hover app__flex"
+                className="flex justify-center items-center absolute w-full h-full bg-black/50 rounded-3xl gap-8"
               >
-                <a href={work?.projectLink} target="_blank" rel="noreferrer">
-                  <motion.div className="app__flex hvr-shrink">
-                    <AiFillEye />
-                  </motion.div>
+                <a
+                  href={work?.projectLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="app__flex hvr-shrink w-12 h-12 bg-black/50 rounded-full"
+                >
+                  <BsEyeFill className="text-white w-6 h-6" />
                 </a>
-                <a href={work?.codeLink} target="_blank" rel="noreferrer">
-                  <motion.div className="app__flex hvr-shrink">
-                    <AiFillGithub />
-                  </motion.div>
+                <a
+                  href={work?.codeLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="app__flex hvr-shrink w-12 h-12 bg-black/50 rounded-full"
+                >
+                  <BsGithub className="text-white w-6 h-6" />
                 </a>
               </motion.div>
             </div>
-            <div className="app__work-content app__flex">
-              <div className="app__work-tag app__flex">
+            <div className="flex justify-center p-2 relative">
+              <div className="flex items-center px-3 py-2 -top-7 bg-white rounded-xl absolute">
                 {work?.tags?.slice(0, -1).map((tag, index) => (
                   <React.Fragment key={index}>
-                    <p className="">{tag}</p>
+                    <p className="font-inter text-sm">{tag}</p>
                     {index < work?.tags?.length - 2 && (
-                      <span className="pipe-separator "> | </span>
+                      <span className="mx-1 font-inter text-sm"> | </span>
                     )}
                   </React.Fragment>
                 ))}
               </div>
-              <div className="app__work-info">
-                <aside>
-                  <h4 className="">{work?.title}</h4>
-                  <p className="">{work?.description}</p>
+              <div className="flex items-center relative">
+                <aside className="flex flex-col mt-1 gap-1">
+                  <h4 className="font-poppins">{work?.title}</h4>
+                  <p className="font-karla">{work?.description}</p>
                 </aside>
                 <AnimatePresence>
                   <motion.div
@@ -121,6 +128,7 @@ const Works = () => {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0 }}
                     transition={{ duration: 0.5, type: "tween" }}
+                    className="absolute right-0"
                   >
                     <IconComponent
                       name={icons[index][currentIndex]?.icon}
@@ -141,7 +149,7 @@ const IconComponent = ({ name, size }) => {
 };
 
 export default AppWrap(
-  MotionWrap(Works, "app__works"),
+  MotionWrap(Works, "flex flex-col"),
   "projects",
   "app__primary-bg"
 );
