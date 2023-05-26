@@ -47,15 +47,15 @@ const Works = () => {
   console.log("icons", icons[0]?.length);
   return (
     <>
-      <h2 className="">
-        My Creative <span>Portfolio</span> section
+      <h2 className="font-dm-sans text-5xl font-semibold mb-8 text-neutral-800">
+        My Creative <span className="text-violet-800">Portfolio</span> section
       </h2>
       <div className="app__work-filter">
         {["ui/ux", "web app", "all"].map((item, index) => (
           <motion.div
             key={index}
             onClick={() => handleWorkFilter(item)}
-            className={`app__work-filter-item app__flex  ${
+            className={`app__work-filter-item app__flex font-rubik ${
               activeFilter === item ? "item-active" : ""
             }`}
             whileHover={{ scale: 1.1 }}

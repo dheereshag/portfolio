@@ -38,8 +38,8 @@ const Contact = () => {
 
   return (
     <>
-      <h2 className=" font-poppins text-neutral-500">
-        Take a coffee and chat with me
+      <h2 className="font-dm-sans text-5xl font-semibold mb-10 text-neutral-600">
+        Take a coffee 🍵 and chat with me
       </h2>
       <div className="app__contact-cards">
         <div className="app__contact-card hvr-shrink" id="email">
@@ -66,7 +66,7 @@ const Contact = () => {
           <section>
             <div>
               <input
-                className=" hvr-box-shadow-inset"
+                className="font-karla text-sm hvr-box-shadow-inset p-4"
                 type="text"
                 placeholder="Your Name"
                 value={name}
@@ -77,7 +77,7 @@ const Contact = () => {
             </div>
             <div>
               <input
-                className=" hvr-box-shadow-inset"
+                className="font-karla text-sm hvr-box-shadow-inset p-4"
                 type="email"
                 placeholder="Your Email"
                 value={email}
@@ -89,7 +89,8 @@ const Contact = () => {
           </section>
           <div>
             <textarea
-              className=" hvr-box-shadow-inset"
+              className="font-karla text-sm hvr-box-shadow-inset p-4"
+              type="text"
               placeholder="Your Message"
               value={message}
               name="message"
@@ -98,7 +99,7 @@ const Contact = () => {
             />
           </div>
           <button type="submit" className="" onClick={handleSubmit}>
-            <span className="font-poppins text-md">
+            <span className="font-inter text-base">
               {loading ? "Sending..." : "Send Message"}
             </span>
           </button>

@@ -20,7 +20,9 @@ const Skills = () => {
 
   return (
     <>
-      <h2 className="">Skills & Experiences</h2>
+      <h2 className="font-dm-sans text-5xl font-semibold mb-10 text-neutral-600">
+        Skills & Experiences
+      </h2>
       <div className="app__skills-container">
         <motion.div className="app__skills-list">
           {skills.map((skill, index) => (
@@ -51,7 +53,9 @@ const Skills = () => {
           {experiences?.map((experience) => (
             <div className="app__skills-exp-item" key={experience?.year}>
               <div className="app__skills-exp-year">
-                <p className="">{experience?.year}</p>
+                <p className="font-bold text-violet-800 font-poppins">
+                  {experience?.year}
+                </p>
               </div>
               <div className="app__skills-exp-works">
                 {experience?.works?.map((work, index) => (
@@ -63,15 +67,18 @@ const Skills = () => {
                     placement="top"
                     arrow={true}
                     interactive={true}
+                    className="font-inter font-bold"
                   >
                     <motion.div
                       whileInView={{ opacity: [0, 1] }}
                       transition={{ duration: 0.5 }}
                       className="app__skills-exp-work"
                     >
-                      <h4 className="">{work?.name}</h4>
-                      <div className="flex items-center">
-                        <p className=" mr-2 text-lg">{work?.company}</p>
+                      <h4 className="font-dm-sans text-lg font-semibold text-neutral-500">
+                        {work?.name}
+                      </h4>
+                      <div className="flex items-center -mt-5">
+                        <p className="mr-2 font-karla mb-1">{work?.company}</p>
                         <i className={`ci ci-${work?.icon} ci-${work?.size}`} />
                       </div>
                     </motion.div>

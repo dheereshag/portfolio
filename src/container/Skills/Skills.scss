@@ -91,9 +91,6 @@
     align-items: flex-start;
     margin-bottom: 1rem;
     cursor: pointer;
-    h4 {
-      font-weight: 500;
-    }
     p {
       font-weight: 400;
       color: var(--gray-color);
@@ -103,10 +100,6 @@
 }
 .app__skills-exp-year {
   margin-right: 3rem;
-  p {
-    font-weight: 800;
-    color: var(--secondary-color);
-  }
   @media screen and (max-width: 450px) {
     margin-right: 1rem;
   }
