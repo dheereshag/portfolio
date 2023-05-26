@@ -74,8 +74,6 @@ const Works = () => {
           <motion.div
             className="app__work-item app__flex hvr-grow"
             key={index}
-            onClick={() => window.open(work?.projectLink, "_blank")}
-            target="_blank"
           >
             <div className="app__work-img app__flex">
               <img src={urlFor(work.image)} alt={work.name} />

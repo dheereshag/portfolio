@@ -39,35 +39,35 @@ const Contact = () => {
 
   return (
     <>
-      <h2 className="font-dm-sans text-5xl font-semibold mb-10 text-neutral-600">
-        Take a coffee 🍵 and chat with me
+      <h2 className="font-dm-sans text-5xl font-semibold mb-10 text-neutral-600 mb-18">
+        Take a coffee <span className="hvr-float">🍵</span> and chat with me
       </h2>
-      <div className="app__contact-cards">
-        <div className="app__contact-card hvr-shrink" id="email">
-          <img src={images.email} alt="email" />
+      <div className="flex flex-col justify-center md:justify-evenly my-5 md:flex-row w-10/12 md:w-full lg:w-10/12 xl:w-7/12">
+        <div className="gap-4 hvr-icon-float hvr-shrink hover:shadow-md hover:shadow-pink-50 bg-rose-100 w-full md:w-5/12 lg:w-4/12 flex items-center px-5 py-4 rounded-3xl cursor-pointer">
+          <img src={images.email} alt="email" className="hvr-icon w-9" />
           <a
             href="mailto:da11@iitbbs.ac.in"
-            className="text-neutral-500 font-pacifico"
+            className="text-pink-500 font-pacifico"
           >
             da11@iitbbs.ac.in
           </a>
         </div>
-        <div className="app__contact-card hvr-shrink" id="phone">
-          <img src={images.mobile} alt="mobile" />
+        <div className="gap-4 hvr-icon-rotate hvr-shrink hover:shadow-md hover:shadow-blue-50 bg-blue-100 w-full md:w-5/12 lg:w-4/12 flex items-center px-5 py-4 rounded-3xl cursor-pointer">
+          <img src={images.mobile} alt="mobile" className="hvr-icon w-9" />
           <a
             href="tel:+91 9411245528"
-            className="text-neutral-500 font-pacifico text-sm"
+            className="text-blue-800 font-pacifico text-sm"
           >
             +91 9411245528
           </a>
         </div>
       </div>
       {!isFormSubmitted ? (
-        <form className="app__contact-form w-7/12">
-          <section>
-            <div>
+        <form className="w-full lg:w-10/12 xl:w-7/12">
+          <section className="flex flex-col md:flex-row gap-4">
+            <div className="w-full">
               <input
-                className="font-karla text-sm hvr-box-shadow-inset p-4"
+                className="font-karla text-sm hvr-box-shadow-inset p-4 bg-blue-50 outline-0 rounded-xl w-full"
                 type="text"
                 placeholder="Your Name"
                 value={name}
@@ -76,9 +76,9 @@ const Contact = () => {
                 required
               />
             </div>
-            <div>
+            <div className="w-full rounded-3xl">
               <input
-                className="font-karla text-sm hvr-box-shadow-inset p-4"
+                className="font-karla text-sm hvr-box-shadow-inset p-4 bg-blue-50 outline-0 rounded-xl w-full"
                 type="email"
                 placeholder="Your Email"
                 value={email}
@@ -88,15 +88,16 @@ const Contact = () => {
               />
             </div>
           </section>
-          <div>
+          <div className="my-4">
             <textarea
-              className="font-karla text-sm hvr-box-shadow-inset p-4"
+              className="font-karla text-sm hvr-box-shadow-inset p-4 bg-blue-50 outline-0 rounded-2xl w-full"
               type="text"
               placeholder="Your Message"
               value={message}
               name="message"
               onChange={handleChangeInput}
               required
+              rows={8}
             />
           </div>
           <motion.button
