@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Navbar.scss";
 import { useAnimate, stagger } from "framer-motion";
 import { MenuToggle } from "./MenuToggle";
-import { menuItems } from "../../constants";
+import { images,menuItems } from "../../constants";
 
 function useMenuAnimation(isOpen) {
   const [scope, animate] = useAnimate();
@@ -56,6 +56,9 @@ const Navbar = () => {
 
   return (
     <nav className="fixed z-10">
+      <a href="#home">
+        <img src={images.logo} alt="logo" className="m-6 w-20" />
+      </a>
       <div ref={scope}>
         <nav className="fixed bg-pink-50 top-0 bottom-0 right-0 w-80">
           <ul className="flex flex-col gap-10 mt-32 ml-20">

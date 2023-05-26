@@ -5,7 +5,7 @@ const skills = [
     size: "3x",
   },
   {
-    name: "framer motion",
+    name: "framer",
     icon: "framer-motion",
     size: "3x",
   },
@@ -15,7 +15,7 @@ const skills = [
     size: "4x",
   },
   {
-    name: "tailwindcss",
+    name: "tailwind",
     icon: "tailwind",
     size: "4x",
   },

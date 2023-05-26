@@ -38,14 +38,13 @@ const Skills = () => {
               dragElastic={1}
             >
               <motion.div
-                className="app__flex"
-                style={{ backgroundColor: "var(--icon-background-color)" }}
+                className="app__flex bg-neutral-100"
               >
                 <i
                   className={`ci ci-${skill.icon} ci-${skill.size} hvr-buzz`}
                 ></i>
               </motion.div>
-              <p className="">{skill.name}</p>
+              <p className="font-poppins text-sm text-neutral-700">{skill.name}</p>
             </motion.div>
           ))}
         </motion.div>

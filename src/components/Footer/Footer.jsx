@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
-import "./Footer.scss";
 const Footer = () => {
   const count = useMotionValue(2000);
   const rounded = useTransform(count, Math.round);
@@ -13,18 +12,18 @@ const Footer = () => {
   }, [count, isInView]);
   return (
     <div className="copyright">
-      <div>
-        <strong className="">@</strong>
-        <motion.strong
-          className="font-poppins"
+      <div className="flex items-baseline">
+        <div className="font-pacifico text-purple-800">@</div>
+        <motion.div
           onViewportEnter={() => setIsInView(true)}
+          className="font-pacifico text-purple-800"
         >
           {rounded}
-        </motion.strong>
+        </motion.div>
 
-        <p className="">&#10240;Dheeresh</p>
+        <p className="ml-1 font-dancing-script">Dheeresh</p>
       </div>
-      <p className="">All rights reserved</p>
+      <p className="font-dancing-script">All rights reserved</p>
     </div>
   );
 };
