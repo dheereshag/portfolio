@@ -59,12 +59,12 @@ const Navbar = () => {
         <img src={images.logo} alt="logo" className="m-6 w-20" />
       </a>
       <div ref={scope}>
-        <nav className="fixed top-0 bottom-0 right-0 w-80">
+        <nav className="fixed top-0 bottom-0 right-0 w-80 bg-violet-900">
           <ul className="flex flex-col gap-10 mt-32 ml-20">
             {menuItems.map((item, index) => (
               <a
                 key={index}
-                className="text-violet-800 text-3xl font-bold cursor-pointer font-poppins"
+                className="text-white text-3xl font-bold cursor-pointer font-poppins"
                 href={`#${item}`}
                 onClick={() => setIsOpen(!isOpen)}
               >
