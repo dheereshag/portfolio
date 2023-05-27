@@ -8,7 +8,7 @@ const AppWrap = (Component, idName, classNames) =>
         <SocialMedia
           classStyles={"flex-col justify-end gap-2 p-4 hidden md:flex"}
         />
-        <div className="app__wrapper app__flex">
+        <div className="flex-1">
           <Component />
           <Footer />
         </div>
