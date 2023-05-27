@@ -69,11 +69,11 @@ const Works = () => {
         <motion.div
           animate={animateCard}
           transition={{ duration: 0.5, type: "tween" }}
-          className="flex flex-wrap justify-center gap-8 md:gap-14"
+          className="flex flex-wrap justify-center gap-8 lg:gap-14"
         >
           {filterWorks.map((work, index) => (
             <motion.div
-              className="hvr-grow-shadow md:w-64 lg:w-80 p-3 rounded-3xl bg-white border shadow-lg"
+              className="hvr-grow-shadow md:w-72 lg:w-80 p-3 rounded-3xl bg-white border shadow-lg"
               key={index}
             >
               <div className="flex relative">

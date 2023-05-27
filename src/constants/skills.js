@@ -108,7 +108,7 @@ const skills = [
   {
     name: "web3",
     icon: "web3js",
-    size: "3x",
+    size: "5x",
   },
 ];
 

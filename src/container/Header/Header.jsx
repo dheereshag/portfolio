@@ -6,7 +6,7 @@ import "./Header.scss";
 import headerIcons from "../../constants/headerIcons";
 const Header = () => {
   return (
-    <div id="home" className="flex flex-col lg:flex-row">
+    <div id="home" className="flex flex-col lg:flex-row ">
       <div className="animate__animated animate__fadeInLeft animate__delay-1s">
         <div className="items-start flex flex-col xl:items-end gap-8">
           <div className="flex p-4 rounded-3xl shadow-md gap-8 items-center font-dm-sans">
