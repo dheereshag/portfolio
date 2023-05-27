@@ -6,26 +6,33 @@ import "./Header.scss";
 import headerIcons from "../../constants/headerIcons";
 const Header = () => {
   return (
-    <div id="home" className="app__header app__flex">
-      <div className="app__header-info animate__animated animate__fadeInLeft animate__delay-1s">
-        <div className="app__header-badge">
-          <div className="badge-cmp flex items-center gap-8">
+    <div id="home" className="flex flex-col lg:flex-row p-10 w-full">
+      <div
+        className="h-full animate__animated animate__fadeInLeft animate__delay-1s"
+        style={{ flex: 0.65 }}
+      >
+        <div className="items-start w-full flex flex-col xl:items-end gap-8">
+          <div className="flex p-4 rounded-3xl shadow-md items-center gap-8">
             <span>👋🏻</span>
             <div className="font-dm-sans text-lg">
               <p className="">Hello, I am</p>
               <h1 className="text-3xl text-violet-800 font-bold">John Doe</h1>
             </div>
           </div>
-          <div className="tag-cmp app__flex">
+          <div className="flex flex-col px-5 py-4 shadow-sm border bg-blue-50 font-poppins rounded-3xl text-right">
             <p className="">web developer</p>
             <p className="">freelancer</p>
           </div>
         </div>
       </div>
-      <div className="app__header-img">
-        <img src={images.profile} alt="profile_bg" />
+      <div className="app__header-img flex flex-1 relative">
         <img
-          className="overlay_circle animate__animated animate__zoomIn animate__slow"
+          src={images.profile}
+          alt="profile_bg"
+          className="w-full z-10 object-contain"
+        />
+        <img
+          className="absolute overlay_circle w-full bottom-2 animate__animated animate__zoomIn animate__slow"
           src={images.circle}
           alt="profile_circle"
         />
