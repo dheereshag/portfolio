@@ -43,13 +43,12 @@ const Works = () => {
       }
     }, 500);
   };
-  console.log("icons", icons[0]?.length);
   return (
-    <>
+    <div className="flex flex-col">
       <h2 className="font-dm-sans text-5xl font-semibold text-gray-700">
         My Creative <span className="text-violet-800">Portfolio</span> section
       </h2>
-      <div className="gap-6 flex my-14">
+      <div className="gap-6 flex my-14 mx-auto">
         {["ui/ux", "web app", "all"].map((item, index) => (
           <motion.button
             key={index}
@@ -147,7 +146,7 @@ const Works = () => {
           </motion.div>
         ))}
       </motion.div>
-    </>
+    </div>
   );
 };
 const IconComponent = ({ name, size }) => {
@@ -155,7 +154,7 @@ const IconComponent = ({ name, size }) => {
 };
 
 export default AppWrap(
-  MotionWrap(Works, "flex flex-col"),
+  MotionWrap(Works),
   "projects",
-  "app__primary-bg"
+  "bg-blue-50"
 );

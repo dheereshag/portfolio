@@ -16,8 +16,8 @@ const About = () => {
   }, []);
 
   return (
-    <div className="flex flex-col">
-      <h2 className="font-dm-sans text-5xl font-semibold text-gray-700 text-center mb-24">
+    <div className="flex flex-col xl:flex-row items-center">
+      <h2 className="font-dm-sans text-5xl font-semibold text-gray-700">
         I know that{" "}
         <span className="font-dm-sans text-violet-800">Good Apps</span> means{" "}
         <span className="font-dm-sans text-violet-800">Good Business</span>

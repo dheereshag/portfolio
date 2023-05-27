@@ -10,9 +10,9 @@ const SocialMedia = ({ classStyles }) => {
             href={icon.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="hvr-grow-rotate"
+            className="hvr-icon-grow-rotate bg-white rounded-full w-14 h-14 border app__flex shadow"
           >
-            <i className={`ci ci-${icon.name} ci-xl`}></i>
+            <i className={`ci ci-${icon.name} ci-xl hvr-icon`}></i>
           </a>
         ))}
       </div>
