@@ -4,19 +4,19 @@ import { motion, AnimatePresence } from "framer-motion";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
 
-const Works = () => {
+const Projects = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const [activeFilter, setActiveFilter] = useState("all");
   const [animateCard, setAnimateCard] = useState({ y: [null, 0], opacity: 1 });
-  const [filterWorks, setFilterWorks] = useState([]);
+  const [filterProjects, setFilterProjects] = useState([]);
   const [icons, setIcons] = useState([]);
-  const [works, setWorks] = useState([]);
+  const [projects, setProjects] = useState([]);
   useEffect(() => {
-    const query = `*[_type == "works"]`;
+    const query = `*[_type == "projects"]`;
     client.fetch(query).then((data) => {
-      setWorks(data);
-      setFilterWorks(data);
+      setProjects(data);
+      setFilterProjects(data);
       const techStackArray = data.map((work) => work.icons); // Extracting techStack array from each work object
       setIcons((prevIcons) => [...prevIcons, ...techStackArray]); // Pushing techStack array into icons array
     });
@@ -37,9 +37,9 @@ const Works = () => {
     setTimeout(() => {
       setAnimateCard({ y: [null, 0], opacity: 1 });
       if (item === "all") {
-        setFilterWorks(works);
+        setFilterProjects(projects);
       } else {
-        setFilterWorks(works.filter((work) => work.tags.includes(item)));
+        setFilterProjects(projects.filter((work) => work.tags.includes(item)));
       }
     }, 500);
   };
@@ -71,7 +71,7 @@ const Works = () => {
           transition={{ duration: 0.5, type: "tween" }}
           className="flex flex-wrap justify-center gap-8 lg:gap-14"
         >
-          {filterWorks.map((work, index) => (
+          {filterProjects.map((work, index) => (
             <motion.div
               className="hvr-grow-shadow md:w-72 lg:w-80 p-3 rounded-3xl bg-white border shadow-lg"
               key={index}
@@ -156,4 +156,4 @@ const IconComponent = ({ name, size }) => {
   return <i className={`ci ci-${name} ci-${size}`} />;
 };
 
-export default AppWrap(MotionWrap(Works), "projects", "bg-blue-50");
+export default AppWrap(MotionWrap(Projects), "projects", "bg-blue-50");
