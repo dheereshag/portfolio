@@ -44,17 +44,17 @@ const Works = () => {
     }, 500);
   };
   return (
-    <div className="flex flex-col gap-20">
+    <div className="flex flex-col gap-20 items-center">
       <h2 className="font-dm-sans text-5xl font-semibold text-gray-700">
         My Creative <span className="text-violet-800">Portfolio</span> section
       </h2>
-      <div className="flex flex-col items-center gap-10">
+      <div className="flex flex-col items-center gap-8">
         <div className="gap-6 flex">
           {["ui/ux", "web app", "all"].map((item, index) => (
             <motion.button
               key={index}
               onClick={() => handleWorkFilter(item)}
-              className={`app__work-filter-item px-5 py-2 rounded-xl font-dm-sans font-semibold hover:bg-violet-900 hover:text-white ${
+              className={`app__work-filter-item px-5 py-3 rounded-xl font-dm-sans font-semibold hover:bg-violet-900 hover:text-white ${
                 activeFilter === item
                   ? "bg-violet-900 text-white"
                   : "bg-white text-gray-800"
@@ -69,11 +69,11 @@ const Works = () => {
         <motion.div
           animate={animateCard}
           transition={{ duration: 0.5, type: "tween" }}
-          className="flex flex-wrap justify-center gap-8"
+          className="flex flex-wrap justify-center gap-8 md:gap-14"
         >
           {filterWorks.map((work, index) => (
             <motion.div
-              className="app__work-item hvr-grow-shadow w-64 lg:w-72 p-3 rounded-3xl bg-white"
+              className="hvr-grow-shadow md:w-64 lg:w-80 p-3 rounded-3xl bg-white border shadow-lg"
               key={index}
             >
               <div className="flex relative">
@@ -83,7 +83,6 @@ const Works = () => {
                   className="rounded-3xl object-cover"
                 />
                 <motion.div
-                  // whileHover={{ opacity: 1 }}
                   transition={{
                     duration: 0.25,
                     type: "tween",
@@ -120,12 +119,14 @@ const Works = () => {
                     </React.Fragment>
                   ))}
                 </div>
-                <div className="flex items-center relative">
-                  <aside className="flex flex-col mt-1 gap-1">
+                <div className="flex items-center relative mt-2">
+                  <aside className="flex flex-col gap-2">
                     <h4 className="font-poppins font-semibold text-violet-900">
                       {work?.title}
                     </h4>
-                    <p className="font-dm-sans text-sm">{work?.description}</p>
+                    <p className="font-dm-sans text-sm lg:text-base w-10/12">
+                      {work?.description}
+                    </p>
                   </aside>
                   <AnimatePresence>
                     <motion.div

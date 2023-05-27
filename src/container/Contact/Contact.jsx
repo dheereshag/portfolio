@@ -43,7 +43,7 @@ const Contact = () => {
           Take a coffee <span className="hvr-float">🍵</span> and chat with me
         </h2>
         <div className="flex flex-col gap-5 justify-center items-center my-5 w-full">
-          <div className="w-11/12 md:w-full gap-4 hvr-icon-float hvr-shrink hover:shadow-md hover:shadow-pink-50 bg-rose-100 flex items-center px-5 py-4 rounded-3xl cursor-pointer">
+          <div className="w-11/12 md:w-full gap-4 hvr-icon-float hvr-shrink hover:shadow-md hover:shadow-rose-300 bg-rose-100 flex items-center px-5 py-4 rounded-3xl cursor-pointer">
             <img src={images.email} alt="email" className="hvr-icon w-9" />
             <a
               href="mailto:da11@iitbbs.ac.in"
@@ -52,7 +52,7 @@ const Contact = () => {
               da11@iitbbs.ac.in
             </a>
           </div>
-          <div className="w-11/12 md:w-full gap-4 hvr-icon-rotate hvr-shrink hover:shadow-md hover:shadow-blue-50 bg-blue-100 flex items-center px-5 py-4 rounded-3xl cursor-pointer">
+          <div className="w-11/12 md:w-full gap-4 hvr-icon-rotate hvr-shrink hover:shadow-md hover:shadow-blue-300 bg-blue-100 flex items-center px-5 py-4 rounded-3xl cursor-pointer">
             <img src={images.mobile} alt="mobile" className="hvr-icon w-9" />
             <a
               href="tel:+91 9411245528"
@@ -65,11 +65,11 @@ const Contact = () => {
       </aside>
 
       {!isFormSubmitted ? (
-        <form className="w-full xl:w-7/12">
+        <form className="w-full xl:w-7/12 flex flex-col gap-5">
           <section className="flex flex-col md:flex-row gap-4">
             <div className="w-full">
               <input
-                className="font-karla text-sm hvr-box-shadow-inset p-4 bg-blue-50 outline-0 rounded-xl w-full"
+                className="font-karla text-sm hvr-box-shadow-inset p-4 bg-violet-100 outline-0 rounded-xl w-full"
                 type="text"
                 placeholder="Your Name"
                 value={name}
@@ -80,7 +80,7 @@ const Contact = () => {
             </div>
             <div className="w-full rounded-3xl">
               <input
-                className="font-karla text-sm hvr-box-shadow-inset p-4 bg-blue-50 outline-0 rounded-xl w-full"
+                className="font-karla text-sm hvr-box-shadow-inset p-4 bg-violet-100 outline-0 rounded-xl w-full"
                 type="email"
                 placeholder="Your Email"
                 value={email}
@@ -90,9 +90,9 @@ const Contact = () => {
               />
             </div>
           </section>
-          <div className="my-4">
+          <div>
             <textarea
-              className="font-karla text-sm hvr-box-shadow-inset p-4 bg-blue-50 outline-0 rounded-2xl w-full"
+              className="font-karla text-sm hvr-box-shadow-inset p-4 bg-violet-100 outline-0 rounded-2xl w-full"
               type="text"
               placeholder="Your Message"
               value={message}
@@ -106,7 +106,7 @@ const Contact = () => {
             type="submit"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="bg-violet-800 rounded-3xl font-inter text-base text-white px-5 py-4 mt-2 shadow-md hover:shadow-violet-400/50 hover:bg-violet-900 transition-all duration-300"
+            className="bg-violet-800 rounded-3xl font-inter text-base text-white px-5 py-4 w-3/12 shadow-md hover:shadow-violet-300 hover:bg-violet-900 transition-all duration-300"
             onClick={handleSubmit}
           >
             {loading ? "Sending..." : "Send Message"}
@@ -124,5 +124,5 @@ const Contact = () => {
 export default AppWrap(
   MotionWrap(Contact),
   "contact",
-  "bg-white"
+  "bg-violet-50"
 );
