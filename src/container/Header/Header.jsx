@@ -12,12 +12,9 @@ const Header = () => {
         style={{ flex: 0.65 }}
       >
         <div className="items-start w-full flex flex-col xl:items-end gap-8">
-          <div className="flex p-4 rounded-3xl shadow-md items-center gap-8">
-            <span>👋🏻</span>
-            <div className="font-dm-sans text-lg">
-              <p className="">Hello, I am</p>
-              <h1 className="text-3xl text-violet-800 font-bold">John Doe</h1>
-            </div>
+          <div className="flex p-4 rounded-3xl shadow-md items-center gap-8 font-dm-sans">
+            <span className="text-3xl">👋🏻</span>
+            <h1 className="text-violet-800 font-bold">I'm John Doe</h1>
           </div>
           <div className="flex flex-col px-5 py-4 shadow-sm border bg-blue-50 font-poppins rounded-3xl text-right">
             <p className="">web developer</p>
