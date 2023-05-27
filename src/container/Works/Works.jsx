@@ -55,7 +55,9 @@ const Works = () => {
             key={index}
             onClick={() => handleWorkFilter(item)}
             className={`app__work-filter-item px-5 py-2 rounded-xl font-dm-sans font-semibold hover:bg-violet-900 hover:text-white ${
-              activeFilter === item ? "bg-violet-900 text-white" : "bg-white text-gray-800"
+              activeFilter === item
+                ? "bg-violet-900 text-white"
+                : "bg-white text-gray-800"
             }`}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
@@ -81,19 +83,19 @@ const Works = () => {
                 className="rounded-3xl object-cover"
               />
               <motion.div
-                whileHover={{ opacity: [0, 1] }}
+                // whileHover={{ opacity: 1 }}
                 transition={{
                   duration: 0.25,
                   type: "tween",
                   staggerChildren: 0.5,
                 }}
-                className="flex justify-center items-center absolute w-full h-full bg-black/50 rounded-3xl gap-8"
+                className="flex justify-center items-center absolute w-full h-full hover:bg-black/50 rounded-3xl gap-8 group"
               >
                 <a
                   href={work?.projectLink}
                   target="_blank"
                   rel="noreferrer"
-                  className="app__flex hvr-shrink w-12 h-12 bg-black/50 rounded-full"
+                  className="app__flex hvr-shrink w-12 h-12 bg-black/50 rounded-full opacity-0 group-hover:opacity-100 transition-all"
                 >
                   <BsEyeFill className="text-white w-6 h-6" />
                 </a>
@@ -101,7 +103,7 @@ const Works = () => {
                   href={work?.codeLink}
                   target="_blank"
                   rel="noreferrer"
-                  className="app__flex hvr-shrink w-12 h-12 bg-black/50 rounded-full"
+                  className="app__flex hvr-shrink w-12 h-12 bg-black/50 rounded-full opacity-0 group-hover:opacity-100 transition-all"
                 >
                   <BsGithub className="text-white w-6 h-6" />
                 </a>
