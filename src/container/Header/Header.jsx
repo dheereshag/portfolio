@@ -38,23 +38,58 @@ const Header = () => {
         />
       </div>
 
-      <motion.div className="app__header-circles animate__animated animate__zoomIn">
-        {headerIcons.map((icon, index) => (
-          <motion.div
-            className="app__flex"
-            key={`circle-${index}`}
-            drag
-            dragConstraints={{
-              top: -50,
-              left: -50,
-              right: 50,
-              bottom: 50,
-            }}
-          >
-            <i className={`ci ci-${icon.name} ci-${icon.size}`}></i>
-          </motion.div>
-        ))}
-      </motion.div>
+      <div
+        className="flex xl:flex-col justify-evenly flex-wrap animate__animated animate__zoomIn"
+        style={{ flex: 0.75 }}
+      >
+        <motion.div
+          className="app__flex rounded-full shadow-md bg-white w-36 h-36"
+          key={`circle-0`}
+          drag
+          dragConstraints={{
+            top: -50,
+            left: -50,
+            right: 50,
+            bottom: 50,
+          }}
+        >
+          <i
+            className={`ci ci-${headerIcons[0].name} ci-${headerIcons[0].size}`}
+          ></i>
+        </motion.div>
+
+        <motion.div
+          className="app__flex rounded-full shadow-md bg-white w-20 h-20 lg:ml-6"
+          key={`circle-1`}
+          drag
+          dragConstraints={{
+            top: -50,
+            left: -50,
+            right: 50,
+            bottom: 50,
+          }}
+        >
+          <i
+            className={`ci ci-${headerIcons[1].name} ci-${headerIcons[1].size}`}
+          ></i>
+        </motion.div>
+
+        <motion.div
+          className="app__flex rounded-full shadow-md bg-white w-24 h-24"
+          key={`circle-2`}
+          drag
+          dragConstraints={{
+            top: -50,
+            left: -50,
+            right: 50,
+            bottom: 50,
+          }}
+        >
+          <i
+            className={`ci ci-${headerIcons[2].name} ci-${headerIcons[2].size}`}
+          ></i>
+        </motion.div>
+      </div>
     </div>
   );
 };
