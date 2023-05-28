@@ -10,7 +10,7 @@ const SocialMedia = ({ parentStyles,childStyles,iconStyles }) => {
           href={icon.href}
           target="_blank"
           rel="noopener noreferrer"
-          className={`${childStyles}`}
+          className={`${childStyles} animate__animated animate__rollIn animate__slower`}
         >
           <i className={`ci ci-${icon.name} ${iconStyles} hvr-icon`}></i>
         </a>

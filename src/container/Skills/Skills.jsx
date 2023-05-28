@@ -9,7 +9,6 @@ import "tippy.js/animations/scale.css";
 import { skills } from "../../constants";
 const Skills = () => {
   const [experiences, setExperiences] = useState([]);
-  const x = useSpring(0, { stiffness: 500, damping: 20 });
 
   useEffect(() => {
     const query = '*[_type == "experiences"]';
@@ -17,7 +16,12 @@ const Skills = () => {
       setExperiences(data);
     });
   }, []);
-
+ const dragConstraints = {
+   top: -50,
+   left: -50,
+   right: 50,
+   bottom: 50,
+ };
   return (
     <div className="flex flex-col gap-20 lg:mt-6 mt-10 xl:mt-0">
       <h2 className="font-dm-sans text-4xl xl:text-5xl font-semibold text-neutral-800 text-center">
@@ -31,11 +35,8 @@ const Skills = () => {
               transition={{ duration: 0.5 }}
               className="flex flex-col text-center gap-2"
               key={skill.name}
-              style={{ x }}
-              drag="x"
-              onDragEnd={(event, info) => x.set(info.point.x)}
-              dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
-              dragElastic={1}
+              drag
+              dragConstraints={dragConstraints}
             >
               <motion.div className="app__flex bg-neutral-100 rounded-3xl md:w-24 md:h-24 hvr-box-shadow-inset w-20 h-20">
                 <i

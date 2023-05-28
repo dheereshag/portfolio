@@ -13,11 +13,16 @@ const Header = () => {
   useEffect(() => {
     setIsHeaderInView(isInView);
   }, [isInView, setIsHeaderInView, isHeaderInView]);
-
+  const dragConstraints = {
+    top: -100,
+    left: -100,
+    right: 100,
+    bottom: 100,
+  };
   return (
     <div
       id="home"
-      className="flex flex-col lg:flex-row mt-4 gap-4 md:gap-0 xl:mr-48"
+      className="flex flex-col lg:flex-row mt-4 gap-4 md:gap-0 xl:mr-64"
       ref={ref}
     >
       <div className="animate__animated animate__fadeInLeft animate__delay-1s">
@@ -41,7 +46,7 @@ const Header = () => {
           <img
             src={images.profile}
             alt="profile_bg"
-            className="w-full z-10 object-contain"
+            className="z-10 object-contain animate__animated animate__fadeIn animate__slower"
           />
           <img
             className="absolute overlay_circle w-full bottom-2 animate__animated animate__zoomIn animate__slow"
@@ -52,15 +57,10 @@ const Header = () => {
 
         <div className="flex lg:flex-col justify-evenly flex-wrap animate__animated animate__zoomIn">
           <motion.div
-            className="app__flex rounded-full shadow-md bg-white w-36 h-36"
+            className="app__flex rounded-full shadow-md bg-white w-40 h-40 border"
             key={`circle-0`}
             drag
-            dragConstraints={{
-              top: -50,
-              left: -50,
-              right: 50,
-              bottom: 50,
-            }}
+            dragConstraints={dragConstraints}
           >
             <i
               className={`ci ci-${headerIcons[0].name} ci-${headerIcons[0].size}`}
@@ -68,15 +68,10 @@ const Header = () => {
           </motion.div>
 
           <motion.div
-            className="app__flex rounded-full shadow-md bg-white w-20 h-20"
+            className="app__flex rounded-full shadow-md bg-white w-24 h-24 border"
             key={`circle-1`}
             drag
-            dragConstraints={{
-              top: -50,
-              left: -50,
-              right: 50,
-              bottom: 50,
-            }}
+            dragConstraints={dragConstraints}
           >
             <i
               className={`ci ci-${headerIcons[1].name} ci-${headerIcons[1].size}`}
@@ -84,15 +79,10 @@ const Header = () => {
           </motion.div>
 
           <motion.div
-            className="app__flex rounded-full shadow-md bg-white w-24 h-24"
+            className="app__flex rounded-full shadow-md bg-white w-28 h-28 border"
             key={`circle-2`}
             drag
-            dragConstraints={{
-              top: -50,
-              left: -50,
-              right: 50,
-              bottom: 50,
-            }}
+            dragConstraints={dragConstraints}
           >
             <i
               className={`ci ci-${headerIcons[2].name} ci-${headerIcons[2].size}`}
