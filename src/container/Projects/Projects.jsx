@@ -119,12 +119,12 @@ const Projects = () => {
                     </React.Fragment>
                   ))}
                 </div>
-                <div className="flex items-center relative mt-2">
+                <div className="flex relative mt-2">
                   <aside className="flex flex-col gap-2">
                     <h4 className="font-poppins font-semibold text-violet-900">
                       {work?.title}
                     </h4>
-                    <p className="font-dm-sans text-sm lg:text-base w-10/12">
+                    <p className="font-dm-sans text-sm lg:text-base w-9/12">
                       {work?.description}
                     </p>
                   </aside>
@@ -135,7 +135,7 @@ const Projects = () => {
                       animate={{ opacity: 1, scale: 1 }}
                       exit={{ opacity: 0, scale: 0 }}
                       transition={{ duration: 0.5, type: "tween" }}
-                      className="absolute right-0"
+                      className="absolute right-0 bottom-0"
                     >
                       <IconComponent
                         name={icons[index][currentIndex]?.icon}

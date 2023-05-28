@@ -63,7 +63,7 @@ const Navbar = () => {
         setIsOpen(false);
       }
     }
-  }, [isHeaderInView]);
+  }, [isHeaderInView,isXL]);
 
   return (
     <nav className="fixed z-20">
