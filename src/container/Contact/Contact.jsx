@@ -1,12 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useRef, useEffect } from "react";
 import { images } from "../../constants";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { client } from "../../client";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { Footer } from "../../components";
 import { useForm } from "react-hook-form";
+import { AppContext } from "../../context/AppContext";
 
 const Contact = () => {
+  const { isContactInView, setIsContactInView } = useContext(AppContext);
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+  useEffect(() => {
+    setIsContactInView(isInView);
+  }, [isInView, setIsContactInView, isContactInView]);
+
   const {
     register,
     handleSubmit,
@@ -37,7 +45,10 @@ const Contact = () => {
 
   return (
     <>
-      <div className="flex flex-col xl:flex-row gap-6 xl:gap-20 items-baseline mt-10 md:mt-0 mb-28 md:mb-0">
+      <div
+        className="flex flex-col xl:flex-row gap-6 xl:gap-20 items-baseline mt-10 md:mt-0 mb-28 md:mb-0"
+        ref={ref}
+      >
         <aside className="flex flex-col md:flex-row items-center gap-0 md:gap-3">
           <h2 className="font-dm-sans text-4xl xl:text-5xl font-semibold mb-10 text-violet-950 leading-tight">
             Take a coffee <span className="hvr-float">🍵</span> and chat with me

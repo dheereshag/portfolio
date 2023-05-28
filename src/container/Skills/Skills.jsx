@@ -1,13 +1,21 @@
 import "./Skills.scss";
-import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import React, { useState, useEffect, useRef, useContext } from "react";
+import { motion, useInView } from "framer-motion";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { client } from "../../client";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
 import "tippy.js/animations/scale.css";
 import { skills } from "../../constants";
+import { AppContext } from "../../context/AppContext";
 const Skills = () => {
+  const { isSkillsInView, setIsSkillsInView } = useContext(AppContext);
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+  useEffect(() => {
+    setIsSkillsInView(isInView);
+  }, [isInView, setIsSkillsInView, isSkillsInView]);
+
   const [experiences, setExperiences] = useState([]);
   useEffect(() => {
     const query = '*[_type == "experiences"]';
@@ -23,7 +31,10 @@ const Skills = () => {
     bottom: 50,
   };
   return (
-    <div className="flex flex-col gap-10 lg:gap-20 lg:mt-6 mt-10 xl:mt-0">
+    <div
+      className="flex flex-col gap-10 lg:gap-20 lg:mt-6 mt-10 xl:mt-0"
+      ref={ref}
+    >
       <h2 className="font-dm-sans text-4xl xl:text-5xl font-semibold text-neutral-800 text-center leading-tight">
         Skills <span className="text-violet-900">&</span> Experiences
       </h2>

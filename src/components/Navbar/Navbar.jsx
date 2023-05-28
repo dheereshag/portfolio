@@ -51,10 +51,14 @@ function useMenuAnimation(isOpen) {
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { isHeaderInView,isXL } = useContext(AppContext);
+  const {
+    isHeaderInView,
+    isXL,
+    isProjectsInView,
+    isSkillsInView,
+    isContactInView,
+  } = useContext(AppContext);
   const scope = useMenuAnimation(isOpen);
-  console.log("isHeaderInView navbar", isHeaderInView);
-
   useEffect(() => {
     if (isXL) {
       if (isHeaderInView) {
@@ -63,7 +67,7 @@ const Navbar = () => {
         setIsOpen(false);
       }
     }
-  }, [isHeaderInView,isXL]);
+  }, [isHeaderInView, isXL]);
 
   return (
     <nav className="fixed z-20">
@@ -71,7 +75,15 @@ const Navbar = () => {
         <img src={images.logo} alt="logo" className="m-6 w-20" />
       </a>
       <div ref={scope}>
-        <nav className="fixed top-0 bottom-0 right-0 w-80 translate-x-full bg-white/80 backdrop-blur xl:backdrop-blur-none xl:bg-transparent">
+        <nav
+          className={`fixed top-0 bottom-0 right-0 w-80 translate-x-full ${
+            isProjectsInView || isSkillsInView || isContactInView
+              ? "bg-white/80 backdrop-blur-sm"
+              : isXL
+              ? "xl:bg-transparent"
+              : "bg-white/80 backdrop-blur-sm"
+          }`}
+        >
           <ul className="flex flex-col gap-10 mt-40 mx-20">
             {menuItems.map((item, index) => (
               <a href={`#${item}`} key={index}>

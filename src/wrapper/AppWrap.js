@@ -15,7 +15,7 @@ const AppWrap = (Component, idName, classNames) =>
           }
           iconStyles={"ci-xl"}
         />
-        <div className="flex flex-1 p-10 relative items-center justify-center">
+        <div className="flex flex-1 m-10 relative items-center justify-center">
           <Component />
         </div>
         <NavigationDots active={idName} />
