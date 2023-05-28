@@ -3,11 +3,13 @@ import { menuItems } from "../constants";
 import { AppContext } from "../context/AppContext";
 const NavigationDots = ({ active }) => {
   const { isHeaderInView, isXL } = useContext(AppContext);
-  if (isXL && isHeaderInView) {
-    return;
-  }
+  const shouldRender = isXL && isHeaderInView;
   return (
-    <div className="hidden md:flex md:justify-center md:flex-col p-4 gap-4">
+    <div
+      className={`md:flex md:justify-center md:flex-col p-4 gap-4 ${
+        shouldRender ? "invisible" : "hidden"
+      }`}
+    >
       {menuItems.map((item, index) => (
         <a
           href={`#${item}`}
