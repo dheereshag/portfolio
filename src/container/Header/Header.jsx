@@ -18,11 +18,14 @@ const Header = () => {
     <div id="home" className="flex flex-col lg:flex-row" ref={ref}>
       <div className="animate__animated animate__fadeInLeft animate__delay-1s">
         <div className="items-start flex flex-col xl:items-end gap-8">
-          <div className="flex p-4 rounded-3xl shadow-md gap-8 items-center font-dm-sans">
-            <span className="text-3xl">👋🏻</span>
-            <h1 className="text-violet-800 font-bold">I'm John Doe</h1>
+          <div className="flex gap-8 shadow rounded-2xl px-4 py-3 items-center">
+            <span className="text-5xl">👋🏻</span>
+            <div className="font-dm-sans flex flex-col gap-2">
+              <p className="">Hello, I am</p>
+              <p className="text-violet-800 font-semibold text-3xl">John Doe</p>
+            </div>
           </div>
-          <div className="flex flex-col px-5 py-4 shadow-sm border bg-blue-50 font-poppins rounded-3xl text-right">
+          <div className="flex flex-col px-5 py-4 shadow font-poppins rounded-2xl text-right">
             <p className="">web developer</p>
             <p className="">freelancer</p>
           </div>

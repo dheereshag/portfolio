@@ -60,7 +60,7 @@ const Navbar = () => {
         <img src={images.logo} alt="logo" className="m-6 w-20" />
       </a>
       <div ref={scope}>
-        <nav className="fixed top-0 bottom-0 right-0 w-80 bg-white translate-x-full">
+        <nav className="fixed top-0 bottom-0 right-0 w-80 translate-x-full">
           <ul className="flex flex-col gap-10 pt-32 pl-20">
             {menuItems.map((item, index) => (
               <a href={`#${item}`}>
