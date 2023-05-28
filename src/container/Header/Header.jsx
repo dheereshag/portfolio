@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import "./Header.scss";
 import headerIcons from "../../constants/headerIcons";
 import { useInView } from "framer-motion";
-import { set } from "immutable";
 const Header = () => {
   const { isHeaderInView, setIsHeaderInView } = useContext(AppContext);
   const ref = useRef(null);
@@ -14,15 +13,20 @@ const Header = () => {
   useEffect(() => {
     setIsHeaderInView(isInView);
   }, [isInView, setIsHeaderInView, isHeaderInView]);
+
   return (
-    <div id="home" className="flex flex-col lg:flex-row" ref={ref}>
+    <div
+      id="home"
+      className="flex flex-col lg:flex-row mt-4 gap-4 md:gap-0 xl:mr-48"
+      ref={ref}
+    >
       <div className="animate__animated animate__fadeInLeft animate__delay-1s">
         <div className="items-start flex flex-col xl:items-end gap-8">
           <div className="flex gap-8 shadow rounded-2xl px-4 py-3 items-center">
             <span className="text-5xl">👋🏻</span>
             <div className="font-dm-sans flex flex-col gap-2">
               <p className="">Hello, I am</p>
-              <p className="text-violet-800 font-semibold text-3xl">John Doe</p>
+              <p className="text-violet-800 font-semibold text-3xl">Dheeresh</p>
             </div>
           </div>
           <div className="flex flex-col px-5 py-4 shadow font-poppins rounded-2xl text-right">

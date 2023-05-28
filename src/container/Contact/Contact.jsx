@@ -3,7 +3,7 @@ import { images } from "../../constants";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { client } from "../../client";
 import { motion } from "framer-motion";
-import { Footer, SocialMedia } from "../../components";
+import { Footer} from "../../components";
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",

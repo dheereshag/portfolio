@@ -3,6 +3,7 @@ import { useAnimate, stagger } from "framer-motion";
 import { MenuToggle } from "./MenuToggle";
 import { images, menuItems } from "../../constants";
 import { AppContext } from "../../context/AppContext";
+import { useMediaQuery } from "react-responsive";
 
 function useMenuAnimation(isOpen) {
   const [scope, animate] = useAnimate();
@@ -52,20 +53,31 @@ function useMenuAnimation(isOpen) {
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { isHeaderInView } = useContext(AppContext);
+  const isXL = useMediaQuery({ minWidth: 1280 });
   const scope = useMenuAnimation(isOpen);
   console.log("isHeaderInView navbar", isHeaderInView);
+
+  useEffect(() => {
+    if (isXL) {
+      if (isHeaderInView) {
+        setIsOpen(true);
+      } else {
+        setIsOpen(false);
+      }
+    }
+  }, [isHeaderInView]);
+
   return (
     <nav className="fixed z-20">
       <a href="#home">
         <img src={images.logo} alt="logo" className="m-6 w-20" />
       </a>
       <div ref={scope}>
-        <nav className="fixed top-0 bottom-0 right-0 w-80 translate-x-full">
-          <ul className="flex flex-col gap-10 pt-32 pl-20">
+        <nav className="fixed top-0 bottom-0 right-0 w-80 bg-white xl:bg-transparent translate-x-full">
+          <ul className="flex flex-col gap-10 p-28">
             {menuItems.map((item, index) => (
-              <a href={`#${item}`}>
+              <a href={`#${item}`} key={index}>
                 <li
-                  key={index}
                   className="text-violet-900 text-3xl font-bold cursor-pointer font-poppins"
                   onClick={() => setIsOpen(!isOpen)}
                 >
