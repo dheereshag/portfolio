@@ -45,7 +45,7 @@ const Projects = () => {
   };
   return (
     <div className="flex flex-col gap-10 md:gap-16 items-center mt-10 md:mt-4 xl:mt-0">
-      <h2 className="font-dm-sans text-4xl xl:text-5xl font-semibold text-gray-700 text-center">
+      <h2 className="font-dm-sans text-4xl xl:text-5xl font-semibold text-gray-700 text-center leading-tight">
         My Creative <span className="text-violet-800">Portfolio</span> section
       </h2>
       <div className="flex flex-col items-center gap-10 xl:gap-16">

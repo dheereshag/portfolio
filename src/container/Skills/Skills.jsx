@@ -24,7 +24,7 @@ const Skills = () => {
  };
   return (
     <div className="flex flex-col gap-10 lg:gap-20 lg:mt-6 mt-10 xl:mt-0">
-      <h2 className="font-dm-sans text-4xl xl:text-5xl font-semibold text-neutral-800 text-center">
+      <h2 className="font-dm-sans text-4xl xl:text-5xl font-semibold text-neutral-800 text-center leading-tight">
         Skills <span className="text-violet-900">&</span> Experiences
       </h2>
       <div className="flex flex-col lg:flex-row gap-16 xl:gap-28 items-center lg:items-start">

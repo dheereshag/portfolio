@@ -39,7 +39,7 @@ const Contact = () => {
     <>
       <div className="flex flex-col xl:flex-row gap-6 xl:gap-20 items-baseline mt-10 md:mt-0 mb-28 md:mb-0">
         <aside className="flex flex-col md:flex-row items-center gap-0 md:gap-3">
-          <h2 className="font-dm-sans text-4xl xl:text-5xl font-semibold mb-10 text-violet-950">
+          <h2 className="font-dm-sans text-4xl xl:text-5xl font-semibold mb-10 text-violet-950 leading-tight">
             Take a coffee <span className="hvr-float">🍵</span> and chat with me
           </h2>
           <div className="flex flex-col gap-5 justify-center items-center my-5 w-full">
@@ -87,7 +87,7 @@ const Contact = () => {
                   className="font-karla text-sm hvr-box-shadow-inset p-4 bg-violet-100 outline-0 rounded-xl w-full"
                   placeholder="Your Email"
                   {...register("email", {
-                    pattern: /^\S+@\S+$/i,
+                    pattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
                     required: true,
                   })}
                 />
@@ -121,7 +121,7 @@ const Contact = () => {
             </motion.button>
           </form>
         ) : (
-          <p className="text-4xl font-pacifico text-violet-800 leading-relaxed">
+          <p className="text-4xl font-pacifico text-violet-800 leading-snug">
             Thank you 😍 for getting in touch
           </p>
         )}
