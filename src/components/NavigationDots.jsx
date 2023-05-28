@@ -6,8 +6,8 @@ const NavigationDots = ({ active }) => {
   const shouldRender = isXL && isHeaderInView;
   return (
     <div
-      className={`md:flex md:justify-center md:flex-col p-4 gap-4 ${
-        shouldRender ? "invisible" : "hidden"
+      className={`hidden md:flex md:justify-center md:flex-col p-4 gap-4 ${
+        shouldRender ? "invisible" : ""
       }`}
     >
       {menuItems.map((item, index) => (

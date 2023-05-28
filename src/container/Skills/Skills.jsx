@@ -1,6 +1,6 @@
 import "./Skills.scss";
 import React, { useState, useEffect } from "react";
-import { motion, useSpring } from "framer-motion";
+import { motion} from "framer-motion";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { client } from "../../client";
 import Tippy from "@tippyjs/react";

@@ -94,17 +94,17 @@ const Projects = () => {
                     href={work?.projectLink}
                     target="_blank"
                     rel="noreferrer"
-                    className="app__flex hvr-shrink w-12 h-12 bg-black/50 rounded-full opacity-0 group-hover:opacity-100 transition-all"
+                    className="app__flex hvr-icon-shrink w-12 h-12 bg-black/50 rounded-full opacity-0 group-hover:opacity-100 transition-all"
                   >
-                    <BsEyeFill className="text-white w-6 h-6" />
+                    <BsEyeFill className="text-white w-6 h-6 hvr-icon" />
                   </a>
                   <a
                     href={work?.codeLink}
                     target="_blank"
                     rel="noreferrer"
-                    className="app__flex hvr-shrink w-12 h-12 bg-black/50 rounded-full opacity-0 group-hover:opacity-100 transition-all"
+                    className="app__flex hvr-icon-shrink w-12 h-12 bg-black/50 rounded-full opacity-0 group-hover:opacity-100 transition-all"
                   >
-                    <BsGithub className="text-white w-6 h-6" />
+                    <BsGithub className="text-white w-6 h-6 hvr-icon" />
                   </a>
                 </motion.div>
               </div>

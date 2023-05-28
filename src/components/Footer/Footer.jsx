@@ -8,7 +8,7 @@ const Footer = () => {
 
   useEffect(() => {
     if (!isInView) return;
-    const animation = animate(count, 2023, { duration: 3 });
+    const animation = animate(count, 2023, { duration: 8 });
     return animation.stop;
   }, [count, isInView]);
   return (
