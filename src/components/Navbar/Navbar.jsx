@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useAnimate, stagger } from "framer-motion";
 import { MenuToggle } from "./MenuToggle";
 import { images, menuItems } from "../../constants";
+import { AppContext } from "../../context/AppContext";
 
 function useMenuAnimation(isOpen) {
   const [scope, animate] = useAnimate();
@@ -50,21 +51,22 @@ function useMenuAnimation(isOpen) {
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  console.log("isOpen navbar", isOpen)
+  const { isHeaderInView } = useContext(AppContext);
   const scope = useMenuAnimation(isOpen);
-
+  // console.log("isHeaderInView navbar", isHeaderInView);
   return (
     <nav className="fixed z-10">
       <a href="#home">
         <img src={images.logo} alt="logo" className="m-6 w-20" />
       </a>
       <div ref={scope}>
-        <nav className="fixed top-0 bottom-0 right-0 w-80 bg-violet-900">
-          <ul className="flex flex-col gap-10 mt-32 ml-20">
+        <nav className="fixed top-0 bottom-0 right-0 w-80 bg-neutral-50">
+          <ul className="flex flex-col gap-10 pt-32 pl-20">
             {menuItems.map((item, index) => (
               <a
                 key={index}
-                className="text-white text-3xl font-bold cursor-pointer font-poppins"
+                className="text-violet-900 text-3xl font-bold cursor-pointer font-poppins"
                 href={`#${item}`}
                 onClick={() => setIsOpen(!isOpen)}
               >

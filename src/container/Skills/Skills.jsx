@@ -19,12 +19,12 @@ const Skills = () => {
   }, []);
 
   return (
-    <div>
-      <h2 className="font-dm-sans text-5xl font-semibold mb-20 text-gray-800 text-center">
+    <div className="flex flex-col gap-20">
+      <h2 className="font-dm-sans text-5xl font-semibold text-gray-800 text-center">
         Skills & Experiences
       </h2>
-      <div className="flex flex-col lg:flex-row gap-20 lg:gap-32">
-        <motion.div className="flex flex-1 flex-wrap justify-center lg:justify-start gap-6">
+      <div className="flex flex-col lg:flex-row gap-16 xl:gap-28">
+        <motion.div className="flex flex-wrap justify-center gap-7 lg:w-7/12 xl:w-8/12">
           {skills.map((skill, index) => (
             <motion.div
               whileInView={{ opacity: [0, 1] }}
@@ -48,7 +48,7 @@ const Skills = () => {
             </motion.div>
           ))}
         </motion.div>
-        <div className="flex flex-col flex-1 gap-10">
+        <div className="flex flex-col gap-10 ml-2 md:ml-14 lg:ml-0 lg:w-4/12">
           {experiences?.map((experience) => (
             <div className="flex gap-16 items-baseline" key={experience?.year}>
               <p className="font-bold text-violet-800 font-poppins text-xl">
@@ -75,7 +75,9 @@ const Skills = () => {
                         {work?.name}
                       </h4>
                       <div className="flex items-center gap-2">
-                        <p className="font-karla text-lg text-gray-600">{work?.company}</p>
+                        <p className="font-karla text-lg text-gray-600">
+                          {work?.company}
+                        </p>
                         <i className={`ci ci-${work?.icon} ci-${work?.size}`} />
                       </div>
                     </motion.div>

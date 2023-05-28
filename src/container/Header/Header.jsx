@@ -1,12 +1,21 @@
-import React from "react";
+import React, { useRef, useEffect, useContext } from "react";
+import { AppContext } from "../../context/AppContext";
 import { AppWrap } from "../../wrapper";
 import { images } from "../../constants";
 import { motion } from "framer-motion";
 import "./Header.scss";
 import headerIcons from "../../constants/headerIcons";
+import { useInView } from "framer-motion";
+import { set } from "immutable";
 const Header = () => {
+  const { isHeaderInView, setIsHeaderInView } = useContext(AppContext);
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+  useEffect(() => {
+    setIsHeaderInView(isInView);
+  }, [isInView, setIsHeaderInView, isHeaderInView]);
   return (
-    <div id="home" className="flex flex-col lg:flex-row ">
+    <div id="home" className="flex flex-col lg:flex-row" ref={ref}>
       <div className="animate__animated animate__fadeInLeft animate__delay-1s">
         <div className="items-start flex flex-col xl:items-end gap-8">
           <div className="flex p-4 rounded-3xl shadow-md gap-8 items-center font-dm-sans">

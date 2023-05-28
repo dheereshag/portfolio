@@ -16,13 +16,13 @@ const About = () => {
   }, []);
 
   return (
-    <div className="flex flex-col xl:flex-row items-center gap-10 xl:gap-0">
+    <div className="flex flex-col items-center gap-24">
       <h2 className="font-dm-sans text-5xl font-semibold text-gray-700 text-center">
         I know that{" "}
         <span className="font-dm-sans text-violet-800">Good Apps</span> means{" "}
         <span className="font-dm-sans text-violet-800">Good Business</span>
       </h2>
-      <div className="flex flex-wrap justify-center gap-10">
+      <div className="flex flex-wrap justify-center gap-14">
         {skills.map((skill, index) => (
           <motion.div
             className="hvr-forward flex flex-col w-64 gap-4"

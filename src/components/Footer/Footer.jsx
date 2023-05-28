@@ -11,7 +11,7 @@ const Footer = () => {
     return animation.stop;
   }, [count, isInView]);
   return (
-    <div className="copyright flex flex-col absolute items-end bottom-2 right-0 w-full">
+    <div className="copyright flex flex-col absolute items-end bottom-2 right-0">
       <div className="flex items-baseline">
         <p className="font-pacifico text-purple-800">@</p>
         <motion.p

@@ -44,11 +44,11 @@ const Projects = () => {
     }, 500);
   };
   return (
-    <div className="flex flex-col gap-20 items-center">
+    <div className="flex flex-col gap-16 items-center">
       <h2 className="font-dm-sans text-5xl font-semibold text-gray-700">
         My Creative <span className="text-violet-800">Portfolio</span> section
       </h2>
-      <div className="flex flex-col items-center gap-8">
+      <div className="flex flex-col items-center gap-16">
         <div className="gap-6 flex">
           {["ui/ux", "web app", "all"].map((item, index) => (
             <motion.button
