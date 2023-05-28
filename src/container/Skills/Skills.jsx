@@ -23,33 +23,33 @@ const Skills = () => {
    bottom: 50,
  };
   return (
-    <div className="flex flex-col gap-20 lg:mt-6 mt-10 xl:mt-0">
+    <div className="flex flex-col gap-10 lg:gap-20 lg:mt-6 mt-10 xl:mt-0">
       <h2 className="font-dm-sans text-4xl xl:text-5xl font-semibold text-neutral-800 text-center">
         Skills <span className="text-violet-900">&</span> Experiences
       </h2>
-      <div className="flex flex-col lg:flex-row gap-16 xl:gap-28">
-        <motion.div className="flex flex-wrap justify-center gap-7 lg:w-7/12 xl:w-8/12">
+      <div className="flex flex-col lg:flex-row gap-16 xl:gap-28 items-center lg:items-start">
+        <motion.div className="flex flex-wrap justify-center gap-7 xl:w-8/12">
           {skills.map((skill, index) => (
             <motion.div
               whileInView={{ opacity: [0, 1] }}
               transition={{ duration: 0.5 }}
               className="flex flex-col text-center gap-2"
-              key={skill.name}
+              key={index}
               drag
               dragConstraints={dragConstraints}
             >
-              <motion.div className="app__flex bg-neutral-100 rounded-3xl md:w-24 md:h-24 hvr-box-shadow-inset w-20 h-20">
+              <motion.div className="app__flex bg-neutral-100 shadow border rounded-3xl md:w-24 md:h-24 hvr-box-shadow-inset w-20 h-20">
                 <i
                   className={`ci ci-${skill.icon} ci-${skill.size} w-8/12 md:w-full hvr-buzz`}
                 ></i>
               </motion.div>
-              <p className="font-poppins text-sm text-neutral-700">
+              <p className="font-poppins text-sm font-semibold text-neutral-600">
                 {skill.name}
               </p>
             </motion.div>
           ))}
         </motion.div>
-        <div className="flex flex-col gap-10 ml-2 md:ml-14 lg:ml-0 lg:w-4/12">
+        <div className="flex flex-col gap-10 xl:w-4/12">
           {experiences?.map((experience) => (
             <div className="flex gap-16 items-baseline" key={experience?.year}>
               <p className="font-bold text-violet-800 font-poppins text-xl">

@@ -358,7 +358,10 @@ template {
   -ms-overflow-style: none;
 }
 
-
 *::-webkit-scrollbar {
   display: none;
+}
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent; /* For some Androids */
 }

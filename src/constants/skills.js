@@ -103,13 +103,13 @@ const skills = [
   {
     name: "solidity",
     icon: "solidity",
-    size: "6x",
+    size: "4x",
   },
-  // {
-  //   name: "web3",
-  //   icon: "web3js",
-  //   size: "5x",
-  // },
+  {
+    name: "web3",
+    icon: "web3js",
+    size: "4x",
+  },
 ];
 
 export default skills;
