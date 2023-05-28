@@ -4,22 +4,21 @@ import { AppWrap, MotionWrap } from "../../wrapper";
 import { client } from "../../client";
 import { motion } from "framer-motion";
 import { Footer } from "../../components";
+import { useForm } from "react-hook-form";
+
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const { name, email, message } = formData;
-  const handleChangeInput = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = () => {
+  const sendForm = (data) => {
+    const { name, email, message } = data;
+    console.log(name, email, message);
     if (!name || !email || !message) {
       return alert("Please fill all the fields");
     }
@@ -66,57 +65,65 @@ const Contact = () => {
         </aside>
 
         {!isFormSubmitted ? (
-          <form className="w-full xl:w-7/12 flex flex-col gap-5">
+          <form
+            className="w-full xl:w-7/12 flex flex-col gap-5"
+            onSubmit={handleSubmit((data) => sendForm(data))}
+          >
             <section className="flex flex-col md:flex-row gap-4">
-              <div className="w-full">
+              <div className="w-full rounded-3xl">
                 <input
                   className="font-karla text-sm hvr-box-shadow-inset p-4 bg-violet-100 outline-0 rounded-xl w-full"
-                  type="text"
                   placeholder="Your Name"
-                  value={name}
-                  name="name"
-                  onChange={handleChangeInput}
-                  required
+                  {...register("name", { required: true })}
                 />
+                {errors.name && (
+                  <span className="text-red-500 font-poppins text-sm">
+                    *name is required
+                  </span>
+                )}
               </div>
               <div className="w-full rounded-3xl">
                 <input
                   className="font-karla text-sm hvr-box-shadow-inset p-4 bg-violet-100 outline-0 rounded-xl w-full"
-                  type="email"
                   placeholder="Your Email"
-                  value={email}
-                  name="email"
-                  onChange={handleChangeInput}
-                  required
+                  {...register("email", {
+                    pattern: /^\S+@\S+$/i,
+                    required: true,
+                  })}
                 />
+                {errors.email && (
+                  <span className="text-red-500 font-poppins text-sm">
+                    *enter valid email
+                  </span>
+                )}
               </div>
             </section>
             <div>
               <textarea
                 className="font-karla text-sm hvr-box-shadow-inset p-4 bg-violet-100 outline-0 rounded-2xl w-full"
-                type="text"
                 placeholder="Your Message"
-                value={message}
-                name="message"
-                onChange={handleChangeInput}
-                required
                 rows={8}
+                {...register("message", { required: true })}
               />
+              {errors.message && (
+                <span className="text-red-500 font-poppins text-sm">
+                  *message is required
+                </span>
+              )}
             </div>
             <motion.button
               type="submit"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               className="bg-violet-800 rounded-3xl font-inter text-base text-white px-5 py-4 shadow-md hover:shadow-violet-300 hover:bg-violet-900 transition-all duration-300"
-              onClick={handleSubmit}
             >
               {loading ? "Sending..." : "Send Message"}
             </motion.button>
           </form>
         ) : (
-          <div>
-            <h3 className="">Thank you for getting in touch!</h3>
-          </div>
+          <p className="text-4xl font-pacifico text-violet-800 leading-relaxed">
+            Thank you 😍 for getting in touch
+          </p>
         )}
       </div>
       <Footer />
