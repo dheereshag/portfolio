@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
+import SocialMedia from "../SocialMedia";
 const Footer = () => {
   const count = useMotionValue(2000);
   const rounded = useTransform(count, Math.round);
@@ -11,18 +12,27 @@ const Footer = () => {
     return animation.stop;
   }, [count, isInView]);
   return (
-    <div className="copyright flex flex-col absolute items-end bottom-2 right-0">
-      <div className="flex items-baseline">
-        <p className="font-pacifico text-purple-800">@</p>
-        <motion.p
-          onViewportEnter={() => setIsInView(true)}
-          className="font-pacifico text-purple-800"
-        >
-          {rounded}
-        </motion.p>
-        <p className="ml-1 font-dancing-script">Dheeresh</p>
+    <div className="flex flex-col md:absolute md:right-0 md:bottom-2 gap-3 mt-20">
+      <div>
+        <div className="flex items-baseline">
+          <p className="font-pacifico text-purple-800">@</p>
+          <motion.p
+            onViewportEnter={() => setIsInView(true)}
+            className="font-pacifico text-purple-800"
+          >
+            {rounded}
+          </motion.p>
+          <p className="ml-1 font-dancing-script">Dheeresh</p>
+        </div>
+        <p className="font-dancing-script">All rights reserved</p>
       </div>
-      <p className="font-dancing-script">All rights reserved</p>
+      <SocialMedia
+        parentStyles={"flex gap-3 md:hidden"}
+        iconStyles={"ci-lg"}
+        childStyles={
+          "hvr-icon-rotate bg-white rounded-full w-10 h-10 border app__flex shadow"
+        }
+      />
     </div>
   );
 };
