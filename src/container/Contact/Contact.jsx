@@ -142,4 +142,4 @@ const Contact = () => {
   );
 };
 
-export default AppWrap(MotionWrap(Contact), "contact", "bg-violet-50");
+export default AppWrap(MotionWrap(Contact,"contact"), "contact", "bg-violet-50");

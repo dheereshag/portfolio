@@ -54,4 +54,4 @@ const About = () => {
   );
 };
 
-export default AppWrap(MotionWrap(About), "about", "bg-white");
+export default AppWrap(MotionWrap(About,"about"), "about", "bg-white");

@@ -40,7 +40,7 @@ const Projects = () => {
   // console.log("icons", icons);
   const handleWorkFilter = (item) => {
     setActiveFilter(item);
-    setAnimateCard({ y: [null, 50], opacity: 0 });
+    setAnimateCard({ y: [null, 30], opacity: 0 });
     setTimeout(() => {
       setAnimateCard({ y: [null, 0], opacity: 1 });
       if (item === "all") {
@@ -166,4 +166,4 @@ const IconComponent = ({ name, size }) => {
   return <i className={`ci ci-${name} ci-${size}`} />;
 };
 
-export default AppWrap(MotionWrap(Projects), "projects", "bg-blue-50");
+export default AppWrap(MotionWrap(Projects,"projects"), "projects", "bg-blue-50");
