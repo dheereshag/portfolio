@@ -1,6 +1,6 @@
 import "./Skills.scss";
 import React, { useState, useEffect } from "react";
-import { motion} from "framer-motion";
+import { motion } from "framer-motion";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { client } from "../../client";
 import Tippy from "@tippyjs/react";
@@ -9,19 +9,19 @@ import "tippy.js/animations/scale.css";
 import { skills } from "../../constants";
 const Skills = () => {
   const [experiences, setExperiences] = useState([]);
-
   useEffect(() => {
     const query = '*[_type == "experiences"]';
     client.fetch(query).then((data) => {
-      setExperiences(data);
+      const sortedExperiences = data.sort((a, b) => a?.year - b?.year);
+      setExperiences(sortedExperiences);
     });
   }, []);
- const dragConstraints = {
-   top: -50,
-   left: -50,
-   right: 50,
-   bottom: 50,
- };
+  const dragConstraints = {
+    top: -50,
+    left: -50,
+    right: 50,
+    bottom: 50,
+  };
   return (
     <div className="flex flex-col gap-10 lg:gap-20 lg:mt-6 mt-10 xl:mt-0">
       <h2 className="font-dm-sans text-4xl xl:text-5xl font-semibold text-neutral-800 text-center leading-tight">
@@ -49,13 +49,13 @@ const Skills = () => {
             </motion.div>
           ))}
         </motion.div>
-        <div className="flex flex-col gap-10 xl:w-4/12">
+        <div className="flex flex-col gap-5 xl:w-4/12">
           {experiences?.map((experience) => (
             <div className="flex gap-16 items-baseline" key={experience?.year}>
-              <p className="font-bold text-violet-800 font-poppins text-xl">
+              <p className="font-bold text-violet-800 font-poppins text-lg">
                 {experience?.year}
               </p>
-              <div className="flex-1">
+              <div className="">
                 {experience?.works?.map((work, index) => (
                   <Tippy
                     key={`${work.name}-${index}`}
@@ -64,7 +64,6 @@ const Skills = () => {
                     duration={[500, 500]}
                     placement="top"
                     arrow={true}
-                    interactive={true}
                     className="font-poppins border shadow-lg px-4 py-3"
                   >
                     <motion.div
@@ -72,14 +71,18 @@ const Skills = () => {
                       transition={{ duration: 0.5 }}
                       className="cursor-pointer"
                     >
-                      <h4 className="font-poppins text-xl font-semibold text-gray-600">
+                      <h4 className="font-poppins text-lg font-semibold text-gray-600 -mb-6">
                         {work?.name}
                       </h4>
                       <div className="flex items-center gap-2">
-                        <p className="font-karla text-lg text-gray-600">
+                        <p className="font-karla text-md text-gray-600">
                           {work?.company}
                         </p>
-                        <i className={`ci ci-${work?.icon} ci-${work?.size}`} />
+                        <i
+                          className={`ci ci-${work?.icon} ci-${work?.size} ${
+                            work?.icon === "ringcentral" ? "mb-0.5" : ""
+                          }`}
+                        />
                       </div>
                     </motion.div>
                   </Tippy>
