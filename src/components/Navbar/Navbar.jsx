@@ -51,26 +51,26 @@ function useMenuAnimation(isOpen) {
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  console.log("isOpen navbar", isOpen)
   const { isHeaderInView } = useContext(AppContext);
   const scope = useMenuAnimation(isOpen);
-  // console.log("isHeaderInView navbar", isHeaderInView);
+  console.log("isHeaderInView navbar", isHeaderInView);
   return (
-    <nav className="fixed z-10">
+    <nav className="fixed z-20">
       <a href="#home">
         <img src={images.logo} alt="logo" className="m-6 w-20" />
       </a>
       <div ref={scope}>
-        <nav className="fixed top-0 bottom-0 right-0 w-80 bg-neutral-50">
+        <nav className="fixed top-0 bottom-0 right-0 w-80 bg-white translate-x-full">
           <ul className="flex flex-col gap-10 pt-32 pl-20">
             {menuItems.map((item, index) => (
-              <a
-                key={index}
-                className="text-violet-900 text-3xl font-bold cursor-pointer font-poppins"
-                href={`#${item}`}
-                onClick={() => setIsOpen(!isOpen)}
-              >
-                {item}
+              <a href={`#${item}`}>
+                <li
+                  key={index}
+                  className="text-violet-900 text-3xl font-bold cursor-pointer font-poppins"
+                  onClick={() => setIsOpen(!isOpen)}
+                >
+                  {item}
+                </li>
               </a>
             ))}
           </ul>
