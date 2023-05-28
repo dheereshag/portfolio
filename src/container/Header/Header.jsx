@@ -37,7 +37,7 @@ const Header = () => {
       </div>
 
       <div className="flex flex-col lg:flex-row gap-8">
-        <div className="app__header-img flex relative">
+        <div className="flex relative">
           <img
             src={images.profile}
             alt="profile_bg"

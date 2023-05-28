@@ -44,17 +44,17 @@ const Projects = () => {
     }, 500);
   };
   return (
-    <div className="flex flex-col gap-16 items-center">
-      <h2 className="font-dm-sans text-5xl font-semibold text-gray-700">
+    <div className="flex flex-col gap-10 md:gap-16 items-center mt-10 md:mt-4 xl:mt-0">
+      <h2 className="font-dm-sans text-4xl xl:text-5xl font-semibold text-gray-700 text-center">
         My Creative <span className="text-violet-800">Portfolio</span> section
       </h2>
-      <div className="flex flex-col items-center gap-16">
+      <div className="flex flex-col items-center gap-10 xl:gap-16">
         <div className="gap-6 flex">
           {["ui/ux", "web app", "all"].map((item, index) => (
             <motion.button
               key={index}
               onClick={() => handleWorkFilter(item)}
-              className={`app__work-filter-item px-5 py-3 rounded-xl font-dm-sans font-semibold hover:bg-violet-900 hover:text-white ${
+              className={`px-5 py-3 shadow-md rounded-xl font-dm-sans font-semibold hover:bg-violet-900 hover:text-white ${
                 activeFilter === item
                   ? "bg-violet-900 text-white"
                   : "bg-white text-gray-800"

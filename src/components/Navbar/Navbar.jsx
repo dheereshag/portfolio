@@ -3,7 +3,6 @@ import { useAnimate, stagger } from "framer-motion";
 import { MenuToggle } from "./MenuToggle";
 import { images, menuItems } from "../../constants";
 import { AppContext } from "../../context/AppContext";
-import { useMediaQuery } from "react-responsive";
 
 function useMenuAnimation(isOpen) {
   const [scope, animate] = useAnimate();
@@ -52,8 +51,7 @@ function useMenuAnimation(isOpen) {
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { isHeaderInView } = useContext(AppContext);
-  const isXL = useMediaQuery({ minWidth: 1280 });
+  const { isHeaderInView,isXL } = useContext(AppContext);
   const scope = useMenuAnimation(isOpen);
   console.log("isHeaderInView navbar", isHeaderInView);
 
@@ -74,7 +72,7 @@ const Navbar = () => {
       </a>
       <div ref={scope}>
         <nav className="fixed top-0 bottom-0 right-0 w-80 bg-white xl:bg-transparent translate-x-full">
-          <ul className="flex flex-col gap-10 p-28">
+          <ul className="flex flex-col gap-10 mt-40 mx-20">
             {menuItems.map((item, index) => (
               <a href={`#${item}`} key={index}>
                 <li

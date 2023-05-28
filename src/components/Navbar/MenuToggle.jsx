@@ -11,7 +11,7 @@ const Path = (props) => (
 export const MenuToggle = ({ toggle }) => (
   <button
     onClick={toggle}
-    className="px-2 fixed rounded-full right-0 w-14 h-14 app__flex bg-white top-0"
+    className="px-2 fixed rounded-full right-0 w-14 h-14 app__flex top-0"
   >
     <svg width="23" viewBox="0 0 23 18">
       <Path

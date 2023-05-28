@@ -19,9 +19,9 @@ const Skills = () => {
   }, []);
 
   return (
-    <div className="flex flex-col gap-20">
-      <h2 className="font-dm-sans text-5xl font-semibold text-gray-800 text-center">
-        Skills & Experiences
+    <div className="flex flex-col gap-20 lg:mt-6 mt-10 xl:mt-0">
+      <h2 className="font-dm-sans text-4xl xl:text-5xl font-semibold text-neutral-800 text-center">
+        Skills <span className="text-violet-900">&</span> Experiences
       </h2>
       <div className="flex flex-col lg:flex-row gap-16 xl:gap-28">
         <motion.div className="flex flex-wrap justify-center gap-7 lg:w-7/12 xl:w-8/12">
