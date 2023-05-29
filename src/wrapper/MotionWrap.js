@@ -7,7 +7,7 @@ const MotionWrap = (Component, idName) =>
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 1, type: "tween" }}
+        transition={{ duration: 1.5, type: "tween" }}
         className={`app__flex`}
       >
         <Component />

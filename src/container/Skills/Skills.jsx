@@ -24,12 +24,7 @@ const Skills = () => {
       setExperiences(sortedExperiences);
     });
   }, []);
-  const dragConstraints = {
-    top: -50,
-    left: -50,
-    right: 50,
-    bottom: 50,
-  };
+
   return (
     <div
       className="flex flex-col gap-10 lg:gap-20 lg:mt-6 mt-10 xl:mt-0"
@@ -41,14 +36,7 @@ const Skills = () => {
       <div className="flex flex-col lg:flex-row gap-16 xl:gap-28 items-center lg:items-start">
         <motion.div className="flex flex-wrap justify-center gap-7 xl:w-8/12">
           {skills.map((skill, index) => (
-            <motion.div
-              whileInView={{ opacity: [0, 1] }}
-              transition={{ duration: 0.5 }}
-              className="flex flex-col text-center gap-2"
-              key={index}
-              drag
-              dragConstraints={dragConstraints}
-            >
+            <motion.div className="flex flex-col text-center gap-2" key={index}>
               <motion.div className="app__flex bg-neutral-100 shadow border rounded-3xl md:w-24 md:h-24 hvr-box-shadow-inset w-20 h-20">
                 <i
                   className={`ci ci-${skill.icon} ci-${skill.size} w-8/12 md:w-full hvr-buzz`}
