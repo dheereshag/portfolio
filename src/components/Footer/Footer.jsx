@@ -12,7 +12,7 @@ const Footer = () => {
     return animation.stop;
   }, [count, isInView]);
   return (
-    <div className="flex flex-col items-end absolute gap-3 right-5 md:right-0 bottom-5">
+    <div className="flex flex-col items-end absolute gap-3 right-5 md:right-0 bottom-1">
       <div>
         <div className="flex items-baseline">
           <p className="font-pacifico text-purple-800">@</p>
