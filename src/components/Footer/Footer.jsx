@@ -12,7 +12,7 @@ const Footer = () => {
     return animation.stop;
   }, [count, isInView]);
   return (
-    <div className="flex flex-col items-end absolute gap-3 right-5 md:right-0 bottom-1">
+    <div className="flex flex-col items-end absolute gap-3 right-0 bottom-0">
       <div>
         <div className="flex items-baseline">
           <p className="font-pacifico text-purple-800">@</p>
@@ -28,9 +28,9 @@ const Footer = () => {
       </div>
       <SocialMedia
         parentStyles={"flex gap-3 md:hidden"}
-        iconStyles={"ci-lg"}
+        iconStyles={"ci-xl"}
         childStyles={
-          "hvr-icon-rotate bg-white rounded-full w-10 h-10 border app__flex shadow"
+          "hvr-icon-rotate bg-white rounded-full w-12 h-12 border app__flex shadow"
         }
       />
     </div>

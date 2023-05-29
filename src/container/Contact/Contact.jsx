@@ -46,7 +46,7 @@ const Contact = () => {
   return (
     <>
       <div
-        className="flex flex-col xl:flex-row gap-6 xl:gap-20 items-baseline mt-10 md:mt-0 mb-28 md:mb-0"
+        className="flex flex-col xl:flex-row gap-6 xl:gap-20 items-baseline mt-8 md:mt-0 mb-40 md:mb-0"
         ref={ref}
       >
         <aside className="flex flex-col md:flex-row items-center gap-0 md:gap-3">

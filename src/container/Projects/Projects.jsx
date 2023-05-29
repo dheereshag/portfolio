@@ -118,7 +118,7 @@ const Projects = () => {
                   </a>
                 </motion.div>
               </div>
-              <div className="flex justify-center p-1 relative">
+              <div className="flex justify-center py-1 relative">
                 <div className="flex items-center px-3 py-2 -top-7 bg-white rounded-xl absolute">
                   {work?.tags?.slice(0, -1).map((tag, index) => (
                     <React.Fragment key={index}>
