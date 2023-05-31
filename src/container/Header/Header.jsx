@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useContext } from "react";
+import React, { useRef, useEffect, useContext, useState } from "react";
 import { AppContext } from "../../context/AppContext";
 import { AppWrap } from "../../wrapper";
 import { images } from "../../constants";
@@ -6,7 +6,11 @@ import { motion } from "framer-motion";
 import "./Header.scss";
 import headerIcons from "../../constants/headerIcons";
 import { useInView } from "framer-motion";
+import Tippy from "@tippyjs/react";
+import "tippy.js/dist/tippy.css";
+import "tippy.js/animations/scale.css";
 const Header = () => {
+  const [isTippyLoaded, setIsTippyLoaded] = useState(false);
   const { isHeaderInView, setIsHeaderInView } = useContext(AppContext);
   const ref = useRef(null);
   const isInView = useInView(ref);
@@ -34,9 +38,10 @@ const Header = () => {
               <p className="text-violet-800 font-semibold text-3xl">Dheeresh</p>
             </div>
           </div>
-          <div className="flex flex-col px-5 py-4 shadow font-poppins rounded-2xl text-right">
-            <p className="">web developer</p>
-            <p className="">freelancer</p>
+          <div className="flex flex-col py-3 px-14 border shadow font-poppins rounded-2xl text-right gap-1 text-sm">
+            <p className="">web 🕸️ developer</p>
+            <p className="">ML 🦾 enthusiast</p>
+            <p className="">app 🤖 developer</p>
           </div>
         </div>
       </div>
@@ -54,44 +59,54 @@ const Header = () => {
             alt="profile_circle"
           />
         </div>
+        <Tippy
+          content={`if you want to play around, drag the icons`}
+          animation="scale" // Use the scale animation
+          duration={[500, 500]}
+          placement="right"
+          arrow={true}
+          delay={isTippyLoaded ? [5000, 0] : [0, 0]}
+          onShown={() => setIsTippyLoaded(true)}
+          className="font-poppins border shadow-lg px-4 py-3"
+        >
+          <div className="flex lg:flex-col justify-evenly flex-wrap animate__animated animate__zoomIn">
+            <motion.div
+              className="app__flex rounded-full shadow-md bg-white w-40 h-40 border"
+              key={`circle-0`}
+              drag
+              dragConstraints={dragConstraints}
+            >
+              <i
+                className={`ci ci-${headerIcons[0].name} ci-${headerIcons[0].size}`}
+              ></i>
+            </motion.div>
 
-        <div className="flex lg:flex-col justify-evenly flex-wrap animate__animated animate__zoomIn">
-          <motion.div
-            className="app__flex rounded-full shadow-md bg-white w-40 h-40 border"
-            key={`circle-0`}
-            drag
-            dragConstraints={dragConstraints}
-          >
-            <i
-              className={`ci ci-${headerIcons[0].name} ci-${headerIcons[0].size}`}
-            ></i>
-          </motion.div>
+            <motion.div
+              className="app__flex rounded-full shadow-md bg-white w-24 h-24 border"
+              key={`circle-1`}
+              drag
+              dragConstraints={dragConstraints}
+            >
+              <i
+                className={`ci ci-${headerIcons[1].name} ci-${headerIcons[1].size}`}
+              ></i>
+            </motion.div>
 
-          <motion.div
-            className="app__flex rounded-full shadow-md bg-white w-24 h-24 border"
-            key={`circle-1`}
-            drag
-            dragConstraints={dragConstraints}
-          >
-            <i
-              className={`ci ci-${headerIcons[1].name} ci-${headerIcons[1].size}`}
-            ></i>
-          </motion.div>
-
-          <motion.div
-            className="app__flex rounded-full shadow-md bg-white w-28 h-28 border"
-            key={`circle-2`}
-            drag
-            dragConstraints={dragConstraints}
-          >
-            <i
-              className={`ci ci-${headerIcons[2].name} ci-${headerIcons[2].size}`}
-            ></i>
-          </motion.div>
-        </div>
+            <motion.div
+              className="app__flex rounded-full shadow-md bg-white w-28 h-28 border"
+              key={`circle-2`}
+              drag
+              dragConstraints={dragConstraints}
+            >
+              <i
+                className={`ci ci-${headerIcons[2].name} ci-${headerIcons[2].size}`}
+              ></i>
+            </motion.div>
+          </div>
+        </Tippy>
       </div>
     </div>
   );
 };
 
-export default AppWrap(Header, "home","bg-blue-50");
+export default AppWrap(Header, "home", "bg-blue-50");

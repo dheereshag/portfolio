@@ -4,3 +4,15 @@
   background-repeat: repeat;
   background-position: center;
 }
+
+// styles.scss
+.tippy-box {
+  background-color: white !important;
+  color: black !important;
+  font-size: normal !important;
+  border-radius: 15px !important;
+}
+
+.tippy-arrow {
+  color: white !important;
+}

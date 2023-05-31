@@ -18,9 +18,9 @@ const About = () => {
   return (
     <div className="flex flex-col items-center gap-10 xl:gap-24 mt-4 xl:mt-0">
       <h2 className="font-dm-sans text-4xl xl:text-5xl font-semibold text-gray-700 text-center leading-tight">
-        I know that{" "}
-        <span className="font-dm-sans text-violet-800">Good Apps</span> means{" "}
-        <span className="font-dm-sans text-violet-800">Good Business</span>
+        This is my{" "}
+        <span className="font-dm-sans text-violet-800">playground,</span> what about{" "}
+        <span className="font-dm-sans text-violet-800">you?</span>
       </h2>
       <div className="flex flex-wrap justify-center gap-14">
         {skills.map((skill, index) => (
