@@ -121,7 +121,7 @@ const Contact = () => {
             </motion.button>
           </form>
         ) : (
-          <p className="text-4xl font-pacifico text-violet-800 leading-snug">
+          <p className="text-4xl font-pacifico text-violet-800 leading-snug animate__animated animate__jackInTheBox">
             Thank you 😍 for getting in touch
           </p>
         )}
