@@ -134,7 +134,7 @@ const Projects = () => {
                     <h4 className="font-poppins font-semibold text-violet-900">
                       {work?.title}
                     </h4>
-                    <p className="font-dm-sans text-sm lg:text-base w-9/12">
+                    <p className="font-dm-sans text-sm w-9/12">
                       {work?.description}
                     </p>
                   </aside>
