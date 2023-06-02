@@ -54,9 +54,6 @@ const Navbar = () => {
   const {
     isHeaderInView,
     isXL,
-    isProjectsInView,
-    isSkillsInView,
-    isContactInView,
   } = useContext(AppContext);
   const scope = useMenuAnimation(isOpen);
   useEffect(() => {
@@ -76,13 +73,7 @@ const Navbar = () => {
       </a>
       <div ref={scope}>
         <nav
-          className={`fixed top-0 bottom-0 right-0 w-80 translate-x-full ${
-            isProjectsInView || isSkillsInView || isContactInView
-              ? "bg-white/80 backdrop-blur"
-              : isXL
-              ? "xl:bg-transparent"
-              : "bg-white/80 backdrop-blur"
-          }`}
+          className={`fixed top-0 bottom-0 right-0 w-80 translate-x-full bg-blue/80 backdrop-blur`}
         >
           <ul className="flex flex-col gap-10 mt-40 mx-20">
             {menuItems.map((item, index) => (

@@ -1,17 +1,11 @@
-import React, { useState, useEffect, useContext, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { BsEyeFill, BsGithub } from "react-icons/bs";
-import { motion, AnimatePresence, useInView } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
-import { AppContext } from "../../context/AppContext";
 
 const Projects = () => {
-  const { isProjectsInView, setIsProjectsInView } = useContext(AppContext);
-  const ref = useRef(null);
-  const isInView = useInView(ref);
-  useEffect(() => {
-    setIsProjectsInView(isInView);
-  }, [isInView, setIsProjectsInView, isProjectsInView]);
+
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [activeFilter, setActiveFilter] = useState("all");
@@ -53,7 +47,6 @@ const Projects = () => {
   return (
     <div
       className="flex flex-col gap-10 md:gap-16 items-center mt-10 md:mt-4 xl:mt-0"
-      ref={ref}
     >
       <h2 className="font-dm-sans text-4xl xl:text-5xl font-semibold text-gray-700 text-center leading-tight">
         My Creative <span className="text-violet-800">Portfolio</span> section
