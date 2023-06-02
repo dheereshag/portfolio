@@ -83,14 +83,14 @@ const Projects = () => {
         >
           {filterProjects.map((work, index) => (
             <motion.div
-              className="hvr-grow-shadow md:w-72 lg:w-80 p-3 rounded-3xl bg-white border shadow-lg"
+              className="hvr-grow-shadow md:w-72 p-3 lg:w-80 bg-white border shadow-lg rounded-3xl"
               key={index}
             >
               <div className="flex relative">
                 <img
                   src={urlFor(work.image)}
                   alt={work.name}
-                  className="rounded-3xl object-cover"
+                  className="object-contain rounded-xl"
                 />
                 <motion.div
                   transition={{
@@ -98,7 +98,7 @@ const Projects = () => {
                     type: "tween",
                     staggerChildren: 0.5,
                   }}
-                  className="flex justify-center items-center absolute w-full h-full hover:bg-black/50 rounded-3xl gap-8 group"
+                  className="flex justify-center items-center absolute h-full w-full hover:bg-black/50 gap-8 group rounded-xl"
                 >
                   <a
                     href={work?.projectLink}
@@ -121,12 +121,12 @@ const Projects = () => {
               <div className="flex justify-center py-1 relative">
                 <div className="flex items-center px-3 py-2 -top-7 bg-white rounded-xl absolute">
                   {work?.tags?.slice(0, -1).map((tag, index) => (
-                    <React.Fragment key={index}>
+                    <div key={index}>
                       <p className="font-inter text-sm">{tag}</p>
                       {index < work?.tags?.length - 2 && (
                         <span className="mx-1 font-inter text-sm"> | </span>
                       )}
-                    </React.Fragment>
+                    </div>
                   ))}
                 </div>
                 <div className="flex relative mt-2">
@@ -166,4 +166,8 @@ const IconComponent = ({ name, size }) => {
   return <i className={`ci ci-${name} ci-${size}`} />;
 };
 
-export default AppWrap(MotionWrap(Projects,"projects"), "projects", "bg-blue-50");
+export default AppWrap(
+  MotionWrap(Projects, "projects"),
+  "projects",
+  "bg-blue-50"
+);

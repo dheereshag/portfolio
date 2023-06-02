@@ -67,7 +67,7 @@ const Header = () => {
           arrow={true}
           delay={isTippyLoaded ? [5000, 0] : [0, 0]}
           onShown={() => setIsTippyLoaded(true)}
-          className="font-poppins border shadow-lg px-4 py-3"
+          className="font-karla border shadow-lg px-4 py-3"
         >
           <div className="flex lg:flex-col justify-evenly flex-wrap animate__animated animate__zoomIn">
             <motion.div

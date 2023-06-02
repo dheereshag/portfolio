@@ -41,7 +41,7 @@ const About = () => {
               src={urlFor(skill.image)}
               alt={skill.title}
               onLoad={() => setIsLoaded(true)}
-              className="rounded-3xl object-cover"
+              className="rounded-3xl object-cover h-48 w-full"
             />
             <h2 className="font-poppins font-semibold text-violet-950 text-lg">
               {skill.title}
