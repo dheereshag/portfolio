@@ -54,7 +54,7 @@ const Header = () => {
             className="z-10 object-contain animate__animated animate__fadeIn animate__slower"
           />
           <img
-            className="absolute overlay_circle w-full bottom-2 animate__animated animate__zoomIn animate__slow"
+            className="absolute w-full bottom-2 animate__animated animate__zoomIn animate__slow"
             src={images.circle}
             alt="profile_circle"
           />
@@ -69,7 +69,7 @@ const Header = () => {
           onShown={() => setIsTippyLoaded(true)}
           className="font-karla border shadow-lg px-4 py-3"
         >
-          <div className="flex lg:flex-col justify-evenly flex-wrap animate__animated animate__zoomIn">
+          <div className="flex lg:flex-col justify-evenly flex-wrap animate__animated animate__zoomIn animate__delay-1s animate__slow">
             <motion.div
               className="app__flex rounded-full shadow-md bg-white w-40 h-40 border"
               key={`circle-0`}
@@ -82,7 +82,7 @@ const Header = () => {
             </motion.div>
 
             <motion.div
-              className="app__flex rounded-full shadow-md bg-white w-24 h-24 border"
+              className="app__flex rounded-full shadow-md bg-white w-20 h-20 border"
               key={`circle-1`}
               drag
               dragConstraints={dragConstraints}
