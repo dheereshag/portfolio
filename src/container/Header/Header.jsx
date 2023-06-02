@@ -26,10 +26,10 @@ const Header = () => {
   return (
     <div
       id="home"
-      className="flex flex-col lg:flex-row mt-4 gap-4 md:gap-0 xl:mr-64"
+      className="flex flex-col lg:flex-row gap-4 mt-4 lg:gap-0 xl:mr-64"
       ref={ref}
     >
-      <div className="animate__animated animate__fadeInLeft animate__delay-2s">
+      <div className="animate__animated animate__fadeInLeft animate__delay-1s">
         <div className="items-start flex flex-col xl:items-end gap-8">
           <div className="flex gap-8 shadow rounded-2xl px-4 py-3 items-center">
             <span className="text-5xl">👋🏻</span>
@@ -51,7 +51,7 @@ const Header = () => {
           <img
             src={images.profile}
             alt="profile_bg"
-            className="z-10 object-contain animate__animated animate__fadeIn animate__slower"
+            className="z-10 object-contain animate__animated animate__fadeIn animate__slow"
           />
           <img
             className="absolute w-full bottom-2 animate__animated animate__zoomIn animate__slow"
