@@ -29,7 +29,7 @@ const Header = () => {
       className="flex flex-col lg:flex-row mt-4 gap-4 md:gap-0 xl:mr-64"
       ref={ref}
     >
-      <div className="animate__animated animate__fadeInLeft animate__delay-1s">
+      <div className="animate__animated animate__fadeInLeft animate__delay-2s">
         <div className="items-start flex flex-col xl:items-end gap-8">
           <div className="flex gap-8 shadow rounded-2xl px-4 py-3 items-center">
             <span className="text-5xl">👋🏻</span>
