@@ -113,9 +113,7 @@ const Contact = () => {
             </div>
             <motion.button
               type="submit"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              className="bg-violet-800 rounded-3xl font-inter text-base text-white px-5 py-4 shadow-md hover:shadow-violet-300 hover:bg-violet-900 transition-all duration-300"
+              className="bg-violet-800 rounded-3xl font-inter text-base text-white px-5 py-4 shadow-md hover:shadow-violet-300 hover:bg-violet-900 transition-all duration-300 hvr-shrink"
             >
               {loading ? "Sending..." : "Send Message"}
             </motion.button>

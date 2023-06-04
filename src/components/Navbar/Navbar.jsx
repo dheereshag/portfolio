@@ -3,6 +3,7 @@ import { useAnimate, stagger } from "framer-motion";
 import { MenuToggle } from "./MenuToggle";
 import { images, menuItems } from "../../constants";
 import { AppContext } from "../../context/AppContext";
+import { BsEyeFill } from "react-icons/bs";
 
 function useMenuAnimation(isOpen) {
   const [scope, animate] = useAnimate();
@@ -93,6 +94,17 @@ const Navbar = () => {
                 </li>
               </a>
             ))}
+            {/* button to view CV */}
+            <a
+              href="https://drive.google.com/file/d/1B32Dcsmr-1fQStcyyvHlbJ0RCNBjdOx0/view?usp=sharing"
+              className="hvr-shrink"
+              target="_blank"
+            >
+              <li className="bg-violet-900 text-white mt-40 text-2xl font-bold py-2 px-4 rounded-full w-8/12 font-poppins flex items-center justify-between hover:bg-violet-950">
+                <span>CV</span>
+                <BsEyeFill />
+              </li>
+            </a>
           </ul>
         </nav>
         <MenuToggle toggle={() => setIsOpen(!isOpen)} />
