@@ -1,5 +1,5 @@
 import "./Skills.scss";
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { client } from "../../client";
@@ -8,7 +8,6 @@ import "tippy.js/dist/tippy.css";
 import "tippy.js/animations/scale.css";
 import { skills } from "../../constants";
 const Skills = () => {
-
   const [experiences, setExperiences] = useState([]);
   useEffect(() => {
     const query = '*[_type == "experiences"]';
@@ -19,9 +18,7 @@ const Skills = () => {
   }, []);
 
   return (
-    <div
-      className="flex flex-col gap-10 lg:gap-20 lg:mt-6 mt-10 xl:mt-0"
-    >
+    <div className="flex flex-col gap-10 lg:gap-20 lg:mt-6 mt-10 xl:mt-0">
       <h2 className="font-dm-sans text-4xl xl:text-5xl font-semibold text-neutral-800 text-center leading-tight">
         Skills <span className="text-violet-900">&</span> Experiences
       </h2>
@@ -50,12 +47,24 @@ const Skills = () => {
                 {experience?.works?.map((work, index) => (
                   <Tippy
                     key={`${work.name}-${index}`}
-                    content={work?.description}
+                    // content is work description separated by | (pipe)
+                    content={work.description.split("|").map((desc, index) => (
+                      <p
+                        key={index}
+                        className="text-base text-gray-600 font-rubik mb-4"
+                      >
+                        {desc.startsWith("Project") ? (
+                          <span className="font-semibold">{desc}</span>
+                        ) : (
+                          desc
+                        )}
+                      </p>
+                    ))}
                     animation="scale" // Use the scale animation
                     duration={[500, 500]}
                     placement="top"
                     arrow={true}
-                    className="font-poppins border shadow-lg px-4 py-3"
+                    className="border shadow-lg px-4 py-3"
                   >
                     <motion.div
                       whileInView={{ opacity: [0, 1] }}
@@ -87,4 +96,4 @@ const Skills = () => {
   );
 };
 
-export default AppWrap(MotionWrap(Skills,"skills"), "skills", "bg-white");
+export default AppWrap(MotionWrap(Skills, "skills"), "skills", "bg-white");
