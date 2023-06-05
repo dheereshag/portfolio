@@ -71,19 +71,9 @@ const skills = [
     size: "4x",
   },
   {
-    name: "kubernetes",
-    icon: "kubernetes",
-    size: "4x",
-  },
-  {
     name: "aws",
     icon: "aws",
     size: "3x",
-  },
-  {
-    name: "digital ocean",
-    icon: "do",
-    size: "4x",
   },
   {
     name: "nodejs",
