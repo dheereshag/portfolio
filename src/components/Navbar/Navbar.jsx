@@ -101,7 +101,7 @@ const Navbar = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <li className="bg-violet-900 text-white mt-24 xl:mt-40 text-2xl font-bold py-2 px-4 rounded-full w-8/12 font-poppins flex items-center justify-between hover:bg-violet-950">
+              <li className="bg-violet-900 text-white mt-4 text-2xl font-bold py-2 px-4 rounded-full w-8/12 font-poppins flex items-center justify-between hover:bg-violet-950">
                 <span>CV</span>
                 <BsEyeFill />
               </li>

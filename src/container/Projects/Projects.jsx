@@ -76,7 +76,7 @@ const Projects = () => {
         >
           {filterProjects.map((work, index) => (
             <motion.div
-              className="hvr-grow-shadow md:w-72 p-3 lg:w-80 bg-white border shadow-lg rounded-3xl"
+              className="hvr-grow-shadow md:w-96 lg:w-80 p-3 bg-white border shadow-lg rounded-3xl"
               key={index}
             >
               <div className="flex relative">
