@@ -73,7 +73,7 @@ const Navbar = () => {
   return (
     <div className="fixed z-20">
       <a href="#home">
-        <img src={images.logo} alt="logo" className="m-6 w-20" />
+        <img src={images.logo} alt="logo" className="m-3 w-14" />
       </a>
       <div ref={scope}>
         <nav
