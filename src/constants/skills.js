@@ -51,8 +51,8 @@ const skills = [
     size: "4x",
   },
   {
-    name: "vuejs",
-    icon: "vuejs",
+    name: "nuxtjs",
+    icon: "nuxtjs",
     size: "3x",
   },
   {

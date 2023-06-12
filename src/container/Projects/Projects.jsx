@@ -49,7 +49,7 @@ const Projects = () => {
       className="flex flex-col gap-10 md:gap-16 items-center mt-10 md:mt-4 xl:mt-0"
     >
       <h2 className="font-dm-sans text-4xl xl:text-5xl font-semibold text-gray-700 text-center leading-tight">
-        My Creative <span className="text-violet-800">Portfolio</span> section
+        My <span className="text-violet-800">Projects</span> section
       </h2>
       <div className="flex flex-col items-center gap-10 xl:gap-16">
         <div className="gap-6 flex">
@@ -76,7 +76,7 @@ const Projects = () => {
         >
           {filterProjects.map((work, index) => (
             <motion.div
-              className="hvr-grow-shadow md:w-96 lg:w-80 p-3 bg-white border shadow-lg rounded-3xl"
+              className="hvr-grow-shadow md:w-96 p-3 bg-white border shadow-lg rounded-3xl"
               key={index}
             >
               <div className="flex relative">
@@ -127,7 +127,7 @@ const Projects = () => {
                     <h4 className="font-poppins font-semibold text-violet-900">
                       {work?.title}
                     </h4>
-                    <p className="font-dm-sans text-sm w-10/12">
+                    <p className="font-dm-sans w-10/12">
                       {work?.description}
                     </p>
                   </aside>
