@@ -4,9 +4,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
 
+const items = ["next", "react", "nuxt", "bootstrap", "all"];
 const Projects = () => {
-
-
   const [currentIndex, setCurrentIndex] = useState(0);
   const [activeFilter, setActiveFilter] = useState("all");
   const [animateCard, setAnimateCard] = useState({ y: [null, 0], opacity: 1 });
@@ -45,15 +44,13 @@ const Projects = () => {
     }, 500);
   };
   return (
-    <div
-      className="flex flex-col gap-10 md:gap-16 items-center mt-10 md:mt-4 xl:mt-0"
-    >
+    <div className="flex flex-col gap-10 md:gap-16 items-center mt-10 md:mt-4 xl:mt-0">
       <h2 className="font-dm-sans text-4xl xl:text-5xl font-semibold text-gray-700 text-center leading-tight">
         My <span className="text-violet-800">Projects</span> section
       </h2>
       <div className="flex flex-col items-center gap-10 xl:gap-16">
-        <div className="gap-6 flex">
-          {["ui/ux", "web app", "all"].map((item, index) => (
+        <div className="gap-6 flex flex-wrap">
+          {items.map((item, index) => (
             <motion.button
               key={index}
               onClick={() => handleWorkFilter(item)}
@@ -65,7 +62,10 @@ const Projects = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
-              {item}
+              <div className="flex items-center gap-1">
+                <span>{item}</span>
+                {item != "all" && <i className={`ci ci-${item}`}></i>}
+              </div>
             </motion.button>
           ))}
         </div>
@@ -127,9 +127,7 @@ const Projects = () => {
                     <h4 className="font-poppins font-semibold text-violet-900">
                       {work?.title}
                     </h4>
-                    <p className="font-dm-sans w-10/12">
-                      {work?.description}
-                    </p>
+                    <p className="font-dm-sans w-10/12">{work?.description}</p>
                   </aside>
                   <AnimatePresence>
                     <motion.div

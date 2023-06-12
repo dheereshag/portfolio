@@ -1,5 +1,45 @@
 const skills = [
   {
+    name: "git",
+    icon: "git",
+    size: "4x",
+  },
+  {
+    name: "nextjs",
+    icon: "nextjs",
+    size: "4x",
+  },
+  {
+    name: "nuxtjs",
+    icon: "nuxtjs",
+    size: "3x",
+  },
+  {
+    name: "tailwind",
+    icon: "tailwind",
+    size: "2x",
+  },
+  {
+    name: "nodejs",
+    icon: "nodejs",
+    size: "4x",
+  },
+  {
+    name: "solidity",
+    icon: "solidity",
+    size: "4x",
+  },
+  {
+    name: "web3",
+    icon: "web3js",
+    size: "4x",
+  },
+  {
+    name: "django",
+    icon: "django",
+    size: "3x",
+  },
+  {
     name: "figma",
     icon: "figma",
     size: "3x",
@@ -26,15 +66,11 @@ const skills = [
     size: "3x",
   },
   {
-    name: "django",
-    icon: "django",
+    name: "redis",
+    icon: "redis",
     size: "3x",
   },
-  {
-    name: "tailwind",
-    icon: "tailwind",
-    size: "2x",
-  },
+
   {
     name: "pytorch",
     icon: "pytorch",
@@ -45,16 +81,7 @@ const skills = [
     icon: "bootstrap",
     size: "4x",
   },
-  {
-    name: "nextjs",
-    icon: "nextjs",
-    size: "4x",
-  },
-  {
-    name: "nuxtjs",
-    icon: "nuxtjs",
-    size: "3x",
-  },
+
   {
     name: "react native",
     icon: "react-native",
@@ -75,11 +102,7 @@ const skills = [
     icon: "aws",
     size: "3x",
   },
-  {
-    name: "nodejs",
-    icon: "nodejs",
-    size: "4x",
-  },
+
   {
     name: "mongodb",
     icon: "mongodb",
@@ -91,13 +114,8 @@ const skills = [
     size: "4x",
   },
   {
-    name: "solidity",
-    icon: "solidity",
-    size: "4x",
-  },
-  {
-    name: "web3",
-    icon: "web3js",
+    name: "DigitalOcean",
+    icon: "do",
     size: "4x",
   },
 ];
