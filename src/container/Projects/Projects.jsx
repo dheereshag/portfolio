@@ -54,7 +54,7 @@ const Projects = () => {
             <motion.button
               key={index}
               onClick={() => handleWorkFilter(item)}
-              className={`px-5 py-3 shadow-md rounded-xl font-dm-sans font-semibold hover:bg-violet-900 hover:text-white ${
+              className={`px-5 py-3 shadow-md rounded-xl font-karla font-semibold hover:bg-violet-900 hover:text-white ${
                 activeFilter === item
                   ? "bg-violet-900 text-white"
                   : "bg-white text-gray-800"
