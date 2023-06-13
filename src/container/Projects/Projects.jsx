@@ -122,7 +122,7 @@ const Projects = () => {
                   <div className="flex items-center gap-1">
                     <i
                       className={`ci ci-${work?.tags[0]} ci-xs ${
-                        work?.tags[0] === "django" ? "mt-1" : "mt-0.5"
+                        work?.tags[0] === "django" ? "mt-0.5" : ""
                       }`}
                     ></i>
                     <p className="font-inter text-sm">{work?.tags[0]}</p>
