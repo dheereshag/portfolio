@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
 
-const items = ["next", "react", "nuxt", "bootstrap", "all"];
+const items = ["next", "react", "nuxt", "django", "all"];
 const Projects = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [activeFilter, setActiveFilter] = useState("all");
@@ -64,7 +64,13 @@ const Projects = () => {
             >
               <div className="flex items-center gap-1">
                 <span>{item}</span>
-                {item !== "all" && <i className={`ci ci-${item}`}></i>}
+                {item !== "all" && (
+                  <i
+                    className={`ci ci-${item} ${
+                      item === "django" ? "mt-0.5" : ""
+                    }`}
+                  ></i>
+                )}
               </div>
             </motion.button>
           ))}
@@ -114,7 +120,11 @@ const Projects = () => {
               <div className="flex justify-center py-1 relative">
                 <div className="flex items-center px-3 py-2 -top-7 bg-white rounded-xl absolute">
                   <div className="flex items-center gap-1">
-                    <i className={`ci ci-${work?.tags[0]}`}></i>
+                    <i
+                      className={`ci ci-${work?.tags[0]} ci-sm ${
+                        work?.tags[0] === "django" ? "mt-1" : ""
+                      }`}
+                    ></i>
                     <p className="font-inter text-sm">{work?.tags[0]}</p>
                   </div>
                 </div>
