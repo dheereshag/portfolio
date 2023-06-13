@@ -49,7 +49,7 @@ const Projects = () => {
         My <span className="text-violet-800">Projects</span> section
       </h2>
       <div className="flex flex-col items-center gap-10 xl:gap-16">
-        <div className="gap-6 flex flex-wrap">
+        <div className="gap-6 flex flex-wrap justify-center">
           {items.map((item, index) => (
             <motion.button
               key={index}
@@ -64,7 +64,7 @@ const Projects = () => {
             >
               <div className="flex items-center gap-1">
                 <span>{item}</span>
-                {item != "all" && <i className={`ci ci-${item}`}></i>}
+                {item !== "all" && <i className={`ci ci-${item}`}></i>}
               </div>
             </motion.button>
           ))}
