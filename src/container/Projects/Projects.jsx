@@ -113,14 +113,10 @@ const Projects = () => {
               </div>
               <div className="flex justify-center py-1 relative">
                 <div className="flex items-center px-3 py-2 -top-7 bg-white rounded-xl absolute">
-                  {work?.tags?.slice(0, -1).map((tag, index) => (
-                    <div key={index}>
-                      <p className="font-inter text-sm">{tag}</p>
-                      {index < work?.tags?.length - 2 && (
-                        <span className="mx-1 font-inter text-sm"> | </span>
-                      )}
-                    </div>
-                  ))}
+                  <div className="flex items-center gap-1">
+                    <i className={`ci ci-${work?.tags[0]}`}></i>
+                    <p className="font-inter text-sm">{work?.tags[0]}</p>
+                  </div>
                 </div>
                 <div className="flex relative mt-2">
                   <aside className="flex flex-col gap-2">
