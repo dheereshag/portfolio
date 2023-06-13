@@ -67,7 +67,7 @@ const Projects = () => {
                 {item !== "all" && (
                   <i
                     className={`ci ci-${item} ${
-                      item === "django" ? "mt-0.5" : ""
+                      item === "django" ? "mt-1" : ""
                     }`}
                   ></i>
                 )}
@@ -122,7 +122,7 @@ const Projects = () => {
                   <div className="flex items-center gap-1">
                     <i
                       className={`ci ci-${work?.tags[0]} ci-sm ${
-                        work?.tags[0] === "django" ? "mt-0.5" : ""
+                        work?.tags[0] === "django" ? "mt-1" : ""
                       }`}
                     ></i>
                     <p className="font-inter text-sm">{work?.tags[0]}</p>
