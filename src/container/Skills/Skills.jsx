@@ -76,6 +76,7 @@ const Skills = () => {
                     placement="top"
                     arrow={true}
                     className="border shadow-lg px-4 py-3"
+                    interactive={true}
                   >
                     <motion.div
                       whileInView={{ opacity: [0, 1] }}
