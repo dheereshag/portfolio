@@ -17,6 +17,19 @@ const Skills = () => {
     });
   }, []);
 
+  const projectDescriptionBullets = (projectDescription) => {
+    return projectDescription?.split("|").map((bullet, index) => (
+      <span
+        key={`${bullet}-${index}`}
+        className={`block mb-2 ${
+          bullet.startsWith("Tech Stack") ? "italic" : ""
+        }`}
+      >
+        {bullet}
+      </span>
+    ));
+  };
+
   return (
     <div className="flex flex-col gap-10 lg:gap-20 lg:mt-6 mt-10 xl:mt-0">
       <h2 className="font-dm-sans text-4xl xl:text-5xl font-semibold text-neutral-800 text-center leading-tight">
@@ -43,22 +56,20 @@ const Skills = () => {
               <p className="font-bold text-violet-800 font-poppins text-lg">
                 {experience?.year}
               </p>
-              <div className="">
+              <div>
                 {experience?.works?.map((work, index) => (
                   <Tippy
                     key={`${work.name}-${index}`}
-                    // content is work description separated by | (pipe)
-                    content={work.description.split("|").map((desc, index) => (
-                      <p
-                        key={index}
-                        className="text-base text-gray-600 font-rubik mb-4"
+                    content={work?.description?.map((desc, index) => (
+                      <div
+                        key={`${desc}-${index}`}
+                        className="font-rubik text-sm text-gray-600"
                       >
-                        {desc.startsWith("Project") ? (
-                          <span className="font-semibold">{desc}</span>
-                        ) : (
-                          desc
-                        )}
-                      </p>
+                        <p className="font-bold my-2">{desc?.projectName}</p>
+                        <p>
+                          {projectDescriptionBullets(desc?.projectDescription)}
+                        </p>
+                      </div>
                     ))}
                     animation="scale" // Use the scale animation
                     duration={[500, 500]}

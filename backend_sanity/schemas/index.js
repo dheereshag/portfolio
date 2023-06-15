@@ -5,6 +5,7 @@ import workExperience from './workExperience'
 import contact from './contact'
 import icons from './icons'
 import projects from './projects'
+import workDescription from './workDescription'
 export const schemaTypes = [
   projects,
   brands,
@@ -13,4 +14,5 @@ export const schemaTypes = [
   workExperience,
   contact,
   icons,
+  workDescription,
 ]
