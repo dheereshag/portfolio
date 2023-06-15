@@ -14,7 +14,7 @@ const NavigationDots = ({ active }) => {
         <a
           href={`#${item}`}
           key={item + index}
-          className={`app__navigation-dot w-2 h-2 rounded-full hover:bg-gray-500 transition-all 2xl:w-2.5 2xl:h-2.5 ${
+          className={`w-2 h-2 rounded-full hover:bg-gray-500 transition-all 2xl:w-2.5 2xl:h-2.5 ${
             active === item ? "bg-violet-800" : "bg-gray-400"
           }`}
         >
