@@ -1,5 +1,5 @@
+"use client";
 import React, { useState } from "react";
-import { images } from "../../constants";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { client } from "../../client";
 import { motion } from "framer-motion";
@@ -40,11 +40,16 @@ const Contact = () => {
       <div className="flex flex-col xl:flex-row gap-6 xl:gap-20 items-baseline mt-8 md:mt-0 mb-40 md:mb-0">
         <aside className="flex flex-col md:flex-row items-center gap-0 md:gap-3">
           <h2 className="font-dm-sans text-4xl xl:text-5xl font-semibold mb-10 text-violet-950 leading-tight">
-            Sip some coffee <span className="hvr-float">🍵</span> and chat with me
+            Sip some coffee <span className="hvr-float">🍵</span> and chat with
+            me
           </h2>
           <div className="flex flex-col gap-5 justify-center items-center my-5 w-full">
-            <div className="w-full gap-4 hvr-icon-float hvr-shrink hover:shadow-md hover:shadow-rose-300 bg-rose-100 flex items-center px-5 py-4 rounded-3xl cursor-pointer">
-              <img src={images.email} alt="email" className="hvr-icon w-9" />
+            <div className="group w-full gap-4 hover:shadow-md hover:shadow-rose-300 bg-rose-100 flex items-center px-5 py-4 rounded-3xl cursor-pointer">
+              <img
+                src="./email.png"
+                alt="email"
+                className="w-9 transition-transform duration-300 transform-gpu group-hover:scale-110 group-hover:-translate-y-1"
+              />
               <a
                 href="mailto:da11@iitbbs.ac.in"
                 className="text-pink-500 font-pacifico"
@@ -52,13 +57,17 @@ const Contact = () => {
                 da11@iitbbs.ac.in
               </a>
             </div>
-            <div className="w-full gap-4 hvr-icon-rotate hvr-shrink hover:shadow-md hover:shadow-blue-300 bg-blue-100 flex items-center px-5 py-4 rounded-3xl cursor-pointer">
-              <img src={images.mobile} alt="mobile" className="hvr-icon w-9" />
+            <div className="w-full gap-4 bg-blue-100 flex items-center px-5 py-4 rounded-3xl cursor-pointer group hover:shadow-md hover:shadow-blue-300">
               <a
                 href="tel:+91 9411245528"
-                className="text-blue-800 font-pacifico text-sm"
+                className="text-blue-800 font-pacifico text-sm flex items-center"
               >
-                +91 9411245528
+                <img
+                  src="./mobile.png"
+                  alt="mobile"
+                  className="w-9 transition-transform duration-300 transform-gpu group-hover:scale-125 group-hover:rotate-12"
+                />
+                <span className="ml-2">+91 9411245528</span>
               </a>
             </div>
           </div>

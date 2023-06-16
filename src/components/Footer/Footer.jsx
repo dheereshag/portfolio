@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useState } from "react";
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import SocialMedia from "../SocialMedia";
@@ -28,10 +29,10 @@ const Footer = () => {
       </div>
       <SocialMedia
         parentStyles={"flex gap-3 md:hidden"}
-        iconStyles={"ci-xl"}
-        childStyles={
-          "hvr-icon-rotate bg-white rounded-full w-12 h-12 border app__flex shadow"
+        iconStyles={
+          "ci-xl transition-transform duration-300 transform-gpu group-hover:scale-125 group-hover:rotate-12"
         }
+        childStyles={"bg-white rounded-full w-12 h-12 border app__flex shadow"}
       />
     </div>
   );

@@ -12,12 +12,12 @@ const skills = [
   {
     name: "nuxtjs",
     icon: "nuxtjs",
-    size: "3x",
+    size: "4x",
   },
   {
     name: "tailwind",
     icon: "tailwind",
-    size: "2x",
+    size: "4x",
   },
   {
     name: "nodejs",
@@ -37,38 +37,38 @@ const skills = [
   {
     name: "django",
     icon: "django",
-    size: "3x",
+    size: "4x",
   },
   {
     name: "figma",
     icon: "figma",
-    size: "3x",
+    size: "4x",
   },
   {
     name: "framer",
     icon: "framer-motion",
-    size: "3x",
+    size: "4x",
   },
   {
     name: "sass",
     icon: "sass-wordmark",
-    size: "3x",
+    size: "4x",
   },
 
   {
     name: "mui",
     icon: "mui",
-    size: "3x",
+    size: "4x",
   },
   {
     name: "postgresql",
     icon: "postgresql",
-    size: "3x",
+    size: "4x",
   },
   {
     name: "redis",
     icon: "redis",
-    size: "3x",
+    size: "4x",
   },
 
   {
@@ -100,7 +100,7 @@ const skills = [
   {
     name: "aws",
     icon: "aws",
-    size: "3x",
+    size: "4x",
   },
 
   {

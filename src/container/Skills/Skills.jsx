@@ -1,3 +1,4 @@
+"use client";
 import "./Skills.scss";
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
@@ -39,9 +40,9 @@ const Skills = () => {
         <motion.div className="flex flex-wrap justify-center gap-7 xl:w-8/12">
           {skills.map((skill, index) => (
             <motion.div className="flex flex-col text-center gap-2" key={index}>
-              <motion.div className="app__flex bg-neutral-100 shadow border rounded-3xl md:w-24 md:h-24 hvr-box-shadow-inset w-20 h-20">
+              <motion.div className="tw-box-shadow-inset transform-gpu group app__flex bg-neutral-100 shadow border rounded-3xl md:w-24 md:h-24 w-20 h-20">
                 <i
-                  className={`ci ci-${skill.icon} ci-${skill.size} w-8/12 md:w-full hvr-buzz`}
+                  className={`ci ci-${skill.icon} ci-${skill.size} w-8/12 md:w-full group-hover:tw-buzz`}
                 ></i>
               </motion.div>
               <p className="font-poppins text-sm font-semibold text-neutral-600">

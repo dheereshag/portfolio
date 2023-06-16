@@ -1,5 +1,5 @@
+"use client";
 import React, { useState, useEffect } from "react";
-import { BsEyeFill, BsGithub } from "react-icons/bs";
 import { motion, AnimatePresence } from "framer-motion";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
@@ -97,23 +97,23 @@ const Projects = () => {
                     type: "tween",
                     staggerChildren: 0.5,
                   }}
-                  className="flex justify-center items-center absolute h-full w-full hover:bg-black/50 gap-8 group rounded-xl"
+                  className="group/dark flex justify-center items-center absolute h-full w-full hover:bg-black/50 gap-8 rounded-xl"
                 >
                   <a
                     href={work?.projectLink}
                     target="_blank"
                     rel="noreferrer"
-                    className="app__flex hvr-icon-shrink w-12 h-12 bg-black/50 rounded-full opacity-0 group-hover:opacity-100 transition-all"
+                    className="group/icon app__flex w-12 h-12 bg-black/50 rounded-full opacity-0 group-hover/dark:opacity-100 transition-all"
                   >
-                    <BsEyeFill className="text-white w-6 h-6 hvr-icon" />
+                    <i className="bi bi-eye-fill text-white text-2xl transition-transform duration-300 transform-gpu group-hover/icon:scale-90"></i>
                   </a>
                   <a
                     href={work?.codeLink}
                     target="_blank"
                     rel="noreferrer"
-                    className="app__flex hvr-icon-shrink w-12 h-12 bg-black/50 rounded-full opacity-0 group-hover:opacity-100 transition-all"
+                    className="group/icon app__flex w-12 h-12 bg-black/50 rounded-full opacity-0 group-hover/dark:opacity-100 transition-all"
                   >
-                    <BsGithub className="text-white w-6 h-6 hvr-icon" />
+                    <i className="bi bi-github text-white text-2xl transition-transform duration-300 transform-gpu group-hover/icon:scale-90"></i>
                   </a>
                 </motion.div>
               </div>

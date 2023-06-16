@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { AppWrap, MotionWrap } from "../../wrapper";
@@ -54,4 +55,4 @@ const About = () => {
   );
 };
 
-export default AppWrap(MotionWrap(About,"about"), "about", "bg-white");
+export default AppWrap(MotionWrap(About, "about"), "about", "bg-white");

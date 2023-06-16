@@ -1,7 +1,7 @@
+"use client";
 import React, { useRef, useEffect, useContext, useState } from "react";
 import { AppContext } from "../../context/AppContext";
 import { AppWrap } from "../../wrapper";
-import { images } from "../../constants";
 import { motion } from "framer-motion";
 import "./Header.scss";
 import headerIcons from "../../constants/headerIcons";
@@ -49,13 +49,13 @@ const Header = () => {
       <div className="flex flex-col lg:flex-row gap-8">
         <div className="flex relative">
           <img
-            src={images.profile}
+            src="./profile.png"
             alt="profile_bg"
             className="z-10 object-contain animate__animated animate__fadeIn animate__slow"
           />
           <img
             className="absolute w-full bottom-2 animate__animated animate__zoomIn animate__slow"
-            src={images.circle}
+            src="./circle.svg"
             alt="profile_circle"
           />
         </div>
@@ -65,7 +65,7 @@ const Header = () => {
           duration={[500, 500]}
           placement="right"
           arrow={true}
-          delay={isTippyLoaded ? [5000, 0] : [0, 0]}
+          delay={isTippyLoaded ? [3000, 0] : [0, 0]}
           onShown={() => setIsTippyLoaded(true)}
           className="font-karla border shadow-lg px-4 py-3"
         >

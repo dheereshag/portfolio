@@ -1,10 +1,9 @@
+"use client";
 import React, { useState, useEffect, useContext } from "react";
 import { useAnimate, stagger } from "framer-motion";
 import { MenuToggle } from "./MenuToggle";
-import { images, menuItems } from "../../constants";
+import { menuItems } from "../../constants";
 import { AppContext } from "../../context/AppContext";
-import { BsEyeFill } from "react-icons/bs";
-
 function useMenuAnimation(isOpen) {
   const [scope, animate] = useAnimate();
 
@@ -73,7 +72,7 @@ const Navbar = () => {
   return (
     <div className="fixed z-20">
       <a href="#home">
-        <img src={images.logo} alt="logo" className="m-3 w-14" />
+        <img src="./logo.png" alt="logo" className="m-3 w-14" />
       </a>
       <div ref={scope}>
         <nav
@@ -103,7 +102,7 @@ const Navbar = () => {
             >
               <li className="bg-violet-900 text-white mt-4 text-2xl font-bold py-2 px-4 rounded-full w-8/12 font-poppins flex items-center justify-between hover:bg-violet-950">
                 <span>CV</span>
-                <BsEyeFill />
+                <i className="bi bi-eye-fill text-white text-2xl"></i>
               </li>
             </a>
           </ul>
