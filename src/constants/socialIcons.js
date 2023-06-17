@@ -1,8 +1,8 @@
 const socialIcons = [
-  { name: "github", href: "https://github.com/dheeresh7" },
-  { name: "linkedin", href: "https://linkedin.com/in/dheeresh7" },
-  { name: "leetcode", href: "https://leetcode.com/dheeresh7" },
-  { name: "discord", href: "https://discord.com/dheeresh7" },
+  { name: "github", href: "https://github.com/dheereshagrwal" },
+  { name: "linkedin", href: "https://www.linkedin.com/in/dheereshagrwal" },
+  { name: "leetcode", href: "https://leetcode.com/dheereshagrwal/" },
+  { name: "instagram", href: "https://instagram.com/dheereshagrwal" },
 ];
 
 export default socialIcons;
