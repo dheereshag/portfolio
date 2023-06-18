@@ -10,27 +10,26 @@ const Projects = () => {
   const [activeFilter, setActiveFilter] = useState("all");
   const [animateCard, setAnimateCard] = useState({ y: [null, 0], opacity: 1 });
   const [filterProjects, setFilterProjects] = useState([]);
-  const [icons, setIcons] = useState([]);
   const [projects, setProjects] = useState([]);
   useEffect(() => {
     const query = `*[_type == "projects"]`;
     client.fetch(query).then((data) => {
       setProjects(data);
       setFilterProjects(data);
-      const techStackArray = data.map((project) => project.icons); // Extracting techStack array from each project object
-      setIcons((prevIcons) => [...prevIcons, ...techStackArray]); // Pushing techStack array into icons array
     });
   }, []);
 
   useEffect(() => {
-    if (!icons) return;
+    if (!projects) return;
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % icons[0]?.length);
+      setCurrentIndex(
+        (prevIndex) => (prevIndex + 1) % projects[0]?.icons?.length
+      );
     }, 2000); // Change the interval duration as needed
 
     return () => clearInterval(interval);
-  }, [icons]);
-  // console.log("icons", icons);
+  }, [projects]);
+
   const handleWorkFilter = (item) => {
     setActiveFilter(item);
     setAnimateCard({ y: [null, 30], opacity: 0 });
@@ -39,7 +38,9 @@ const Projects = () => {
       if (item === "all") {
         setFilterProjects(projects);
       } else {
-        setFilterProjects(projects.filter((project) => project.tags.includes(item)));
+        setFilterProjects(
+          projects.filter((project) => project.tags.includes(item))
+        );
       }
     }, 500);
   };
@@ -80,80 +81,84 @@ const Projects = () => {
           transition={{ duration: 0.5, type: "tween" }}
           className="flex flex-wrap justify-center gap-8 lg:gap-14"
         >
-          {filterProjects.map((project, index) => (
-            <motion.div
-              className="hvr-grow-shadow md:w-96 p-3 bg-white border shadow-lg rounded-3xl"
-              key={index}
-            >
-              <div className="flex relative">
-                <img
-                  src={urlFor(project.image)}
-                  alt={project.name}
-                  className="object-contain rounded-xl"
-                />
-                <motion.div
-                  transition={{
-                    duration: 0.25,
-                    type: "tween",
-                    staggerChildren: 0.5,
-                  }}
-                  className="group/dark flex justify-center items-center absolute h-full w-full hover:bg-black/50 gap-8 rounded-xl"
-                >
-                  <a
-                    href={project?.projectLink}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="group/icon app__flex w-12 h-12 bg-black/50 rounded-full opacity-0 group-hover/dark:opacity-100 transition-all"
+          {filterProjects.map((project, index) => {
+            return (
+              <motion.div
+                className="hvr-grow-shadow md:w-96 p-3 bg-white border shadow-lg rounded-3xl"
+                key={index}
+              >
+                <div className="flex relative">
+                  <img
+                    src={urlFor(project.image)}
+                    alt={project.name}
+                    className="object-contain rounded-xl"
+                  />
+                  <motion.div
+                    transition={{
+                      duration: 0.25,
+                      type: "tween",
+                      staggerChildren: 0.5,
+                    }}
+                    className="group/dark flex justify-center items-center absolute h-full w-full hover:bg-black/50 gap-8 rounded-xl"
                   >
-                    <i className="bi bi-eye-fill text-white text-2xl transition-transform duration-300 transform-gpu group-hover/icon:scale-90"></i>
-                  </a>
-                  <a
-                    href={project?.codeLink}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="group/icon app__flex w-12 h-12 bg-black/50 rounded-full opacity-0 group-hover/dark:opacity-100 transition-all"
-                  >
-                    <i className="bi bi-github text-white text-2xl transition-transform duration-300 transform-gpu group-hover/icon:scale-90"></i>
-                  </a>
-                </motion.div>
-              </div>
-              <div className="flex justify-center py-1 relative">
-                <div className="flex items-center px-3 py-2 -top-6 bg-white rounded-xl absolute">
-                  <div className="flex items-center gap-1">
-                    <i
-                      className={`ci ci-${project?.tags[0]} ci-xs ${
-                        project?.tags[0] === "django" ? "mt-0.5" : ""
-                      }`}
-                    ></i>
-                    <p className="font-inter text-sm">{project?.tags[0]}</p>
+                    <a
+                      href={project?.projectLink}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="group/icon app__flex w-12 h-12 bg-black/50 rounded-full opacity-0 group-hover/dark:opacity-100 transition-all"
+                    >
+                      <i className="bi bi-eye-fill text-white text-2xl transition-transform duration-300 transform-gpu group-hover/icon:scale-90"></i>
+                    </a>
+                    <a
+                      href={project?.codeLink}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="group/icon app__flex w-12 h-12 bg-black/50 rounded-full opacity-0 group-hover/dark:opacity-100 transition-all"
+                    >
+                      <i className="bi bi-github text-white text-2xl transition-transform duration-300 transform-gpu group-hover/icon:scale-90"></i>
+                    </a>
+                  </motion.div>
+                </div>
+                <div className="flex justify-center py-1 relative">
+                  <div className="flex items-center px-3 py-2 -top-6 bg-white rounded-xl absolute">
+                    <div className="flex items-center gap-1">
+                      <i
+                        className={`ci ci-${project?.tags[0]} ci-xs ${
+                          project?.tags[0] === "django" ? "mt-0.5" : ""
+                        }`}
+                      ></i>
+                      <p className="font-inter text-sm">{project?.tags[0]}</p>
+                    </div>
+                  </div>
+                  <div className="flex relative mt-2">
+                    <aside className="flex flex-col gap-2">
+                      <h4 className="font-poppins font-semibold text-violet-900">
+                        {project?.title}
+                      </h4>
+                      <p className="font-dm-sans w-10/12">
+                        {project?.description}
+                      </p>
+                    </aside>
+                    <AnimatePresence>
+                      <motion.div
+                        key={`${index}-${currentIndex}`}
+                        initial={{ opacity: 0, scale: 0 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0 }}
+                        transition={{ duration: 0.5, type: "tween" }}
+                        className="absolute right-0 bottom-0"
+                      >
+                        <IconComponent
+                          name={project.icons[currentIndex]?.icon}
+                          size={project.icons[currentIndex]?.size}
+                        />
+                      </motion.div>
+                    </AnimatePresence>
                   </div>
                 </div>
-                <div className="flex relative mt-2">
-                  <aside className="flex flex-col gap-2">
-                    <h4 className="font-poppins font-semibold text-violet-900">
-                      {project?.title}
-                    </h4>
-                    <p className="font-dm-sans w-10/12">{project?.description}</p>
-                  </aside>
-                  <AnimatePresence>
-                    <motion.div
-                      key={`${index}-${currentIndex}`}
-                      initial={{ opacity: 0, scale: 0 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0 }}
-                      transition={{ duration: 0.5, type: "tween" }}
-                      className="absolute right-0 bottom-0"
-                    >
-                      <IconComponent
-                        name={icons[index][currentIndex]?.icon}
-                        size={icons[index][currentIndex]?.size}
-                      />
-                    </motion.div>
-                  </AnimatePresence>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            );
+          })}
         </motion.div>
       </div>
     </div>
