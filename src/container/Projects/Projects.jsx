@@ -17,7 +17,7 @@ const Projects = () => {
     client.fetch(query).then((data) => {
       setProjects(data);
       setFilterProjects(data);
-      const techStackArray = data.map((work) => work.icons); // Extracting techStack array from each work object
+      const techStackArray = data.map((project) => project.icons); // Extracting techStack array from each project object
       setIcons((prevIcons) => [...prevIcons, ...techStackArray]); // Pushing techStack array into icons array
     });
   }, []);
@@ -39,7 +39,7 @@ const Projects = () => {
       if (item === "all") {
         setFilterProjects(projects);
       } else {
-        setFilterProjects(projects.filter((work) => work.tags.includes(item)));
+        setFilterProjects(projects.filter((project) => project.tags.includes(item)));
       }
     }, 500);
   };
@@ -80,15 +80,15 @@ const Projects = () => {
           transition={{ duration: 0.5, type: "tween" }}
           className="flex flex-wrap justify-center gap-8 lg:gap-14"
         >
-          {filterProjects.map((work, index) => (
+          {filterProjects.map((project, index) => (
             <motion.div
               className="hvr-grow-shadow md:w-96 p-3 bg-white border shadow-lg rounded-3xl"
               key={index}
             >
               <div className="flex relative">
                 <img
-                  src={urlFor(work.image)}
-                  alt={work.name}
+                  src={urlFor(project.image)}
+                  alt={project.name}
                   className="object-contain rounded-xl"
                 />
                 <motion.div
@@ -100,7 +100,7 @@ const Projects = () => {
                   className="group/dark flex justify-center items-center absolute h-full w-full hover:bg-black/50 gap-8 rounded-xl"
                 >
                   <a
-                    href={work?.projectLink}
+                    href={project?.projectLink}
                     target="_blank"
                     rel="noreferrer"
                     className="group/icon app__flex w-12 h-12 bg-black/50 rounded-full opacity-0 group-hover/dark:opacity-100 transition-all"
@@ -108,7 +108,7 @@ const Projects = () => {
                     <i className="bi bi-eye-fill text-white text-2xl transition-transform duration-300 transform-gpu group-hover/icon:scale-90"></i>
                   </a>
                   <a
-                    href={work?.codeLink}
+                    href={project?.codeLink}
                     target="_blank"
                     rel="noreferrer"
                     className="group/icon app__flex w-12 h-12 bg-black/50 rounded-full opacity-0 group-hover/dark:opacity-100 transition-all"
@@ -121,19 +121,19 @@ const Projects = () => {
                 <div className="flex items-center px-3 py-2 -top-6 bg-white rounded-xl absolute">
                   <div className="flex items-center gap-1">
                     <i
-                      className={`ci ci-${work?.tags[0]} ci-xs ${
-                        work?.tags[0] === "django" ? "mt-0.5" : ""
+                      className={`ci ci-${project?.tags[0]} ci-xs ${
+                        project?.tags[0] === "django" ? "mt-0.5" : ""
                       }`}
                     ></i>
-                    <p className="font-inter text-sm">{work?.tags[0]}</p>
+                    <p className="font-inter text-sm">{project?.tags[0]}</p>
                   </div>
                 </div>
                 <div className="flex relative mt-2">
                   <aside className="flex flex-col gap-2">
                     <h4 className="font-poppins font-semibold text-violet-900">
-                      {work?.title}
+                      {project?.title}
                     </h4>
-                    <p className="font-dm-sans w-10/12">{work?.description}</p>
+                    <p className="font-dm-sans w-10/12">{project?.description}</p>
                   </aside>
                   <AnimatePresence>
                     <motion.div
