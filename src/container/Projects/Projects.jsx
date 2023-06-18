@@ -107,7 +107,7 @@ const Projects = () => {
                       rel="noreferrer"
                       className="group/icon app__flex w-12 h-12 bg-black/50 rounded-full opacity-0 group-hover/dark:opacity-100 transition-all"
                     >
-                      <i className="bi bi-eye-fill text-white text-2xl transition-transform duration-300 transform-gpu group-hover/icon:scale-90"></i>
+                      <i className="fa-solid fa-eye fa-xl text-white transition-transform duration-300 transform-gpu group-hover/icon:scale-90"></i>
                     </a>
                     <a
                       href={project?.codeLink}
@@ -115,7 +115,7 @@ const Projects = () => {
                       rel="noreferrer"
                       className="group/icon app__flex w-12 h-12 bg-black/50 rounded-full opacity-0 group-hover/dark:opacity-100 transition-all"
                     >
-                      <i className="bi bi-github text-white text-2xl transition-transform duration-300 transform-gpu group-hover/icon:scale-90"></i>
+                      <i className="fa-brands fa-github fa-xl text-white transition-transform duration-300 transform-gpu group-hover/icon:scale-90"></i>
                     </a>
                   </motion.div>
                 </div>

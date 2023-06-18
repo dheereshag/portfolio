@@ -9,10 +9,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
-        />
+        <script
+          src="https://kit.fontawesome.com/39c9d22d07.js"
+          crossOrigin="anonymous"
+        ></script>
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/gh/dheereshagrwal/colored-icons@1.6.1/ci.css"

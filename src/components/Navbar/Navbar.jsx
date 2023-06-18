@@ -102,7 +102,7 @@ const Navbar = () => {
             >
               <li className="bg-violet-900 text-white mt-4 text-2xl font-bold py-2 px-4 rounded-full w-8/12 font-poppins flex items-center justify-between hover:bg-violet-950">
                 <span>CV</span>
-                <i className="bi bi-eye-fill text-white text-2xl"></i>
+                <i className="fa-solid fa-eye text-white"></i>
               </li>
             </a>
           </ul>
