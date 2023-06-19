@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
 
-const items = ["next", "react", "nuxt", "django", "all"];
+const items = ["next", "react", "django", "nuxt", "all"];
 const Projects = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [activeFilter, setActiveFilter] = useState("all");
