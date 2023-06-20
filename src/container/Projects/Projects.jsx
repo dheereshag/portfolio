@@ -12,7 +12,7 @@ const Projects = () => {
   const [filterProjects, setFilterProjects] = useState([]);
   const [projects, setProjects] = useState([]);
   useEffect(() => {
-    const query = `*[_type == "projects"]`;
+    const query = `*[_type == "projects"] | order(title asc)`;
     client.fetch(query).then((data) => {
       setProjects(data);
       setFilterProjects(data);
