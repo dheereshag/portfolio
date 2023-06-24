@@ -6,7 +6,6 @@ import { urlFor, client } from "../../client";
 
 const items = ["next", "react", "django", "nuxt", "all"];
 const Projects = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
   const [activeFilter, setActiveFilter] = useState("all");
   const [animateCard, setAnimateCard] = useState({ y: [null, 0], opacity: 1 });
   const [filterProjects, setFilterProjects] = useState([]);
@@ -19,6 +18,7 @@ const Projects = () => {
     });
   }, []);
 
+  const [currentIndex, setCurrentIndex] = useState(0);
   useEffect(() => {
     if (!projects) return;
     const interval = setInterval(() => {
@@ -27,7 +27,9 @@ const Projects = () => {
       );
     }, 2000); // Change the interval duration as needed
 
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+    };
   }, [projects]);
 
   const handleWorkFilter = (item) => {
