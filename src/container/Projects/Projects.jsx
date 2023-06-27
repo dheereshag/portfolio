@@ -11,7 +11,7 @@ const Projects = () => {
   const [filterProjects, setFilterProjects] = useState([]);
   const [projects, setProjects] = useState([]);
   useEffect(() => {
-    const query = `*[_type == "projects"] | order(title asc)`;
+    const query = `*[_type == "projects"] | order(title desc)`;
     client.fetch(query).then((data) => {
       setProjects(data);
       setFilterProjects(data);
@@ -87,12 +87,12 @@ const Projects = () => {
             return (
               <motion.div
                 className="hvr-grow-shadow md:w-96 p-3 bg-white border shadow-lg rounded-3xl"
-                key={index}
+                key={`${project.title}-${index}`}
               >
                 <div className="flex relative">
                   <img
                     src={urlFor(project.image)}
-                    alt={project.name}
+                    alt={project.title}
                     className="object-contain rounded-xl"
                   />
                   <motion.div
@@ -137,13 +137,13 @@ const Projects = () => {
                       <h4 className="font-poppins font-semibold text-violet-900">
                         {project?.title}
                       </h4>
-                      <p className="font-dm-sans w-10/12">
+                      <p className="font-dm-sans w-10/12 break-words">
                         {project?.description}
                       </p>
                     </aside>
                     <AnimatePresence>
                       <motion.div
-                        key={`${index}-${currentIndex}`}
+                        key={`${project.title}-${index}-${currentIndex}`}
                         initial={{ opacity: 0, scale: 0 }}
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0, scale: 0 }}
