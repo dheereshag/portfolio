@@ -147,7 +147,7 @@ const Projects = () => {
                         initial={{ opacity: 0, scale: 0 }}
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0, scale: 0 }}
-                        transition={{ duration: 0.5, type: "tween" }}
+                        transition={{ duration: 1, type: "tween" }}
                         className="absolute right-0 bottom-0"
                       >
                         <IconComponent
