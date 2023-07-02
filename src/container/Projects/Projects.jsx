@@ -25,7 +25,7 @@ const Projects = () => {
       setCurrentIndex(
         (prevIndex) => (prevIndex + 1) % projects[0]?.icons?.length
       );
-    }, 2000); // Change the interval duration as needed
+    }, 2500); // Change the interval duration as needed
 
     return () => {
       clearInterval(interval);
@@ -141,21 +141,19 @@ const Projects = () => {
                         {project?.description}
                       </p>
                     </aside>
-                    <AnimatePresence>
-                      <motion.div
-                        key={`${project.title}-${index}-${currentIndex}`}
-                        initial={{ opacity: 0, scale: 0 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 0 }}
-                        transition={{ duration: 1, type: "tween" }}
-                        className="absolute right-0 bottom-0"
-                      >
-                        <IconComponent
-                          name={project.icons[currentIndex]?.icon}
-                          size={project.icons[currentIndex]?.size}
-                        />
-                      </motion.div>
-                    </AnimatePresence>
+                    <motion.div
+                      key={`${project.title}-${index}-${currentIndex}`}
+                      initial={{ opacity: 0, scale: 0 }}
+                      animate={{ opacity: 1, scale: 1}}
+                      exit={{ opacity: 0, scale: 0 }}
+                      transition={{ duration: 1, type: "anticipate" }}
+                      className="absolute right-0 bottom-0"
+                    >
+                      <IconComponent
+                        name={project.icons[currentIndex]?.icon}
+                        size={project.icons[currentIndex]?.size}
+                      />
+                    </motion.div>
                   </div>
                 </div>
               </motion.div>
