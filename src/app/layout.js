@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
         ></script>
         <link
           rel="stylesheet"
-          href="https://cdn.jsdelivr.net/gh/dheereshagrwal/colored-icons@1.6.1/ci.min.css"
+          href="https://cdn.jsdelivr.net/gh/dheereshagrwal/colored-icons@1.6.2/ci.css"
         />
         <link
           rel="stylesheet"
