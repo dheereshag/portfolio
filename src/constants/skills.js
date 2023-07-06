@@ -25,11 +25,6 @@ const skills = [
     size: "4x",
   },
   {
-    name: "solidity",
-    icon: "solidity",
-    size: "4x",
-  },
-  {
     name: "web3",
     icon: "web3js",
     size: "4x",
@@ -37,6 +32,16 @@ const skills = [
   {
     name: "django",
     icon: "django",
+    size: "4x",
+  },
+  {
+    name: "spring",
+    icon: "spring",
+    size: "4x",
+  },
+  {
+    name: "solidity",
+    icon: "solidity",
     size: "4x",
   },
   {
@@ -95,6 +100,11 @@ const skills = [
   {
     name: "docker",
     icon: "docker",
+    size: "4x",
+  },
+  {
+    name: "kubernetes",
+    icon: "kubernetes",
     size: "4x",
   },
   {
