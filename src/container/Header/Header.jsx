@@ -49,12 +49,12 @@ const Header = () => {
       <div className="flex flex-col lg:flex-row gap-8">
         <div className="flex relative">
           <img
-            src="./profile.png"
+            src="./profile2.png"
             alt="profile_bg"
-            className="z-10 object-contain animate__animated animate__fadeIn animate__slow"
+            className="z-10 animate__animated animate__fadeIn animate__slow"
           />
           <img
-            className="absolute w-full bottom-2 animate__animated animate__zoomIn animate__slow"
+            className="absolute bottom-2 animate__animated animate__zoomIn animate__slow"
             src="./circle.svg"
             alt="profile_circle"
           />
