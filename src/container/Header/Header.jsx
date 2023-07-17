@@ -49,7 +49,7 @@ const Header = () => {
       <div className="flex flex-col lg:flex-row gap-8">
         <div className="flex relative">
           <img
-            src="./profile2.png"
+            src="./profile.png"
             alt="profile_bg"
             className="z-10 animate__animated animate__fadeIn animate__slow"
           />
