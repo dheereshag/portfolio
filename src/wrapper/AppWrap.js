@@ -6,7 +6,7 @@ const AppWrap = (Component, idName, classNames) =>
     return (
       <div
         id={idName}
-        className={`app__container ${classNames} min-h-screen flex`}
+        className={`${classNames} min-h-screen flex`}
       >
         <SocialMedia
           parentStyles={"flex-col justify-end gap-4 m-3 hidden md:flex"}
