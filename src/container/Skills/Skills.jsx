@@ -109,4 +109,4 @@ const Skills = () => {
   );
 };
 
-export default AppWrap(MotionWrap(Skills, "skills"), "skills", "bg-white");
+export default AppWrap(MotionWrap(Skills, "skills"), "skills", "bg-blue-50");

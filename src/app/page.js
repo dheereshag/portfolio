@@ -1,5 +1,5 @@
 import { Navbar } from "@/components";
-import { Header, About, Projects, Skills, Contact } from "@/container";
+import { Header, Projects, Skills, Contact } from "@/container";
 import { AppProvider } from "@/context/AppContext";
 
 export default function Home() {
@@ -7,7 +7,6 @@ export default function Home() {
     <AppProvider>
       <Navbar />
       <Header />
-      <About />
       <Projects />
       <Skills />
       <Contact />

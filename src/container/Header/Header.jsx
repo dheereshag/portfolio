@@ -39,9 +39,7 @@ const Header = () => {
             </div>
           </div>
           <div className="flex flex-col py-3 px-14 border shadow font-poppins rounded-2xl text-right gap-1 text-sm">
-            <p className="">web 🕸️ developer</p>
-            <p className="">app 🤖 developer</p>
-            <p className="">skilled in ML 🦾 & DS </p>
+            <p className="">Full-Stack Developer</p>
           </div>
         </div>
       </div>

@@ -171,5 +171,5 @@ const IconComponent = ({ name, size }) => {
 export default AppWrap(
   MotionWrap(Projects, "projects"),
   "projects",
-  "bg-blue-50"
+  "bg-white"
 );
