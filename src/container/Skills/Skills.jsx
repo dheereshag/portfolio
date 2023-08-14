@@ -61,28 +61,11 @@ const Skills = () => {
                 {experience?.works?.map((work, index) => (
                   <Tippy
                     key={`${work.name}-${index}`}
-                    content={work?.description?.map((desc, index) => (
-                      <div
-                        key={`${desc}-${index}`}
-                        className="font-rubik text-sm text-gray-600"
-                      >
-                        <p className="font-bold my-2">{desc?.projectName}</p>
-                        <p>
-                          {projectDescriptionBullets(desc?.projectDescription)}
-                        </p>
-                      </div>
-                    ))}
-                    animation="scale" // Use the scale animation
-                    duration={[500, 500]}
-                    placement="top"
-                    arrow={true}
-                    className="border shadow-lg px-4 py-3"
-                    interactive={true}
+                    arrow={false}
                   >
                     <motion.div
                       whileInView={{ opacity: [0, 1] }}
                       transition={{ duration: 0.5 }}
-                      className="cursor-pointer"
                     >
                       <h4 className="font-poppins text-lg font-semibold text-gray-600 -mb-6">
                         {work?.name}
