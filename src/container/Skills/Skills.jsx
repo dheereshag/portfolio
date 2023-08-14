@@ -13,23 +13,10 @@ const Skills = () => {
   useEffect(() => {
     const query = '*[_type == "experiences"]';
     client.fetch(query).then((data) => {
-      const sortedExperiences = data.sort((a, b) => a?.year - b?.year);
+      const sortedExperiences = data.sort((a, b) => b?.year - a?.year);
       setExperiences(sortedExperiences);
     });
   }, []);
-
-  const projectDescriptionBullets = (projectDescription) => {
-    return projectDescription?.split("|").map((bullet, index) => (
-      <span
-        key={`${bullet}-${index}`}
-        className={`block mb-2 ${
-          bullet.startsWith("Tech Stack") ? "italic" : ""
-        }`}
-      >
-        {bullet}
-      </span>
-    ));
-  };
 
   return (
     <div className="flex flex-col gap-10 lg:gap-20 lg:mt-6 mt-10 xl:mt-0">
@@ -40,7 +27,7 @@ const Skills = () => {
         <motion.div className="flex flex-wrap justify-center gap-7 xl:w-8/12">
           {skills.map((skill, index) => (
             <motion.div className="flex flex-col text-center gap-2" key={index}>
-              <motion.div className="tw-box-shadow-inset transform-gpu group app__flex bg-neutral-100 shadow border rounded-3xl md:w-24 md:h-24 w-20 h-20">
+              <motion.div className="tw-box-shadow-inset transform-gpu group app__flex bg-blue-100 shadow border rounded-3xl md:w-24 md:h-24 w-20 h-20">
                 <i
                   className={`ci ci-${skill.icon} ci-${skill.size} w-8/12 md:w-full group-hover:tw-buzz`}
                 ></i>
@@ -59,10 +46,7 @@ const Skills = () => {
               </p>
               <div>
                 {experience?.works?.map((work, index) => (
-                  <Tippy
-                    key={`${work.name}-${index}`}
-                    arrow={false}
-                  >
+                  <Tippy key={`${work.name}-${index}`} arrow={false}>
                     <motion.div
                       whileInView={{ opacity: [0, 1] }}
                       transition={{ duration: 0.5 }}
@@ -74,11 +58,7 @@ const Skills = () => {
                         <p className="font-karla text-md text-gray-600">
                           {work?.company}
                         </p>
-                        <i
-                          className={`ci ci-${work?.icon} ci-${work?.size} ${
-                            work?.icon === "ringcentral" ? "mb-0.5" : ""
-                          }`}
-                        />
+                        <i className={`ci ci-${work?.icon} ci-${work?.size}`} />
                       </div>
                     </motion.div>
                   </Tippy>

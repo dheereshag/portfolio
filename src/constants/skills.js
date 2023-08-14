@@ -86,17 +86,6 @@ const skills = [
     icon: "bootstrap",
     size: "4x",
   },
-
-  {
-    name: "react native",
-    icon: "react-native",
-    size: "4x",
-  },
-  {
-    name: "flutter",
-    icon: "flutter",
-    size: "4x",
-  },
   {
     name: "docker",
     icon: "docker",
@@ -118,11 +107,7 @@ const skills = [
     icon: "mongodb",
     size: "4x",
   },
-  {
-    name: "java",
-    icon: "java-vertical",
-    size: "4x",
-  },
+
   {
     name: "DigitalOcean",
     icon: "do",
