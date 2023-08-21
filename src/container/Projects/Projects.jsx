@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
 
-const items = ["next", "react", "django", "nuxt", "all"];
+const items = ["next", "django", "node", "nuxt", "all"];
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState("all");
   const [animateCard, setAnimateCard] = useState({ y: [null, 0], opacity: 1 });
@@ -17,20 +17,6 @@ const Projects = () => {
       setFilterProjects(data);
     });
   }, []);
-
-  const [currentIndex, setCurrentIndex] = useState(0);
-  useEffect(() => {
-    if (!projects) return;
-    const interval = setInterval(() => {
-      setCurrentIndex(
-        (prevIndex) => (prevIndex + 1) % projects[0]?.icons?.length
-      );
-    }, 2500); // Change the interval duration as needed
-
-    return () => {
-      clearInterval(interval);
-    };
-  }, [projects]);
 
   const handleWorkFilter = (item) => {
     setActiveFilter(item);
@@ -124,12 +110,9 @@ const Projects = () => {
                 <div className="flex justify-center py-1 relative">
                   <div className="flex items-center px-3 py-2 -top-6 bg-white rounded-xl absolute">
                     <div className="flex items-center gap-1">
-                      <i
-                        className={`ci ci-${project?.tags[0]} ci-xs ${
-                          project?.tags[0] === "django" ? "mt-0.5" : ""
-                        }`}
-                      ></i>
-                      <p className="font-inter text-sm">{project?.tags[0]}</p>
+                      {project.icons.map((icon) => (
+                        <i className={`ci ci-${icon.icon} ${icon.size}`}></i>
+                      ))}
                     </div>
                   </div>
                   <div className="flex relative mt-2">
@@ -137,23 +120,10 @@ const Projects = () => {
                       <h4 className="font-poppins font-semibold text-violet-900">
                         {project?.title}
                       </h4>
-                      <p className="font-dm-sans w-10/12 break-words">
+                      <p className="font-dm-sans break-words">
                         {project?.description}
                       </p>
                     </aside>
-                    <motion.div
-                      key={`${project.title}-${index}-${currentIndex}`}
-                      initial={{ opacity: 0, scale: 0 }}
-                      animate={{ opacity: 1, scale: 1}}
-                      exit={{ opacity: 0, scale: 0 }}
-                      transition={{ duration: 1, type: "anticipate" }}
-                      className="absolute right-0 bottom-0"
-                    >
-                      <IconComponent
-                        name={project.icons[currentIndex]?.icon}
-                        size={project.icons[currentIndex]?.size}
-                      />
-                    </motion.div>
                   </div>
                 </div>
               </motion.div>
@@ -163,9 +133,6 @@ const Projects = () => {
       </div>
     </div>
   );
-};
-const IconComponent = ({ name, size }) => {
-  return <i className={`ci ci-${name} ci-${size}`} />;
 };
 
 export default AppWrap(
