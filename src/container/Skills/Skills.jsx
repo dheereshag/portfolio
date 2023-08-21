@@ -1,12 +1,8 @@
 "use client";
-import "./Skills.scss";
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { client } from "../../client";
-import Tippy from "@tippyjs/react";
-import "tippy.js/dist/tippy.css";
-import "tippy.js/animations/scale.css";
 import { skills } from "../../constants";
 const Skills = () => {
   const [experiences, setExperiences] = useState([]);
@@ -46,7 +42,7 @@ const Skills = () => {
               </p>
               <div>
                 {experience?.works?.map((work, index) => (
-                  <Tippy key={`${work.name}-${index}`} arrow={false}>
+                  <div key={`${work.name}-${index}`}>
                     <motion.div
                       whileInView={{ opacity: [0, 1] }}
                       transition={{ duration: 0.5 }}
@@ -61,7 +57,7 @@ const Skills = () => {
                         <i className={`ci ci-${work?.icon} ci-${work?.size}`} />
                       </div>
                     </motion.div>
-                  </Tippy>
+                  </div>
                 ))}
               </div>
             </div>

@@ -108,8 +108,8 @@ const Projects = () => {
                   </motion.div>
                 </div>
                 <div className="flex justify-center py-1 relative">
-                  <div className="flex items-center px-3 py-2 -top-6 bg-white rounded-xl absolute">
-                    <div className="flex items-center gap-1">
+                  <div className="flex items-center px-2 py-2 -top-5 bg-white rounded-xl absolute">
+                    <div className="flex items-center gap-1.5">
                       {project.icons.map((icon) => (
                         <i className={`ci ci-${icon.icon} ${icon.size}`}></i>
                       ))}
