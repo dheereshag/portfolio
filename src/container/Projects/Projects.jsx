@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { AppWrap, MotionWrap } from "../../wrapper";
-import { urlFor, client } from "../../client";
+import { urlFor, client } from "@/client";
 
 const items = ["next", "django", "node", "nuxt", "all"];
 const Projects = () => {
