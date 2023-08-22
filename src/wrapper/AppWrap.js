@@ -4,10 +4,7 @@ import { NavigationDots, SocialMedia } from "../components";
 const AppWrap = (Component, idName, classNames) =>
   function HOC() {
     return (
-      <div
-        id={idName}
-        className={`${classNames} min-h-screen flex`}
-      >
+      <div id={idName} className={`${classNames} min-h-screen flex`}>
         <SocialMedia
           parentStyles={"flex-col justify-end gap-4 m-3 hidden md:flex"}
           childStyles={

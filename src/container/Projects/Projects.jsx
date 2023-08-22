@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { urlFor, client } from "@/client";
 
-const items = ["next", "django", "node", "nuxt", "all"];
+const items = ["next", "django", "node", "all"];
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState("all");
   const [animateCard, setAnimateCard] = useState({ y: [null, 0], opacity: 1 });

@@ -10,11 +10,6 @@ const skills = [
     size: "4x",
   },
   {
-    name: "nuxtjs",
-    icon: "nuxtjs",
-    size: "4x",
-  },
-  {
     name: "tailwind",
     icon: "tailwind",
     size: "4x",
