@@ -13,8 +13,15 @@ const Footer = () => {
     return animation.stop;
   }, [count, isInView]);
   return (
-    <div className="flex flex-col items-end absolute gap-3 right-0 bottom-0">
-      <div>
+    <div className="flex flex-col md:flex-row justify-between -mb-20 gap-4 mt-20">
+      <SocialMedia
+        parentStyles={"flex gap-3"}
+        iconStyles={
+          "ci-xl transition-transform duration-300 transform-gpu group-hover:scale-125 group-hover:rotate-12"
+        }
+        childStyles={"bg-white rounded-full w-12 h-12 border app__flex shadow"}
+      />
+      <aside className="mb-2">
         <div className="flex items-baseline">
           <p className="font-pacifico text-purple-800">@</p>
           <motion.p
@@ -26,14 +33,7 @@ const Footer = () => {
           <p className="ml-1 font-dancing-script">Dheeresh</p>
         </div>
         <p className="font-dancing-script">All rights reserved</p>
-      </div>
-      <SocialMedia
-        parentStyles={"flex gap-3 md:hidden"}
-        iconStyles={
-          "ci-xl transition-transform duration-300 transform-gpu group-hover:scale-125 group-hover:rotate-12"
-        }
-        childStyles={"bg-white rounded-full w-12 h-12 border app__flex shadow"}
-      />
+      </aside>
     </div>
   );
 };
