@@ -4,8 +4,8 @@ import { AppWrap } from "../../wrapper";
 
 const Header = () => {
   return (
-    <div className="flex justify-between text-white" id="home">
-      <aside className="flex flex-col gap-4 p-10 font-dm-sans w-5/12">
+    <div className="flex flex-col md:flex-row justify-between text-white" id="home">
+      <aside className="flex flex-col gap-4 m-3 md:m-10 font-dm-sans w-full md:w-5/12">
         <h1 className="text-4xl font-extrabold">
           I'm Dheeresh. I am a web developer.
         </h1>
@@ -23,11 +23,11 @@ const Header = () => {
           our family computer from space.
         </p>
       </aside>
-      <aside className="flex flex-col gap-14">
+      <aside className="flex flex-col gap-14 w-full md:w-3/12">
         <img
           src="./square.jpg"
           alt="profile_bg"
-          className="grayscale hover:grayscale-0 bg-cover bg-grey-300 w-96 shadow rounded-2xl transform rotate-3 scale-110"
+          className="grayscale hover:grayscale-0 bg-cover bg-grey-300 shadow rounded-2xl transform rotate-3 scale-110"
         />
         <div className="flex flex-col gap-2 text-lg">
           <Link
