@@ -3,7 +3,6 @@ import React, { useState, useEffect, useContext } from "react";
 import { useAnimate, stagger } from "framer-motion";
 import { MenuToggle } from "./MenuToggle";
 import { menuItems } from "../../constants";
-import { AppContext } from "../../context/AppContext";
 function useMenuAnimation(isOpen) {
   const [scope, animate] = useAnimate();
 
@@ -51,16 +50,6 @@ function useMenuAnimation(isOpen) {
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { isHeaderInView, isXL } = useContext(AppContext);
-  useEffect(() => {
-    if (isXL) {
-      if (isHeaderInView) {
-        setIsOpen(true);
-      } else {
-        setIsOpen(false);
-      }
-    }
-  }, [isHeaderInView, isXL]);
   const [hide, setHide] = useState(true);
   useEffect(() => {
     if (isOpen) {
@@ -76,11 +65,7 @@ const Navbar = () => {
       </a>
       <div ref={scope}>
         <nav
-          className={`fixed top-0 bottom-0 right-0 w-80 ${
-            isXL && isHeaderInView
-              ? "bg-transparent"
-              : "bg-white/80 backdrop-blur"
-          } ${hide ? "hidden" : ""}`}
+          className="fixed top-0 bottom-0 right-0 w-80 bg-white/80 backdrop-blur"
         >
           <ul className="flex flex-col gap-10 mt-40 mx-20">
             {menuItems.map((item, index) => (

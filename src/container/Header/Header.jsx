@@ -1,22 +1,14 @@
 "use client";
 import React, { useRef, useEffect, useContext, useState } from "react";
-import { AppContext } from "../../context/AppContext";
 import { AppWrap } from "../../wrapper";
 import { motion } from "framer-motion";
 import "./Header.scss";
 import headerIcons from "../../constants/headerIcons";
-import { useInView } from "framer-motion";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
 import "tippy.js/animations/scale.css";
 const Header = () => {
   const [isTippyLoaded, setIsTippyLoaded] = useState(false);
-  const { isHeaderInView, setIsHeaderInView } = useContext(AppContext);
-  const ref = useRef(null);
-  const isInView = useInView(ref);
-  useEffect(() => {
-    setIsHeaderInView(isInView);
-  }, [isInView, setIsHeaderInView, isHeaderInView]);
   const dragConstraints = {
     top: -100,
     left: -100,
@@ -27,7 +19,6 @@ const Header = () => {
     <div
       id="home"
       className="flex flex-col lg:flex-row gap-4 mt-4 lg:gap-0 xl:mr-64"
-      ref={ref}
     >
       <div className="animate__animated animate__fadeInLeft animate__delay-1s">
         <div className="items-start flex flex-col xl:items-end gap-8">

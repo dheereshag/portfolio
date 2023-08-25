@@ -1,14 +1,9 @@
 import React, { useContext } from "react";
 import { menuItems } from "../constants";
-import { AppContext } from "../context/AppContext";
 const NavigationDots = ({ active }) => {
-  const { isHeaderInView, isXL } = useContext(AppContext);
-  const shouldRender = isXL && isHeaderInView;
   return (
     <div
-      className={`hidden md:flex md:justify-center md:flex-col p-4 gap-4 ${
-        shouldRender ? "invisible" : ""
-      }`}
+      className={`hidden md:flex md:justify-center md:flex-col p-4 gap-4`}
     >
       {menuItems.map((item, index) => (
         <a
