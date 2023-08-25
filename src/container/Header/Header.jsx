@@ -4,8 +4,8 @@ import { AppWrap } from "../../wrapper";
 
 const Header = () => {
   return (
-    <div className="flex justify-evenly" id="home">
-      <aside className="flex flex-col gap-4 p-4 font-dm-sans w-5/12 rounded-xl shadow-md ">
+    <div className="flex justify-between text-white" id="home">
+      <aside className="flex flex-col gap-4 p-10 font-dm-sans w-5/12">
         <h1 className="text-4xl font-extrabold">
           I'm Dheeresh. I am a web developer.
         </h1>
@@ -23,19 +23,26 @@ const Header = () => {
           our family computer from space.
         </p>
       </aside>
-      <aside className="flex flex-col">
+      <aside className="flex flex-col gap-14">
         <img
           src="./square.jpg"
           alt="profile_bg"
           className="grayscale hover:grayscale-0 bg-cover bg-grey-300 w-96 shadow rounded-2xl transform rotate-3 scale-110"
         />
-        <div className="mt-10">
+        <div className="flex flex-col gap-2 text-lg">
           <Link
-            className="flex items-center gap-2 cursor-pointer hover:text-green-500"
+            className="flex items-center gap-4 cursor-pointer hover:text-blue-500"
             href="https://github.com/dheereshagrwal"
           >
-            <i className="ci ci-github"></i>
+            <i className="ci ci-github ci-invert"></i>
             <p>Github</p>
+          </Link>
+          <Link
+            className="flex items-center gap-4 cursor-pointer hover:text-blue-500"
+            href="https://twitter.com/dheeresh_agrwal"
+          >
+            <i className="ci ci-twitter"></i>
+            <p>Twitter</p>
           </Link>
         </div>
       </aside>
@@ -43,4 +50,4 @@ const Header = () => {
   );
 };
 
-export default AppWrap(Header, "home", "bg-blue-50");
+export default AppWrap(Header, "home", "bg-zinc-900");
