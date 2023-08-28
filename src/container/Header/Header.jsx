@@ -4,7 +4,10 @@ import { AppWrap } from "../../wrapper";
 
 const Header = () => {
   return (
-    <div className="flex flex-col md:flex-row justify-between text-white" id="home">
+    <div
+      className="flex flex-col md:flex-row justify-between text-white"
+      id="home"
+    >
       <aside className="flex flex-col gap-4 m-3 md:m-10 font-dm-sans w-full md:w-5/12">
         <h1 className="text-4xl font-extrabold">
           I'm Dheeresh. I am a web developer.
@@ -22,27 +25,48 @@ const Header = () => {
           Blackberry into orbit and was able to transmit a photo back down to
           our family computer from space.
         </p>
+        <p>
+          Today, I’m the founder of Planetaria, where we’re working on civilian
+          space suits and manned shuttle kits you can assemble at home so that
+          the next generation of kids really can make it to orbit — from the
+          comfort of their own backyards.
+        </p>
+
       </aside>
-      <aside className="flex flex-col gap-14 w-full md:w-3/12">
+      <aside className="flex flex-col mr-28 mt-4 gap-14 w-full md:w-4/12">
         <img
           src="./square.jpg"
           alt="profile_bg"
-          className="grayscale hover:grayscale-0 bg-cover bg-grey-300 shadow rounded-2xl transform rotate-3 scale-110"
+          className="grayscale hover:grayscale-0 bg-cover bg-grey-300 shadow rounded-2xl transform rotate-3 scale-110 mr"
         />
         <div className="flex flex-col gap-2 text-lg">
           <Link
-            className="flex items-center gap-4 cursor-pointer hover:text-blue-500"
+            className="flex items-center gap-4 cursor-pointer hover:text-green-500"
             href="https://github.com/dheereshagrwal"
           >
             <i className="ci ci-github ci-invert"></i>
-            <p>Github</p>
+            <p>Follow on Github</p>
           </Link>
           <Link
-            className="flex items-center gap-4 cursor-pointer hover:text-blue-500"
+            className="flex items-center gap-4 cursor-pointer hover:text-green-500"
             href="https://twitter.com/dheeresh_agrwal"
           >
             <i className="ci ci-twitter"></i>
-            <p>Twitter</p>
+            <p>Follow on Twitter</p>
+          </Link>
+          <Link
+            className="flex items-center gap-4 cursor-pointer hover:text-green-500"
+            href="https://twitter.com/dheeresh_agrwal"
+          >
+            <i className="ci ci-linkedin"></i>
+            <p>Follow on LinkedIn </p>
+          </Link>
+          <Link
+            className="flex items-center gap-4 cursor-pointer hover:text-green-500"
+            href="https://twitter.com/dheeresh_agrwal"
+          >
+            <i className="ci ci-instagram"></i>
+            <p>Follow on Instagram </p>
           </Link>
         </div>
       </aside>
