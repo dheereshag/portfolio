@@ -16,8 +16,8 @@ const Skills = () => {
 
   return (
     <div className="flex flex-col gap-10 lg:gap-20 lg:mt-6 mt-10 xl:mt-0">
-      <h2 className="font-dm-sans text-4xl xl:text-5xl font-semibold text-neutral-800 text-center leading-tight">
-        Skills <span className="text-violet-900">&</span> Experiences
+      <h2 className="font-dm-sans text-4xl xl:text-5xl font-semibold text-white text-center leading-tight">
+        Skills <span className="text-cyan-400">&</span> Experiences
       </h2>
       <div className="flex flex-col lg:flex-row gap-16 xl:gap-28 items-center lg:items-start">
         <motion.div className="flex flex-wrap justify-center gap-7 xl:w-8/12">
@@ -28,7 +28,7 @@ const Skills = () => {
                   className={`ci ci-${skill.icon} ci-${skill.size} w-8/12 md:w-full group-hover:tw-buzz`}
                 ></i>
               </motion.div>
-              <p className="font-poppins text-sm font-semibold text-neutral-600">
+              <p className="font-poppins text-sm font-semibold text-white">
                 {skill.name}
               </p>
             </motion.div>
@@ -68,4 +68,4 @@ const Skills = () => {
   );
 };
 
-export default AppWrap(MotionWrap(Skills, "skills"), "skills", "bg-blue-50");
+export default AppWrap(MotionWrap(Skills, "skills"), "skills", "bg-zinc-900");

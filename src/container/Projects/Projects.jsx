@@ -34,8 +34,8 @@ const Projects = () => {
   };
   return (
     <div className="flex flex-col gap-10 md:gap-16 items-center mt-10 md:mt-4 xl:mt-0">
-      <h2 className="font-dm-sans text-4xl xl:text-5xl font-semibold text-gray-700 text-center leading-tight">
-        My <span className="text-violet-800">Projects</span> section
+      <h2 className="font-dm-sans text-4xl xl:text-5xl font-semibold text-white text-center leading-tight">
+        My <span className="text-cyan-400 ">Projects</span> section
       </h2>
       <div className="flex flex-col items-center gap-10 xl:gap-16">
         <div className="gap-6 flex flex-wrap justify-center">
@@ -43,10 +43,10 @@ const Projects = () => {
             <motion.button
               key={index}
               onClick={() => handleWorkFilter(item)}
-              className={`px-5 py-3 shadow-md rounded-xl font-karla font-semibold hover:bg-violet-900 hover:text-white ${
+              className={`px-5 py-3 shadow-md rounded-xl font-karla outline font-semibold hover:bg-violet-900 hover:text-white ${
                 activeFilter === item
-                  ? "bg-violet-900 text-white"
-                  : "bg-white text-gray-800"
+                ? " text-white outline-zinc-950"
+                  : "bg-zinc-800 text-white"
               }`}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
@@ -72,7 +72,7 @@ const Projects = () => {
           {filterProjects.map((project, index) => {
             return (
               <motion.div
-                className="hvr-grow-shadow md:w-96 p-3 bg-white border shadow-lg rounded-3xl"
+                className="hvr-grow-shadow md:w-96 p-3 bg-zinc-800 border shadow-lg rounded-3xl"
                 key={`${project.title}-${index}`}
               >
                 <div className="flex relative">
@@ -138,5 +138,5 @@ const Projects = () => {
 export default AppWrap(
   MotionWrap(Projects, "projects"),
   "projects",
-  "bg-white"
+  "bg-zinc-900"
 );
