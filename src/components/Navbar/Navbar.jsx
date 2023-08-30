@@ -65,19 +65,21 @@ const Navbar = () => {
       </a>
       <div ref={scope}>
         <nav
-          className="fixed top-0 bottom-0 right-0 w-80 bg-white/80 backdrop-blur"
+          className="fixed top-0 bottom-0 right-0 w-80 outline outline-amber-40  backdrop-blur"
         >
           <ul className="flex flex-col gap-10 mt-40 mx-20">
-            {menuItems.map((item, index) => (
+            {
+              menuItems.map((item, index) => (
               <a href={`#${item}`} key={index}>
                 <li
-                  className="text-violet-900 text-3xl font-bold cursor-pointer font-poppins"
+                  className="text-cyan-500  text-3xl font-bold cursor-pointer font-poppins"
                   onClick={() => setIsOpen(!isOpen)}
                 >
                   {item}
                 </li>
               </a>
-            ))}
+              ))
+            }
             {/* button to view CV */}
             <a
               href="https://drive.google.com/file/d/1B32Dcsmr-1fQStcyyvHlbJ0RCNBjdOx0/view?usp=sharing"
@@ -85,7 +87,7 @@ const Navbar = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <li className="bg-violet-900 text-white mt-4 text-2xl font-bold py-2 px-4 rounded-full w-8/12 font-poppins flex items-center justify-between hover:bg-violet-950">
+              <li className="bg-cyan-500 text-white mt-4 text-2xl font-bold py-2 px-4 rounded-full w-8/12 font-poppins flex items-center justify-between hover:bg-violet-950">
                 <span>CV</span>
                 <i className="fa-solid fa-eye text-white"></i>
               </li>

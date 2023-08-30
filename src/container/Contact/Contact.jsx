@@ -37,7 +37,7 @@ const Contact = () => {
 
   return (
     <div>
-      <h2 className="font-dm-sans text-4xl xl:text-5xl font-semibold mb-10 text-violet-950 leading-tight">
+      <h2 className="font-dm-sans text-4xl xl:text-5xl font-semibold mb-10 text-cyan-500 leading-tight">
         Sip some coffee <span className="hvr-float">🍵</span> and chat with me
       </h2>
       <div className="flex flex-col md:flex-row gap-5 justify-center items-center my-5 w-full">
@@ -118,7 +118,7 @@ const Contact = () => {
           </div>
           <motion.button
             type="submit"
-            className="bg-violet-800 rounded-3xl font-inter text-base text-white px-5 py-4 shadow-md hover:shadow-violet-300 hover:bg-violet-900 transition-all duration-300 hvr-shrink"
+            className="bg-cyan-500 rounded-3xl font-inter text-base text-white px-5 py-4 shadow-md hover:shadow-violet-300 hover:bg-cyan-900 transition-all duration-300 hvr-shrink"
           >
             {loading ? "Sending..." : "Send Message"}
           </motion.button>
@@ -136,5 +136,5 @@ const Contact = () => {
 export default AppWrap(
   MotionWrap(Contact, "contact"),
   "contact",
-  "bg-violet-50"
+  "bg-zinc-900"
 );

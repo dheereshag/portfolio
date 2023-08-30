@@ -37,7 +37,7 @@ const Skills = () => {
         <div className="flex flex-col gap-5 xl:w-4/12">
           {experiences?.map((experience) => (
             <div className="flex gap-16 items-baseline" key={experience?.year}>
-              <p className="font-bold text-violet-800 font-poppins text-lg">
+              <p className="font-bold text-green-400 font-poppins text-lg">
                 {experience?.year}
               </p>
               <div>
@@ -47,14 +47,14 @@ const Skills = () => {
                       whileInView={{ opacity: [0, 1] }}
                       transition={{ duration: 0.5 }}
                     >
-                      <h4 className="font-poppins text-lg font-semibold text-gray-600 -mb-6">
+                      <h4 className="font-poppins text-lg font-semibold text-cyan-500 -mb-6">
                         {work?.name}
                       </h4>
                       <div className="flex items-center gap-2">
-                        <p className="font-karla text-md text-gray-600">
+                        <p className="font-karla text-md text-white">
                           {work?.company}
                         </p>
-                        <i className={`ci ci-${work?.icon} ci-${work?.size}`} />
+                        <i className={`ci ci-${work?.icon} ci-${work?.size}` } />
                       </div>
                     </motion.div>
                   </div>

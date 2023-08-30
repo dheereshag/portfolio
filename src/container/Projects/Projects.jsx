@@ -81,6 +81,7 @@ const Projects = () => {
                     alt={project.title}
                     className="object-contain rounded-xl"
                   />
+
                   <motion.div
                     transition={{
                       duration: 0.25,
@@ -117,10 +118,10 @@ const Projects = () => {
                   </div>
                   <div className="flex relative mt-2">
                     <aside className="flex flex-col gap-2">
-                      <h4 className="font-poppins font-semibold text-violet-900">
+                      <h4 className="font-poppins font-semibold text-cyan-500">
                         {project?.title}
                       </h4>
-                      <p className="font-dm-sans break-words">
+                      <p className="font-dm-sans break-words text-white">
                         {project?.description}
                       </p>
                     </aside>
