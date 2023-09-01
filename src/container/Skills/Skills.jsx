@@ -2,22 +2,56 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { AppWrap, MotionWrap } from "../../wrapper";
-import { client } from "../../client";
-
+import groupByStartYear from "@/utils/groupByStartYear";
+// const groupedWorks = {
+//   2020: [
+//     {
+//       companyName: "HighOnSwift",
+//       companyIcon: { iconName: "highonswift-light", iconStyle: "9x" },
+//       role: "SDE Intern",
+//       duration: "(Jul Onwards)",
+//       startYear: "2020",
+//       id: 3,
+//     },
+//     {
+//       companyName: "Ciphense",
+//       companyIcon: { iconName: "ciphense-light", iconStyle: "8x" },
+//       role: "SDE Intern",
+//       duration: "(May - Jul)",
+//       startYear: "2020",
+//       id: 4,
+//     },
+//   ],
+//   2022: [
+//     {
+//       companyName: "RingCentral",
+//       companyIcon: { iconName: "ringcentral", iconStyle: "6x mb-px" },
+//       role: "SDE-1",
+//       duration: "(Jul - Nov)",
+//       startYear: "2022",
+//       id: 1,
+//     },
+//   ],
+//   2023: [
+//     {
+//       companyName: "HighOnSwift",
+//       companyIcon: {
+//         iconName: "highonswift-light",
+//         iconStyle: "9x",
+//       },
+//       role: "Independent Contractor",
+//       duration: "(Jan - Present)",
+//       startYear: "2023",
+//       id: "2",
+//     },
+//   ],
+// };
 const Skills = () => {
-  const [experiences, setExperiences] = useState([]);
+  const [groupedWorks, setGroupedWorks] = useState([]);
+
   const [skills, setSkills] = useState([]);
   useEffect(() => {
-    const query = '*[_type == "experiences"]';
-    client.fetch(query).then((data) => {
-      const sortedExperiences = data.sort((a, b) => b?.year - a?.year);
-      console.log("sortedExperiences", sortedExperiences);
-      setExperiences(sortedExperiences);
-    });
-  }, []);
-
-  useEffect(() => {
-    async function fetchSkillData() {
+    async function fetchSkills() {
       try {
         const response = await fetch("http://18.222.249.158:8080/skills");
         if (!response.ok) {
@@ -25,13 +59,31 @@ const Skills = () => {
         }
         const data = await response.json();
         setSkills(data);
-        console.log("skills", data);
       } catch (error) {
         console.error("Error fetching skill data:", error);
       }
     }
 
-    fetchSkillData();
+    fetchSkills();
+  }, []);
+
+  useEffect(() => {
+    async function fetchWorks() {
+      try {
+        const response = await fetch("http://18.222.249.158:8080/works");
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const data = await response.json();
+        const groupedWorks = groupByStartYear(data);
+        console.log("groupedWorks", groupedWorks);
+        setGroupedWorks(groupedWorks);
+      } catch (error) {
+        console.error("Error fetching works data:", error);
+      }
+    }
+
+    fetchWorks();
   }, []);
 
   return (
@@ -54,35 +106,40 @@ const Skills = () => {
             </motion.div>
           ))}
         </motion.div>
+
         <div className="flex flex-col gap-5 xl:w-4/12">
-          {experiences?.map((experience) => (
-            <div className="flex gap-16 items-baseline" key={experience?.year}>
-              <p className="font-bold text-white font-poppins text-lg">
-                {experience?.year}
-              </p>
-              <div>
-                {experience?.works?.map((work, index) => (
-                  <div key={`${work.name}-${index}`}>
-                    <motion.div
-                      whileInView={{ opacity: [0, 1] }}
-                      transition={{ duration: 0.5 }}
-                    >
-                      <h4 className="font-sora text-zinc-300 -mb-6">
-                        {work?.name}
-                      </h4>
-                      <div className="flex items-center gap-2">
-                        <p className="font-sora text-white text-lg font-semibold">
-                          {work?.company}
-                        </p>
-                        {console.log("work", work)}
-                        <i className={`ci ci-${work?.icon} ci-${work?.size}`} />
-                      </div>
-                    </motion.div>
-                  </div>
-                ))}
+          {Object.entries(groupedWorks)
+            .sort(([yearA], [yearB]) => yearB - yearA)
+            .map(([year, works]) => (
+              <div className="flex gap-16 items-baseline" key={year}>
+                <p className="font-bold text-white font-poppins text-lg">
+                  {year}
+                </p>
+                <div>
+                  {works
+                    .sort((workA, workB) => workB.id - workA.id)
+                    .map((work) => (
+                      <motion.div
+                        whileInView={{ opacity: [0, 1] }}
+                        transition={{ duration: 0.5 }}
+                        key={work.id}
+                      >
+                        <h4 className="font-sora text-zinc-300 -mb-6">
+                          {work?.role} {work?.duration}
+                        </h4>
+                        <div className="flex items-center gap-2">
+                          <p className="font-sora text-white text-lg font-semibold">
+                            {work?.companyName}
+                          </p>
+                          <i
+                            className={`ci ci-${work?.companyIcon.iconName} ci-${work?.companyIcon.iconStyle}`}
+                          />
+                        </div>
+                      </motion.div>
+                    ))}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
       </div>
     </div>
