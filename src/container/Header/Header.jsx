@@ -1,50 +1,31 @@
 "use client";
 import Link from "next/link";
 import { AppWrap } from "../../wrapper";
-import { motion } from "framer-motion";
+import Typewriter from "@/components/Typewriter";
 
-const text = "Hello, World!";
 const Header = () => {
   return (
     <div
       className="flex flex-col md:flex-row justify-between text-zinc-300"
       id="home"
     >
-      <aside className="flex flex-col gap-4  mt-16 md:m-10 font-dm-sans w-full md:w-5/12">
-        <div>
-          {text.split("").map((char, index) => (
-            <motion.span
-              key={index}
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: index * 0.1 }}
-            >
-              {char}
-            </motion.span>
-          ))}
-        </div>
+      <aside className="flex flex-col gap-4 mt-16 md:m-10 font-dm-sans w-full md:w-5/12">
         <h1 className="text-4xl font-extrabold">
-          I'm Dheeresh. I am a web developer.
+          <Typewriter
+            text={"I'm Dheeresh. I am a web developer."}
+            speed={0.03}
+            delay={0}
+          />
         </h1>
-        <p className="mt-2">
-          I've loved making things for as long as I can remember, and wrote my
-          first program when I was 6 years old, just two weeks after my mom
-          brought home the brand new Macintosh LC 550 that I taught myself to
-          type on.
-        </p>
-        <p>
-          I spent the next few summers indoors working on a rocket design, while
-          I recovered from the multiple surgeries it took to fix my badly broken
-          legs. It took nine iterations, but when I was 15 I sent my dad's
-          Blackberry into orbit and was able to transmit a photo back down to
-          our family computer from space.
-        </p>
-        <p>
-          Today, I’m the founder of Planetaria, where we’re working on civilian
-          space suits and manned shuttle kits you can assemble at home so that
-          the next generation of kids really can make it to orbit — from the
-          comfort of their own backyards.
-        </p>
+        <div>
+          <Typewriter
+            text={
+              "I've loved making things for as long as I can remember, and wrote my first program when I was 6 years old, just two weeks after my mom brought home the brand new Macintosh LC 550 that I taught myself to type on. I spent the next few summers indoors working on a rocket design, while I recovered from the multiple surgeries it took to fix my badly broken legs. It took nine iterations, but when I was 15 I sent my dad's Blackberry into orbit and was able to transmit a photo back down to our family computer from space. Today, I’m the founder of Planetaria, where we’re working on civilian space suits and manned shuttle kits you can assemble at home so that the next generation of kids really can make it to orbit — from the comfort of their own backyards."
+            }
+            speed={0.005}
+            delay={1}
+          />
+        </div>
       </aside>
 
       <aside className="flex flex-col mr-28 mt-16 gap-14 w-full md:w-3/12">
