@@ -1,113 +1,25 @@
-const skills = [
-  {
-    name: "git",
-    icon: "git",
-    size: "4x",
-  },
-  {
-    name: "nextjs",
-    icon: "nextjs",
-    size: "4x",
-  },
-  {
-    name: "tailwind",
-    icon: "tailwind",
-    size: "4x",
-  },
-  {
-    name: "nodejs",
-    icon: "nodejs",
-    size: "4x",
-  },
-  {
-    name: "web3",
-    icon: "web3js",
-    size: "4x",
-  },
-  {
-    name: "django",
-    icon: "django",
-    size: "4x",
-  },
-  {
-    name: "spring",
-    icon: "spring",
-    size: "4x",
-  },
-  {
-    name: "solidity",
-    icon: "solidity",
-    size: "4x",
-  },
-  {
-    name: "figma",
-    icon: "figma",
-    size: "4x",
-  },
-  {
-    name: "framer",
-    icon: "framer-motion",
-    size: "4x",
-  },
-  {
-    name: "sass",
-    icon: "sass-wordmark",
-    size: "4x",
-  },
 
-  {
-    name: "mui",
-    icon: "mui",
-    size: "4x",
-  },
-  {
-    name: "postgresql",
-    icon: "postgresql",
-    size: "4x",
-  },
-  {
-    name: "redis",
-    icon: "redis",
-    size: "4x",
-  },
+function useSkills() {
+  const [skills, setSkills] = useState([]);
 
-  {
-    name: "pytorch",
-    icon: "pytorch",
-    size: "4x",
-  },
-  {
-    name: "bootstrap",
-    icon: "bootstrap",
-    size: "4x",
-  },
-  {
-    name: "docker",
-    icon: "docker",
-    size: "4x",
-  },
-  {
-    name: "kubernetes",
-    icon: "kubernetes",
-    size: "4x",
-  },
-  {
-    name: "aws",
-    icon: "aws",
-    size: "4x",
-  },
+  useEffect(() => {
+    async function fetchSkillData() {
+      try {
+        const response = await fetch("http://18.222.249.158:8080/skills");
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const data = await response.json();
+        setSkills(data);
+      } catch (error) {
+        console.error("Error fetching skill data:", error);
+      }
+    }
 
-  {
-    name: "mongodb",
-    icon: "mongodb",
-    size: "4x",
-  },
+    fetchSkillData();
+  }, []);
 
-  {
-    name: "DigitalOcean",
-    icon: "do",
-    size: "4x",
-  },
-];
+  return skills;
+}
 
-export default skills;
+export default useSkills;
