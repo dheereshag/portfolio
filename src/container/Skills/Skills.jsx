@@ -7,7 +7,14 @@ import { client } from "../../client";
 const Skills = () => {
   const [experiences, setExperiences] = useState([]);
   const [skills, setSkills] = useState([]);
-
+  useEffect(() => {
+    const query = '*[_type == "experiences"]';
+    client.fetch(query).then((data) => {
+      const sortedExperiences = data.sort((a, b) => b?.year - a?.year);
+      console.log("sortedExperiences", sortedExperiences);
+      setExperiences(sortedExperiences);
+    });
+  }, []);
 
   useEffect(() => {
     async function fetchSkillData() {
@@ -22,12 +29,10 @@ const Skills = () => {
       } catch (error) {
         console.error("Error fetching skill data:", error);
       }
-
     }
 
     fetchSkillData();
   }, []);
-
 
   return (
     <div className="flex flex-col gap-10 lg:gap-20 lg:mt-6 mt-10 xl:mt-0">
@@ -43,7 +48,7 @@ const Skills = () => {
                   className={`ci ci-${skill.icon.iconName} ci-${skill.icon.iconStyle} w-8/12 md:w-full group-hover:tw-buzz`}
                 ></i>
               </motion.div>
-              <p className="font-sora text-base font-semibold text-white">
+              <p className="font-sora font-semibold text-zinc-300 text-sm">
                 {skill.name}
               </p>
             </motion.div>
@@ -52,7 +57,7 @@ const Skills = () => {
         <div className="flex flex-col gap-5 xl:w-4/12">
           {experiences?.map((experience) => (
             <div className="flex gap-16 items-baseline" key={experience?.year}>
-              <p className="font-bold text-green-400 font-poppins text-lg">
+              <p className="font-bold text-white font-poppins text-lg">
                 {experience?.year}
               </p>
               <div>
@@ -62,13 +67,14 @@ const Skills = () => {
                       whileInView={{ opacity: [0, 1] }}
                       transition={{ duration: 0.5 }}
                     >
-                      <h4 className="font-poppins text-lg font-semibold text-cyan-500 -mb-6">
+                      <h4 className="font-poppins text-lg font-semibold text-zinc-300 -mb-6">
                         {work?.name}
                       </h4>
                       <div className="flex items-center gap-2">
-                        <p className="font-karla text-md text-white">
+                        <p className="font-sora text-md text-white">
                           {work?.company}
                         </p>
+                        {console.log("work", work)}
                         <i className={`ci ci-${work?.icon} ci-${work?.size}`} />
                       </div>
                     </motion.div>
