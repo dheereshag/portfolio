@@ -13,7 +13,7 @@ const HeaderText = () => {
       <div className="text-lg">
         <Typewriter
           text={
-            "I've loved making things for as long as I can remember, and wrote my first program when I was 6 years old, just two weeks after my mom brought home the brand new Macintosh LC 550 that I taught myself to type on. I spent the next few summers indoors working on a rocket design, while I recovered from the multiple surgeries it took to fix my badly broken legs. It took nine iterations, but when I was 15 I sent my dad's Blackberry into orbit and was able to transmit a photo back down to our family computer from space. Today, I’m the founder of Planetaria, where we’re working on civilian space suits and manned shuttle kits you can assemble at home so that the next generation of kids really can make it to orbit — from the comfort of their own backyards."
+            "Hi, I'm a software developer with a passion for technology and innovation. I studied at IIT Bhubaneswar, where I learned coding and landed a job at RingCentral on day 0. Although I was later laid off, I didn’t let that stop me. Instead, I taught myself devops and other skills in depth, and now I’m a fullstack developer with expertise in next js in frontend and spring boot, django and nodejs in backend. I also have knowledge of devops and aws. I’m always looking for new challenges and opportunities to grow and make a difference in the world of technology."
           }
           speed={0.005}
           delay={1}
