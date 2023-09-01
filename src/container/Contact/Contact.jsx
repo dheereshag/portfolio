@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import { AppWrap, MotionWrap } from "../../wrapper";
-import { client } from "../../client";
 import { motion } from "framer-motion";
 import { Footer } from "../../components";
 import { useForm } from "react-hook-form";
@@ -16,24 +15,32 @@ const Contact = () => {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const sendForm = (data) => {
+  const sendForm = async (data) => {
     const { name, email, message } = data;
     console.log(name, email, message);
     if (!name || !email || !message) {
       return alert("Please fill all the fields");
     }
     setLoading(true);
-    const contact = {
-      _type: "contact",
-      name: name,
-      email: email,
-      message: message,
-    };
-    client.create(contact).then(() => {
-      setLoading(false);
+    //send post request to 18.222.249.158:8080/contact
+    try {
+      const response = await fetch("http://18.222.249.158:8080/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      const responseData = await response.json();
+      console.log("Success:", responseData);
       setIsFormSubmitted(true);
-    });
+      setLoading(false);
+    } catch (error) {
+      console.error("Error:", error);
+      setLoading(false);
+    }
   };
+
 
   return (
     <div>
@@ -119,7 +126,9 @@ const Contact = () => {
           </div>
           <motion.button
             type="submit"
-            className="bg-zinc-700 font-inter text-base text-white px-5 py-4 shadow-md hover:bg-black hover:rounded-xl transition-all transform-gpu duration-300 hover:scale-90"
+            className={`font-inter text-base text-white px-5 py-4 shadow-md hover:bg-black hover:rounded-xl transition-all transform-gpu duration-300 hover:scale-90 ${
+              loading ? "bg-black" : "bg-zinc-700"
+            }`}
           >
             {loading ? "Sending..." : "Send Message"}
           </motion.button>
