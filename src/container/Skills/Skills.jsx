@@ -67,11 +67,11 @@ const Skills = () => {
                       whileInView={{ opacity: [0, 1] }}
                       transition={{ duration: 0.5 }}
                     >
-                      <h4 className="font-poppins text-lg font-semibold text-zinc-300 -mb-6">
+                      <h4 className="font-sora text-zinc-300 -mb-6">
                         {work?.name}
                       </h4>
                       <div className="flex items-center gap-2">
-                        <p className="font-sora text-md text-white">
+                        <p className="font-sora text-white text-lg font-semibold">
                           {work?.company}
                         </p>
                         {console.log("work", work)}
