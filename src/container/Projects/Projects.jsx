@@ -43,10 +43,10 @@ const Projects = () => {
             <motion.button
               key={index}
               onClick={() => handleWorkFilter(item)}
-              className={`px-5 py-3 shadow-md rounded-xl font-karla bg-zinc-800 font-semibold text-white ${
+              className={`px-5 py-3 font-sora font-semibold text-sm text-zinc-300 ${
                 activeFilter === item
-                  ? "rounded-none bg-zinc-950"
-                  : ""
+                  ? "rounded-none bg-black"
+                  : "rounded-xl bg-zinc-800"
               }`}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
