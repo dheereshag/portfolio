@@ -3,31 +3,32 @@ import React, { useState, useEffect, useContext } from "react";
 import { useAnimate, stagger } from "framer-motion";
 import { MenuToggle } from "./MenuToggle";
 import { menuItems } from "../../constants";
+
 function useMenuAnimation(isOpen) {
   const [scope, animate] = useAnimate();
 
   useEffect(() => {
     const menuAnimations = isOpen
       ? [
-        [
-          "nav",
-          { transform: "translateX(0%)" },
-          { ease: [0.08, 0.65, 0.53, 0.96], duration: 0.6 },
-        ],
-        [
-          "li",
-          { transform: "scale(1)", opacity: 1, filter: "blur(0px)" },
-          { delay: stagger(0.05), at: "-0.1" },
-        ],
-      ]
+          [
+            "nav",
+            { transform: "translateX(0%)" },
+            { ease: [0.08, 0.65, 0.53, 0.96], duration: 0.6 },
+          ],
+          [
+            "li",
+            { transform: "scale(1)", opacity: 1, filter: "blur(0px)" },
+            { delay: stagger(0.05), at: "-0.1" },
+          ],
+        ]
       : [
-        [
-          "li",
-          { transform: "scale(0.5)", opacity: 0, filter: "blur(10px)" },
-          { delay: stagger(0.05, { from: "last" }), at: "<" },
-        ],
-        ["nav", { transform: "translateX(100%)" }, { at: "-0.1" }],
-      ];
+          [
+            "li",
+            { transform: "scale(0.5)", opacity: 0, filter: "blur(10px)" },
+            { delay: stagger(0.05, { from: "last" }), at: "<" },
+          ],
+          ["nav", { transform: "translateX(100%)" }, { at: "-0.1" }],
+        ];
 
     animate([
       [
@@ -50,12 +51,6 @@ function useMenuAnimation(isOpen) {
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [hide, setHide] = useState(true);
-  useEffect(() => {
-    if (isOpen) {
-      setHide(false);
-    }
-  }, [isOpen]);
 
   const scope = useMenuAnimation(isOpen);
   return (
@@ -65,21 +60,19 @@ const Navbar = () => {
       </a>
       <div ref={scope}>
         <nav
-          className="fixed bg-zinc-900/90 top-0 bottom-0 right-0 w-80 backdrop-blur"
+          className={`fixed bg-zinc-900/90 top-0 bottom-0 right-0 w-80 backdrop-blur`}
         >
           <ul className="flex flex-col gap-10 mt-40 mx-20">
-            {
-              menuItems.map((item, index) => (
-                <a href={`#${item}`} key={index}>
-                  <li
-                    className="text-white  text-3xl font-bold cursor-pointer font-poppins"
-                    onClick={() => setIsOpen(!isOpen)}
-                  >
-                    {item}
-                  </li>
-                </a>
-              ))
-            }
+            {menuItems.map((item, index) => (
+              <a href={`#${item}`} key={index}>
+                <li
+                  className="text-white  text-3xl font-bold cursor-pointer font-poppins"
+                  onClick={() => setIsOpen((prevIsOpen) => !prevIsOpen)}
+                >
+                  {item}
+                </li>
+              </a>
+            ))}
             {/* button to view CV */}
             <a
               href="https://drive.google.com/file/d/1B32Dcsmr-1fQStcyyvHlbJ0RCNBjdOx0/view?usp=sharing"
@@ -94,7 +87,7 @@ const Navbar = () => {
             </a>
           </ul>
         </nav>
-        <MenuToggle toggle={() => setIsOpen(!isOpen)} />
+        <MenuToggle toggle={() => setIsOpen((prevIsOpen) => !prevIsOpen)} />
       </div>
     </div>
   );

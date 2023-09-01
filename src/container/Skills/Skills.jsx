@@ -3,49 +3,6 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import groupByStartYear from "@/utils/groupByStartYear";
-// const groupedWorks = {
-//   2020: [
-//     {
-//       companyName: "HighOnSwift",
-//       companyIcon: { iconName: "highonswift-light", iconStyle: "9x" },
-//       role: "SDE Intern",
-//       duration: "(Jul Onwards)",
-//       startYear: "2020",
-//       id: 3,
-//     },
-//     {
-//       companyName: "Ciphense",
-//       companyIcon: { iconName: "ciphense-light", iconStyle: "8x" },
-//       role: "SDE Intern",
-//       duration: "(May - Jul)",
-//       startYear: "2020",
-//       id: 4,
-//     },
-//   ],
-//   2022: [
-//     {
-//       companyName: "RingCentral",
-//       companyIcon: { iconName: "ringcentral", iconStyle: "6x mb-px" },
-//       role: "SDE-1",
-//       duration: "(Jul - Nov)",
-//       startYear: "2022",
-//       id: 1,
-//     },
-//   ],
-//   2023: [
-//     {
-//       companyName: "HighOnSwift",
-//       companyIcon: {
-//         iconName: "highonswift-light",
-//         iconStyle: "9x",
-//       },
-//       role: "Independent Contractor",
-//       duration: "(Jan - Present)",
-//       startYear: "2023",
-//       id: "2",
-//     },
-//   ],
-// };
 const Skills = () => {
   const [groupedWorks, setGroupedWorks] = useState([]);
 
@@ -76,7 +33,6 @@ const Skills = () => {
         }
         const data = await response.json();
         const groupedWorks = groupByStartYear(data);
-        console.log("groupedWorks", groupedWorks);
         setGroupedWorks(groupedWorks);
       } catch (error) {
         console.error("Error fetching works data:", error);
