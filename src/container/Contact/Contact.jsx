@@ -41,30 +41,31 @@ const Contact = () => {
         Sip some coffee <span className="hvr-float">🍵</span> and chat with me
       </h2>
       <div className="flex flex-col md:flex-row gap-5 justify-center items-center my-5 w-full">
-        <div className="group w-full gap-4 hover:shadow-md hover:shadow-rose-300 bg-rose-100 flex items-center px-5 py-4 rounded-3xl cursor-pointer">
-          <img
-            src="./email.png"
-            alt="email"
-            className="w-9 transition-transform duration-300 transform-gpu group-hover:scale-110 group-hover:-translate-y-1"
-          />
+        <div className="w-full bg-rose-100 flex items-center px-5 py-4 rounded-3xl cursor-pointer group">
           <a
             href="mailto:da11@iitbbs.ac.in"
-            className="text-pink-500 font-pacifico"
+            className="text-pink-500 font-pacifico text-sm flex items-center gap-4"
           >
-            da11@iitbbs.ac.in
+            <img
+              src="./email.png"
+              alt="email"
+              className="w-9 transition-transform duration-300 transform-gpu group-hover:scale-110 group-hover:-translate-y-1"
+            />
+            <span>da11@iitbbs.ac.in</span>
           </a>
         </div>
-        <div className="w-full gap-4 bg-blue-100 flex items-center px-5 py-4 rounded-3xl cursor-pointer group hover:shadow-md hover:shadow-blue-300">
+
+        <div className="w-full bg-blue-100 flex items-center px-5 py-4 rounded-3xl cursor-pointer group">
           <a
             href="tel:+91 9411245528"
-            className="text-blue-800 font-pacifico text-sm flex items-center"
+            className="text-blue-800 font-pacifico text-sm flex items-center gap-4"
           >
             <img
               src="./mobile.png"
               alt="mobile"
               className="w-9 transition-transform duration-300 transform-gpu group-hover:scale-125 group-hover:rotate-12"
             />
-            <span className="ml-2">+91 9411245528</span>
+            <span>+91 9411245528</span>
           </a>
         </div>
       </div>
@@ -77,7 +78,7 @@ const Contact = () => {
           <section className="flex flex-col md:flex-row gap-4">
             <div className="w-full rounded-3xl">
               <input
-                className="font-karla text-sm hvr-box-shadow-inset p-4 bg-zinc-800 outline-0 rounded-xl w-full text-zinc-300"
+                className="font-sora text-sm hvr-box-shadow-inset p-4 bg-zinc-800 outline-0 rounded-xl w-full text-zinc-300"
                 placeholder="Your Name"
                 {...register("name", { required: true })}
               />
@@ -89,7 +90,7 @@ const Contact = () => {
             </div>
             <div className="w-full rounded-3xl">
               <input
-                className="font-karla text-sm hvr-box-shadow-inset p-4 bg-zinc-800 outline-0 rounded-xl w-full text-zinc-300"
+                className="font-sora text-sm hvr-box-shadow-inset p-4 bg-zinc-800 outline-0 rounded-xl w-full text-zinc-300"
                 placeholder="Your Email"
                 {...register("email", {
                   pattern: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
@@ -105,7 +106,7 @@ const Contact = () => {
           </section>
           <div>
             <textarea
-              className="font-karla text-sm hvr-box-shadow-inset p-4 bg-zinc-800 outline-0 rounded-2xl w-full text-zinc-300"
+              className="font-sora text-sm hvr-box-shadow-inset p-4 bg-zinc-800 outline-0 rounded-2xl w-full text-zinc-300"
               placeholder="Your Message"
               rows={8}
               {...register("message", { required: true })}
@@ -118,13 +119,13 @@ const Contact = () => {
           </div>
           <motion.button
             type="submit"
-            className="bg-zinc-800 font-inter text-base text-white px-5 py-4 shadow-md hover:bg-zinc-950 rounded-none transition-all duration-300 hvr-shrink"
+            className="bg-zinc-700 font-inter text-base text-white px-5 py-4 shadow-md hover:bg-black hover:rounded-xl transition-all transform-gpu duration-300 hover:scale-90"
           >
             {loading ? "Sending..." : "Send Message"}
           </motion.button>
         </form>
       ) : (
-        <p className="text-3xl md:text-4xl lg:text-5xl mt-16 text-center font-pacifico text-violet-800 leading-snug animate__animated animate__jackInTheBox">
+        <p className="text-3xl md:text-4xl lg:text-5xl mt-16 text-center font-pacifico text-zinc-300 leading-snug animate__animated animate__jackInTheBox">
           Thank you 😍 for getting in touch
         </p>
       )}

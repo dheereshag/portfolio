@@ -14,14 +14,16 @@ const Footer = () => {
   }, [count, isInView]);
   return (
     
-    <div className="flex flex-col md:flex-row justify-between  -mb-20 gap-4 mt-20  bg-zinc-900">
+    <div className="flex flex-col md:flex-row justify-between -mb-20 gap-4 mt-20">
+      
       <SocialMedia
         parentStyles={"flex gap-3"}
         iconStyles={
           "ci-xl transition-transform duration-300 transform-gpu group-hover:scale-125 group-hover:rotate-12"
         }
-        childStyles={"bg-white rounded-full w-12 h-12 border app__flex shadow"}
+        childStyles={"bg-zinc-800 rounded-full w-12 h-12 tw-box-shadow-inset app__flex"}
       />
+
       <aside className="mb-2">
         <div className="flex items-baseline ">
           <p className="font-pacifico text-white">@</p>
