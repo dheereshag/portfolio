@@ -1,7 +1,9 @@
 "use client";
 import Link from "next/link";
 import { AppWrap } from "../../wrapper";
+import { motion } from "framer-motion";
 
+const text = "Hello, World!";
 const Header = () => {
   return (
     <div
@@ -9,6 +11,18 @@ const Header = () => {
       id="home"
     >
       <aside className="flex flex-col gap-4  mt-16 md:m-10 font-dm-sans w-full md:w-5/12">
+        <div>
+          {text.split("").map((char, index) => (
+            <motion.span
+              key={index}
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: index * 0.1 }}
+            >
+              {char}
+            </motion.span>
+          ))}
+        </div>
         <h1 className="text-4xl font-extrabold">
           I'm Dheeresh. I am a web developer.
         </h1>
@@ -31,11 +45,9 @@ const Header = () => {
           the next generation of kids really can make it to orbit — from the
           comfort of their own backyards.
         </p>
-
       </aside>
 
       <aside className="flex flex-col mr-28 mt-16 gap-14 w-full md:w-3/12">
-       
         <img
           src="./square.jpg"
           alt="profile_bg"
@@ -72,11 +84,10 @@ const Header = () => {
             <i className="ci ci-lg ci-instagram"></i>
             <p>Follow on Instagram </p>
           </Link>
-
         </div>
       </aside>
     </div>
   );
 };
 
-export default AppWrap( Header, "home", "bg-zinc-900");
+export default AppWrap(Header, "home", "bg-zinc-900");
