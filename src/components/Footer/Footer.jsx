@@ -24,16 +24,16 @@ const Footer = () => {
       />
       <aside className="mb-2">
         <div className="flex items-baseline ">
-          <p className="font-pacifico text-cyan-500">@</p>
+          <p className="font-pacifico text-white">@</p>
           <motion.p
             onViewportEnter={() => setIsInView(true)}
-            className="font-pacifico text-cyan-500"
+            className="font-pacifico text-white"
           >
             {rounded}
           </motion.p>
-          <p className="ml-1 font-dancing-script text-green-500">Dheeresh</p>
+          <p className="ml-1 font-dancing-script text-zinc-300">Dheeresh</p>
         </div>
-        <p className="font-dancing-script text-green-500">All rights reserved</p>
+        <p className="font-dancing-script text-zinc-300">All rights reserved</p>
       </aside>
      
     </div>

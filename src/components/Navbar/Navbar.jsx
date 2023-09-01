@@ -87,7 +87,7 @@ const Navbar = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <li className="bg-cyan-500 text-white mt-4 text-2xl font-bold py-2 px-4 rounded-full w-8/12 font-poppins flex items-center justify-between hover:bg-violet-950">
+              <li className="bg-cyan-500 text-white mt-4 text-2xl font-bold py-2 px-4 rounded-full w-8/12 font-poppins flex items-center justify-between hover:bg-cyan-900">
                 <span>CV</span>
                 <i className="fa-solid fa-eye text-white"></i>
               </li>

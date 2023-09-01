@@ -34,8 +34,8 @@ const Projects = () => {
   };
   return (
     <div className="flex flex-col gap-10 md:gap-16 items-center mt-10 md:mt-4 xl:mt-0">
-      <h2 className="font-dm-sans text-4xl xl:text-5xl font-semibold text-white text-center leading-tight">
-        My <span className="text-cyan-400 ">Projects</span> section
+      <h2 className="font-dm-sans text-4xl xl:text-5xl font-semibold text-zinc-300 text-center leading-tight">
+        My <span className="text-white">Projects</span> section
       </h2>
       <div className="flex flex-col items-center gap-10 xl:gap-16">
         <div className="gap-6 flex flex-wrap justify-center">
@@ -43,10 +43,10 @@ const Projects = () => {
             <motion.button
               key={index}
               onClick={() => handleWorkFilter(item)}
-              className={`px-5 py-3 shadow-md rounded-xl font-karla outline font-semibold hover:bg-violet-900 hover:text-white ${
+              className={`px-5 py-3 shadow-md rounded-xl font-karla bg-zinc-800 font-semibold text-white ${
                 activeFilter === item
-                ? " text-white outline-zinc-950"
-                  : "bg-zinc-800 text-white"
+                  ? "rounded-none bg-zinc-950"
+                  : ""
               }`}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
@@ -72,7 +72,7 @@ const Projects = () => {
           {filterProjects.map((project, index) => {
             return (
               <motion.div
-                className="hvr-grow-shadow md:w-96 p-3 bg-zinc-800 border shadow-lg rounded-3xl"
+                className="hvr-grow-shadow md:w-96 p-3 bg-zinc-800 rounded-3xl"
                 key={`${project.title}-${index}`}
               >
                 <div className="flex relative">
@@ -96,7 +96,7 @@ const Projects = () => {
                       rel="noreferrer"
                       className="group/icon app__flex w-12 h-12 bg-black/50 rounded-full opacity-0 group-hover/dark:opacity-100 transition-all"
                     >
-                      <i className="fa-solid fa-eye fa-xl text-white transition-transform duration-300 transform-gpu group-hover/icon:scale-90"></i>
+                      <i className="fa-solid fa-eye fa-xl text-white transition-transform duration-300 transform-gpu group-hover/icon:scale-75"></i>
                     </a>
                     <a
                       href={project?.codeLink}
@@ -104,12 +104,12 @@ const Projects = () => {
                       rel="noreferrer"
                       className="group/icon app__flex w-12 h-12 bg-black/50 rounded-full opacity-0 group-hover/dark:opacity-100 transition-all"
                     >
-                      <i className="fa-brands fa-github fa-xl text-white transition-transform duration-300 transform-gpu group-hover/icon:scale-90"></i>
+                      <i className="fa-brands fa-github fa-xl text-white transition-transform duration-300 transform-gpu group-hover/icon:scale-75"></i>
                     </a>
                   </motion.div>
                 </div>
                 <div className="flex justify-center py-1 relative">
-                  <div className="flex items-center px-2 py-2 -top-5 bg-white rounded-xl absolute">
+                  <div className="flex items-center px-2 py-2 -top-5 bg-zinc-800 rounded-xl absolute">
                     <div className="flex items-center gap-1.5">
                       {project.icons.map((icon) => (
                         <i className={`ci ci-${icon.icon} ${icon.size}`}></i>
@@ -118,10 +118,10 @@ const Projects = () => {
                   </div>
                   <div className="flex relative mt-2">
                     <aside className="flex flex-col gap-2">
-                      <h4 className="font-poppins font-semibold text-cyan-500">
+                      <h4 className="font-sora font-semibold text-white">
                         {project?.title}
                       </h4>
-                      <p className="font-dm-sans break-words text-white">
+                      <p className="font-dm-sans break-words text-sm text-zinc-300">
                         {project?.description}
                       </p>
                     </aside>

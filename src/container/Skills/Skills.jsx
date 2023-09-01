@@ -31,7 +31,7 @@ const Skills = () => {
 
   return (
     <div className="flex flex-col gap-10 lg:gap-20 lg:mt-6 mt-10 xl:mt-0">
-      <h2 className="font-dm-sans text-4xl xl:text-5xl font-semibold text-white text-center leading-tight">
+      <h2 className="font-dm-sans text-4xl xl:text-5xl font-semibold text-zinc-300 text-center leading-tight">
         Skills <span className="text-zinc-500">&</span> Experiences
       </h2>
       <div className="flex flex-col lg:flex-row gap-16 xl:gap-28 items-center lg:items-start">
@@ -43,7 +43,7 @@ const Skills = () => {
                   className={`ci ci-${skill.icon.iconName} ci-${skill.icon.iconStyle} w-8/12 md:w-full group-hover:tw-buzz`}
                 ></i>
               </motion.div>
-              <p className="font-poppins text-sm font-semibold text-white">
+              <p className="font-sora text-base font-semibold text-white">
                 {skill.name}
               </p>
             </motion.div>

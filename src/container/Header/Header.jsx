@@ -5,7 +5,7 @@ import { AppWrap } from "../../wrapper";
 const Header = () => {
   return (
     <div
-      className="flex flex-col md:flex-row justify-between text-white"
+      className="flex flex-col md:flex-row justify-between text-zinc-300"
       id="home"
     >
       <aside className="flex flex-col gap-4  mt-16 md:m-10 font-dm-sans w-full md:w-5/12">
@@ -39,26 +39,26 @@ const Header = () => {
         <img
           src="./square.jpg"
           alt="profile_bg"
-          className="grayscale hover:grayscale-0 bg-cover bg-grey-300 shadow rounded-2xl transform rotate-3 scale-110 mr"
+          className="hover:grayscale bg-cover bg-grey-300 shadow rounded-2xl transform rotate-3 scale-110 mr"
         />
 
-        <div className="flex flex-col gap-2 font-inter">
+        <div className="flex flex-col gap-2 font-inter text-zinc-300">
           <Link
-            className="flex items-center gap-4 cursor-pointer hover:text-green-500"
+            className="flex items-center gap-4 cursor-pointer hover:text-blue-500"
             href="https://github.com/dheereshagrwal"
           >
             <i className="ci ci-lg ci-github ci-invert"></i>
             <p>Follow on Github</p>
           </Link>
           <Link
-            className="flex items-center gap-4 cursor-pointer hover:text-green-500"
+            className="flex items-center gap-4 cursor-pointer hover:text-blue-500"
             href="https://twitter.com/dheeresh_agrwal"
           >
             <i className="ci ci-lg ci-leetcode-light"></i>
             <p>Follow on Twitter</p>
           </Link>
           <Link
-            className="flex items-center gap-4 cursor-pointer hover:text-green-500"
+            className="flex items-center gap-4 cursor-pointer hover:text-blue-500"
             href="https://www.linkedin.com/in/dheereshagrwal/"
           >
             <i className="ci ci-lg ci-linkedin"></i>
@@ -66,7 +66,7 @@ const Header = () => {
           </Link>
 
           <Link
-            className="flex items-center gap-4 cursor-pointer hover:text-green-500"
+            className="flex items-center gap-4 cursor-pointer hover:text-blue-500"
             href="https://twitter.com/dheeresh_agrwal"
           >
             <i className="ci ci-lg ci-instagram"></i>

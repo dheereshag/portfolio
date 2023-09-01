@@ -37,7 +37,7 @@ const Contact = () => {
 
   return (
     <div>
-      <h2 className="font-dm-sans text-4xl xl:text-5xl font-semibold mb-10 text-cyan-500 leading-tight">
+      <h2 className="font-dm-sans text-4xl xl:text-5xl font-semibold mb-10 text-zinc-300 leading-tight">
         Sip some coffee <span className="hvr-float">🍵</span> and chat with me
       </h2>
       <div className="flex flex-col md:flex-row gap-5 justify-center items-center my-5 w-full">
@@ -77,19 +77,19 @@ const Contact = () => {
           <section className="flex flex-col md:flex-row gap-4">
             <div className="w-full rounded-3xl">
               <input
-                className="font-karla text-sm hvr-box-shadow-inset p-4 bg-violet-100 outline-0 rounded-xl w-full"
+                className="font-karla text-sm hvr-box-shadow-inset p-4 bg-zinc-800 outline-0 rounded-xl w-full text-zinc-300"
                 placeholder="Your Name"
                 {...register("name", { required: true })}
               />
               {errors.name && (
-                <span className="text-red-500 font-poppins text-sm">
+                <span className="text-red-500 font-sora text-sm">
                   *name is required
                 </span>
               )}
             </div>
             <div className="w-full rounded-3xl">
               <input
-                className="font-karla text-sm hvr-box-shadow-inset p-4 bg-violet-100 outline-0 rounded-xl w-full"
+                className="font-karla text-sm hvr-box-shadow-inset p-4 bg-zinc-800 outline-0 rounded-xl w-full text-zinc-300"
                 placeholder="Your Email"
                 {...register("email", {
                   pattern: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
@@ -97,7 +97,7 @@ const Contact = () => {
                 })}
               />
               {errors.email && (
-                <span className="text-red-500 font-poppins text-sm">
+                <span className="text-red-500 font-sora text-sm">
                   *enter valid email
                 </span>
               )}
@@ -105,20 +105,20 @@ const Contact = () => {
           </section>
           <div>
             <textarea
-              className="font-karla text-sm hvr-box-shadow-inset p-4 bg-violet-100 outline-0 rounded-2xl w-full"
+              className="font-karla text-sm hvr-box-shadow-inset p-4 bg-zinc-800 outline-0 rounded-2xl w-full text-zinc-300"
               placeholder="Your Message"
               rows={8}
               {...register("message", { required: true })}
             />
             {errors.message && (
-              <span className="text-red-500 font-poppins text-sm">
+              <span className="text-red-500 font-sora text-sm">
                 *message is required
               </span>
             )}
           </div>
           <motion.button
             type="submit"
-            className="bg-cyan-500 rounded-3xl font-inter text-base text-white px-5 py-4 shadow-md hover:shadow-violet-300 hover:bg-cyan-900 transition-all duration-300 hvr-shrink"
+            className="bg-zinc-800 font-inter text-base text-white px-5 py-4 shadow-md hover:bg-zinc-950 rounded-none transition-all duration-300 hvr-shrink"
           >
             {loading ? "Sending..." : "Send Message"}
           </motion.button>
