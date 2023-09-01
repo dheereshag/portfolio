@@ -60,7 +60,7 @@ const Navbar = () => {
       </a>
       <div ref={scope}>
         <nav
-          className={`fixed bg-zinc-900/90 top-0 bottom-0 right-0 w-80 backdrop-blur ${
+          className={`fixed bg-zinc-900/90 top-0 bottom-0 right-0 w-80 backdrop-blur-md ${
             isOpen ? "" : "translate-x-full transform-gpu"
           }`}
         >
