@@ -16,21 +16,29 @@ const HeaderText = () => {
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 3, type: "tween" }}
       >
-        Hi, I'm a software developer with a passion for technology and
-        innovation. I studied at <i class="fa-solid fa-graduation-cap"></i> IIT
-        Bhubaneswar, where I learned coding and landed a job at{" "}
-        <i class="fa-solid fa-briefcase" /> RingCentral on day 0. Although I got
-        impacted by layoffs during the recession, I didn't let that stop me.
-        Instead, I taught myself <i class="fa-solid fa-cogs"></i> devops{" "}
-        <i class="ci ci-docker ci-lg" />
-        <i class="ci ci-kubernetes ci-lg" /> and aws{" "}
-        <i class="ci ci-aws-light ci-lg" /> in depth. I have expertise in
-        next.js <i className="ci ci-next ci-lg" /> in frontend and spring boot{" "}
-        <i className="ci ci-spring ci-lg" /> , django{" "}
-        <i className="ci ci-django ci-lg" /> and nodejs{" "}
-        <i className="ci ci-node ci-lg" /> in backend. I'm always looking for{" "}
-        <i class="fa-solid fa-trophy"></i> new challenges and opportunities to
-        grow and make a difference in the world of technology.{" "}
+        <p>
+          Hi, I'm a software developer with a passion for technology and
+          innovation. I studied at <i class="fa-solid fa-graduation-cap"></i>{" "}
+          IIT Bhubaneswar, where I learned coding and landed a job at{" "}
+          <i class="fa-solid fa-briefcase fa-sm" /> RingCentral on day 0.
+        </p>
+        <br />
+        <p>
+          Although I got impacted by layoffs during the recession, I didn't let
+          that stop me. Instead, I taught myself{" "}
+          <i className="fa-solid fa-cogs" /> devops tools like{" "}
+          <i className="ci ci-docker ci-sm" /> docker,{" "}
+          <i className="ci ci-kubernetes ci-sm" /> kubernetes, and{" "}
+          <i className="ci ci-aws-light ci-sm" /> aws in depth.
+        </p>
+        <br />
+        <p>
+          I currently work with <i className="ci ci-next ci-sm" /> nextjs, for
+          frontend and <i className="ci ci-nodejs ci-sm" /> nodejs,{" "}
+          <i className="ci ci-django ci-sm" /> django,{" "}
+          <i className="ci ci-spring ci-sm" /> spring boot for backend with both
+          NoSQL and SQL <i className="fa-solid fa-database fa-xs" /> databases.
+        </p>
       </motion.div>
     </div>
   );
