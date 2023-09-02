@@ -21,7 +21,7 @@ const Footer = () => {
         iconStyles={
           "ci-xl transition-transform duration-300 transform-gpu group-hover:scale-125 group-hover:rotate-12"
         }
-        childStyles={"bg-zinc-800 rounded-full w-12 h-12 tw-box-shadow-inset app__flex"}
+        childStyles={"bg-zinc-800 w-12 h-12 tw-box-shadow-inset app__flex"}
       />
 
       <aside className="mb-2">
