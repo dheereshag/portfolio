@@ -10,10 +10,7 @@ const Skills = () => {
   useEffect(() => {
     async function fetchSkills() {
       try {
-        const response = await fetch("http://18.222.249.158:8080/skills");
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
+        const response = await fetch("/api/skills");
         const data = await response.json();
         setSkills(data);
       } catch (error) {
