@@ -1,4 +1,3 @@
-import React, { useContext } from "react";
 import { menuItems } from "../constants";
 const NavigationDots = ({ active }) => {
   return (

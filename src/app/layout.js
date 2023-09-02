@@ -28,6 +28,7 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         />
+        <title>{metadata.title}</title>
       </head>
       <body>{children}</body>
     </html>

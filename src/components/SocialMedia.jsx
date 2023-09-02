@@ -1,4 +1,3 @@
-import React from "react";
 import { socialIcons } from "../constants";
 
 const SocialMedia = ({ parentStyles,childStyles,iconStyles }) => {
