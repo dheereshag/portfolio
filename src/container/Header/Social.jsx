@@ -2,10 +2,11 @@ import Link from "next/link";
 const Social = () => {
   return (
     <div className="gap-16 flex flex-col ">
+      
       <img
         src="./square.jpg"
         alt="profile_bg"
-        className="hover:grayscale bg-cover bg-grey-300 shadow rounded-2xl transform rotate-3 scale-110 mr"
+        className="hover:grayscale bg-cover rotate-3 scale-110"
       />
 
       <div className="grid grid-cols-2 gap-4 font-inter text-zinc-300">
