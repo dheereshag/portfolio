@@ -19,10 +19,7 @@ const Projects = () => {
   useEffect(() => {
     async function fetchProjects() {
       try {
-        const response = await fetch("http://18.222.249.158:8080/projects");
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
+        const response = await fetch("/api/projects");
         const data = await response.json();
         setProjects(data);
         setFilterProjects(data);

@@ -24,7 +24,7 @@ const Contact = () => {
     setLoading(true);
     //send post request to 18.222.249.158:8080/contact
     try {
-      const response = await fetch("http://18.222.249.158:8080/contact", {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -40,7 +40,6 @@ const Contact = () => {
       setLoading(false);
     }
   };
-
 
   return (
     <div>

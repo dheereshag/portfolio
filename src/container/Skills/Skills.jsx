@@ -24,10 +24,7 @@ const Skills = () => {
   useEffect(() => {
     async function fetchWorks() {
       try {
-        const response = await fetch("http://18.222.249.158:8080/works");
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
+        const response = await fetch("/api/works");
         const data = await response.json();
         const groupedWorks = groupByStartYear(data);
         setGroupedWorks(groupedWorks);
