@@ -1,8 +1,9 @@
 "use client";
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import { useAnimate, stagger } from "framer-motion";
 import { MenuToggle } from "./MenuToggle";
 import { menuItems } from "../../constants";
+
 function useMenuAnimation(isOpen) {
   const [scope, animate] = useAnimate();
 
@@ -50,12 +51,6 @@ function useMenuAnimation(isOpen) {
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [hide, setHide] = useState(true);
-  useEffect(() => {
-    if (isOpen) {
-      setHide(false);
-    }
-  }, [isOpen]);
 
   const scope = useMenuAnimation(isOpen);
   return (
@@ -65,14 +60,16 @@ const Navbar = () => {
       </a>
       <div ref={scope}>
         <nav
-          className="fixed top-0 bottom-0 right-0 w-80 bg-white/80 backdrop-blur"
+          className={`fixed bg-zinc-900/90 top-0 bottom-0 right-0 w-80 backdrop-blur-md ${
+            isOpen ? "" : "translate-x-full transform-gpu"
+          }`}
         >
           <ul className="flex flex-col gap-10 mt-40 mx-20">
             {menuItems.map((item, index) => (
               <a href={`#${item}`} key={index}>
                 <li
-                  className="text-violet-900 text-3xl font-bold cursor-pointer font-poppins"
-                  onClick={() => setIsOpen(!isOpen)}
+                  className="text-white  text-3xl font-bold cursor-pointer font-poppins"
+                  onClick={() => setIsOpen((prevIsOpen) => !prevIsOpen)}
                 >
                   {item}
                 </li>
@@ -85,14 +82,14 @@ const Navbar = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <li className="bg-violet-900 text-white mt-4 text-2xl font-bold py-2 px-4 rounded-full w-8/12 font-poppins flex items-center justify-between hover:bg-violet-950">
+              <li className="bg-black text-white mt-4 text-2xl transform-gpu font-bold py-2 px-4 hover:rounded-full w-8/12 font-poppins flex items-center justify-between">
                 <span>CV</span>
                 <i className="fa-solid fa-eye text-white"></i>
               </li>
             </a>
           </ul>
         </nav>
-        <MenuToggle toggle={() => setIsOpen(!isOpen)} />
+        <MenuToggle toggle={() => setIsOpen((prevIsOpen) => !prevIsOpen)} />
       </div>
     </div>
   );

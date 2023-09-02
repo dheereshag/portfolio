@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import { AppWrap, MotionWrap } from "../../wrapper";
-import { client } from "../../client";
 import { motion } from "framer-motion";
 import { Footer } from "../../components";
 import { useForm } from "react-hook-form";
@@ -16,55 +15,64 @@ const Contact = () => {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const sendForm = (data) => {
+  const sendForm = async (data) => {
     const { name, email, message } = data;
     console.log(name, email, message);
     if (!name || !email || !message) {
       return alert("Please fill all the fields");
     }
     setLoading(true);
-    const contact = {
-      _type: "contact",
-      name: name,
-      email: email,
-      message: message,
-    };
-    client.create(contact).then(() => {
-      setLoading(false);
+    //send post request to 18.222.249.158:8080/contact
+    try {
+      const response = await fetch("http://18.222.249.158:8080/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      const responseData = await response.json();
+      console.log("Success:", responseData);
       setIsFormSubmitted(true);
-    });
+      setLoading(false);
+    } catch (error) {
+      console.error("Error:", error);
+      setLoading(false);
+    }
   };
+
 
   return (
     <div>
-      <h2 className="font-dm-sans text-4xl xl:text-5xl font-semibold mb-10 text-violet-950 leading-tight">
+      <h2 className="font-dm-sans text-4xl xl:text-5xl font-semibold mb-10 text-zinc-300 leading-tight">
         Sip some coffee <span className="hvr-float">🍵</span> and chat with me
       </h2>
       <div className="flex flex-col md:flex-row gap-5 justify-center items-center my-5 w-full">
-        <div className="group w-full gap-4 hover:shadow-md hover:shadow-rose-300 bg-rose-100 flex items-center px-5 py-4 rounded-3xl cursor-pointer">
-          <img
-            src="./email.png"
-            alt="email"
-            className="w-9 transition-transform duration-300 transform-gpu group-hover:scale-110 group-hover:-translate-y-1"
-          />
+        <div className="w-full bg-rose-100 flex items-center px-5 py-4 rounded-3xl cursor-pointer group">
           <a
             href="mailto:da11@iitbbs.ac.in"
-            className="text-pink-500 font-pacifico"
+            className="text-pink-500 font-pacifico text-sm flex items-center gap-4"
           >
-            da11@iitbbs.ac.in
+            <img
+              src="./email.png"
+              alt="email"
+              className="w-9 transition-transform duration-300 transform-gpu group-hover:scale-110 group-hover:-translate-y-1"
+            />
+            <span>da11@iitbbs.ac.in</span>
           </a>
         </div>
-        <div className="w-full gap-4 bg-blue-100 flex items-center px-5 py-4 rounded-3xl cursor-pointer group hover:shadow-md hover:shadow-blue-300">
+
+        <div className="w-full bg-blue-100 flex items-center px-5 py-4 rounded-3xl cursor-pointer group">
           <a
             href="tel:+91 9411245528"
-            className="text-blue-800 font-pacifico text-sm flex items-center"
+            className="text-blue-800 font-pacifico text-sm flex items-center gap-4"
           >
             <img
               src="./mobile.png"
               alt="mobile"
               className="w-9 transition-transform duration-300 transform-gpu group-hover:scale-125 group-hover:rotate-12"
             />
-            <span className="ml-2">+91 9411245528</span>
+            <span>+91 9411245528</span>
           </a>
         </div>
       </div>
@@ -77,19 +85,19 @@ const Contact = () => {
           <section className="flex flex-col md:flex-row gap-4">
             <div className="w-full rounded-3xl">
               <input
-                className="font-karla text-sm hvr-box-shadow-inset p-4 bg-violet-100 outline-0 rounded-xl w-full"
+                className="font-sora text-sm hvr-box-shadow-inset p-4 bg-zinc-800 outline-0 rounded-xl w-full text-zinc-300"
                 placeholder="Your Name"
                 {...register("name", { required: true })}
               />
               {errors.name && (
-                <span className="text-red-500 font-poppins text-sm">
+                <span className="text-red-500 font-sora text-sm">
                   *name is required
                 </span>
               )}
             </div>
             <div className="w-full rounded-3xl">
               <input
-                className="font-karla text-sm hvr-box-shadow-inset p-4 bg-violet-100 outline-0 rounded-xl w-full"
+                className="font-sora text-sm hvr-box-shadow-inset p-4 bg-zinc-800 outline-0 rounded-xl w-full text-zinc-300"
                 placeholder="Your Email"
                 {...register("email", {
                   pattern: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
@@ -97,7 +105,7 @@ const Contact = () => {
                 })}
               />
               {errors.email && (
-                <span className="text-red-500 font-poppins text-sm">
+                <span className="text-red-500 font-sora text-sm">
                   *enter valid email
                 </span>
               )}
@@ -105,26 +113,28 @@ const Contact = () => {
           </section>
           <div>
             <textarea
-              className="font-karla text-sm hvr-box-shadow-inset p-4 bg-violet-100 outline-0 rounded-2xl w-full"
+              className="font-sora text-sm hvr-box-shadow-inset p-4 bg-zinc-800 outline-0 rounded-2xl w-full text-zinc-300"
               placeholder="Your Message"
               rows={8}
               {...register("message", { required: true })}
             />
             {errors.message && (
-              <span className="text-red-500 font-poppins text-sm">
+              <span className="text-red-500 font-sora text-sm">
                 *message is required
               </span>
             )}
           </div>
           <motion.button
             type="submit"
-            className="bg-violet-800 rounded-3xl font-inter text-base text-white px-5 py-4 shadow-md hover:shadow-violet-300 hover:bg-violet-900 transition-all duration-300 hvr-shrink"
+            className={`font-inter text-base text-white px-5 py-4 shadow-md hover:bg-black hover:rounded-xl transition-all transform-gpu duration-300 hover:scale-90 ${
+              loading ? "bg-black" : "bg-zinc-700"
+            }`}
           >
             {loading ? "Sending..." : "Send Message"}
           </motion.button>
         </form>
       ) : (
-        <p className="text-3xl md:text-4xl lg:text-5xl mt-16 text-center font-pacifico text-violet-800 leading-snug animate__animated animate__jackInTheBox">
+        <p className="text-3xl md:text-4xl lg:text-5xl mt-16 text-center font-pacifico text-zinc-300 leading-snug animate__animated animate__jackInTheBox">
           Thank you 😍 for getting in touch
         </p>
       )}
@@ -136,5 +146,5 @@ const Contact = () => {
 export default AppWrap(
   MotionWrap(Contact, "contact"),
   "contact",
-  "bg-violet-50"
+  "bg-zinc-900"
 );
