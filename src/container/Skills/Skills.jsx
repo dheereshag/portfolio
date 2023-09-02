@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { AppWrap, MotionWrap } from "../../wrapper";
-import groupByStartYear from "@/utils/groupByStartYear";
+import groupByStartYear from "../../utils/groupByStartYear";
 const Skills = () => {
   const [groupedWorks, setGroupedWorks] = useState([]);
 

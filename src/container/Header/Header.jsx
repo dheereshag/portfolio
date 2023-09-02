@@ -1,6 +1,6 @@
 "use client";
 import { AppWrap } from "../../wrapper";
-import HeaderText from "@/container/Header/HeaderText";
+import HeaderText from "./HeaderText";
 import Social from "./Social";
 
 const Header = () => {
