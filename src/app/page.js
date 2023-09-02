@@ -6,8 +6,8 @@ export default function Home() {
     <>
       <Navbar />
       <Header />
-      <Projects />
       <Skills />
+      <Projects />
       <Contact />
     </>
   );
