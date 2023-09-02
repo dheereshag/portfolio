@@ -3,15 +3,15 @@ import { motion } from "framer-motion";
 const HeaderText = () => {
   return (
     <div>
-      <h1 className="text-4xl mb-2 font-extrabold">
+      <h1 className="text-3xl md:text-4xl mb-4 font-extrabold">
         <Typewriter
-          text={"I'm Dheeresh. I am a web developer."}
+          text={"I'm Dheeresh. I am a Web Developer."}
           speed={0.03}
           delay={0}
         />
       </h1>
       <motion.div
-        className="text-lg"
+        className="text-base md:text-lg flex flex-col gap-3"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 3, type: "tween" }}
@@ -22,16 +22,19 @@ const HeaderText = () => {
           IIT Bhubaneswar, where I learned coding and landed a job at{" "}
           <i class="fa-solid fa-briefcase fa-sm" /> RingCentral on day 0.
         </p>
-        <br />
         <p>
           Although I got impacted by layoffs during the recession, I didn't let
-          that stop me. Instead, I taught myself{" "}
+          that get into me. Instead, I kept upskilling and taught myself{" "}
           <i className="fa-solid fa-cogs" /> devops tools like{" "}
           <i className="ci ci-docker ci-sm" /> docker,{" "}
           <i className="ci ci-kubernetes ci-sm" /> kubernetes, and{" "}
-          <i className="ci ci-aws-light ci-sm" /> aws in depth.
+          <i className="ci ci-aws-light ci-sm" /> aws in depth to deploy containerized applications.
         </p>
-        <br />
+        <p>
+          Then I started working as an Independent Contractor and also made several
+          projects and including an open-source project of colored icons that
+          has over 55 github <i className="fas fa-star fa-xs text-yellow-500" /> stars.
+        </p>
         <p>
           I currently work with <i className="ci ci-next ci-sm" /> nextjs, for
           frontend and <i className="ci ci-nodejs ci-sm" /> nodejs,{" "}
