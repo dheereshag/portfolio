@@ -19,7 +19,7 @@ const Footer = () => {
       <SocialMedia
         parentStyles={"flex gap-3"}
         iconStyles={
-          "ci-xl transition-transform duration-300 transform-gpu group-hover:scale-125 group-hover:rotate-12"
+          "ci-xl transition-transform duration-300 transform-gpu group-hover:scale-125"
         }
         childStyles={"bg-zinc-800 w-12 h-12 tw-box-shadow-inset app__flex"}
       />
