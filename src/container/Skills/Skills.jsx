@@ -10,7 +10,9 @@ const Skills = () => {
   useEffect(() => {
     async function fetchSkills() {
       try {
-        const response = await fetch("/api/skills");
+        const response = await fetch(
+          "https://dheereshagrwal-portfolio-backend.up.railway.app/skills"
+        );
         const data = await response.json();
         setSkills(data);
       } catch (error) {
@@ -24,7 +26,9 @@ const Skills = () => {
   useEffect(() => {
     async function fetchWorks() {
       try {
-        const response = await fetch("/api/works");
+        const response = await fetch(
+          "https://dheereshagrwal-portfolio-backend.up.railway.app/works"
+        );
         const data = await response.json();
         const groupedWorks = groupByStartYear(data);
         setGroupedWorks(groupedWorks);

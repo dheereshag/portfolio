@@ -19,7 +19,9 @@ const Projects = () => {
   useEffect(() => {
     async function fetchProjects() {
       try {
-        const response = await fetch("/api/projects");
+        const response = await fetch(
+          "https://dheereshagrwal-portfolio-backend.up.railway.app/projects"
+        );
         const data = await response.json();
         setProjects(data);
         setFilterProjects(data);
