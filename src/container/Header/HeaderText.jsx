@@ -18,9 +18,9 @@ const HeaderText = () => {
       >
         <p>
           Hi, I'm a software developer with a passion for technology and
-          innovation. I studied at <i class="fa-solid fa-graduation-cap"></i>{" "}
+          innovation. I studied at <i className="fa-solid fa-graduation-cap"></i>{" "}
           IIT Bhubaneswar, where I learned coding and landed a job at{" "}
-          <i class="fa-solid fa-briefcase fa-sm" /> RingCentral on day 0.
+          <i className="fa-solid fa-briefcase fa-sm" /> RingCentral on day 0.
         </p>
         <p>
           Although I got impacted by layoffs during the recession, I didn't let

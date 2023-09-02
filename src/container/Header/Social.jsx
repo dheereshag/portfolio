@@ -13,7 +13,7 @@ const Social = () => {
           className="flex items-center gap-4 cursor-pointer hover:text-blue-500"
           href="mailto:da11@iitbbs.ac.in"
         >
-          <i class="fa-solid fa-envelope"></i>
+          <i className="fa-solid fa-envelope"></i>
           <p>da11@iitbbs.ac.in</p>
         </Link>
         <Link
