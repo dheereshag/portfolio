@@ -7,10 +7,10 @@ import Social from "./Social";
 const Header = () => {
   return (
     <div
-      className="flex flex-col lg:flex-row justify-between text-zinc-300"
+      className="flex flex-col lg:flex-row justify-between text-zinc-300 mt-10"
       id="home"
     >
-      <aside className="flex flex-col gap-10 mt-10 lg:m-10 font-dm-sans w-full lg:w-6/12 xl:w-5/12">
+      <aside className="flex flex-col gap-10 lg:m-10 font-dm-sans w-full lg:w-6/12 xl:w-5/12">
         <HeaderText />
         <ViewCV />
       </aside>

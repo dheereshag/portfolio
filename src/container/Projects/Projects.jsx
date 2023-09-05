@@ -53,7 +53,7 @@ const Projects = () => {
     }, 500);
   };
   return (
-    <div className="flex flex-col gap-10 md:gap-16 items-center md:mt-10">
+    <div className="flex flex-col gap-10 md:gap-16 items-center mt-10">
       <h2 className="font-dm-sans text-3xl md:text-4xl xl:text-5xl font-semibold text-zinc-400 text-center leading-tight">
         My <span className="text-white">Projects</span> section
       </h2>

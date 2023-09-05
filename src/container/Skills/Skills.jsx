@@ -41,7 +41,7 @@ const Skills = () => {
   }, []);
 
   return (
-    <div className="flex flex-col gap-10 lg:gap-20 md:mt-10">
+    <div className="flex flex-col gap-10 lg:gap-20 mt-10">
       <h2 className="font-dm-sans text-3xl md:text-4xl xl:text-5xl font-semibold text-zinc-300 text-center leading-tight">
         Skills <span className="text-zinc-500">&</span> Experiences
       </h2>
