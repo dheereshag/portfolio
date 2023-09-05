@@ -45,8 +45,8 @@ const Contact = () => {
   };
 
   return (
-    <div>
-      <h2 className="font-dm-sans text-4xl xl:text-5xl font-semibold mb-10 text-zinc-300 leading-tight">
+    <div className="md:mt-10">
+      <h2 className="font-dm-sans text-3xl md:text-4xl xl:text-5xl font-semibold mb-10 text-zinc-300 leading-tight">
         Sip some coffee <span className="hvr-float">🍵</span> and chat with me
       </h2>
       <div className="flex flex-col md:flex-row gap-5 justify-center items-center my-5 w-full">

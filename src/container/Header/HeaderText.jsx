@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const HeaderText = () => {
   return (
     <div>
-      <h1 className="text-3xl md:text-4xl mb-4 font-extrabold">
+      <h1 className="text-2xl md:text-4xl mb-4 font-extrabold">
         <Typewriter
           text={"I'm Dheeresh. I am a Web Developer."}
           speed={0.03}

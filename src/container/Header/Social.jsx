@@ -9,7 +9,7 @@ const Social = () => {
         className="hover:grayscale bg-cover rotate-3 scale-110"
       />
 
-      <div className="grid grid-cols-2 gap-4 font-inter text-zinc-300">
+      <div className="grid grid-cols-2 gap-x-16 gap-y-4 font-inter text-zinc-300">
         <Link
           className="flex items-center gap-4 cursor-pointer hover:text-blue-500"
           href="mailto:da11@iitbbs.ac.in"

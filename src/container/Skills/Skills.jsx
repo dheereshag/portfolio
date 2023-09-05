@@ -41,17 +41,17 @@ const Skills = () => {
   }, []);
 
   return (
-    <div className="flex flex-col gap-10 lg:gap-20 lg:mt-6 mt-10 xl:mt-0">
-      <h2 className="font-dm-sans text-4xl xl:text-5xl font-semibold text-zinc-300 text-center leading-tight">
+    <div className="flex flex-col gap-10 lg:gap-20 md:mt-10">
+      <h2 className="font-dm-sans text-3xl md:text-4xl xl:text-5xl font-semibold text-zinc-300 text-center leading-tight">
         Skills <span className="text-zinc-500">&</span> Experiences
       </h2>
       <div className="flex flex-col lg:flex-row gap-16 xl:gap-28 items-center lg:items-start">
-        <motion.div className="flex flex-wrap justify-center gap-7 xl:w-7/12">
+        <motion.div className="flex flex-wrap justify-center gap-6 xl:w-7/12">
           {skills.map((skill, index) => (
             <motion.div className="flex flex-col text-center gap-2" key={index}>
               <motion.div className="tw-box-shadow-inset transform-gpu group app__flex rounded-3xl md:w-24 md:h-24 w-20 h-20">
                 <i
-                  className={`ci ci-${skill.icon.iconName} ci-${skill.icon.iconStyle} w-8/12 md:w-full group-hover:tw-buzz`}
+                  className={`ci ci-${skill.icon.iconName} ci-${skill.icon.iconStyle} group-hover:tw-buzz`}
                 ></i>
               </motion.div>
               <p className="font-sora font-semibold text-zinc-300 text-sm">
@@ -65,8 +65,8 @@ const Skills = () => {
           {Object.entries(groupedWorks)
             .sort(([yearA], [yearB]) => yearB - yearA)
             .map(([year, works]) => (
-              <div className="flex gap-16 items-baseline" key={year}>
-                <p className="font-bold text-white font-poppins text-lg">
+              <div className="flex gap-6 md:gap-16 items-baseline" key={year}>
+                <p className="font-bold text-white text-sm font-poppins md:text-lg">
                   {year}
                 </p>
                 <div>
@@ -78,11 +78,11 @@ const Skills = () => {
                         transition={{ duration: 0.5 }}
                         key={work.id}
                       >
-                        <h4 className="font-sora text-zinc-300 -mb-6">
+                        <h4 className="font-sora text-sm md:text-base text-zinc-300 -mb-6">
                           {work?.role} {work?.duration}
                         </h4>
                         <div className="flex items-center gap-2">
-                          <p className="font-sora text-white text-lg font-semibold">
+                          <p className="font-sora text-white text-sm md:text-lg font-semibold">
                             {work?.companyName}
                           </p>
                           <i

@@ -14,7 +14,7 @@ const Footer = () => {
   }, [count, isInView]);
   return (
     
-    <div className="flex flex-col md:flex-row justify-between -mb-20 gap-4 mt-20">
+    <div className="flex flex-col md:flex-row justify-between gap-4 mt-20">
       
       <SocialMedia
         parentStyles={"flex gap-3"}
