@@ -46,10 +46,10 @@ const Skills = () => {
         Skills <span className="text-zinc-500">&</span> Experiences
       </h2>
       <div className="flex flex-col lg:flex-row gap-16 xl:gap-28 items-center lg:items-start">
-        <motion.div className="flex flex-wrap justify-center gap-7 xl:w-8/12">
+        <motion.div className="flex flex-wrap justify-center gap-7 xl:w-7/12">
           {skills.map((skill, index) => (
             <motion.div className="flex flex-col text-center gap-2" key={index}>
-              <motion.div className="tw-box-shadow-inset transform-gpu group app__flex bg-zinc-800 shadow rounded-3xl md:w-24 md:h-24 w-20 h-20">
+              <motion.div className="tw-box-shadow-inset transform-gpu group app__flex rounded-3xl md:w-24 md:h-24 w-20 h-20">
                 <i
                   className={`ci ci-${skill.icon.iconName} ci-${skill.icon.iconStyle} w-8/12 md:w-full group-hover:tw-buzz`}
                 ></i>
@@ -61,7 +61,7 @@ const Skills = () => {
           ))}
         </motion.div>
 
-        <div className="flex flex-col gap-5 xl:w-4/12">
+        <div className="flex flex-col gap-5 mt-1.5 xl:w-4/12">
           {Object.entries(groupedWorks)
             .sort(([yearA], [yearB]) => yearB - yearA)
             .map(([year, works]) => (
