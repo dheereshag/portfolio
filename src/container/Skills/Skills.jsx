@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import groupByStartYear from "../../utils/groupByStartYear";
+
 const Skills = () => {
   const [groupedWorks, setGroupedWorks] = useState([]);
 
@@ -61,7 +62,7 @@ const Skills = () => {
           ))}
         </motion.div>
 
-        <div className="flex flex-col gap-5 mt-1.5 xl:w-4/12">
+        <div className="flex flex-col gap-14 mt-1.5 xl:w-4/12">
           {Object.entries(groupedWorks)
             .sort(([yearA], [yearB]) => yearB - yearA)
             .map(([year, works]) => (
@@ -69,7 +70,7 @@ const Skills = () => {
                 <p className="font-bold text-white text-sm font-poppins md:text-lg">
                   {year}
                 </p>
-                <div>
+                <div className="flex flex-col gap-8">
                   {works
                     .sort((workA, workB) => workB.id - workA.id)
                     .map((work) => (
@@ -77,18 +78,14 @@ const Skills = () => {
                         whileInView={{ opacity: [0, 1] }}
                         transition={{ duration: 0.5 }}
                         key={work.id}
+                        className="flex flex-col gap-3"
                       >
-                        <h4 className="font-sora text-sm md:text-base text-zinc-300 -mb-6">
+                        <p className="font-sora text-white text-sm md:text-lg font-semibold">
+                          {work?.companyName}
+                        </p>
+                        <p className="font-sora text-sm md:text-base text-zinc-300">
                           {work?.role} {work?.duration}
-                        </h4>
-                        <div className="flex items-center gap-2">
-                          <p className="font-sora text-white text-sm md:text-lg font-semibold">
-                            {work?.companyName}
-                          </p>
-                          <i
-                            className={`ci ci-${work?.companyIcon.iconName} ci-${work?.companyIcon.iconStyle}`}
-                          />
-                        </div>
+                        </p>
                       </motion.div>
                     ))}
                 </div>

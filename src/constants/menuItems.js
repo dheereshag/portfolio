@@ -1,7 +1,7 @@
 export const menuItems = [
   "home",
-  "projects",
   "skills",
+  "projects",
   "contact",
 ];
 export default menuItems;
