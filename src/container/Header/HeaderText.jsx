@@ -24,7 +24,7 @@ const HeaderText = () => {
         </p>
         <p>
           Although I got impacted by layoffs during the recession, I didn't let
-          that get into me. Instead, I kept upskilling and taught myself{" "}
+          it get better of me. Instead, I kept upskilling and taught myself{" "}
           <i className="fa-solid fa-cogs" /> devops tools like{" "}
           <i className="ci ci-docker ci-sm" /> docker,{" "}
           <i className="ci ci-kubernetes ci-sm" /> kubernetes, and{" "}
