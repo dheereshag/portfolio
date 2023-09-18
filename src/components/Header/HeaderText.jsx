@@ -18,8 +18,9 @@ const HeaderText = () => {
       >
         <p>
           Hi, I'm a software developer with a passion for technology and
-          innovation. I studied at <i className="fa-solid fa-graduation-cap"></i>{" "}
-          IIT Bhubaneswar, where I learned coding and landed a job at{" "}
+          innovation. I studied at{" "}
+          <i className="fa-solid fa-graduation-cap"></i> IIT Bhubaneswar, where
+          I learned coding and landed a job at{" "}
           <i className="fa-solid fa-briefcase fa-sm" /> RingCentral on day 0.
         </p>
         <p>
@@ -28,12 +29,14 @@ const HeaderText = () => {
           <i className="fa-solid fa-cogs" /> devops tools like{" "}
           <i className="ci ci-docker ci-sm" /> docker,{" "}
           <i className="ci ci-kubernetes ci-sm" /> kubernetes, and{" "}
-          <i className="ci ci-aws-light ci-sm" /> aws in depth to deploy containerized applications.
+          <i className="ci ci-aws-light ci-sm" /> aws in depth to deploy
+          containerized applications.
         </p>
         <p>
-          Then I started working as an Independent Contractor and also made several
-          projects and including an open-source project of colored icons that
-          has over 55 github <i className="fas fa-star fa-xs text-yellow-500" /> stars.
+          Then I started working as an Independent Contractor and also made
+          several projects and including an open-source project of colored icons
+          that has over 55 github{" "}
+          <i className="fas fa-star fa-xs text-yellow-500" /> stars.
         </p>
         <p>
           I currently work with <i className="ci ci-next ci-sm" /> nextjs, for

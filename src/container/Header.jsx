@@ -1,8 +1,8 @@
 "use client";
-import { AppWrap } from "../../wrapper";
-import HeaderText from "./HeaderText";
-import ViewCV from "./ViewCV";
-import Social from "./Social";
+import { AppWrap } from "../wrapper";
+import HeaderText from "../components/Header/HeaderText";
+import ViewCV from "../components/Header/ViewCV";
+import Social from "../components/Header/Social";
 
 const Header = () => {
   return (
