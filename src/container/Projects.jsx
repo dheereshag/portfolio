@@ -1,7 +1,8 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { AppWrap, MotionWrap } from "../wrapper";
+import { useFetchProjects } from "../hooks";
 
 const items = [
   { name: "next", iconStyle: "md" },
@@ -12,47 +13,15 @@ const items = [
 ];
 
 const Projects = () => {
-  const [activeFilter, setActiveFilter] = useState("all");
-  const [animateCard, setAnimateCard] = useState({ y: [null, 0], opacity: 1 });
-  const [filterProjects, setFilterProjects] = useState([]);
-  const [projects, setProjects] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
   const [isImageLoading, setIsImageLoading] = useState(true);
-
-  useEffect(() => {
-    async function fetchProjects() {
-      try {
-        const response = await fetch(
-          "https://dheereshagrwal-portfolio-backend.up.railway.app/projects"
-        );
-        const data = await response.json();
-        setProjects(data);
-        setFilterProjects(data);
-        setIsLoading(false);
-      } catch (error) {
-        console.error("Error fetching skill data:", error);
-      }
-    }
-
-    fetchProjects();
-  }, []);
-
-  const handleWorkFilter = (item) => {
-    setActiveFilter(item);
-    setAnimateCard({ y: [null, 30], opacity: 0 });
-    setTimeout(() => {
-      setAnimateCard({ y: [null, 0], opacity: 1 });
-      if (item.name === "all") {
-        setFilterProjects(projects);
-      } else {
-        setFilterProjects(
-          projects.filter((project) =>
-            project.tags.some((tag) => tag.name === item.name)
-          )
-        );
-      }
-    }, 500);
-  };
+  const {
+    activeFilter,
+    filterProjects,
+    isLoading,
+    handleWorkFilter,
+    animateCard,
+  } = useFetchProjects();
+  
   return (
     <div className="flex flex-col gap-10 md:gap-16 items-center mt-10">
       <h2 className="font-dm-sans text-3xl md:text-4xl xl:text-5xl font-semibold text-zinc-400 text-center leading-tight">
