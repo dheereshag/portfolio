@@ -4,7 +4,8 @@ import { animate } from "framer-motion";
 const useAnimateCount = (count, isInView) => {
   useEffect(() => {
     if (!isInView) return;
-    const animation = animate(count, 2023, { duration: 6 });
+    const currentYear = new Date().getFullYear();
+    const animation = animate(count, currentYear, { duration: 6 });
     return animation.stop;
   }, [count, isInView]);
 };
