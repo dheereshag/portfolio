@@ -1,2 +1,2 @@
-export { default as Skill } from "./Skill";
-export { default as Work } from "./Work";
+export { default as SkillBox } from "./SkillBox";
+export { default as SkillsGrid } from "./SkillsGrid";
