@@ -1,6 +1,6 @@
 import { socialIcons } from "../../constants";
 
-const SocialMedia = () => {
+const FooterSocials = () => {
   return (
     <div className="flex gap-3">
       {socialIcons.map((icon) => (
@@ -20,4 +20,4 @@ const SocialMedia = () => {
   );
 };
 
-export default SocialMedia;
+export default FooterSocials;
