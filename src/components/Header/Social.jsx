@@ -1,5 +1,5 @@
 import Link from "next/link";
-const HeaderSocial = ({ href, iconClass, children }) => {
+const Social = ({ href, iconClass, children }) => {
   return (
     <Link
       className="flex items-center gap-4 cursor-pointer hover:text-blue-500"
@@ -12,4 +12,4 @@ const HeaderSocial = ({ href, iconClass, children }) => {
   );
 };
 
-export default HeaderSocial;
+export default Social;

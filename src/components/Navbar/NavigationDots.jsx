@@ -1,9 +1,7 @@
-import { menuItems } from "../constants";
+import { menuItems } from "../../constants";
 const NavigationDots = ({ active }) => {
   return (
-    <div
-      className={`hidden md:flex md:justify-center md:flex-col p-4 gap-4`}
-    >
+    <div className={`hidden md:flex md:justify-center md:flex-col p-4 gap-4`}>
       {menuItems.map((item, index) => (
         <a
           href={`#${item}`}

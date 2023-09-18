@@ -1,4 +1,4 @@
-import Typewriter from "./Typewriter";
+import { Typewriter } from ".";
 import { motion } from "framer-motion";
 const HeaderText = () => {
   return (

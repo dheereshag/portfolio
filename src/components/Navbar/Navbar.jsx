@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { MenuToggle } from "./MenuToggle";
 import { menuItems } from "../../constants";
-import useMenuAnimation from "../../hooks/useMenuAnimation";
+import { useMenuAnimation } from "../../hooks";
 import MenuItems from "./MenuItems";
 
 const Navbar = () => {

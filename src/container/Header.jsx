@@ -1,8 +1,6 @@
 "use client";
 import { AppWrap } from "../wrapper";
-import HeaderText from "../components/Header/HeaderText";
-import ViewCV from "../components/Header/ViewCV";
-import HeaderSocials from "../components/Header/HeaderSocials";
+import { HeaderText, Socials, ViewCV } from "../components/Header";
 
 const Header = () => {
   return (
@@ -15,7 +13,7 @@ const Header = () => {
         <ViewCV />
       </aside>
       <aside className="xl:mr-28 lg:mr-10 mt-16 w-full md:w-7/12 lg:w-5/12 xl:w-3/12">
-        <HeaderSocials />
+        <Socials />
       </aside>
     </div>
   );

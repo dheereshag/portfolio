@@ -1,45 +1,11 @@
 "use client";
-import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { AppWrap, MotionWrap } from "../wrapper";
-import groupByStartYear from "../utils/groupByStartYear";
-
+import { useFetchSkills, useFetchWorks } from "../hooks";
+import { Skill, Work } from "../components/Skills";
 const Skills = () => {
-  const [groupedWorks, setGroupedWorks] = useState([]);
-
-  const [skills, setSkills] = useState([]);
-  useEffect(() => {
-    async function fetchSkills() {
-      try {
-        const response = await fetch(
-          "https://dheereshagrwal-portfolio-backend.up.railway.app/skills"
-        );
-        const data = await response.json();
-        setSkills(data);
-      } catch (error) {
-        console.error("Error fetching skill data:", error);
-      }
-    }
-
-    fetchSkills();
-  }, []);
-
-  useEffect(() => {
-    async function fetchWorks() {
-      try {
-        const response = await fetch(
-          "https://dheereshagrwal-portfolio-backend.up.railway.app/works"
-        );
-        const data = await response.json();
-        const groupedWorks = groupByStartYear(data);
-        setGroupedWorks(groupedWorks);
-      } catch (error) {
-        console.error("Error fetching works data:", error);
-      }
-    }
-
-    fetchWorks();
-  }, []);
+  const skills = useFetchSkills();
+  const groupedWorks = useFetchWorks();
 
   return (
     <div className="flex flex-col gap-10 lg:gap-20 mt-10">
@@ -49,16 +15,7 @@ const Skills = () => {
       <div className="flex flex-col lg:flex-row gap-16 xl:gap-28 items-center lg:items-start">
         <motion.div className="flex flex-wrap justify-center gap-6 xl:w-7/12">
           {skills.map((skill, index) => (
-            <motion.div className="flex flex-col text-center gap-2" key={index}>
-              <motion.div className="tw-box-shadow-inset transform-gpu group app__flex rounded-3xl md:w-24 md:h-24 w-20 h-20">
-                <i
-                  className={`ci ci-${skill.icon.iconName} ci-${skill.icon.iconStyle} group-hover:tw-buzz`}
-                ></i>
-              </motion.div>
-              <p className="font-sora font-semibold text-zinc-300 text-sm">
-                {skill.name}
-              </p>
-            </motion.div>
+            <Skill skill={skill} key={index} />
           ))}
         </motion.div>
 
@@ -74,19 +31,7 @@ const Skills = () => {
                   {works
                     .sort((workA, workB) => workB.id - workA.id)
                     .map((work) => (
-                      <motion.div
-                        whileInView={{ opacity: [0, 1] }}
-                        transition={{ duration: 0.5 }}
-                        key={work.id}
-                        className="flex flex-col gap-3"
-                      >
-                        <p className="font-sora text-white text-sm md:text-lg font-semibold">
-                          {work?.companyName}
-                        </p>
-                        <p className="font-sora text-sm md:text-base text-zinc-300">
-                          {work?.role} {work?.duration}
-                        </p>
-                      </motion.div>
+                      <Work work={work} key={work.id} />
                     ))}
                 </div>
               </div>

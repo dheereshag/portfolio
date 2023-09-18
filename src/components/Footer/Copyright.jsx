@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useMotionValue, useTransform, motion } from "framer-motion";
-import useAnimateCount from "../../hooks/useAnimateCount";
+import { useAnimateCount } from "../../hooks";
 const Copyright = () => {
   const count = useMotionValue(2000);
   const rounded = useTransform(count, Math.round);
