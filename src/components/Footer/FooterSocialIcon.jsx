@@ -1,4 +1,4 @@
-const SocialIcon = ({ icon }) => (
+const FooterSocialIcon = ({ icon }) => (
   <a
     key={icon.name}
     href={icon.href}
@@ -12,4 +12,4 @@ const SocialIcon = ({ icon }) => (
   </a>
 );
 
-export default SocialIcon;
+export default FooterSocialIcon;
