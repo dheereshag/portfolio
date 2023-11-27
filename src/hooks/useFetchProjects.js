@@ -33,7 +33,7 @@ const useFetchProjects = () => {
       } else {
         setFilterProjects(
           projects.filter((project) =>
-            project.tags.some((tag) => tag.name === item.name)
+            project.techStacks.some((stack) => stack.name === item.name)
           )
         );
       }
