@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import groupByStartYear from "../utils/groupByStartYear";
+import { API_URL } from "../constants";
 
 const useFetchWorks = () => {
   const [groupedWorks, setGroupedWorks] = useState([]);
@@ -7,9 +8,7 @@ const useFetchWorks = () => {
   useEffect(() => {
     async function fetchWorks() {
       try {
-        const response = await fetch(
-          "https://dheereshagrwal-portfolio-backend.up.railway.app/works"
-        );
+        const response = await fetch(`${API_URL}/works`);
         const data = await response.json();
         const groupedWorks = groupByStartYear(data);
         setGroupedWorks(groupedWorks);

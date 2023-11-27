@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import { API_URL } from "../constants";
 const useFetchProjects = () => {
   const [activeFilter, setActiveFilter] = useState("all");
   const [filterProjects, setFilterProjects] = useState([]);
@@ -10,9 +10,7 @@ const useFetchProjects = () => {
   useEffect(() => {
     async function fetchProjects() {
       try {
-        const response = await fetch(
-          "https://dheereshagrwal-portfolio-backend.up.railway.app/projects"
-        );
+        const response = await fetch(`${API_URL}/projects`);
         const data = await response.json();
         setProjects(data);
         setFilterProjects(data);

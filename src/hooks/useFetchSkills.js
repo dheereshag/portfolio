@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { API_URL } from "../constants";
 
 const useFetchSkills = () => {
   const [skills, setSkills] = useState([]);
@@ -6,9 +7,7 @@ const useFetchSkills = () => {
   useEffect(() => {
     async function fetchSkills() {
       try {
-        const response = await fetch(
-          "https://dheereshagrwal-portfolio-backend.up.railway.app/skills"
-        );
+        const response = await fetch(`${API_URL}/skills`);
         const data = await response.json();
         setSkills(data);
       } catch (error) {

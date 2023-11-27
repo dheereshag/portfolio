@@ -3,7 +3,15 @@ import { useState } from "react";
 import { AppWrap, MotionWrap } from "../wrapper";
 import { Footer } from "../components";
 import { useForm } from "react-hook-form";
-import { Email, Phone, LoadingButton, NameInput, EmailInput, MessageInput } from "../components/Contact";
+import {
+  Email,
+  Phone,
+  LoadingButton,
+  NameInput,
+  EmailInput,
+  MessageInput,
+} from "../components/Contact";
+import { API_URL } from "../constants";
 
 const Contact = () => {
   const {
@@ -24,16 +32,13 @@ const Contact = () => {
     setLoading(true);
     //send post request to 18.222.249.158:8080/contact
     try {
-      const response = await fetch(
-        "https://dheereshagrwal-portfolio-backend.up.railway.app/contact",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        }
-      );
+      const response = await fetch(`${API_URL}/contact`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
       const responseData = await response.json();
       console.log("Success:", responseData);
       setIsFormSubmitted(true);

@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 
 const items = [
   { name: "next", iconStyle: "md" },
-  { name: "django", iconStyle: "md mt-px" },
   { name: "node", iconStyle: "md" },
   { name: "spring", iconStyle: "md" },
   { name: "all" },
