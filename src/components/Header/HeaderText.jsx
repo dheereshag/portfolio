@@ -35,7 +35,7 @@ const HeaderText = () => {
         <p>
           Then I started working as an Independent Contractor and also made
           several projects and including an open-source project of colored icons
-          that has over 55 github{" "}
+          that has over 100 github{" "}
           <i className="fas fa-star fa-xs text-yellow-500" /> stars.
         </p>
         <p>
