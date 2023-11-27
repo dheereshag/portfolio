@@ -1,2 +1,2 @@
-const API_URL = "https://portfolio-backend-spring.onrender.com";
+const API_URL = "https://dheereshagrwal.up.railway.app";
 export default API_URL;
