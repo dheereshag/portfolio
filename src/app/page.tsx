@@ -1,6 +1,5 @@
 import Image, { type ImageProps } from 'next/image'
 import Link from 'next/link'
-import clsx from 'clsx'
 
 import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
@@ -15,13 +14,10 @@ import logoAirbnb from '@/images/logos/airbnb.svg'
 import logoFacebook from '@/images/logos/facebook.svg'
 import logoPlanetaria from '@/images/logos/planetaria.svg'
 import logoStarbucks from '@/images/logos/starbucks.svg'
-import image1 from '@/images/photos/image-1.jpg'
-import image2 from '@/images/photos/image-2.jpg'
-import image3 from '@/images/photos/image-3.jpg'
-import image4 from '@/images/photos/image-4.jpg'
-import image5 from '@/images/photos/image-5.jpg'
 import { type ArticleWithSlug, getAllArticles } from '@/lib/articles'
 import { formatDate } from '@/lib/formatDate'
+import Projects from '../components/Project'
+import About from '@/components/About'
 
 function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -109,8 +105,6 @@ function SocialLink({
     </Link>
   )
 }
-
-
 
 interface Role {
   company: string
@@ -211,10 +205,7 @@ function Resume() {
   )
 }
 
-
-
 export default async function Home() {
-  let articles = (await getAllArticles()).slice(0, 4)
 
   return (
     <>
@@ -249,12 +240,12 @@ export default async function Home() {
           </div>
         </div>
       </Container>
-      
+
+      <Projects />
+      <About />
       <Container className="mt-24 md:mt-28">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
-          
           <div className="space-y-10 lg:pl-16 xl:pl-24">
-            
             <Resume />
           </div>
         </div>
