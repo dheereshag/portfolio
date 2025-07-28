@@ -38,13 +38,6 @@ const projects = [
     logo: "/ci.svg",
   },
   {
-    name: "Vembric",
-    description:
-      "An API documentation template that helps you create beautiful and interactive API documentation on the web.",
-    link: { href: "https://vembric.vercel.app", label: "vembric.vercel.app" },
-    logo: "/vembric.svg",
-  },
-  {
     name: "Portfolio",
     description:
       "This portfolio website, showcasing my work and projects. Built with Next.js, Tailwind CSS, and React Icons.",
@@ -53,6 +46,13 @@ const projects = [
       label: "dheereshagrwal.vercel.app",
     },
     logo: "/portfolio.png",
+  },
+  {
+    name: "Vembric",
+    description:
+      "An API documentation template that helps you create beautiful and interactive API documentation on the web.",
+    link: { href: "https://vembric.vercel.app", label: "vembric.vercel.app" },
+    logo: "/vembric.svg",
   },
 ];
 
