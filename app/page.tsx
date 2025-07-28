@@ -2,6 +2,7 @@ import { SiGithub, SiLinkedin, SiLeetcode, SiCodeforces } from "react-icons/si";
 import SocialIcon from "@/components/SocialIcon";
 import HeroSection from "@/components/HeroSection";
 import ProjectCard from "@/components/ProjectCard";
+import AboutSection from "@/components/AboutSection";
 
 const socialLinks = [
   {
@@ -100,6 +101,18 @@ export default function Home() {
             logo={project.logo}
           />
         ))}
+      </article>
+
+      {/* About Section */}
+      <article className="mb-12">
+        <AboutSection
+          title="About Me"
+          descriptions={[
+            "I'm a software engineer with a passion for building things.",
+            "I love working with JavaScript and have experience with frameworks like React and Next.js.",
+            "In my free time, I enjoy photography and exploring the outdoors.",
+          ]}
+        />
       </article>
     </main>
   );
