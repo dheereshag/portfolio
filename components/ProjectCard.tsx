@@ -1,4 +1,3 @@
-import { HiOutlineExternalLink } from "react-icons/hi";
 import Link from "next/link";
 import { Link as Chain } from "lucide-react";
 import Image from "next/image";
