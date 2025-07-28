@@ -1,6 +1,13 @@
-import { IconType } from "react-icons";
+import type { IconType } from "react-icons";
+import { Inter } from "next/font/google";
 import Link from "next/link";
-
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+const inter = Inter({ subsets: ["latin"], display: "swap" });
 interface SocialIconProps {
   href: string;
   icon: IconType;
@@ -15,15 +22,23 @@ export default function SocialIcon({
   size = 20,
 }: SocialIconProps) {
   return (
-    <Link
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      title={label}
-      aria-label={label}
-      className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
-    >
-      <Icon size={size} />
-    </Link>
+    <TooltipProvider>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Link
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={label}
+            className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+          >
+            <Icon size={size} />
+          </Link>
+        </TooltipTrigger>
+        <TooltipContent className={`${inter.className} px-2 py-1 text-xs `}>
+          {label}
+        </TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
   );
 }
