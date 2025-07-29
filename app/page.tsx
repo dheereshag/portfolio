@@ -6,6 +6,7 @@ import AboutSection from "@/components/AboutSection";
 import Resume from "@/components/Resume";
 import SectionHeading from "@/components/SectionHeading";
 import Email from "@/components/Email";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -67,6 +68,10 @@ export default function Home() {
           <Email />
         </section>
       </article>
+      {/* Footer */}
+      <section className="mt-20">
+        <Footer />
+      </section>
     </main>
   );
 }
