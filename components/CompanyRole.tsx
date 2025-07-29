@@ -8,7 +8,7 @@ export default function CompanyRole({ role }: { role: Role }) {
         logo={role.logo}
         name={role.company}
         avatarSize={10}
-        imageSize={5}
+        imageSize={4}
       />
       <dl className="flex flex-auto flex-wrap gap-2">
         <dt className="sr-only">Company</dt>
