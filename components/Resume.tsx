@@ -12,7 +12,7 @@ export default function Resume() {
       <CardHeader>
         <h2 className="flex font-semibold gap-2 items-center">
           <BriefcaseIcon className="h-6 w-6" />
-          <span>Work</span>
+          <span className="sm:text-lg">Work</span>
         </h2>
       </CardHeader>
       <CardContent>
