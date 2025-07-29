@@ -1,3 +1,5 @@
+import { IconType } from "react-icons";
+
 export type Role = {
   company: string;
   title: string;
@@ -8,7 +10,7 @@ export type Role = {
 
 export type Social = {
   href: string;
-  icon: any;
+  icon: IconType;
   label: string;
 };
 
