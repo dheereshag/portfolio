@@ -3,7 +3,7 @@ import type { Role } from "@/lib/types";
 
 export default function CompanyRole({ role }: { role: Role }) {
   return (
-    <li className="flex gap-4 items-center">
+    <li className="flex gap-4">
       <CompanyAvatar
         logo={role.logo}
         name={role.company}
@@ -12,14 +12,14 @@ export default function CompanyRole({ role }: { role: Role }) {
       />
       <dl className="flex flex-auto flex-wrap gap-2">
         <dt className="sr-only">Company</dt>
-        <dd className="w-full flex-none text-sm font-medium text-foreground">
+        <dd className="w-full flex-none font-medium">
           {role.company}
         </dd>
         <dt className="sr-only">Role</dt>
-        <dd className="text-xs text-muted-foreground">{role.title}</dd>
+        <dd className="text-sm text-muted-foreground">{role.title}</dd>
         <dt className="sr-only">Date</dt>
         <dd
-          className="ml-auto text-xs text-muted-foreground"
+          className="ml-auto text-sm text-muted-foreground"
           aria-label={`${role.start} until ${role.end}`}
         >
           <time dateTime={role.start}>{role.start}</time>
