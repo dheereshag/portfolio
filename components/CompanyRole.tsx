@@ -1,17 +1,15 @@
 import type { Role } from "@/lib/types";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import CompanyAvatar from "@/components/CompanyAvatar";
 
 export default function CompanyRole({ role }: { role: Role }) {
   return (
     <li className="flex gap-4">
-      <Avatar className="items-center justify-center dark:border dark:border-zinc-700/50 dark:bg-zinc-800 size-10">
-        <AvatarImage
-          src={role.logo}
-          alt={`${role.company} logo`}
-          className="size-5"
-        />
-        <AvatarFallback>{role.company.charAt(0).toUpperCase()}</AvatarFallback>
-      </Avatar>
+      <CompanyAvatar
+        logo={role.logo}
+        name={role.company}
+        sizeClass="size-10"
+        imageSizeClass="size-5"
+      />
       <dl className="flex flex-auto flex-wrap gap-2">
         <dt className="sr-only">Company</dt>
         <dd className="w-full flex-none font-medium">{role.company}</dd>

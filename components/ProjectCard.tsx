@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Link as Chain } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import CompanyAvatar from "@/components/CompanyAvatar";
 
 interface ProjectCardProps {
   name: string;
@@ -23,10 +23,12 @@ export default function ProjectCard({
     <div className="cursor-pointer">
       <Card className="hover:bg-zinc-50 dark:hover:bg-zinc-800/50 bg-transparent rounded-2xl">
         <CardContent>
-          <Avatar className="items-center justify-center dark:border dark:border-zinc-700/50 dark:bg-zinc-800 size-10">
-            <AvatarImage src={logo} alt={`${name} logo`} className="size-6" />
-            <AvatarFallback>{name.charAt(0).toUpperCase()}</AvatarFallback>
-          </Avatar>
+          <CompanyAvatar
+            logo={logo}
+            name={name}
+            sizeClass="size-10"
+            imageSizeClass="size-6"
+          />
           <h2 className="mt-6 font-semibold text-zinc-800 dark:text-zinc-100">
             <Link href={link.href} target="_blank" rel="noopener noreferrer">
               {name}
