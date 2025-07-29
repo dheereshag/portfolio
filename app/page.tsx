@@ -3,6 +3,9 @@ import SocialIcon from "@/components/SocialIcon";
 import HeroSection from "@/components/HeroSection";
 import ProjectCard from "@/components/ProjectCard";
 import AboutSection from "@/components/AboutSection";
+import Resume from "@/components/Resume";
+import SectionHeading from "@/components/SectionHeading";
+import Email from "@/components/Email";
 
 const socialLinks = [
   {
@@ -102,17 +105,20 @@ export default function Home() {
           />
         ))}
       </article>
-
+      <SectionHeading title="About Me" />
       {/* About Section */}
-      <article className="mb-12">
+      <article className="flex justify-center">
         <AboutSection
-          title="About Me"
           descriptions={[
-            "I'm a software engineer with a passion for building things.",
-            "I love working with JavaScript and have experience with frameworks like React and Next.js.",
+            "I'm a software engineer with a passion for building things.I love working with JavaScript and have experience with frameworks like React and Next.js.",
             "In my free time, I enjoy photography and exploring the outdoors.",
           ]}
         />
+        {/* Resume Section */}
+        <section className="">
+          <Resume />
+          <Email />
+        </section>
       </article>
     </main>
   );
