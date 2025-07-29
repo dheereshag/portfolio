@@ -1,5 +1,5 @@
 import type { IconType } from "react-icons";
-import { Inter } from "next/font/google";
+import { inter } from "@/lib/fonts";
 import Link from "next/link";
 import {
   Tooltip,
@@ -7,7 +7,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-const inter = Inter({ subsets: ["latin"], display: "swap" });
+
 interface SocialIconProps {
   href: string;
   icon: IconType;
