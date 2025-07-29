@@ -26,20 +26,22 @@ export default function ProjectCard({
           <CompanyAvatar
             logo={logo}
             name={name}
-            sizeClass="size-10"
-            imageSizeClass="size-6"
+            sizeClass="size-9 sm:size-10"
+            imageSizeClass="size-5 sm:size-6"
           />
-          <h2 className="mt-6 font-semibold text-zinc-800 dark:text-zinc-100">
+          <h2 className="mt-4 sm:mt-6 font-semibold text-zinc-800 dark:text-zinc-100">
             <Link href={link.href} target="_blank" rel="noopener noreferrer">
               {name}
             </Link>
           </h2>
-          <p className="mt-2 text-zinc-600 dark:text-zinc-400">{description}</p>
+          <p className="mt-1 sm:mt-2 text-zinc-600 dark:text-zinc-400">
+            {description}
+          </p>
           <Link
             href={link.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-6 flex text-sm font-medium text-zinc-400 transition dark:text-zinc-200 items-center gap-2 dark:hover:text-blue-500"
+            className="mt-4 sm:mt-6 flex text-xs sm:text-sm font-medium text-zinc-400 transition dark:text-zinc-200 items-center gap-2 dark:hover:text-blue-500"
           >
             <Chain className="h-4 w-4" />
             <span>{link.label}</span>

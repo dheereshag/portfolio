@@ -9,9 +9,9 @@ import Email from "@/components/Email";
 
 export default function Home() {
   return (
-    <main className="font-sans min-h-screen px-8 py-12 sm:px-20 sm:py-20">
+    <main className="font-sans min-h-screen px-3 py-6 sm:px-8 sm:py-12 md:px-16 md:py-20">
       {/* Intro */}
-      <article className="mb-12">
+      <article className="mb-8 sm:mb-12">
         <HeroSection
           title="Software engineer, learner, and amateur photographer."
           description="I'm Dheeresh, a software engineer and entrepreneur based in New York City. I'm the founder and CEO of Planetaria, where we develop technologies that empower regular people to explore space on their own terms."
@@ -19,7 +19,7 @@ export default function Home() {
       </article>
 
       {/* Social Links */}
-      <section className="flex justify-center items-center gap-8">
+      <section className="flex flex-wrap justify-center items-center gap-6 sm:gap-8">
         {socials.map((social, index) => (
           <SocialIcon
             key={index}
@@ -31,7 +31,7 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <article className="mt-20 mb-12">
+      <article className="mt-12 sm:mt-20 mb-8 sm:mb-12">
         <HeroSection
           title="Things I've made trying to put my dent in the universe."
           description="I've worked on tons of little projects over the years but these are the
@@ -41,7 +41,7 @@ export default function Home() {
         />
       </article>
 
-      <article className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10 mb-16 lg:max-w-6xl">
+      <article className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 sm:gap-x-8 gap-y-6 sm:gap-y-10 mb-10 sm:mb-16 lg:max-w-6xl">
         {projects.map((project) => (
           <ProjectCard
             key={project.name}
@@ -54,7 +54,7 @@ export default function Home() {
       </article>
       <SectionHeading title="About Me" />
       {/* About Section */}
-      <article className="flex flex-col lg:flex-row justify-center gap-10">
+      <article className="flex flex-col lg:flex-row justify-center gap-6 sm:gap-10">
         <AboutSection
           descriptions={[
             "I'm a software engineer with a passion for building things.I love working with JavaScript and have experience with frameworks like React and Next.js.",
@@ -62,7 +62,7 @@ export default function Home() {
           ]}
         />
         {/* Resume Section */}
-        <section className="flex flex-col gap-10">
+        <section className="flex flex-col gap-6 sm:gap-10 mt-6 lg:mt-0">
           <Resume />
           <Email />
         </section>

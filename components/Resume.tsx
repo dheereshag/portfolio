@@ -16,12 +16,12 @@ export default function Resume() {
         </h2>
       </CardHeader>
       <CardContent>
-        <ol className="space-y-8">
+        <ol className="space-y-4 sm:space-y-6 md:space-y-8">
           {resume.map((role, roleIndex) => (
             <CompanyRole key={roleIndex} role={role} />
           ))}
         </ol>
-        <Button variant="outline" className="mt-6 w-full" asChild>
+        <Button variant="outline" className="mt-4 sm:mt-6 w-full" asChild>
           <Link
             href="/Dheeresh_Agarwal_Resume.pdf"
             download
