@@ -20,10 +20,10 @@ export default function ProjectCard({
   logo,
 }: ProjectCardProps) {
   return (
-    <li className="group flex flex-col cursor-pointer">
-      <Card className="border-0 shadow-none bg-transparent p-0 group-hover:bg-zinc-50 dark:group-hover:bg-zinc-800/50 transition-colors rounded-2xl">
-        <CardContent className="p-6">
-          <div className="flex h-12 w-12 items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800">
+    <div className="cursor-pointer">
+      <Card className="hover:bg-zinc-50 dark:hover:bg-zinc-800/50 bg-transparent rounded-2xl">
+        <CardContent>
+          <div className="flex h-12 w-12 items-center justify-center rounded-full dark:border dark:border-zinc-700/50 dark:bg-zinc-800">
             <Image src={logo} alt={`${name} logo`} width={32} height={32} />
           </div>
           <h2 className="mt-6 font-semibold text-zinc-800 dark:text-zinc-100">
@@ -43,6 +43,6 @@ export default function ProjectCard({
           </Link>
         </CardContent>
       </Card>
-    </li>
+    </div>
   );
 }
