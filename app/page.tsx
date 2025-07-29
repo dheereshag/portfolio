@@ -1,4 +1,4 @@
-import { SiGithub, SiLinkedin, SiLeetcode, SiCodeforces } from "react-icons/si";
+import { socials, projects } from "@/lib/data";
 import SocialIcon from "@/components/SocialIcon";
 import HeroSection from "@/components/HeroSection";
 import ProjectCard from "@/components/ProjectCard";
@@ -6,59 +6,6 @@ import AboutSection from "@/components/AboutSection";
 import Resume from "@/components/Resume";
 import SectionHeading from "@/components/SectionHeading";
 import Email from "@/components/Email";
-
-const socialLinks = [
-  {
-    href: "https://github.com/dheereshagrwal",
-    icon: SiGithub,
-    label: "GitHub",
-  },
-  {
-    href: "https://codeforces.com/profile/dheereshagrwal",
-    icon: SiCodeforces,
-    label: "Codeforces",
-  },
-  {
-    href: "https://leetcode.com/dheereshagrwal",
-    icon: SiLeetcode,
-    label: "LeetCode ",
-  },
-  {
-    href: "https://linkedin.com/in/dheereshagrwal",
-    icon: SiLinkedin,
-    label: "LinkedIn",
-  },
-];
-
-const projects = [
-  {
-    name: "Coloured Icons",
-    description:
-      "A CDN for coloured icons. It provides a simple way to use icons in your projects with customizable colors.",
-    link: {
-      href: "https://coloured-icons.vercel.app",
-      label: "coloured-icons.vercel.app",
-    },
-    logo: "/ci.svg",
-  },
-  {
-    name: "Portfolio",
-    description:
-      "This portfolio website, showcasing my work and projects. Built with Next.js, Tailwind CSS, and React Icons.",
-    link: {
-      href: "https://dheereshagrwal.vercel.app",
-      label: "dheereshagrwal.vercel.app",
-    },
-    logo: "/portfolio.png",
-  },
-  {
-    name: "Vembric",
-    description:
-      "An API documentation template that helps you create beautiful and interactive API documentation on the web.",
-    link: { href: "https://vembric.vercel.app", label: "vembric.vercel.app" },
-    logo: "/vembric.svg",
-  },
-];
 
 export default function Home() {
   return (
@@ -73,7 +20,7 @@ export default function Home() {
 
       {/* Social Links */}
       <section className="flex justify-center items-center gap-8">
-        {socialLinks.map((social, index) => (
+        {socials.map((social, index) => (
           <SocialIcon
             key={index}
             href={social.href}
@@ -87,7 +34,7 @@ export default function Home() {
       <article className="mt-20 mb-12">
         <HeroSection
           title="Things I've made trying to put my dent in the universe."
-          description=" I've worked on tons of little projects over the years but these are the
+          description="I've worked on tons of little projects over the years but these are the
         ones that I'm most proud of. Many of them are open-source, so if you see
         something that piques your interest, check out the code and contribute
         if you have ideas for how it can be improved."
@@ -107,7 +54,7 @@ export default function Home() {
       </article>
       <SectionHeading title="About Me" />
       {/* About Section */}
-      <article className="flex justify-center">
+      <article className="flex flex-col lg:flex-row justify-center gap-10">
         <AboutSection
           descriptions={[
             "I'm a software engineer with a passion for building things.I love working with JavaScript and have experience with frameworks like React and Next.js.",
@@ -115,7 +62,7 @@ export default function Home() {
           ]}
         />
         {/* Resume Section */}
-        <section className="">
+        <section className="flex flex-col gap-10">
           <Resume />
           <Email />
         </section>

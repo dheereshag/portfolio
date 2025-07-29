@@ -1,7 +1,23 @@
-export interface Role {
+export type Role = {
   company: string;
   title: string;
   logo: string;
-  start: string | { label: string; dateTime: string };
-  end: string | { label: string; dateTime: string };
-}
+  start: string;
+  end: string;
+};
+
+export type Social = {
+  href: string;
+  icon: any;
+  label: string;
+};
+
+export type Project = {
+  name: string;
+  description: string;
+  link: {
+    href: string;
+    label: string;
+  };
+  logo: string;
+};

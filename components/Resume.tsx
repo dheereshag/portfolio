@@ -3,29 +3,10 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import CompanyRole from "@/components/CompanyRole";
-import type { Role } from "@/lib/types";
+
+import { resume } from "@/lib/data";
 
 export default function Resume() {
-  const resume: Array<Role> = [
-    {
-      company: "TaxHoa",
-      title: "Software Engineer",
-      logo: "/ci.svg",
-      start: "2019",
-      end: {
-        label: "Present",
-        dateTime: new Date().getFullYear().toString(),
-      },
-    },
-    {
-      company: "Airbnb",
-      title: "Software Engineer",
-      logo: "/ci.svg",
-      start: "2014",
-      end: "2019",
-    },
-  ];
-
   return (
     <Card className="hover:bg-zinc-50 dark:hover:bg-zinc-800/50 bg-transparent rounded-2xl">
       <CardHeader>
