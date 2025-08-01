@@ -12,16 +12,14 @@ export default function Home() {
   return (
     <main className="font-sans min-h-screen px-3 py-6 sm:px-8 sm:py-12 md:px-16 md:py-20">
       {/* Hero Section */}
-      <section className="mb-8 sm:mb-12">
-        <HeroSection
-          title={CONTENT.HERO.TITLE}
-          description={CONTENT.HERO.DESCRIPTION}
-        />
-      </section>
+      <HeroSection
+        title={CONTENT.HERO.TITLE}
+        description={CONTENT.HERO.DESCRIPTION}
+      />
 
       {/* Social Links */}
       <section
-        className="flex flex-wrap justify-center items-center gap-6 sm:gap-8"
+        className="flex flex-wrap justify-center items-center gap-8 sm:gap-10 mb-16 sm:mb-20"
         aria-label="Social media links"
       >
         {socials.map((social) => (
@@ -35,15 +33,13 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section className="mt-12 sm:mt-20 mb-8 sm:mb-12">
         <HeroSection
           title={CONTENT.PROJECTS.TITLE}
           description={CONTENT.PROJECTS.DESCRIPTION}
         />
-      </section>
 
       <section
-        className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 sm:gap-x-8 gap-y-6 sm:gap-y-10 mb-10 sm:mb-16 lg:max-w-6xl"
+        className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 sm:gap-x-8 gap-y-8 sm:gap-y-10 mb-16 sm:mb-20 lg:max-w-6xl"
         aria-label="Featured projects"
       >
         {projects.map((project) => (
@@ -60,11 +56,11 @@ export default function Home() {
       <SectionHeading title={CONTENT.ABOUT.TITLE} />
 
       {/* About Section */}
-      <section className="flex flex-col lg:flex-row justify-center gap-6 sm:gap-10 mb-8 sm:mb-12">
+      <section className="flex flex-col lg:flex-row justify-center gap-8 sm:gap-12 mb-12 sm:mb-16">
         <AboutSection descriptions={CONTENT.ABOUT.DESCRIPTIONS} />
 
         {/* Resume and Contact Section */}
-        <aside className="flex flex-col gap-6 sm:gap-10 mt-6 lg:mt-0">
+        <aside className="flex flex-col gap-8 sm:gap-10 mt-6 lg:mt-0">
           <Resume />
           <Email />
         </aside>
