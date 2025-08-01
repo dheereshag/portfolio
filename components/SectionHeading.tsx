@@ -15,7 +15,7 @@ function SectionHeading({
 
   return (
     <Tag
-      className={`mb-10 sm:mb-14 text-center text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors ${className}`}
+      className={`mb-10 sm:mb-14 text-center text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors ${className}`}
     >
       {title}
     </Tag>

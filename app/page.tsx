@@ -33,13 +33,13 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-        <HeroSection
-          title={CONTENT.PROJECTS.TITLE}
-          description={CONTENT.PROJECTS.DESCRIPTION}
-        />
+      <HeroSection
+        title={CONTENT.PROJECTS.TITLE}
+        description={CONTENT.PROJECTS.DESCRIPTION}
+      />
 
       <section
-        className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 sm:gap-x-8 gap-y-8 sm:gap-y-10 mb-16 sm:mb-20 lg:max-w-6xl"
+        className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 sm:gap-x-8 gap-y-8 sm:gap-y-10 mb-16 sm:mb-20 lg:max-w-5xl"
         aria-label="Featured projects"
       >
         {projects.map((project) => (

@@ -22,12 +22,14 @@ function ProjectCard({
       className={`hover:bg-zinc-50 dark:hover:bg-zinc-800/50 bg-transparent rounded-2xl cursor-pointer transition-all duration-300 hover:shadow-lg hover:shadow-zinc-200/10 dark:hover:shadow-zinc-800/20 ${className}`}
     >
       <CardContent>
-          <CompanyAvatar
-            logo={logo}
-            name={name}
-            sizeClass="size-10 sm:size-12"
-            imageSizeClass="size-6 sm:size-7"
-          />
+        <CompanyAvatar
+          logo={logo}
+          name={name}
+          sizeClass="size-10 sm:size-12"
+          imageSizeClass="size-6 sm:size-7"
+          href={link.href}
+          ariaLabel={`Visit ${name} project`}
+        />
         <h2 className="mt-6 sm:mt-8 font-semibold text-lg sm:text-xl text-zinc-800 dark:text-zinc-100 group-hover:text-zinc-600 dark:group-hover:text-zinc-300 transition-colors">
           <Link
             href={link.href}

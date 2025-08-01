@@ -1,21 +1,24 @@
 "use client";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import Link from "next/link";
 import { memo } from "react";
 
 interface CompanyAvatarProps {
   readonly logo: string;
   readonly name: string;
-  readonly sizeClass?: string;
-  readonly imageSizeClass?: string;
-  readonly className?: string;
+  readonly sizeClass: string;
+  readonly imageSizeClass: string;
+  readonly href: string;
+  readonly ariaLabel: string;
 }
 
 function CompanyAvatar({
   logo,
   name,
-  sizeClass = "size-10",
-  imageSizeClass = "size-5",
-  className = "",
+  sizeClass,
+  imageSizeClass,
+  href,
+  ariaLabel,
 }: CompanyAvatarProps) {
   const getInitials = (companyName: string): string => {
     return companyName
@@ -25,9 +28,9 @@ function CompanyAvatar({
       .join("");
   };
 
-  return (
+  const avatarElement = (
     <Avatar
-      className={`items-center justify-center dark:border dark:border-zinc-700/50 dark:bg-zinc-800 ${sizeClass} ${className}`}
+      className={`items-center justify-center dark:border dark:border-zinc-700/50 dark:bg-zinc-800 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-zinc-900/20 dark:hover:shadow-zinc-100/10 ${sizeClass}`}
     >
       <AvatarImage
         src={logo}
@@ -42,6 +45,19 @@ function CompanyAvatar({
         {getInitials(name)}
       </AvatarFallback>
     </Avatar>
+  );
+
+  // always wrap avatar in Link now that href is required
+  return (
+    <Link
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={ariaLabel || `Visit ${name}`}
+      className="inline-block hover:opacity-80 transition-opacity duration-200"
+    >
+      {avatarElement}
+    </Link>
   );
 }
 
