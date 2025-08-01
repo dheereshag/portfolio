@@ -19,7 +19,7 @@ function ProjectCard({
 }: ProjectCardProps) {
   return (
     <Card
-      className={`hover:bg-zinc-50 dark:hover:bg-zinc-800/50 bg-transparent rounded-2xl cursor-pointer transition-all duration-300 hover:shadow-lg hover:shadow-zinc-200/10 dark:hover:shadow-zinc-800/20 ${className}`}
+      className={`hover:bg-zinc-50 dark:hover:bg-zinc-800/50 bg-transparent rounded-2xl transition-all duration-300 hover:shadow-lg hover:shadow-zinc-200/10 dark:hover:shadow-zinc-800/20 ${className}`}
     >
       <CardContent>
         <CompanyAvatar
