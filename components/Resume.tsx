@@ -1,10 +1,8 @@
-import { ArrowDownIcon, BriefcaseIcon } from "lucide-react";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { BriefcaseIcon } from "lucide-react";
+import DownloadCvButton from "@/components/DownloadCvButton";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import CompanyRole from "@/components/CompanyRole";
 import { resume } from "@/lib/data";
-import { ASSET_PATHS } from "@/lib/constants";
 import { memo } from "react";
 
 function Resume() {
@@ -22,17 +20,7 @@ function Resume() {
             <CompanyRole key={`${role.company}-${role.start}`} role={role} />
           ))}
         </ol>
-        <Button variant="outline" className="mt-4 sm:mt-6 w-full" asChild>
-          <Link
-            href={ASSET_PATHS.RESUME}
-            download
-            className="flex items-center justify-center gap-2"
-            aria-label="Download CV PDF"
-          >
-            Download CV
-            <ArrowDownIcon className="h-4 w-4" aria-hidden="true" />
-          </Link>
-        </Button>
+        <DownloadCvButton />
       </CardContent>
     </Card>
   );
