@@ -10,7 +10,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="font-sans min-h-screen px-3 py-6 sm:px-8 sm:py-12 md:px-16 md:py-20">
+    <main className="font-sans min-h-screen px-5 py-6 sm:px-8 sm:py-12 md:px-16 md:py-20">
       {/* Hero Section */}
       <HeroSection
         title={CONTENT.HERO.TITLE}
@@ -56,11 +56,11 @@ export default function Home() {
       <SectionHeading title={CONTENT.ABOUT.TITLE} />
 
       {/* About Section */}
-      <section className="flex flex-col lg:flex-row justify-center gap-8 sm:gap-12 mb-12 sm:mb-16">
+      <section className="flex flex-col xl:flex-row gap-8 sm:gap-12 mb-12 sm:mb-16 max-w-6xl mx-auto">
         <AboutSection descriptions={CONTENT.ABOUT.DESCRIPTIONS} />
 
         {/* Resume and Contact Section */}
-        <aside className="flex flex-col gap-8 sm:gap-10 mt-6 lg:mt-0">
+        <aside className="flex flex-col gap-8 sm:gap-10 items-center">
           <Resume />
           <Email />
         </aside>

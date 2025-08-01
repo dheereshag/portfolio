@@ -6,7 +6,7 @@ interface AboutSectionProps {
 
 function AboutSection({ descriptions }: AboutSectionProps) {
   return (
-    <article className="flex flex-col gap-4 sm:gap-6 max-w-full sm:max-w-xl md:max-w-2xl px-2 sm:px-0">
+    <article className="flex flex-col gap-4 sm:gap-6 max-w-2xl mx-auto">
       {descriptions.map((desc, index) => (
         <p
           key={index}
