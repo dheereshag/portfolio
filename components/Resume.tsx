@@ -16,7 +16,7 @@ function Resume() {
       </CardHeader>
       <CardContent>
         <ol className="space-y-4 sm:space-y-6 md:space-y-8">
-          {resume.map((role, roleIndex) => (
+          {resume.map((role) => (
             <CompanyRole key={`${role.company}-${role.start}`} role={role} />
           ))}
         </ol>
