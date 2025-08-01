@@ -11,6 +11,9 @@ export const EXTERNAL_URLS = {
   PORTFOLIO: "https://dheereshagrwal.vercel.app",
   COLOURED_ICONS: "https://coloured-icons.vercel.app",
   VEMBRIC: "https://vembric.vercel.app",
+  // Company URLs
+  TAXHOA: "https://www.taxhoa.com",
+  RINGCENTRAL: "https://www.ringcentral.com",
 } as const;
 
 // Contact information

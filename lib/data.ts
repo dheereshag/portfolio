@@ -69,6 +69,7 @@ export const resume: readonly Role[] = [
     logo: ASSET_PATHS.LOGOS.TAXHOA,
     start: "Dec. 2022",
     end: "Present",
+    website: EXTERNAL_URLS.TAXHOA,
   },
   {
     company: "RingCentral",
@@ -76,15 +77,16 @@ export const resume: readonly Role[] = [
     logo: ASSET_PATHS.LOGOS.RINGCENTRAL,
     start: "Jul. 2022",
     end: "Nov. 2022",
+    website: EXTERNAL_URLS.RINGCENTRAL,
   },
 ] as const;
 
 // Content constants for better maintainability
 export const CONTENT = {
   HERO: {
-    TITLE: "Software engineer, learner, and amateur photographer.",
+    TITLE: "Software engineer, learner, and an amateur photographer.",
     DESCRIPTION:
-      "I'm Dheeresh, a software engineer and entrepreneur based in New York City. I'm the founder and CEO of Planetaria, where we develop technologies that empower regular people to explore space on their own terms.",
+      "I'm Dheeresh, a software engineer based in India. I specialize in building scalable web applications and have experience working with companies like RingCentral and TaxHoa. I'm passionate about creating solutions that make a difference.",
   },
   PROJECTS: {
     TITLE: "Things I've made trying to put my dent in the universe.",
@@ -94,8 +96,8 @@ export const CONTENT = {
   ABOUT: {
     TITLE: "About Me",
     DESCRIPTIONS: [
-      "I'm a software engineer with a passion for building things. I love working with JavaScript and have experience with frameworks like React and Next.js.",
-      "In my free time, I enjoy photography and exploring the outdoors.",
+      "I'm a software engineer with experience building scalable web applications. I've worked at companies like RingCentral and TaxHoa, where I've contributed to various software solutions and gained expertise in modern development practices.",
+      "I enjoy working with JavaScript, TypeScript, and modern frameworks like React and Next.js. When I'm not coding, I like exploring new technologies and contributing to open-source projects.",
     ],
   },
 } as const;

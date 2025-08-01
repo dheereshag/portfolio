@@ -6,6 +6,7 @@ export interface Role {
   readonly logo: string;
   readonly start: string;
   readonly end: string;
+  readonly website: string;
 }
 
 export interface Social {

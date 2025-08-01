@@ -60,7 +60,7 @@ export default function Home() {
       <SectionHeading title={CONTENT.ABOUT.TITLE} />
 
       {/* About Section */}
-      <section className="flex flex-col lg:flex-row justify-center gap-6 sm:gap-10">
+      <section className="flex flex-col lg:flex-row justify-center gap-6 sm:gap-10 mb-8 sm:mb-12">
         <AboutSection descriptions={CONTENT.ABOUT.DESCRIPTIONS} />
 
         {/* Resume and Contact Section */}

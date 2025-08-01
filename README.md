@@ -18,7 +18,7 @@ A modern, responsive portfolio website built with Next.js 15, TypeScript, and Ta
 ### Prerequisites
 
 - Node.js 18.0 or later
-- pnpm (recommended) or npm
+- pnpm (recommended package manager)
 
 ### Installation
 
@@ -33,31 +33,27 @@ cd portfolio
 
 ```bash
 pnpm install
-# or
-npm install
 ```
 
 3. Run the development server:
 
 ```bash
 pnpm dev
-# or
-npm run dev
 ```
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## 🛠️ Scripts
 
-- `dev` - Start development server with Turbopack
-- `build` - Build for production
-- `start` - Start production server
-- `lint` - Run ESLint
-- `lint:fix` - Fix ESLint errors
-- `type-check` - Run TypeScript type checking
-- `format` - Format code with Prettier
-- `format:check` - Check code formatting
-- `precommit` - Run type check, lint, and format check
+- `pnpm dev` - Start development server with Turbopack
+- `pnpm build` - Build for production
+- `pnpm start` - Start production server
+- `pnpm lint` - Run ESLint
+- `pnpm lint:fix` - Fix ESLint errors
+- `pnpm type-check` - Run TypeScript type checking
+- `pnpm format` - Format code with Prettier
+- `pnpm format:check` - Check code formatting
+- `pnpm precommit` - Run type check, lint, and format check
 
 ## 📁 Project Structure
 
