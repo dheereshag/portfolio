@@ -1,8 +1,10 @@
+import { memo } from "react";
+
 interface AboutSectionProps {
-  descriptions: string[];
+  readonly descriptions: readonly string[];
 }
 
-export default function AboutSection({ descriptions }: AboutSectionProps) {
+function AboutSection({ descriptions }: AboutSectionProps) {
   return (
     <article className="flex flex-col gap-2 sm:gap-3 max-w-full sm:max-w-2xl md:max-w-3xl px-2 sm:px-0">
       {descriptions.map((desc, index) => (
@@ -16,3 +18,5 @@ export default function AboutSection({ descriptions }: AboutSectionProps) {
     </article>
   );
 }
+
+export default memo(AboutSection);

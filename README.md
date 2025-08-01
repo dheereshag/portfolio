@@ -1,22 +1,121 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dheeresh Agarwal - Portfolio
 
-## Getting Started
+A modern, responsive portfolio website built with Next.js 15, TypeScript, and Tailwind CSS.
 
-First, run the development server:
+## ✨ Features
+
+- **Modern Stack**: Built with Next.js 15, React 19, and TypeScript
+- **Responsive Design**: Optimized for all device sizes
+- **Performance**: Lighthouse score optimized with image optimization and lazy loading
+- **Accessibility**: WCAG compliant with proper ARIA labels and semantic HTML
+- **Type Safety**: Strict TypeScript configuration with comprehensive type definitions
+- **Code Quality**: ESLint and Prettier configuration for consistent code style
+- **SEO Optimized**: Meta tags, Open Graph, and structured data
+- **Dark Mode**: Beautiful dark theme design
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18.0 or later
+- pnpm (recommended) or npm
+
+### Installation
+
+1. Clone the repository:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/dheereshagrwal/portfolio.git
+cd portfolio
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm install
+# or
+npm install
+```
+
+3. Run the development server:
+
+```bash
+pnpm dev
+# or
+npm run dev
+```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## 🛠️ Scripts
+
+- `dev` - Start development server with Turbopack
+- `build` - Build for production
+- `start` - Start production server
+- `lint` - Run ESLint
+- `lint:fix` - Fix ESLint errors
+- `type-check` - Run TypeScript type checking
+- `format` - Format code with Prettier
+- `format:check` - Check code formatting
+- `precommit` - Run type check, lint, and format check
+
+## 📁 Project Structure
+
+```
+├── app/                    # Next.js app directory
+│   ├── layout.tsx         # Root layout
+│   ├── page.tsx           # Home page
+│   └── globals.css        # Global styles
+├── components/            # Reusable components
+│   ├── ui/                # UI components (shadcn/ui)
+│   └── ...                # Feature components
+├── lib/                   # Utility functions and types
+│   ├── constants.ts       # App constants
+│   ├── data.ts           # Static data
+│   ├── hooks.ts          # Custom React hooks
+│   ├── types.ts          # TypeScript types
+│   └── utils.ts          # Utility functions
+└── public/               # Static assets
+```
+
+## 🎨 Tech Stack
+
+- **Framework**: [Next.js 15](https://nextjs.org/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **UI Components**: [shadcn/ui](https://ui.shadcn.com/)
+- **Icons**: [Lucide React](https://lucide.dev/) & [React Icons](https://react-icons.github.io/react-icons/)
+- **Font**: [Geist](https://vercel.com/font)
+
+## 🔧 Configuration
+
+### TypeScript
+
+- Strict mode enabled
+- Additional strict options for better type safety
+- Path mapping configured for clean imports
+
+### ESLint
+
+- Extended Next.js and TypeScript configurations
+- Custom rules for code quality
+- Import ordering and React best practices
+
+### Performance
+
+- Image optimization with multiple formats
+- Package imports optimization
+- Console removal in production builds
+
+## 📝 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 📧 Contact
+
+Dheeresh Agarwal - [da11@iitbbs.ac.in](mailto:da11@iitbbs.ac.in)
+
+Project Link: [https://dheereshagrwal.vercel.app](https://dheereshagrwal.vercel.app)
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 

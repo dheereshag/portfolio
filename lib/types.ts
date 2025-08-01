@@ -1,25 +1,27 @@
 import { IconType } from "react-icons";
 
-export type Role = {
-  company: string;
-  title: string;
-  logo: string;
-  start: string;
-  end: string;
-};
+export interface Role {
+  readonly company: string;
+  readonly title: string;
+  readonly logo: string;
+  readonly start: string;
+  readonly end: string;
+}
 
-export type Social = {
-  href: string;
-  icon: IconType;
-  label: string;
-};
+export interface Social {
+  readonly href: string;
+  readonly icon: IconType;
+  readonly label: string;
+}
 
-export type Project = {
-  name: string;
-  description: string;
-  link: {
-    href: string;
-    label: string;
-  };
-  logo: string;
-};
+export interface ProjectLink {
+  readonly href: string;
+  readonly label: string;
+}
+
+export interface Project {
+  readonly name: string;
+  readonly description: string;
+  readonly link: ProjectLink;
+  readonly logo: string;
+}

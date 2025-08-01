@@ -1,0 +1,32 @@
+/**
+ * Application-wide constants for better maintainability and type safety
+ */
+
+// External URLs
+export const EXTERNAL_URLS = {
+  GITHUB: "https://github.com/dheereshagrwal",
+  LINKEDIN: "https://linkedin.com/in/dheereshagrwal",
+  LEETCODE: "https://leetcode.com/dheereshagrwal",
+  CODEFORCES: "https://codeforces.com/profile/dheereshagrwal",
+  PORTFOLIO: "https://dheereshagrwal.vercel.app",
+  COLOURED_ICONS: "https://coloured-icons.vercel.app",
+  VEMBRIC: "https://vembric.vercel.app",
+} as const;
+
+// Contact information
+export const CONTACT = {
+  EMAIL: "da11@iitbbs.ac.in",
+  NAME: "Dheeresh Agarwal",
+} as const;
+
+// Asset paths
+export const ASSET_PATHS = {
+  RESUME: "/Dheeresh_Agarwal_Resume.pdf",
+  LOGOS: {
+    TAXHOA: "/taxhoa.ico",
+    RINGCENTRAL: "/ringcentral.png",
+    PORTFOLIO: "/portfolio.png",
+    COLOURED_ICONS: "/ci.svg",
+    VEMBRIC: "/vembric.svg",
+  },
+} as const;

@@ -1,25 +1,48 @@
+"use client";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import React from "react";
+import { memo } from "react";
 
 interface CompanyAvatarProps {
-  logo: string;
-  name: string;
-  sizeClass?: string; // e.g. "size-10"
-  imageSizeClass?: string; // e.g. "size-5"
+  readonly logo: string;
+  readonly name: string;
+  readonly sizeClass?: string;
+  readonly imageSizeClass?: string;
+  readonly className?: string;
 }
 
-export default function CompanyAvatar({
+function CompanyAvatar({
   logo,
   name,
   sizeClass = "size-10",
   imageSizeClass = "size-5",
+  className = "",
 }: CompanyAvatarProps) {
+  const getInitials = (companyName: string): string => {
+    return companyName
+      .split(" ")
+      .map((word) => word.charAt(0).toUpperCase())
+      .slice(0, 2)
+      .join("");
+  };
+
   return (
     <Avatar
-      className={`items-center justify-center dark:border dark:border-zinc-700/50 dark:bg-zinc-800 ${sizeClass}`}
+      className={`items-center justify-center dark:border dark:border-zinc-700/50 dark:bg-zinc-800 ${sizeClass} ${className}`}
     >
-      <AvatarImage src={logo} alt={`${name} logo`} className={imageSizeClass} />
-      <AvatarFallback>{name.charAt(0).toUpperCase()}</AvatarFallback>
+      <AvatarImage
+        src={logo}
+        alt={`${name} logo`}
+        className={imageSizeClass}
+        loading="lazy"
+      />
+      <AvatarFallback
+        className="text-xs font-semibold"
+        aria-label={`${name} initials`}
+      >
+        {getInitials(name)}
+      </AvatarFallback>
     </Avatar>
   );
 }
+
+export default memo(CompanyAvatar);

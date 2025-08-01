@@ -9,10 +9,11 @@ import {
 } from "@/components/ui/tooltip";
 
 interface SocialIconProps {
-  href: string;
-  icon: IconType;
-  label: string;
-  size?: number;
+  readonly href: string;
+  readonly icon: IconType;
+  readonly label: string;
+  readonly size?: number;
+  readonly className?: string;
 }
 
 export default function SocialIcon({
@@ -20,6 +21,7 @@ export default function SocialIcon({
   icon: Icon,
   label,
   size = 20,
+  className = "",
 }: SocialIconProps) {
   return (
     <TooltipProvider>
@@ -29,13 +31,13 @@ export default function SocialIcon({
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={label}
-            className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+            aria-label={`Visit ${label} profile`}
+            className={`text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-200 ${className}`}
           >
-            <Icon size={size} />
+            <Icon size={size} aria-hidden="true" />
           </Link>
         </TooltipTrigger>
-        <TooltipContent className={`${inter.className} px-2 py-1 text-xs `}>
+        <TooltipContent className={`${inter.className} px-2 py-1 text-xs`}>
           {label}
         </TooltipContent>
       </Tooltip>
