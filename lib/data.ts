@@ -86,18 +86,19 @@ export const CONTENT = {
   HERO: {
     TITLE: "Software engineer, learner, and an amateur photographer.",
     DESCRIPTION:
-      "I'm Dheeresh, a software engineer based in India. I specialize in building scalable web applications and have experience working with companies like RingCentral and TaxHoa. I'm passionate about creating solutions that make a difference.",
+      "I'm Dheeresh, a software engineer based in India. I specialize in building scalable web applications with experience working at both multinational corporations like RingCentral and startups like TaxHoa. I'm passionate about creating solutions that make a difference.",
   },
   PROJECTS: {
-    TITLE: "Things I've made trying to put my dent in the universe.",
+    TITLE: "A collection of projects I've passionately built.",
     DESCRIPTION:
       "I've worked on tons of little projects over the years but these are the ones that I'm most proud of. Many of them are open-source, so if you see something that piques your interest, check out the code and contribute if you have ideas for how it can be improved.",
   },
   ABOUT: {
     TITLE: "About Me",
     DESCRIPTIONS: [
-      "I'm a software engineer with experience building scalable web applications. I've worked at companies like RingCentral and TaxHoa, where I've contributed to various software solutions and gained expertise in modern development practices.",
-      "I enjoy working with JavaScript, TypeScript, and modern frameworks like React and Next.js. When I'm not coding, I like exploring new technologies and contributing to open-source projects.",
+      "I've been working as a software engineer for a while now, and I've had the chance to work at different types of companies - from big corporations to smaller startups.",
+      "Most of my work involves TypeScript, Next.js for frontend stuff, and Node.js or Django for backend.",
+      "When I'm not coding, I like trying out new tech, contributing to open-source projects, hitting the gym, taking photos, and occasionally crawling through Coursera courses to finish them (spoiler: I actually do).",
     ],
   },
 } as const;
