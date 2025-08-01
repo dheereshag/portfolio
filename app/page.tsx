@@ -10,7 +10,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="font-sans min-h-screen px-5 py-6 sm:px-8 sm:py-12 md:px-16 md:py-20">
+    <main className="font-sans min-h-screen px-5 sm:px-8 md:px-16 py-12 md:py-20">
       {/* Hero Section */}
       <HeroSection
         title={CONTENT.HERO.TITLE}
