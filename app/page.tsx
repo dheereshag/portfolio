@@ -12,55 +12,62 @@ export default function Home() {
   return (
     <main className="font-sans min-h-screen px-5 sm:px-8 md:px-16 py-12 md:py-20">
       {/* Hero Section */}
-      <HeroSection
-        title={CONTENT.HERO.TITLE}
-        description={CONTENT.HERO.DESCRIPTION}
-      />
+      <header>
+        <HeroSection
+          title={CONTENT.HERO.TITLE}
+          description={CONTENT.HERO.DESCRIPTION}
+        />
 
-      {/* Social Links */}
-      <section
-        className="flex flex-wrap justify-center items-center gap-8 sm:gap-10 mb-16 sm:mb-20"
-        aria-label="Social media links"
-      >
-        {socials.map((social) => (
-          <SocialIcon
-            key={social.label}
-            href={social.href}
-            icon={social.icon}
-            label={social.label}
-          />
-        ))}
-      </section>
+        {/* Social Links Navigation */}
+        <nav
+          className="flex flex-wrap justify-center items-center gap-8 sm:gap-10 mb-16 sm:mb-20"
+          aria-label="Social media links"
+        >
+          {socials.map((social) => (
+            <SocialIcon
+              key={social.label}
+              href={social.href}
+              icon={social.icon}
+              label={social.label}
+            />
+          ))}
+        </nav>
+      </header>
 
       {/* Projects Section */}
-      <HeroSection
-        title={CONTENT.PROJECTS.TITLE}
-        description={CONTENT.PROJECTS.DESCRIPTION}
-      />
+      <section>
+        <HeroSection
+          title={CONTENT.PROJECTS.TITLE}
+          description={CONTENT.PROJECTS.DESCRIPTION}
+        />
 
-      <section
-        className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 sm:gap-x-8 gap-y-8 sm:gap-y-10 mb-16 sm:mb-20 lg:max-w-6xl"
-        aria-label="Featured projects"
-      >
-        {projects.map((project) => (
-          <ProjectCard
-            key={project.name}
-            name={project.name}
-            description={project.description}
-            link={project.link}
-            logo={project.logo}
-          />
-        ))}
+        <article
+          className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 sm:gap-x-8 gap-y-8 sm:gap-y-10 mb-16 sm:mb-20 lg:max-w-6xl"
+          aria-label="Featured projects"
+        >
+          {projects.map((project) => (
+            <ProjectCard
+              key={project.name}
+              name={project.name}
+              description={project.description}
+              link={project.link}
+              logo={project.logo}
+            />
+          ))}
+        </article>
       </section>
 
-      <SectionHeading title={CONTENT.ABOUT.TITLE} />
+      <SectionHeading title={CONTENT.ABOUT.TITLE} level={2} />
 
       {/* About Section */}
       <section className="flex flex-col xl:flex-row gap-8 sm:gap-12 mb-12 sm:mb-16 max-w-6xl mx-auto">
         <AboutSection descriptions={CONTENT.ABOUT.DESCRIPTIONS} />
 
         {/* Resume and Contact Section */}
-        <aside className="flex flex-col gap-8 sm:gap-10 items-center">
+        <aside
+          className="flex flex-col gap-8 sm:gap-10 items-center"
+          aria-label="Professional information and contact"
+        >
           <Resume />
           <Email />
         </aside>
