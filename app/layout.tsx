@@ -1,49 +1,99 @@
 import type { Metadata, Viewport } from "next";
 import { geistSans, geistMono } from "@/lib/fonts";
 import { CONTACT } from "@/lib/constants";
+import StructuredData from "@/components/StructuredData";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://dheereshagrwal.vercel.app"),
   title: {
-    default: CONTACT.NAME,
+    default: `${CONTACT.NAME} - Software Engineer & Full Stack Developer`,
     template: `%s | ${CONTACT.NAME}`,
   },
   description:
-    "Software engineer, learner, and amateur photographer. Portfolio showcasing projects and experience.",
+    "Dheeresh Agarwal is a software engineer and full-stack developer specializing in React, Next.js, TypeScript, and Node.js. Experience at RingCentral and TaxHoa. Portfolio showcasing projects and expertise.",
   keywords: [
     "Dheeresh Agarwal",
     "Software Engineer",
-    "Portfolio",
-    "React",
-    "Next.js",
+    "Full Stack Developer",
+    "React Developer",
+    "Next.js Developer",
     "TypeScript",
+    "Node.js",
+    "Frontend Developer",
+    "Backend Developer",
+    "Web Developer",
+    "JavaScript",
+    "Portfolio",
+    "RingCentral",
+    "TaxHoa",
+    "IIT Bhubaneswar",
+    "Indian Institute of Technology Bhubaneswar",
+    "Indian Institute of Technology",
+    "IITBBS",
+    "IIT",
+    "India",
+    "Agra",
+    "Software Development",
+    "Web Applications",
+    "Open Source",
   ],
   authors: [{ name: CONTACT.NAME, url: "https://dheereshagrwal.vercel.app" }],
   creator: CONTACT.NAME,
+  publisher: CONTACT.NAME,
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://dheereshagrwal.vercel.app",
-    title: CONTACT.NAME,
-    description: "Software engineer, learner, and amateur photographer",
-    siteName: CONTACT.NAME,
+    title: `${CONTACT.NAME} - Software Engineer & Full Stack Developer`,
+    description:
+      "Software engineer specializing in React, Next.js, TypeScript, and Node.js. Experience at RingCentral and TaxHoa.",
+    siteName: `${CONTACT.NAME} Portfolio`,
+    images: [
+      {
+        url: "/portfolio.png",
+        width: 1200,
+        height: 630,
+        alt: `${CONTACT.NAME} - Software Engineer Portfolio`,
+        type: "image/png",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: CONTACT.NAME,
-    description: "Software engineer, learner, and amateur photographer",
+    title: `${CONTACT.NAME} - Software Engineer & Full Stack Developer`,
+    description:
+      "Software engineer specializing in React, Next.js, TypeScript, and Node.js. Experience at RingCentral and TaxHoa.",
+    images: ["/portfolio.png"],
+    creator: "@dheereshagrwal",
   },
   robots: {
     index: true,
     follow: true,
+    nocache: true,
     googleBot: {
       index: true,
       follow: true,
+      noimageindex: false,
       "max-video-preview": -1,
       "max-image-preview": "large",
       "max-snippet": -1,
     },
   },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon-16x16.png",
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: "/site.webmanifest",
+  category: "portfolio",
+  classification: "Personal Portfolio Website",
+  referrer: "origin-when-cross-origin",
 };
 
 export const viewport: Viewport = {
@@ -60,6 +110,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
+      <head>
+        <StructuredData />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-zinc-900 text-zinc-100`}
       >

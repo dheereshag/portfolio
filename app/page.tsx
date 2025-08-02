@@ -7,12 +7,60 @@ import Resume from "@/components/Resume";
 import SectionHeading from "@/components/SectionHeading";
 import Email from "@/components/Email";
 import Footer from "@/components/Footer";
+import { Metadata } from "next";
+import { CONTACT } from "@/lib/constants";
+
+export const metadata: Metadata = {
+  title: `${CONTACT.NAME} - Software Engineer Portfolio`,
+  description: CONTENT.HERO.DESCRIPTION,
+  keywords: [
+    "software engineer portfolio",
+    "react developer",
+    "next.js developer",
+    "typescript developer",
+    "full stack developer",
+    "web developer",
+    "frontend developer",
+    "backend developer",
+    "javascript developer",
+    "node.js developer",
+    "dheeresh agarwal",
+    "ringcentral",
+    "taxhoa",
+    "iit bhubaneswar",
+    "indian institute of technology bhubaneswar",
+    "iitbbs",
+  ],
+  alternates: {
+    canonical: "https://dheereshagrwal.vercel.app",
+  },
+  openGraph: {
+    title: `${CONTACT.NAME} - Software Engineer Portfolio`,
+    description: CONTENT.HERO.DESCRIPTION,
+    type: "profile",
+    url: "https://dheereshagrwal.vercel.app",
+    images: [
+      {
+        url: "/portfolio.png",
+        width: 1200,
+        height: 630,
+        alt: `${CONTACT.NAME} Portfolio Screenshot`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${CONTACT.NAME} - Software Engineer Portfolio`,
+    description: CONTENT.HERO.DESCRIPTION,
+    images: ["/portfolio.png"],
+  },
+};
 
 export default function Home() {
   return (
     <main className="font-sans min-h-screen px-5 sm:px-8 md:px-16 py-12 md:py-20">
       {/* Hero Section */}
-      <header>
+      <header id="home">
         <HeroSection
           title={CONTENT.HERO.TITLE}
           description={CONTENT.HERO.DESCRIPTION}
@@ -35,7 +83,7 @@ export default function Home() {
       </header>
 
       {/* Projects Section */}
-      <section>
+      <section id="projects">
         <HeroSection
           title={CONTENT.PROJECTS.TITLE}
           description={CONTENT.PROJECTS.DESCRIPTION}
@@ -60,11 +108,15 @@ export default function Home() {
       <SectionHeading title={CONTENT.ABOUT.TITLE} level={2} />
 
       {/* About Section */}
-      <section className="flex flex-col xl:flex-row gap-8 sm:gap-12 mb-12 sm:mb-16 max-w-6xl mx-auto">
+      <section
+        id="about"
+        className="flex flex-col xl:flex-row gap-8 sm:gap-12 mb-12 sm:mb-16 max-w-6xl mx-auto"
+      >
         <AboutSection descriptions={CONTENT.ABOUT.DESCRIPTIONS} />
 
         {/* Resume and Contact Section */}
         <aside
+          id="contact"
           className="flex flex-col gap-8 sm:gap-10 items-center"
           aria-label="Professional information and contact"
         >
