@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { geistSans, geistMono } from "@/lib/fonts";
-import { CONTACT } from "@/lib/constants";
+import { CONTACT, ASSET_PATHS } from "@/lib/constants";
 import StructuredData from "@/components/StructuredData";
 import "./globals.css";
 
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     siteName: `${CONTACT.NAME} Portfolio`,
     images: [
       {
-        url: "/portfolio.png",
+        url: ASSET_PATHS.LOGOS.PORTFOLIO,
         width: 1200,
         height: 630,
         alt: `${CONTACT.NAME} - Software Engineer Portfolio`,
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     title: `${CONTACT.NAME} - Software Engineer & Full Stack Developer`,
     description:
       "Software engineer specializing in React, Next.js, TypeScript, and Node.js. Experience at RingCentral and TaxHoa.",
-    images: ["/portfolio.png"],
+    images: [ASSET_PATHS.LOGOS.PORTFOLIO],
     creator: "@dheereshagrwal",
   },
   robots: {

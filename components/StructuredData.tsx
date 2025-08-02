@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { CONTACT, EXTERNAL_URLS } from "@/lib/constants";
+import { CONTACT, EXTERNAL_URLS, ASSET_PATHS } from "@/lib/constants";
 import { projects, resume, CONTENT } from "@/lib/data";
 
 interface StructuredDataProps {
@@ -17,7 +17,7 @@ function StructuredData({
     email: CONTACT.EMAIL,
     jobTitle: "Software Engineer",
     description: CONTENT.HERO.DESCRIPTION,
-    image: `${url}/portfolio.png`,
+    image: `${url}${ASSET_PATHS.LOGOS.PORTFOLIO}`,
     sameAs: [
       EXTERNAL_URLS.GITHUB,
       EXTERNAL_URLS.LINKEDIN,
@@ -101,7 +101,7 @@ function StructuredData({
     "@id": `${url}#organization`,
     name: CONTACT.NAME,
     url: url,
-    logo: `${url}/portfolio.png`,
+    logo: `${url}${ASSET_PATHS.LOGOS.PORTFOLIO}`,
     contactPoint: {
       "@type": "ContactPoint",
       email: CONTACT.EMAIL,

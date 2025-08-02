@@ -8,7 +8,7 @@ import SectionHeading from "@/components/SectionHeading";
 import Email from "@/components/Email";
 import Footer from "@/components/Footer";
 import { Metadata } from "next";
-import { CONTACT } from "@/lib/constants";
+import { CONTACT, ASSET_PATHS } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: `${CONTACT.NAME} - Software Engineer Portfolio`,
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     url: "https://dheereshagrwal.vercel.app",
     images: [
       {
-        url: "/portfolio.png",
+        url: ASSET_PATHS.LOGOS.PORTFOLIO,
         width: 1200,
         height: 630,
         alt: `${CONTACT.NAME} Portfolio Screenshot`,
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${CONTACT.NAME} - Software Engineer Portfolio`,
     description: CONTENT.HERO.DESCRIPTION,
-    images: ["/portfolio.png"],
+    images: [ASSET_PATHS.LOGOS.PORTFOLIO],
   },
 };
 
