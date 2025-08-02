@@ -35,18 +35,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   // External project pages - only include your own projects, not external ones
-  const ownProjectPages: MetadataRoute.Sitemap = projects
-    .filter(
-      (project) =>
-        project.link.href.includes("dheereshagrwal") ||
-        project.link.href.includes("vercel.app")
-    )
-    .map((project) => ({
-      url: project.link.href,
-      lastModified,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    }));
+  const ownProjectPages: MetadataRoute.Sitemap = projects.map((project) => ({
+    url: project.link.href,
+    lastModified,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
 
   return [...staticPages, ...ownProjectPages];
 }
