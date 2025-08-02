@@ -1,11 +1,11 @@
 import type { Metadata, Viewport } from "next";
 import { geistSans, geistMono } from "@/lib/fonts";
-import { CONTACT, ASSET_PATHS } from "@/lib/constants";
+import { CONTACT, ASSET_PATHS, EXTERNAL_URLS } from "@/lib/constants";
 import StructuredData from "@/components/StructuredData";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://dheereshagrwal.vercel.app"),
+  metadataBase: new URL(EXTERNAL_URLS.PORTFOLIO),
   title: {
     default: `${CONTACT.NAME} - Software Engineer & Full Stack Developer`,
     template: `%s | ${CONTACT.NAME}`,
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     "Web Applications",
     "Open Source",
   ],
-  authors: [{ name: CONTACT.NAME, url: "https://dheereshagrwal.vercel.app" }],
+  authors: [{ name: CONTACT.NAME, url: EXTERNAL_URLS.PORTFOLIO }],
   creator: CONTACT.NAME,
   publisher: CONTACT.NAME,
   formatDetection: {
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://dheereshagrwal.vercel.app",
+    url: EXTERNAL_URLS.PORTFOLIO,
     title: `${CONTACT.NAME} - Software Engineer & Full Stack Developer`,
     description:
       "Software engineer specializing in React, Next.js, TypeScript, and Node.js. Experience at RingCentral and TaxHoa.",

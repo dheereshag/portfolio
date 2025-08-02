@@ -8,7 +8,7 @@ import SectionHeading from "@/components/SectionHeading";
 import Email from "@/components/Email";
 import Footer from "@/components/Footer";
 import { Metadata } from "next";
-import { CONTACT, ASSET_PATHS } from "@/lib/constants";
+import { CONTACT, ASSET_PATHS, EXTERNAL_URLS } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: `${CONTACT.NAME} - Software Engineer Portfolio`,
@@ -32,13 +32,13 @@ export const metadata: Metadata = {
     "iitbbs",
   ],
   alternates: {
-    canonical: "https://dheereshagrwal.vercel.app",
+    canonical: EXTERNAL_URLS.PORTFOLIO,
   },
   openGraph: {
     title: `${CONTACT.NAME} - Software Engineer Portfolio`,
     description: CONTENT.HERO.DESCRIPTION,
     type: "profile",
-    url: "https://dheereshagrwal.vercel.app",
+    url: EXTERNAL_URLS.PORTFOLIO,
     images: [
       {
         url: ASSET_PATHS.LOGOS.PORTFOLIO,

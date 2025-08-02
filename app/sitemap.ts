@@ -1,8 +1,9 @@
 import { MetadataRoute } from "next";
 import { projects } from "@/lib/data";
+import { EXTERNAL_URLS } from "@/lib/constants";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://dheereshagrwal.vercel.app";
+  const baseUrl = EXTERNAL_URLS.PORTFOLIO;
   const lastModified = new Date();
 
   // Static pages

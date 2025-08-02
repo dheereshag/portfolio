@@ -1,4 +1,5 @@
 import { MetadataRoute } from "next";
+import { EXTERNAL_URLS } from "@/lib/constants";
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -19,7 +20,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/", "/_next/", "/private/"],
       },
     ],
-    sitemap: "https://dheereshagrwal.vercel.app/sitemap.xml",
-    host: "https://dheereshagrwal.vercel.app",
+    sitemap: `${EXTERNAL_URLS.PORTFOLIO}/sitemap.xml`,
+    host: EXTERNAL_URLS.PORTFOLIO,
   };
 }

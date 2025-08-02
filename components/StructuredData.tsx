@@ -7,7 +7,7 @@ interface StructuredDataProps {
 }
 
 function StructuredData({
-  url = "https://dheereshagrwal.vercel.app",
+  url = EXTERNAL_URLS.PORTFOLIO,
 }: StructuredDataProps) {
   const personSchema = {
     "@context": "https://schema.org",
