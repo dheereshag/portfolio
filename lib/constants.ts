@@ -28,7 +28,8 @@ export const ASSET_PATHS = {
   LOGOS: {
     TAXHOA: "/taxhoa.ico",
     RINGCENTRAL: "/ringcentral.png",
-    PORTFOLIO: "/portfolio.png",
+    PORTFOLIO: "/portfolio.png", // Large version for Open Graph
+    PORTFOLIO_AVATAR: "/favicon-96x96.png", // Optimized small version for avatars
     COLOURED_ICONS: "/ci.svg",
     VEMBRIC: "/vembric.svg",
   },

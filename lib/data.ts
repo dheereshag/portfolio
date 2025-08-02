@@ -48,7 +48,7 @@ export const projects: readonly Project[] = [
       href: EXTERNAL_URLS.PORTFOLIO,
       label: "dheereshagrwal.vercel.app",
     },
-    logo: ASSET_PATHS.LOGOS.PORTFOLIO,
+    logo: ASSET_PATHS.LOGOS.PORTFOLIO_AVATAR,
   },
   {
     name: "Vembric",
