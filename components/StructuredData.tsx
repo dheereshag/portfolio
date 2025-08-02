@@ -46,6 +46,29 @@ function StructuredData({
       name: "Indian Institute of Technology Bhubaneswar",
       url: "https://www.iitbbs.ac.in/",
     },
+    hasCredential: {
+      "@type": "EducationalOccupationalCredential",
+      credentialCategory: "degree",
+      educationalLevel: "Bachelor's Degree",
+      about: {
+        "@type": "EducationalOccupationalProgram",
+        name: "Computer Science and Engineering",
+        provider: {
+          "@type": "CollegeOrUniversity",
+          name: "Indian Institute of Technology Bhubaneswar",
+        },
+      },
+    },
+    address: {
+      "@type": "PostalAddress",
+      addressCountry: "IN",
+      addressRegion: "Odisha",
+      addressLocality: "Bhubaneswar",
+    },
+    nationality: {
+      "@type": "Country",
+      name: "India",
+    },
   };
 
   const websiteSchema = {
@@ -91,6 +114,14 @@ function StructuredData({
       author: {
         "@type": "Person",
         name: CONTACT.NAME,
+      },
+      // Add additional software application properties
+      softwareVersion: "1.0",
+      offers: {
+        "@type": "Offer",
+        price: "0",
+        priceCurrency: "USD",
+        availability: "https://schema.org/InStock",
       },
     })),
   };
@@ -139,6 +170,60 @@ function StructuredData({
     ],
   };
 
+  // Add job posting schema for work experience
+  const workExperienceSchema = resume.map((role, index) => ({
+    "@context": "https://schema.org",
+    "@type": "EmployeeRole",
+    "@id": `${url}#job-${index}`,
+    roleName: role.title,
+    startDate: role.start,
+    endDate:
+      role.end === "Present"
+        ? new Date().toISOString().split("T")[0]
+        : role.end,
+    worksFor: {
+      "@type": "Organization",
+      name: role.company,
+      url: role.website,
+    },
+    employee: {
+      "@type": "Person",
+      name: CONTACT.NAME,
+    },
+  }));
+
+  // FAQ Schema for common questions
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "What technologies does Dheeresh Agarwal specialize in?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Dheeresh specializes in React, Next.js, TypeScript, Node.js, JavaScript, and full-stack web development. He has experience with modern frameworks and tools for building scalable web applications.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Where has Dheeresh Agarwal worked?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Dheeresh has worked at multinational corporations like RingCentral and startups like TaxHoa, gaining experience across different company sizes and environments.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What education does Dheeresh Agarwal have?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Dheeresh is an alumnus of the Indian Institute of Technology Bhubaneswar (IIT Bhubaneswar), one of India's premier technical institutions.",
+        },
+      },
+    ],
+  };
+
   return (
     <>
       <script
@@ -169,6 +254,21 @@ function StructuredData({
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
+      {workExperienceSchema.map((schema, index) => (
+        <script
+          key={`work-${index}`}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(schema),
+          }}
+        />
+      ))}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema),
         }}
       />
     </>

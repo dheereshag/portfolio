@@ -41,10 +41,12 @@ export const metadata: Metadata = {
   authors: [{ name: CONTACT.NAME, url: EXTERNAL_URLS.PORTFOLIO }],
   creator: CONTACT.NAME,
   publisher: CONTACT.NAME,
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
+  alternates: {
+    canonical: EXTERNAL_URLS.PORTFOLIO,
+    languages: {
+      "en-US": EXTERNAL_URLS.PORTFOLIO,
+      "x-default": EXTERNAL_URLS.PORTFOLIO,
+    },
   },
   openGraph: {
     type: "website",
@@ -93,6 +95,12 @@ export const metadata: Metadata = {
   category: "portfolio",
   classification: "Personal Portfolio Website",
   referrer: "origin-when-cross-origin",
+  // Add verification meta tags for search engines
+  verification: {
+    google: "your-google-search-console-verification-code", // Get from Google Search Console
+    // bing: "your-bing-verification-code", // Get from Bing Webmaster Tools
+    // yandex: "your-yandex-verification-code", // Get from Yandex Webmaster
+  },
 };
 
 export const viewport: Viewport = {
@@ -110,6 +118,17 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
+        {/* Preconnect to external domains */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin=""
+        />
+        {/* DNS prefetch for external links */}
+        <link rel="dns-prefetch" href="//github.com" />
+        <link rel="dns-prefetch" href="//linkedin.com" />
+        <link rel="dns-prefetch" href="//leetcode.com" />
         <StructuredData />
       </head>
       <body

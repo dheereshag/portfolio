@@ -47,6 +47,18 @@ const nextConfig: NextConfig = {
             key: "Referrer-Policy",
             value: "origin-when-cross-origin",
           },
+          {
+            key: "Permissions-Policy",
+            value: "camera=(), microphone=(), geolocation=()",
+          },
+          {
+            key: "Strict-Transport-Security",
+            value: "max-age=31536000; includeSubDomains",
+          },
+          {
+            key: "Content-Security-Policy",
+            value: "frame-ancestors 'self'",
+          },
         ],
       },
       {
@@ -64,6 +76,34 @@ const nextConfig: NextConfig = {
           {
             key: "Cache-Control",
             value: "public, max-age=86400, s-maxage=86400",
+          },
+        ],
+      },
+      // Cache static assets aggressively
+      {
+        source: "/favicon.ico",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      {
+        source: "/:path*\\.(png|jpg|jpeg|gif|webp|svg|ico)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      {
+        source: "/:path*\\.(js|css|woff2|woff)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
           },
         ],
       },
