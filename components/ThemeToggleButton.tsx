@@ -23,7 +23,7 @@ export default function ThemeToggleButton() {
     <Button
       variant="ghost"
       size="icon"
-      className="group/toggle extend-touch-target size-8 top-4 right-4 fixed z-50"
+      className="group/toggle extend-touch-target size-8 top-2 right-2 sm:top-4 sm:right-4 fixed z-50"
       onClick={toggleTheme}
       title="Toggle theme"
     >
