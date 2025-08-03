@@ -46,13 +46,13 @@ function ProjectCard({
           <p className="mt-3 sm:mt-4 text-muted-foreground leading-relaxed text-base">
             {description}
           </p>
-          <footer>
+          <footer className="inline-block mt-6 sm:mt-8">
             <Link
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`Visit ${name} at ${link.label}`}
-              className="mt-6 sm:mt-8 flex text-sm font-medium text-muted-foreground transition-all duration-300 items-center gap-2 hover:text-foreground group"
+              className="flex text-sm font-medium text-blue-600 dark:text-blue-400 transition-all duration-300 items-center gap-2 hover:text-blue-800 dark:hover:text-blue-300 group"
             >
               <Chain
                 className="h-4 w-4 transition-transform duration-200 group-hover:rotate-12"

@@ -39,7 +39,7 @@ function CompanyAvatar({
         loading="lazy"
       />
       <AvatarFallback
-        className="text-xs font-semibold"
+        className="text-xs font-semibold text-foreground"
         aria-label={`${name} initials`}
       >
         {getInitials(name)}

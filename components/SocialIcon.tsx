@@ -38,7 +38,7 @@ export default function SocialIcon({
           </Link>
         </TooltipTrigger>
         <TooltipContent
-          className={`${inter.className} px-3 py-2 text-sm font-medium`}
+          className={`${inter.className} px-3 py-2 text-sm font-medium text-primary-foreground`}
         >
           {label}
         </TooltipContent>
