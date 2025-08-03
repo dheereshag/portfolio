@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { geistSans, geistMono } from "@/lib/fonts";
+import { geistSans, geistMono, inter } from "@/lib/fonts";
 import { layoutMetadata, viewport } from "@/lib/metadata";
 import StructuredData from "@/components/StructuredData";
 import ThemeProvider from "@/components/ThemeProvider";
@@ -46,7 +46,7 @@ export default function RootLayout({
         <StructuredData />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} antialiased`}
       >
         <ThemeProvider
           attribute="class"
