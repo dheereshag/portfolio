@@ -7,7 +7,7 @@ import { memo } from "react";
 
 function Resume() {
   return (
-    <Card className="hover:bg-zinc-50 dark:hover:bg-zinc-800/50 bg-transparent rounded-2xl transition-colors duration-200">
+    <Card className="hover:bg-accent bg-transparent rounded-2xl transition-colors duration-200">
       <CardHeader>
         <h4 className="flex font-semibold gap-2 items-center">
           <BriefcaseIcon className="h-6 w-6" aria-hidden="true" />

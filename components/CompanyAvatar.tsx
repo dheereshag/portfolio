@@ -30,7 +30,7 @@ function CompanyAvatar({
 
   const avatarElement = (
     <Avatar
-      className={`items-center justify-center dark:border dark:border-zinc-700/50 dark:bg-zinc-800 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-zinc-900/20 dark:hover:shadow-zinc-100/10 ${sizeClass}`}
+      className={`items-center justify-center border border-border bg-card hover:bg-accent transition-all duration-300 hover:scale-110 hover:shadow-lg ${sizeClass}`}
     >
       <AvatarImage
         src={logo}

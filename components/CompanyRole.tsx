@@ -20,23 +20,23 @@ function CompanyRole({ role }: CompanyRoleProps) {
       />
       <dl className="flex flex-auto flex-wrap gap-1 sm:gap-2">
         <dt className="sr-only">Company</dt>
-        <dd className="w-full flex-none font-medium text-zinc-800 dark:text-zinc-100">
+        <dd className="w-full flex-none font-medium text-foreground">
           <Link
             href={role.website}
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-zinc-600 dark:hover:text-zinc-400 transition-colors duration-200"
+            className="hover:text-muted-foreground transition-colors duration-200"
           >
             {role.company}
           </Link>
         </dd>
         <dt className="sr-only">Role</dt>
-        <dd className="text-sm text-zinc-600 dark:text-zinc-400">
+        <dd className="text-sm text-muted-foreground">
           {role.title}
         </dd>
         <dt className="sr-only">Date</dt>
         <dd
-          className="ml-auto text-xs sm:text-sm text-zinc-500 dark:text-zinc-400"
+          className="ml-auto text-xs sm:text-sm text-muted-foreground"
           aria-label={`${role.start} until ${role.end}`}
         >
           <time dateTime={role.start}>{role.start}</time>
