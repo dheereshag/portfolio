@@ -1,7 +1,8 @@
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
 import { geistSans, geistMono } from "@/lib/fonts";
 import { layoutMetadata, viewport } from "@/lib/metadata";
 import StructuredData from "@/components/StructuredData";
+import ThemeProvider from "@/components/ThemeProvider";
 import "./globals.css";
 
 export const metadata: Metadata = layoutMetadata;
@@ -13,7 +14,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" suppressHydrationWarning>
       <head>
         {/* Preconnect to external domains */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -29,9 +30,16 @@ export default function RootLayout({
         <StructuredData />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-zinc-900 text-zinc-100`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
