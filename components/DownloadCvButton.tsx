@@ -6,7 +6,7 @@ import { ASSET_PATHS } from "@/lib/constants";
 
 function DownloadCvButton() {
   return (
-    <Button variant="outline" className="mt-4 sm:mt-6 w-full hover:scale-101 transition-all transform" asChild>
+    <Button variant="outline" className="mt-4 sm:mt-6 w-full hover:scale-103 transition-all transform" asChild>
       <Link
         href={ASSET_PATHS.RESUME}
         download
