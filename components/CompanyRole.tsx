@@ -31,9 +31,7 @@ function CompanyRole({ role }: CompanyRoleProps) {
           </Link>
         </dd>
         <dt className="sr-only">Role</dt>
-        <dd className="text-sm text-muted-foreground">
-          {role.title}
-        </dd>
+        <dd className="text-sm text-muted-foreground">{role.title}</dd>
         <dt className="sr-only">Date</dt>
         <dd
           className="ml-auto text-xs sm:text-sm text-muted-foreground"
