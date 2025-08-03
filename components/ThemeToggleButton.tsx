@@ -1,74 +1,67 @@
 "use client";
 
-import { useId, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { MoonIcon, SunIcon } from "lucide-react";
 import { useTheme } from "next-themes";
-import { Switch } from "@/components/ui/switch";
+
+import { Toggle } from "@/components/ui/toggle";
 
 export default function ThemeToggleButton() {
-  const id = useId();
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
-  // Ensure component is mounted to avoid hydration mismatch
   useEffect(() => {
     setMounted(true);
   }, []);
 
+  // While SSR/hydrating, render a disabled toggle
   if (!mounted) {
-    // Return a placeholder during SSR/hydration
     return (
-      <div className="fixed top-4 right-4 z-50 group inline-flex items-center gap-2">
-        <span className="flex-1 cursor-pointer text-right text-sm font-medium">
-          <SunIcon size={16} aria-hidden="true" />
-        </span>
-        <Switch
-          id={id}
-          checked={true}
-          aria-label="Toggle between dark and light mode"
+      <div className="fixed top-4 right-4 z-50">
+        <Toggle
+          variant="outline"
+          className="size-9"
+          pressed={false}
           disabled
-        />
-        <span className="flex-1 cursor-pointer text-left text-sm font-medium">
-          <MoonIcon size={16} aria-hidden="true" />
-        </span>
+          aria-label="Toggle theme"
+        >
+          <MoonIcon
+            size={16}
+            className="shrink-0 scale-0 opacity-0 transition-all dark:scale-100 dark:opacity-100"
+            aria-hidden="true"
+          />
+          <SunIcon
+            size={16}
+            className="absolute shrink-0 scale-100 opacity-100 transition-all dark:scale-0 dark:opacity-0"
+            aria-hidden="true"
+          />
+        </Toggle>
       </div>
     );
   }
 
   const isDark = theme === "dark";
 
-  const toggleTheme = () => {
-    setTheme(isDark ? "light" : "dark");
-  };
-
   return (
-    <div
-      className="fixed top-4 right-4 z-50 group inline-flex items-center gap-2"
-      data-state={isDark ? "checked" : "unchecked"}
-    >
-      <span
-        id={`${id}-off`}
-        className="group-data-[state=checked]:text-muted-foreground/70 flex-1 cursor-pointer text-right text-sm font-medium"
-        aria-controls={id}
-        onClick={() => setTheme("light")}
+    <div className="fixed top-4 right-4 z-50">
+      <Toggle
+        variant="outline"
+        className="size-9"
+        pressed={isDark}
+        onPressedChange={() => setTheme(isDark ? "light" : "dark")}
+        aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
       >
-        <SunIcon size={16} aria-hidden="true" />
-      </span>
-      <Switch
-        id={id}
-        checked={isDark}
-        onCheckedChange={toggleTheme}
-        aria-labelledby={`${id}-off ${id}-on`}
-        aria-label="Toggle between dark and light mode"
-      />
-      <span
-        id={`${id}-on`}
-        className="group-data-[state=unchecked]:text-muted-foreground/70 flex-1 cursor-pointer text-left text-sm font-medium"
-        aria-controls={id}
-        onClick={() => setTheme("dark")}
-      >
-        <MoonIcon size={16} aria-hidden="true" />
-      </span>
+        <MoonIcon
+          size={16}
+          className="shrink-0 scale-0 opacity-0 transition-all dark:scale-100 dark:opacity-100"
+          aria-hidden="true"
+        />
+        <SunIcon
+          size={16}
+          className="absolute shrink-0 scale-100 opacity-100 transition-all dark:scale-0 dark:opacity-0"
+          aria-hidden="true"
+        />
+      </Toggle>
     </div>
   );
 }
