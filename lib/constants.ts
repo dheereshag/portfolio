@@ -34,3 +34,8 @@ export const ASSET_PATHS = {
     VEMBRIC: "/vembric.svg",
   },
 } as const;
+
+export const META_THEME_COLORS = {
+  light: "#ffffff",
+  dark: "#09090b",
+};

@@ -32,13 +32,13 @@ export default function SocialIcon({
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`Visit ${label} profile`}
-            className={`text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-all duration-300 hover:scale-110 ${className}`}
+            className={`text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-110 ${className}`}
           >
             <Icon size={size} aria-hidden="true" />
           </Link>
         </TooltipTrigger>
         <TooltipContent
-          className={`${inter.className} px-3 py-2 text-sm font-medium`}
+          className={`${inter.className} px-3 py-2 text-sm font-medium text-primary-foreground`}
         >
           {label}
         </TooltipContent>

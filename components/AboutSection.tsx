@@ -10,7 +10,7 @@ function AboutSection({ descriptions }: AboutSectionProps) {
       {descriptions.map((desc, index) => (
         <p
           key={index}
-          className="leading-relaxed text-zinc-600 dark:text-zinc-400 text-base sm:text-lg md:text-xl font-medium"
+          className="leading-relaxed text-muted-foreground text-base sm:text-lg md:text-xl font-medium"
         >
           {desc}
         </p>
