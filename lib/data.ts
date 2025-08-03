@@ -94,7 +94,7 @@ export const CONTENT = {
       "I've worked on tons of little projects over the years but these are the ones that I'm most proud of. Many of them are open-source, so if you see something that piques your interest, check out the code and contribute if you have ideas for how it can be improved.",
   },
   ABOUT: {
-    TITLE: "About Me",
+    TITLE: "About Me.",
     DESCRIPTIONS: [
       "I've been working as a software engineer for a while now, and I've had the chance to work at different types of companies - from big corporations to smaller startups.",
       "Most of my work involves TypeScript, Next.js for frontend stuff, and Node.js or Django for backend.",
