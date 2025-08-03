@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { ASSET_PATHS, CONTACT, EXTERNAL_URLS } from "@/lib/constants";
+import { ASSET_PATHS, CONTACT, EXTERNAL_URLS, META_THEME_COLORS } from "@/lib/constants";
 
 // Comprehensive SEO Keywords
 export const SEO_KEYWORDS: string[] = [
@@ -122,8 +122,8 @@ export const layoutMetadata: Metadata = {
 // Viewport configuration
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "#09090b" },
+    { media: "(prefers-color-scheme: light)", color: META_THEME_COLORS.light },
+    { media: "(prefers-color-scheme: dark)", color: META_THEME_COLORS.dark },
   ],
 };
 
