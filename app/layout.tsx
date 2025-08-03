@@ -31,7 +31,7 @@ export default function RootLayout({
             `,
           }}
         />
-        <meta name="theme-color" content={META_THEME_COLORS.dark} />
+        <meta name="theme-color" content={META_THEME_COLORS.light} />
         {/* Preconnect to external domains */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
