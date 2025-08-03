@@ -7,54 +7,12 @@ import Resume from "@/components/Resume";
 import SectionHeading from "@/components/SectionHeading";
 import Email from "@/components/Email";
 import Footer from "@/components/Footer";
-import { Metadata } from "next";
-import { CONTACT, ASSET_PATHS, EXTERNAL_URLS } from "@/lib/constants";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: `${CONTACT.NAME} - Software Engineer Portfolio`,
-  description: CONTENT.HERO.DESCRIPTION,
-  keywords: [
-    "software engineer portfolio",
-    "react developer",
-    "next.js developer",
-    "typescript developer",
-    "full stack developer",
-    "web developer",
-    "frontend developer",
-    "backend developer",
-    "javascript developer",
-    "node.js developer",
-    "dheeresh agarwal",
-    "ringcentral",
-    "taxhoa",
-    "iit bhubaneswar",
-    "indian institute of technology bhubaneswar",
-    "iitbbs",
-  ],
-  alternates: {
-    canonical: EXTERNAL_URLS.PORTFOLIO,
-  },
-  openGraph: {
-    title: `${CONTACT.NAME} - Software Engineer Portfolio`,
-    description: CONTENT.HERO.DESCRIPTION,
-    type: "profile",
-    url: EXTERNAL_URLS.PORTFOLIO,
-    images: [
-      {
-        url: ASSET_PATHS.LOGOS.PORTFOLIO,
-        width: 1200,
-        height: 630,
-        alt: `${CONTACT.NAME} Portfolio Screenshot`,
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: `${CONTACT.NAME} - Software Engineer Portfolio`,
-    description: CONTENT.HERO.DESCRIPTION,
-    images: [ASSET_PATHS.LOGOS.PORTFOLIO],
-  },
-};
+export const metadata = createPageMetadata(
+  `${CONTENT.HERO.TITLE}`,
+  CONTENT.HERO.DESCRIPTION
+);
 
 export default function Home() {
   return (
