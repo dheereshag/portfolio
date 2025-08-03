@@ -24,7 +24,7 @@ export default function ThemeToggleButton() {
         </span>
         <Switch
           id={id}
-          checked={false}
+          checked={true}
           aria-label="Toggle between dark and light mode"
           disabled
         />
@@ -50,7 +50,7 @@ export default function ThemeToggleButton() {
         id={`${id}-off`}
         className="group-data-[state=checked]:text-muted-foreground/70 flex-1 cursor-pointer text-right text-sm font-medium"
         aria-controls={id}
-        onClick={() => setTheme("dark")}
+        onClick={() => setTheme("light")}
       >
         <SunIcon size={16} aria-hidden="true" />
       </span>
@@ -65,7 +65,7 @@ export default function ThemeToggleButton() {
         id={`${id}-on`}
         className="group-data-[state=unchecked]:text-muted-foreground/70 flex-1 cursor-pointer text-left text-sm font-medium"
         aria-controls={id}
-        onClick={() => setTheme("light")}
+        onClick={() => setTheme("dark")}
       >
         <MoonIcon size={16} aria-hidden="true" />
       </span>
