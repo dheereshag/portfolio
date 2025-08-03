@@ -18,7 +18,7 @@ export default function ThemeToggleButton() {
   if (!mounted) {
     // Return a placeholder during SSR/hydration
     return (
-      <div className="fixed top-4 right-4 z-50 group inline-flex items-center gap-2 p-2 bg-background/80 backdrop-blur-sm border rounded-lg shadow-sm">
+      <div className="fixed top-4 right-4 z-50 group inline-flex items-center gap-2">
         <span className="flex-1 cursor-pointer text-right text-sm font-medium">
           <SunIcon size={16} aria-hidden="true" />
         </span>
@@ -43,7 +43,7 @@ export default function ThemeToggleButton() {
 
   return (
     <div
-      className="fixed top-4 right-4 z-50 group inline-flex items-center gap-2 p-2 bg-background/80 backdrop-blur-sm border rounded-lg shadow-sm"
+      className="fixed top-4 right-4 z-50 group inline-flex items-center gap-2"
       data-state={isDark ? "checked" : "unchecked"}
     >
       <span
