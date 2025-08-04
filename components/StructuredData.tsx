@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { memo, useMemo } from "react";
 import {
   EXTERNAL_URLS,
   createPersonSchema,
@@ -18,13 +18,25 @@ interface StructuredDataProps {
 function StructuredData({
   url = EXTERNAL_URLS.PORTFOLIO,
 }: StructuredDataProps) {
-  const personSchema = createPersonSchema(url, resume, CONTENT);
-  const websiteSchema = createWebsiteSchema(url, CONTENT);
-  const portfolioSchema = createPortfolioSchema(url, projects, CONTENT);
-  const organizationSchema = createOrganizationSchema(url);
-  const breadcrumbSchema = createBreadcrumbSchema(url);
-  const workExperienceSchema = createWorkExperienceSchemas(url, resume);
-  const faqSchema = createFaqSchema();
+  const personSchema = useMemo(
+    () => createPersonSchema(url, resume, CONTENT),
+    [url]
+  );
+  const websiteSchema = useMemo(() => createWebsiteSchema(url, CONTENT), [url]);
+  const portfolioSchema = useMemo(
+    () => createPortfolioSchema(url, projects, CONTENT),
+    [url]
+  );
+  const organizationSchema = useMemo(
+    () => createOrganizationSchema(url),
+    [url]
+  );
+  const breadcrumbSchema = useMemo(() => createBreadcrumbSchema(url), [url]);
+  const workExperienceSchema = useMemo(
+    () => createWorkExperienceSchemas(url, resume),
+    [url]
+  );
+  const faqSchema = useMemo(() => createFaqSchema(), []);
 
   return (
     <>

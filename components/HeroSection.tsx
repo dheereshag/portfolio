@@ -1,3 +1,4 @@
+import { memo } from "react";
 import SectionHeading from "./SectionHeading";
 
 interface HeroSectionProps {
@@ -5,7 +6,7 @@ interface HeroSectionProps {
   description: string;
 }
 
-export default function HeroSection({ title, description }: HeroSectionProps) {
+function HeroSection({ title, description }: HeroSectionProps) {
   return (
     <section className="max-w-full sm:max-w-xl md:max-w-2xl mx-auto text-center mb-12 sm:mb-16">
       <SectionHeading title={title} />
@@ -15,3 +16,5 @@ export default function HeroSection({ title, description }: HeroSectionProps) {
     </section>
   );
 }
+
+export default memo(HeroSection);

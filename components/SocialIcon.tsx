@@ -1,6 +1,7 @@
 import type { IconType } from "react-icons";
 import { inter } from "@/lib/fonts";
 import Link from "next/link";
+import { memo } from "react";
 import {
   Tooltip,
   TooltipContent,
@@ -16,7 +17,7 @@ interface SocialIconProps {
   readonly className?: string;
 }
 
-export default function SocialIcon({
+function SocialIcon({
   href,
   icon: Icon,
   label,
@@ -46,3 +47,5 @@ export default function SocialIcon({
     </TooltipProvider>
   );
 }
+
+export default memo(SocialIcon);

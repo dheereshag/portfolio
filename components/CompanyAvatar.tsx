@@ -1,7 +1,7 @@
 "use client";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Link from "next/link";
-import { memo } from "react";
+import { memo, useMemo } from "react";
 
 interface CompanyAvatarProps {
   readonly logo: string;
@@ -20,13 +20,13 @@ function CompanyAvatar({
   href,
   ariaLabel,
 }: CompanyAvatarProps) {
-  const getInitials = (companyName: string): string => {
-    return companyName
+  const initials = useMemo(() => {
+    return name
       .split(" ")
       .map((word) => word.charAt(0).toUpperCase())
       .slice(0, 2)
       .join("");
-  };
+  }, [name]);
 
   const avatarElement = (
     <Avatar
@@ -42,7 +42,7 @@ function CompanyAvatar({
         className="text-xs font-semibold text-foreground"
         aria-label={`${name} initials`}
       >
-        {getInitials(name)}
+        {initials}
       </AvatarFallback>
     </Avatar>
   );
