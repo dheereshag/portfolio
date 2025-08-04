@@ -52,7 +52,7 @@ function StructuredData({
       educationalLevel: "Bachelor's Degree",
       about: {
         "@type": "EducationalOccupationalProgram",
-        name: "Computer Science and Engineering",
+        name: "Materials Engineering",
         provider: {
           "@type": "CollegeOrUniversity",
           name: "Indian Institute of Technology Bhubaneswar",
