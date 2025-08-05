@@ -2,6 +2,8 @@
  * Application-wide constants for better maintainability and type safety
  */
 
+import type { Role, Project, Content } from "@/lib/types";
+
 // External URLs
 export const EXTERNAL_URLS = {
   GITHUB: "https://github.com/dheereshagrwal",
@@ -99,8 +101,8 @@ export const BREADCRUMB_ITEMS = [
 // Schema factory functions - these create schemas with dynamic data
 export const createPersonSchema = (
   url: string,
-  resume: readonly any[],
-  content: any
+  resume: readonly Role[],
+  content: Content
 ) => ({
   "@context": "https://schema.org",
   "@type": "Person",
@@ -152,7 +154,7 @@ export const createPersonSchema = (
   },
 });
 
-export const createWebsiteSchema = (url: string, content: any) => ({
+export const createWebsiteSchema = (url: string, content: Content) => ({
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: `${CONTACT.NAME} Portfolio`,
@@ -176,8 +178,8 @@ export const createWebsiteSchema = (url: string, content: any) => ({
 
 export const createPortfolioSchema = (
   url: string,
-  projects: readonly any[],
-  content: any
+  projects: readonly Project[],
+  content: Content
 ) => ({
   "@context": "https://schema.org",
   "@type": "CreativeWork",
@@ -242,7 +244,7 @@ export const createBreadcrumbSchema = (url: string) => ({
 
 export const createWorkExperienceSchemas = (
   url: string,
-  resume: readonly any[]
+  resume: readonly Role[]
 ) =>
   resume.map((role, index) => ({
     "@context": "https://schema.org",

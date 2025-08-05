@@ -26,3 +26,18 @@ export interface Project {
   readonly link: ProjectLink;
   readonly logo: string;
 }
+
+export interface Content {
+  readonly HERO: {
+    readonly TITLE: string;
+    readonly DESCRIPTION: string;
+  };
+  readonly PROJECTS: {
+    readonly TITLE: string;
+    readonly DESCRIPTION: string;
+  };
+  readonly ABOUT: {
+    readonly TITLE: string;
+    readonly DESCRIPTIONS: readonly string[];
+  };
+}
