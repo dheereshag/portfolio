@@ -2,7 +2,7 @@
  * Centralized data/constants for the portfolio
  * All data is readonly for immutability and better performance
  */
-import { SiGithub, SiLinkedin, SiLeetcode } from "react-icons/si";
+import { SiGithub, SiLinkedin, SiLeetcode, SiCodeforces } from "react-icons/si";
 import type { Role, Social, Project } from "@/lib/types";
 import { EXTERNAL_URLS, ASSET_PATHS } from "@/lib/constants";
 
@@ -12,11 +12,11 @@ export const socials: readonly Social[] = [
     icon: SiGithub,
     label: "GitHub",
   },
-  // {
-  //   href: EXTERNAL_URLS.CODEFORCES,
-  //   icon: SiCodeforces,
-  //   label: "Codeforces",
-  // },
+  {
+    href: EXTERNAL_URLS.CODEFORCES,
+    icon: SiCodeforces,
+    label: "Codeforces",
+  },
   {
     href: EXTERNAL_URLS.LEETCODE,
     icon: SiLeetcode,
