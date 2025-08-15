@@ -25,6 +25,7 @@ export default function Home() {
           <HeroSection
             title={CONTENT.HERO.TITLE}
             description={CONTENT.HERO.DESCRIPTION}
+            headingAs="h1"
           />
 
           {/* Social Links Navigation */}

@@ -17,7 +17,7 @@ const nextConfig: NextConfig = {
     formats: ["image/webp", "image/avif"],
     minimumCacheTTL: 31536000, // 1 year
     dangerouslyAllowSVG: true,
-    contentDispositionType: "attachment",
+    contentDispositionType: "inline",
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
 
