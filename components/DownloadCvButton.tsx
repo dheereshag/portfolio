@@ -1,4 +1,3 @@
-import { memo } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowDownIcon } from "lucide-react";
@@ -26,4 +25,4 @@ function DownloadCvButton() {
   );
 }
 
-export default memo(DownloadCvButton);
+export default DownloadCvButton;

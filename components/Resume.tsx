@@ -3,7 +3,6 @@ import DownloadCvButton from "@/components/DownloadCvButton";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import CompanyRole from "@/components/CompanyRole";
 import { resume } from "@/lib/data";
-import { memo } from "react";
 
 function Resume() {
   return (
@@ -28,4 +27,4 @@ function Resume() {
   );
 }
 
-export default memo(Resume);
+export default Resume;

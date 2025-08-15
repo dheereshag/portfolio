@@ -2,7 +2,6 @@ import Link from "next/link";
 import { Link as Chain } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import CompanyAvatar from "@/components/CompanyAvatar";
-import { memo } from "react";
 import type { Project } from "@/lib/types";
 
 interface ProjectCardProps
@@ -68,4 +67,4 @@ function ProjectCard({
 }
 
 // Memoize the component for better performance
-export default memo(ProjectCard);
+export default ProjectCard;

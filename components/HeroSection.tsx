@@ -1,4 +1,4 @@
-import { memo } from "react";
+// React Compiler is enabled; explicit memoization is typically unnecessary.
 import SectionHeading from "./SectionHeading";
 
 interface HeroSectionProps {
@@ -23,4 +23,4 @@ function HeroSection({
   );
 }
 
-export default memo(HeroSection);
+export default HeroSection;

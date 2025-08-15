@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { SiGmail } from "react-icons/si";
 import { CONTACT } from "@/lib/constants";
-import { memo } from "react";
 
 function Email() {
   return (
@@ -18,4 +17,4 @@ function Email() {
   );
 }
 
-export default memo(Email);
+export default Email;

@@ -1,7 +1,7 @@
 "use client";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Link from "next/link";
-import { memo, useMemo } from "react";
+import { useMemo } from "react";
 
 interface CompanyAvatarProps {
   readonly logo: string;
@@ -61,4 +61,4 @@ function CompanyAvatar({
   );
 }
 
-export default memo(CompanyAvatar);
+export default CompanyAvatar;

@@ -1,4 +1,4 @@
-import { memo } from "react";
+// React Compiler is enabled; explicit memoization is typically unnecessary.
 
 interface AboutSectionProps {
   readonly descriptions: readonly string[];
@@ -19,4 +19,4 @@ function AboutSection({ descriptions }: AboutSectionProps) {
   );
 }
 
-export default memo(AboutSection);
+export default AboutSection;

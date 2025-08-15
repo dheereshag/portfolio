@@ -1,4 +1,4 @@
-import { memo } from "react";
+// React Compiler is enabled; explicit memoization is typically unnecessary.
 
 interface SectionHeadingProps {
   readonly title: string;
@@ -15,4 +15,4 @@ function SectionHeading({ title, as = "h2" }: SectionHeadingProps) {
   );
 }
 
-export default memo(SectionHeading);
+export default SectionHeading;

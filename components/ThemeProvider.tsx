@@ -1,6 +1,5 @@
 "use client";
 
-import { memo } from "react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 
 function ThemeProvider({
@@ -10,4 +9,4 @@ function ThemeProvider({
   return <NextThemesProvider {...props}>{children}</NextThemesProvider>;
 }
 
-export default memo(ThemeProvider);
+export default ThemeProvider;

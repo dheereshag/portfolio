@@ -1,5 +1,5 @@
 import { CONTACT } from "@/lib/constants";
-import { memo, useMemo } from "react";
+import { useMemo } from "react";
 
 function Footer() {
   const currentYear = useMemo(() => new Date().getFullYear(), []);
@@ -13,4 +13,4 @@ function Footer() {
   );
 }
 
-export default memo(Footer);
+export default Footer;

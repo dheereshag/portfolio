@@ -1,7 +1,6 @@
 import type { Role } from "@/lib/types";
 import CompanyAvatar from "@/components/CompanyAvatar";
 import Link from "next/link";
-import { memo } from "react";
 
 interface CompanyRoleProps {
   readonly role: Role;
@@ -48,4 +47,4 @@ function CompanyRole({ role }: CompanyRoleProps) {
   );
 }
 
-export default memo(CompanyRole);
+export default CompanyRole;
