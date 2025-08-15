@@ -13,11 +13,13 @@ export default function ThemeToggleButton() {
 
   React.useEffect(() => {
     setMetaColor(metaColor);
-  }, [metaColor, setMetaColor]);
+    // setMetaColor is stable for our purposes; including it would cause unnecessary reruns
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [metaColor]);
 
-  const toggleTheme = React.useCallback(() => {
+  const toggleTheme = () => {
     setTheme(resolvedTheme === "dark" ? "light" : "dark");
-  }, [resolvedTheme, setTheme]);
+  };
 
   return (
     <Button
