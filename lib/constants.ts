@@ -15,6 +15,7 @@ export const EXTERNAL_URLS = {
   VEMBRIC: "https://vembric.vercel.app",
   // Company URLs
   TAXHOA: "https://www.taxhoa.com",
+  ATTENTIVE: "https://www.attentive.ai",
   RINGCENTRAL: "https://www.ringcentral.com",
 } as const;
 
