@@ -6,11 +6,11 @@ import type { Role, Project, Content } from "@/lib/types";
 
 // External URLs
 export const EXTERNAL_URLS = {
-  GITHUB: "https://github.com/dheereshagrwal",
-  LINKEDIN: "https://linkedin.com/in/dheereshagrwal",
+  GITHUB: "https://github.com/dheereshag",
+  LINKEDIN: "https://linkedin.com/in/dheereshag",
   LEETCODE: "https://leetcode.com/dheereshagrwal",
-  CODEFORCES: "https://codeforces.com/profile/dheereshagrwal",
-  PORTFOLIO: "https://dheereshagrwal.vercel.app",
+  CODEFORCES: "https://codeforces.com/profile/dheereshag",
+  PORTFOLIO: "https://dheereshag.vercel.app",
   COLOURED_ICONS: "https://coloured-icons.vercel.app",
   VEMBRIC: "https://vembric.vercel.app",
   // Company URLs

@@ -46,7 +46,7 @@ export const projects: readonly Project[] = [
       "This portfolio website, showcasing my work and projects. Built with Next.js, Tailwind CSS, and React Icons.",
     link: {
       href: EXTERNAL_URLS.PORTFOLIO,
-      label: "dheereshagrwal.vercel.app",
+      label: "dheereshag.vercel.app",
     },
     logo: ASSET_PATHS.LOGOS.PORTFOLIO_AVATAR,
   },

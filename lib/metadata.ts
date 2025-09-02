@@ -89,7 +89,7 @@ export const layoutMetadata: Metadata = {
     description:
       "Software engineer specializing in React, Next.js, TypeScript, and Node.js. Experience at RingCentral and TaxHoa.",
     images: [ASSET_PATHS.LOGOS.PORTFOLIO],
-    creator: "@dheereshagrwal",
+    creator: "@dheereshag",
   },
   robots: {
     index: true,

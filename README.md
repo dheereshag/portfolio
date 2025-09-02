@@ -25,7 +25,7 @@ A modern, responsive portfolio website built with Next.js 15, TypeScript, and Ta
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/dheereshagrwal/portfolio.git
+git clone https://github.com/dheereshag/portfolio.git
 cd portfolio
 ```
 
@@ -111,7 +111,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 Dheeresh Agarwal - [da11@iitbbs.ac.in](mailto:da11@iitbbs.ac.in)
 
-Project Link: [https://dheereshagrwal.vercel.app](https://dheereshagrwal.vercel.app)
+Project Link: [https://dheereshag.vercel.app](https://dheereshag.vercel.app)
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
