@@ -9,13 +9,14 @@ export const EXTERNAL_URLS = {
   GITHUB: "https://github.com/dheereshag",
   LINKEDIN: "https://linkedin.com/in/dheereshag",
   LEETCODE: "https://leetcode.com/dheereshagrwal",
+  CODECHEF: "https://www.codechef.com/users/dheereshag",
   CODEFORCES: "https://codeforces.com/profile/dheereshag",
   PORTFOLIO: "https://dheereshag.vercel.app",
   COLOURED_ICONS: "https://coloured-icons.vercel.app",
   VEMBRIC: "https://vembric.vercel.app",
   // Company URLs
-  TAXHOA: "https://www.taxhoa.com",
   ATTENTIVE: "https://www.attentive.ai",
+  HIGHONSWIFT: "https://www.highonswift.com",
   RINGCENTRAL: "https://www.ringcentral.com",
 } as const;
 
@@ -29,7 +30,8 @@ export const CONTACT = {
 export const ASSET_PATHS = {
   RESUME: "/Dheeresh_Agarwal_Resume.pdf",
   LOGOS: {
-    TAXHOA: "/taxhoa.ico",
+    ATTENTIVE: "/attentive.png",
+    HIGHONSWIFT: "/highonswift.png",
     RINGCENTRAL: "/ringcentral.png",
     PORTFOLIO: "/portfolio.png", // Large version for Open Graph
     PORTFOLIO_AVATAR: "/favicon-96x96.png", // Optimized small version for avatars
@@ -83,7 +85,7 @@ export const FAQ_DATA = [
   {
     question: "Where has Dheeresh Agarwal worked?",
     answer:
-      "Dheeresh has worked at multinational corporations like RingCentral and startups like TaxHoa, gaining experience across different company sizes and environments.",
+      "Dheeresh has worked at multinational corporations like RingCentral and startups like Attentive.ai, gaining experience across different company sizes and environments.",
   },
   {
     question: "What education does Dheeresh Agarwal have?",

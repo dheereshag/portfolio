@@ -16,7 +16,8 @@ export const SEO_KEYWORDS: string[] = [
   "JavaScript",
   "Portfolio",
   "RingCentral",
-  "TaxHoa",
+  "HighOnSwift",
+  "Attentive.ai",
   "IIT Bhubaneswar",
   "Indian Institute of Technology Bhubaneswar",
   "Indian Institute of Technology",
@@ -39,7 +40,8 @@ export const SEO_KEYWORDS: string[] = [
   "node.js developer",
   "dheeresh agarwal",
   "ringcentral",
-  "taxhoa",
+  "highonswift",
+  "attentive.ai",
   "iit bhubaneswar",
   "indian institute of technology bhubaneswar",
   "iitbbs",
@@ -53,7 +55,7 @@ export const layoutMetadata: Metadata = {
     template: `%s | ${CONTACT.NAME}`,
   },
   description:
-    "Dheeresh Agarwal is a software engineer and full-stack developer specializing in React, Next.js, TypeScript, and Node.js. Experience at RingCentral and TaxHoa. Portfolio showcasing projects and expertise.",
+    "Dheeresh Agarwal is a software engineer and full-stack developer specializing in React, Next.js, TypeScript, and Node.js. Experience at RingCentral and Attentive.ai. Portfolio showcasing projects and expertise.",
   keywords: SEO_KEYWORDS,
   authors: [{ name: CONTACT.NAME, url: EXTERNAL_URLS.PORTFOLIO }],
   creator: CONTACT.NAME,
@@ -71,7 +73,7 @@ export const layoutMetadata: Metadata = {
     url: EXTERNAL_URLS.PORTFOLIO,
     title: `${CONTACT.NAME} - Software Engineer & Full Stack Developer`,
     description:
-      "Software engineer specializing in React, Next.js, TypeScript, and Node.js. Experience at RingCentral and TaxHoa.",
+      "Software engineer specializing in React, Next.js, TypeScript, and Node.js. Experience at RingCentral and Attentive.ai.",
     siteName: `${CONTACT.NAME} Portfolio`,
     images: [
       {
@@ -87,7 +89,7 @@ export const layoutMetadata: Metadata = {
     card: "summary_large_image",
     title: `${CONTACT.NAME} - Software Engineer & Full Stack Developer`,
     description:
-      "Software engineer specializing in React, Next.js, TypeScript, and Node.js. Experience at RingCentral and TaxHoa.",
+      "Software engineer specializing in React, Next.js, TypeScript, and Node.js. Experience at RingCentral and Attentive.ai.",
     images: [ASSET_PATHS.LOGOS.PORTFOLIO],
     creator: "@dheereshag",
   },

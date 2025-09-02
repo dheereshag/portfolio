@@ -2,7 +2,12 @@
  * Centralized data/constants for the portfolio
  * All data is readonly for immutability and better performance
  */
-import { SiGithub, SiLinkedin, SiLeetcode } from "react-icons/si";
+import {
+  SiGithub,
+  SiLinkedin,
+  SiLeetcode,
+  SiCodechef,
+} from "react-icons/si";
 import type { Role, Social, Project } from "@/lib/types";
 import { EXTERNAL_URLS, ASSET_PATHS } from "@/lib/constants";
 
@@ -26,6 +31,11 @@ export const socials: readonly Social[] = [
     href: EXTERNAL_URLS.LINKEDIN,
     icon: SiLinkedin,
     label: "LinkedIn",
+  },
+  {
+    href: EXTERNAL_URLS.CODECHEF,
+    icon: SiCodechef,
+    label: "CodeChef",
   },
 ] as const;
 
@@ -64,12 +74,20 @@ export const projects: readonly Project[] = [
 
 export const resume: readonly Role[] = [
   {
-    company: "TaxHoa",
+    company: "Attentive.ai",
     title: "Software Engineer",
-    logo: ASSET_PATHS.LOGOS.TAXHOA,
+    logo: ASSET_PATHS.LOGOS.ATTENTIVE,
+    start: "Dec. 2023",
+    end: "Aug. 2024",
+    website: EXTERNAL_URLS.ATTENTIVE,
+  },
+  {
+    company: "HighOnSwift",
+    title: "Software Engineer",
+    logo: ASSET_PATHS.LOGOS.HIGHONSWIFT,
     start: "Dec. 2022",
-    end: "Present",
-    website: EXTERNAL_URLS.TAXHOA,
+    end: "Dec. 2023",
+    website: EXTERNAL_URLS.HIGHONSWIFT,
   },
   {
     company: "RingCentral",
@@ -86,7 +104,7 @@ export const CONTENT = {
   HERO: {
     TITLE: "Software engineer, learner, and an amateur photographer.",
     DESCRIPTION:
-      "I'm Dheeresh, a software engineer based in India. I specialize in building scalable web applications with experience working at both multinational corporations like RingCentral and startups like TaxHoa. I'm passionate about creating solutions that make a difference.",
+      "I'm Dheeresh, a software engineer based in India. I specialize in building scalable web applications with experience working at both multinational corporations like RingCentral and startups like Attentive.ai. I'm passionate about creating solutions that make a difference.",
   },
   PROJECTS: {
     TITLE: "A collection of projects I've passionately built.",
