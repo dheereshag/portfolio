@@ -82,12 +82,12 @@ export const resume: readonly Role[] = [
     website: EXTERNAL_URLS.ATTENTIVE,
   },
   {
-    company: "HighOnSwift",
+    company: "TaxHoa",
     title: "Software Engineer",
-    logo: ASSET_PATHS.LOGOS.HIGHONSWIFT,
+    logo: ASSET_PATHS.LOGOS.TAXHOA,
     start: "Dec. 2022",
-    end: "Dec. 2023",
-    website: EXTERNAL_URLS.HIGHONSWIFT,
+    end: "Aug. 2025",
+    website: EXTERNAL_URLS.TAXHOA,
   },
   {
     company: "RingCentral",

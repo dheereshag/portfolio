@@ -16,7 +16,7 @@ export const EXTERNAL_URLS = {
   VEMBRIC: "https://vembric.vercel.app",
   // Company URLs
   ATTENTIVE: "https://www.attentive.ai",
-  HIGHONSWIFT: "https://www.highonswift.com",
+  TAXHOA: "https://www.taxhoa.com",
   RINGCENTRAL: "https://www.ringcentral.com",
 } as const;
 
@@ -31,7 +31,7 @@ export const ASSET_PATHS = {
   RESUME: "/Dheeresh_Agarwal_Resume.pdf",
   LOGOS: {
     ATTENTIVE: "/attentive.png",
-    HIGHONSWIFT: "/highonswift.png",
+    TAXHOA: "/taxhoa.ico",
     RINGCENTRAL: "/ringcentral.png",
     PORTFOLIO: "/portfolio.png", // Large version for Open Graph
     PORTFOLIO_AVATAR: "/favicon-96x96.png", // Optimized small version for avatars
