@@ -74,12 +74,12 @@ export const projects: readonly Project[] = [
 
 export const resume: readonly Role[] = [
   {
-    company: "Attentive.ai",
+    company: "dcluttr.ai",
     title: "Software Engineer",
-    logo: ASSET_PATHS.LOGOS.ATTENTIVE,
-    start: "Dec. 2023",
-    end: "Aug. 2024",
-    website: EXTERNAL_URLS.ATTENTIVE,
+    logo: ASSET_PATHS.LOGOS.DCLUTTR,
+    start: "Sep. 2025",
+    end: "Present",
+    website: EXTERNAL_URLS.DCLUTTR,
   },
   {
     company: "TaxHoa",
@@ -104,7 +104,7 @@ export const CONTENT = {
   HERO: {
     TITLE: "Software engineer, learner, and an amateur photographer.",
     DESCRIPTION:
-      "I'm Dheeresh, a software engineer based in India. I specialize in building scalable web applications with experience working at both multinational corporations like RingCentral and startups like Attentive.ai. I'm passionate about creating solutions that make a difference.",
+      "I'm Dheeresh, a software engineer based in India. I specialize in building scalable web applications with experience working at both multinational corporations like RingCentral and startups like dcluttr.ai. I'm passionate about creating solutions that make a difference.",
   },
   PROJECTS: {
     TITLE: "A collection of projects I've passionately built.",
