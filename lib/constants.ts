@@ -15,8 +15,8 @@ export const EXTERNAL_URLS = {
   COLOURED_ICONS: "https://coloured-icons.vercel.app",
   VEMBRIC: "https://vembric.vercel.app",
   // Company URLs
-  ATTENTIVE: "https://www.attentive.ai",
-  HIGHONSWIFT: "https://www.highonswift.com",
+  DCLUTTR: "https://www.dcluttr.ai",
+  TAXHOA: "https://www.taxhoa.com",
   RINGCENTRAL: "https://www.ringcentral.com",
 } as const;
 
@@ -30,8 +30,8 @@ export const CONTACT = {
 export const ASSET_PATHS = {
   RESUME: "/Dheeresh_Agarwal_Resume.pdf",
   LOGOS: {
-    ATTENTIVE: "/attentive.png",
-    HIGHONSWIFT: "/highonswift.png",
+    DCLUTTR: "/dcluttr.png",
+    TAXHOA: "/taxhoa.ico",
     RINGCENTRAL: "/ringcentral.png",
     PORTFOLIO: "/portfolio.png", // Large version for Open Graph
     PORTFOLIO_AVATAR: "/favicon-96x96.png", // Optimized small version for avatars
@@ -85,7 +85,7 @@ export const FAQ_DATA = [
   {
     question: "Where has Dheeresh Agarwal worked?",
     answer:
-      "Dheeresh has worked at multinational corporations like RingCentral and startups like Attentive.ai, gaining experience across different company sizes and environments.",
+      "Dheeresh has worked at multinational corporations like RingCentral and startups like dcluttr.ai, gaining experience across different company sizes and environments.",
   },
   {
     question: "What education does Dheeresh Agarwal have?",
