@@ -15,7 +15,6 @@ export const EXTERNAL_URLS = {
   COLOURED_ICONS: "https://coloured-icons.vercel.app",
   VEMBRIC: "https://vembric.vercel.app",
   // Company URLs
-  DCLUTTR: "https://www.dcluttr.ai",
   TAXHOA: "https://www.taxhoa.com",
   RINGCENTRAL: "https://www.ringcentral.com",
 } as const;
@@ -30,7 +29,6 @@ export const CONTACT = {
 export const ASSET_PATHS = {
   RESUME: "/Dheeresh_Agarwal_Resume.pdf",
   LOGOS: {
-    DCLUTTR: "/dcluttr.png",
     TAXHOA: "/taxhoa.ico",
     RINGCENTRAL: "/ringcentral.png",
     PORTFOLIO: "/portfolio.png", // Large version for Open Graph

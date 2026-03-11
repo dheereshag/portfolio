@@ -47,7 +47,7 @@ function CompanyAvatar({
   // always wrap avatar in Link now that href is required
   return (
     <Link
-      href={href}
+     href={href || "#"}
       target="_blank"
       rel="noopener noreferrer"
       aria-label={ariaLabel || `Visit ${name}`}
