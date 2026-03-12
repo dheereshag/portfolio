@@ -17,11 +17,6 @@ export const socials: readonly Social[] = [
     icon: SiGithub,
     label: "GitHub",
   },
-  // {
-  //   href: EXTERNAL_URLS.CODEFORCES,
-  //   icon: SiCodeforces,
-  //   label: "Codeforces",
-  // },
   {
     href: EXTERNAL_URLS.LEETCODE,
     icon: SiLeetcode,
@@ -74,20 +69,32 @@ export const projects: readonly Project[] = [
 
 export const resume: readonly Role[] = [
   {
+    company: "RingCentral",
+    title: "Software Development Engineer - I",
+    logo: ASSET_PATHS.LOGOS.RINGCENTRAL,
+    start: "Jul. 2022",
+    end: "Nov. 2022",
+    website: EXTERNAL_URLS.RINGCENTRAL,
+  },
+  {
     company: "TaxHoa",
     title: "Software Engineer",
     logo: ASSET_PATHS.LOGOS.TAXHOA,
     start: "Dec. 2022",
     end: "Present",
     website: EXTERNAL_URLS.TAXHOA,
-  },
-  {
-    company: "RingCentral",
-    title: "Software Engineer",
-    logo: ASSET_PATHS.LOGOS.RINGCENTRAL,
-    start: "Jul. 2022",
-    end: "Nov. 2022",
-    website: EXTERNAL_URLS.RINGCENTRAL,
+    roles: [
+      {
+        title: "Software Development Engineer - I",
+        start: "Dec. 2022",
+        end: "Aug. 2024",
+      },
+      {
+        title: "Software Development Engineer - II",
+        start: "Aug. 2024",
+        end: "Present",
+      },
+    ],
   },
 ] as const;
 

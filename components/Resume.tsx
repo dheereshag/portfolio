@@ -15,9 +15,13 @@ function Resume() {
       </CardHeader>
       <CardContent>
         <section aria-label="Professional experience">
-          <ol className="space-y-4 sm:space-y-6 md:space-y-8">
-            {resume.map((role) => (
-              <CompanyRole key={`${role.company}-${role.start}`} role={role} />
+          <ol className="space-y-0">
+            {resume.map((role, idx) => (
+              <CompanyRole
+                key={`${role.company}-${role.start}`}
+                role={role}
+                isLast={idx === resume.length - 1}
+              />
             ))}
           </ol>
         </section>

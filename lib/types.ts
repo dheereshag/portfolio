@@ -1,5 +1,11 @@
 import { IconType } from "react-icons";
 
+export interface SubRole {
+  readonly title: string;
+  readonly start: string;
+  readonly end: string;
+}
+
 export interface Role {
   readonly company: string;
   readonly title: string;
@@ -7,6 +13,7 @@ export interface Role {
   readonly start: string;
   readonly end: string;
   readonly website: string;
+  readonly roles?: readonly SubRole[];
 }
 
 export interface Social {
