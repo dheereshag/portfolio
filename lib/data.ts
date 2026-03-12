@@ -77,12 +77,12 @@ export const resume: readonly Role[] = [
     website: EXTERNAL_URLS.TAXHOA,
     roles: [
       {
-        title: "Software Development Engineer - II",
+        title: "Software Engineer - II",
         start: "Aug. 2024",
         end: "Present",
       },
       {
-        title: "Software Development Engineer - I",
+        title: "Software Engineer - I",
         start: "Dec. 2022",
         end: "Aug. 2024",
       },
@@ -90,7 +90,7 @@ export const resume: readonly Role[] = [
   },
   {
     company: "RingCentral",
-    title: "Software Development Engineer - I",
+    title: "Software Engineer - I",
     logo: ASSET_PATHS.LOGOS.RINGCENTRAL,
     start: "Jul. 2022",
     end: "Nov. 2022",
