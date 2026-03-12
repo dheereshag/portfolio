@@ -10,7 +10,7 @@ function CompanyRole({ role, isLast = false }: CompanyRoleProps) {
   const hasSubRoles = role.roles && role.roles.length > 0;
 
   return (
-    <li className={`relative flex gap-3 sm:gap-4 items-start ${!isLast ? "pb-8" : ""}`}>
+    <li className={`relative flex gap-3 sm:gap-4 items-start ${!isLast ? "pb-10" : ""}`}>
       {!isLast && (
         <div
           aria-hidden="true"
@@ -29,9 +29,10 @@ function CompanyRole({ role, isLast = false }: CompanyRoleProps) {
         />
       </div>
 
-      <div className="flex flex-col flex-auto min-w-0 pt-1 gap-3">
+      <div className="flex flex-col flex-auto min-w-0 pt-1.5">
+        {/* Company header row */}
         <div className="flex items-center justify-between gap-2">
-          <span className="font-medium text-foreground text-sm">{role.company}</span>
+          <span className="font-semibold text-foreground text-sm">{role.company}</span>
           <span className="text-xs text-muted-foreground whitespace-nowrap">
             <time dateTime={role.start}>{role.start}</time>
             <span aria-hidden="true" className="mx-1">—</span>
@@ -40,22 +41,46 @@ function CompanyRole({ role, isLast = false }: CompanyRoleProps) {
         </div>
 
         {hasSubRoles ? (
-          <ol className="flex flex-col gap-3">
+          <ol className="flex flex-col mt-4 ml-2">
             {role.roles!.map((subRole, idx) => (
-              <li key={`${subRole.title}-${subRole.start}`} className="relative flex gap-3 items-start">
+              <li
+                key={`${subRole.title}-${subRole.start}`}
+                className="relative flex gap-4 items-start pb-6 last:pb-0"
+              >
+                {/* Line connecting dots */}
                 {idx !== role.roles!.length - 1 && (
                   <div
                     aria-hidden="true"
-                    className="absolute top-2 left-[5px] w-px h-full bg-border"
+                    className="absolute w-px bg-border"
+                    style={{
+                      top: "20px",
+                      left: "7px",
+                      height: "calc(100% - 14px)",
+                    }}
                   />
                 )}
-                <span
+
+                {/* Dot */}
+                <div
                   aria-hidden="true"
-                  className="relative z-10 mt-1.5 flex-shrink-0 size-2.5 rounded-full border-2 border-muted-foreground bg-background"
+                  style={{
+                    width: "15px",
+                    height: "15px",
+                    borderRadius: "50%",
+                    flexShrink: 0,
+                    marginTop: "2px",
+                    position: "relative",
+                    zIndex: 10,
+                    backgroundColor: "hsl(var(--muted-foreground))",
+                    opacity: 0.5,
+                  }}
                 />
-                <dl className="flex flex-auto flex-wrap gap-1 min-w-0">
+
+                <dl className="flex flex-col gap-1 min-w-0">
                   <dt className="sr-only">Role</dt>
-                  <dd className="w-full flex-none text-sm text-foreground">{subRole.title}</dd>
+                  <dd className="text-sm font-semibold text-foreground leading-snug">
+                    {subRole.title}
+                  </dd>
                   <dt className="sr-only">Date</dt>
                   <dd className="text-xs text-muted-foreground">
                     <time dateTime={subRole.start}>{subRole.start}</time>
@@ -67,10 +92,7 @@ function CompanyRole({ role, isLast = false }: CompanyRoleProps) {
             ))}
           </ol>
         ) : (
-          <dl className="flex flex-auto flex-wrap gap-1 min-w-0">
-            <dt className="sr-only">Role</dt>
-            <dd className="text-sm text-muted-foreground">{role.title}</dd>
-          </dl>
+          <p className="text-sm text-muted-foreground mt-1">{role.title}</p>
         )}
       </div>
     </li>

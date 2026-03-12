@@ -69,14 +69,6 @@ export const projects: readonly Project[] = [
 
 export const resume: readonly Role[] = [
   {
-    company: "RingCentral",
-    title: "Software Development Engineer - I",
-    logo: ASSET_PATHS.LOGOS.RINGCENTRAL,
-    start: "Jul. 2022",
-    end: "Nov. 2022",
-    website: EXTERNAL_URLS.RINGCENTRAL,
-  },
-  {
     company: "TaxHoa",
     title: "Software Engineer",
     logo: ASSET_PATHS.LOGOS.TAXHOA,
@@ -85,20 +77,27 @@ export const resume: readonly Role[] = [
     website: EXTERNAL_URLS.TAXHOA,
     roles: [
       {
-        title: "Software Development Engineer - I",
-        start: "Dec. 2022",
-        end: "Aug. 2024",
-      },
-      {
         title: "Software Development Engineer - II",
         start: "Aug. 2024",
         end: "Present",
       },
+      {
+        title: "Software Development Engineer - I",
+        start: "Dec. 2022",
+        end: "Aug. 2024",
+      },
     ],
+  },
+  {
+    company: "RingCentral",
+    title: "Software Development Engineer - I",
+    logo: ASSET_PATHS.LOGOS.RINGCENTRAL,
+    start: "Jul. 2022",
+    end: "Nov. 2022",
+    website: EXTERNAL_URLS.RINGCENTRAL,
   },
 ] as const;
 
-// Content constants for better maintainability
 export const CONTENT = {
   HERO: {
     TITLE: "Software engineer, learner, and an amateur photographer.",
