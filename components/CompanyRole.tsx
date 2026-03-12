@@ -1,5 +1,6 @@
 import type { Role } from "@/lib/types";
 import CompanyAvatar from "@/components/CompanyAvatar";
+import Link from "next/link";
 
 interface CompanyRoleProps {
   readonly role: Role;
@@ -10,114 +11,88 @@ function CompanyRole({ role, isLast = false }: CompanyRoleProps) {
   const hasSubRoles = role.roles && role.roles.length > 0;
 
   return (
-    <>
-      {/* ── Company row ── */}
-      <li className="relative flex gap-3 sm:gap-4 items-start pb-4">
-        <div className="relative z-10 flex-shrink-0">
-          <CompanyAvatar
-            logo={role.logo}
-            name={role.company}
-            sizeClass="size-9 sm:size-10"
-            imageSizeClass="size-4 sm:size-5"
-            href={role.website}
-            ariaLabel={`Visit ${role.company} website`}
-          />
-        </div>
+    <li className={`flex gap-3 sm:gap-4 items-start ${!isLast ? "mb-6" : ""}`}>
+      {/* Avatar */}
+      <div className="flex-shrink-0 z-10">
+        <CompanyAvatar
+          logo={role.logo}
+          name={role.company}
+          sizeClass="size-9 sm:size-10"
+          imageSizeClass="size-4 sm:size-5"
+          href={role.website}
+          ariaLabel={`Visit ${role.company} website`}
+        />
+      </div>
 
-        <div className="flex flex-col flex-auto min-w-0 pt-1.5">
-          <div className="flex items-center justify-between gap-2">
-            <span className="font-semibold text-foreground text-sm">{role.company}</span>
-            <span className="text-xs text-muted-foreground whitespace-nowrap">
+      {/* Content */}
+      <div className="flex flex-col flex-auto min-w-0 pt-1">
+
+        {/* Company name */}
+        <Link
+          href={role.website}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-semibold text-foreground text-sm hover:text-muted-foreground transition-colors duration-200 leading-snug"
+        >
+          {role.company}
+        </Link>
+
+        {/* No sub-roles: show title + dates */}
+        {!hasSubRoles && (
+          <>
+            <p className="text-sm text-muted-foreground mt-0.5">{role.title}</p>
+            <p className="text-xs text-muted-foreground mt-0.5">
               <time dateTime={role.start}>{role.start}</time>
               <span aria-hidden="true" className="mx-1">—</span>
               <time dateTime={role.end}>{role.end}</time>
-            </span>
-          </div>
-          {!hasSubRoles && (
-            <p className="text-sm text-muted-foreground mt-1">{role.title}</p>
-          )}
-        </div>
-      </li>
+            </p>
+          </>
+        )}
 
-      
-      {hasSubRoles && (
-        <li className="relative flex gap-3 sm:gap-4 pb-6">
-          
-          <div
-            className="relative flex-shrink-0 size-9 sm:size-10"
-            aria-hidden="true"
-          >
-            
-            <div
-              style={{
-                position: "absolute",
-                top: 0,
-                bottom: 0,
-                left: "50%",
-                transform: "translateX(-50%)",
-                width: "1px",
-                backgroundColor: "rgba(150,150,150,0.35)",
-              }}
-            />
-          </div>
+        {/* Sub-roles */}
+        {hasSubRoles && (
+          <ol className="mt-3 flex flex-col">
+            {role.roles!.map((subRole, idx) => {
+              const isLastSubRole = idx === role.roles!.length - 1;
+              return (
+                <li key={`${subRole.title}-${subRole.start}`} className="relative flex gap-3 items-start">
 
-          
-          <ol className="flex flex-col gap-5 flex-auto min-w-0 pt-1">
-            {role.roles!.map((subRole) => (
-              <li
-                key={`${subRole.title}-${subRole.start}`}
-                className="relative flex items-center gap-3 sm:gap-4"
-              >
-                
-                <div
-                  className="absolute flex items-center justify-center"
-                  style={{
-                    left: "-36px",
-                    width: "36px",
-                    display: "flex",
-                    justifyContent: "center",
-                  }}
-                >
-                  <div
-                    style={{
-                      width: "9px",
-                      height: "9px",
-                      borderRadius: "50%",
-                      backgroundColor: "rgba(150,150,150,0.7)",
-                      flexShrink: 0,
-                    }}
-                  />
-                </div>
+                  {/* Dot + connector line column */}
+                  <div className="flex flex-col items-center flex-shrink-0" style={{ width: "16px" }}>
+                    {/* Dot */}
+                    <div
+                      className="flex-shrink-0 rounded-full bg-muted border border-muted-foreground/40 z-10"
+                      style={{ width: "10px", height: "10px", marginTop: "4px" }}
+                      aria-hidden="true"
+                    />
+                    {/* Connector line to next dot */}
+                    {!isLastSubRole && (
+                      <div
+                        className="flex-1 bg-border"
+                        style={{ width: "1px", minHeight: "32px" }}
+                        aria-hidden="true"
+                      />
+                    )}
+                  </div>
 
-                <div className="flex items-center justify-between gap-2 w-full">
-                  <span className="font-semibold text-foreground text-sm">
-                    {subRole.title}
-                  </span>
-                  <span className="text-xs text-muted-foreground whitespace-nowrap">
-                    <time dateTime={subRole.start}>{subRole.start}</time>
-                    <span aria-hidden="true" className="mx-1">—</span>
-                    <time dateTime={subRole.end}>{subRole.end}</time>
-                  </span>
-                </div>
-              </li>
-            ))}
+                  {/* Sub-role text */}
+                  <div className={`flex flex-col min-w-0 ${!isLastSubRole ? "pb-4" : ""}`}>
+                    <span className="text-sm font-semibold text-foreground leading-snug">
+                      {subRole.title}
+                    </span>
+                    <span className="text-xs text-muted-foreground mt-0.5">
+                      <time dateTime={subRole.start}>{subRole.start}</time>
+                      <span aria-hidden="true" className="mx-1">—</span>
+                      <time dateTime={subRole.end}>{subRole.end}</time>
+                    </span>
+                  </div>
+                </li>
+              );
+            })}
           </ol>
-        </li>
-      )}
-
-      
-      {!isLast && (
-        <li
-          aria-hidden="true"
-          style={{
-            listStyle: "none",
-            height: "1px",
-            backgroundColor: "rgba(150,150,150,0.2)",
-            marginBottom: "20px",
-          }}
-        />
-      )}
-    </>
+        )}
+      </div>
+    </li>
   );
 }
 

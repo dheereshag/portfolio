@@ -6,7 +6,7 @@ import { resume } from "@/lib/data";
 
 function Resume() {
   return (
-    <Card className="hover:bg-accent bg-transparent rounded-2xl transition-colors duration-200">
+    <Card className="w-full hover:bg-accent bg-transparent rounded-2xl transition-colors duration-200">
       <CardHeader>
         <h4 className="flex font-semibold gap-2 items-center text-foreground">
           <BriefcaseIcon className="h-6 w-6" aria-hidden="true" />
@@ -15,7 +15,7 @@ function Resume() {
       </CardHeader>
       <CardContent>
         <section aria-label="Professional experience">
-          <ol className="space-y-0">
+          <ol className="space-y-6">
             {resume.map((role, idx) => (
               <CompanyRole
                 key={`${role.company}-${role.start}`}
