@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ["lucide-react", "react-icons"],
     // Enable React Compiler for automatic memoization and performance optimizations
-    reactCompiler: true,
+    //reactCompiler: true,
   },
 
   // Compress responses for better performance
