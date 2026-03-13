@@ -11,9 +11,10 @@ function CompanyRole({ role, isLast = false }: CompanyRoleProps) {
   const hasSubRoles = role.roles && role.roles.length > 0;
 
   return (
-    <li className={`flex gap-3 sm:gap-4 items-start ${!isLast ? "mb-6" : ""}`}>
+    <li className={`flex flex-col ${!isLast ? "mb-6" : ""}`}>
+      <div className="flex gap-3 sm:gap-4 items-start">
       {/* Avatar */}
-      <div className="flex-shrink-0 z-10">
+      <div className="flex-shrink-0 z-10 w-9 sm:w-10 flex justify-center">
         <CompanyAvatar
           logo={role.logo}
           name={role.company}
@@ -50,15 +51,18 @@ function CompanyRole({ role, isLast = false }: CompanyRoleProps) {
         )}
 
         {/* Sub-roles */}
-        {hasSubRoles && (
-          <ol className="mt-3 flex flex-col">
+        
+      </div>
+      </div>
+      {hasSubRoles && (
+          <ol className="mt-3 flex flex-col" style={{ paddingLeft: "14px" }}>
             {role.roles!.map((subRole, idx) => {
               const isLastSubRole = idx === role.roles!.length - 1;
               return (
                 <li key={`${subRole.title}-${subRole.start}`} className="relative flex gap-3 items-start">
 
                   {/* Dot + connector line column */}
-                  <div className="flex flex-col items-center flex-shrink-0" style={{ width: "16px" }}>
+                  <div className="flex flex-col items-center flex-shrink-0" style={{ width: "10px" }}>
                     {/* Dot */}
                     <div
                       className="flex-shrink-0 rounded-full bg-muted border border-muted-foreground/40 z-10"
@@ -91,7 +95,6 @@ function CompanyRole({ role, isLast = false }: CompanyRoleProps) {
             })}
           </ol>
         )}
-      </div>
     </li>
   );
 }
