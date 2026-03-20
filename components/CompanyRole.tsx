@@ -29,19 +29,44 @@ function CompanyRole({ role }: CompanyRoleProps) {
             {role.company}
           </Link>
         </dd>
-        <dt className="sr-only">Role</dt>
-        <dd className="text-sm text-muted-foreground">{role.title}</dd>
-        <dt className="sr-only">Date</dt>
-        <dd
-          className="ml-auto text-xs sm:text-sm text-muted-foreground"
-          aria-label={`${role.start} until ${role.end}`}
-        >
-          <time dateTime={role.start}>{role.start}</time>
-          <span aria-hidden="true" className="mx-1">
-            —
-          </span>
-          <time dateTime={role.end}>{role.end}</time>
-        </dd>
+        {role.promotions ? (
+          role.promotions.map((sub) => (
+            <div
+              key={`${sub.title}-${sub.start}`}
+              className="w-full flex flex-wrap gap-1 sm:gap-2"
+            >
+              <dt className="sr-only">Role</dt>
+              <dd className="text-sm text-muted-foreground">{sub.title}</dd>
+              <dt className="sr-only">Date</dt>
+              <dd
+                className="ml-auto text-xs sm:text-sm text-muted-foreground"
+                aria-label={`${sub.start} until ${sub.end}`}
+              >
+                <time dateTime={sub.start}>{sub.start}</time>
+                <span aria-hidden="true" className="mx-1">
+                  -
+                </span>
+                <time dateTime={sub.end}>{sub.end}</time>
+              </dd>
+            </div>
+          ))
+        ) : (
+          <>
+            <dt className="sr-only">Role</dt>
+            <dd className="text-sm text-muted-foreground">{role.title}</dd>
+            <dt className="sr-only">Date</dt>
+            <dd
+              className="ml-auto text-xs sm:text-sm text-muted-foreground"
+              aria-label={`${role.start} until ${role.end}`}
+            >
+              <time dateTime={role.start}>{role.start}</time>
+              <span aria-hidden="true" className="mx-1">
+                -
+              </span>
+              <time dateTime={role.end}>{role.end}</time>
+            </dd>
+          </>
+        )}
       </dl>
     </li>
   );

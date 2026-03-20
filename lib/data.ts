@@ -75,18 +75,22 @@ export const projects: readonly Project[] = [
 export const resume: readonly Role[] = [
   {
     company: "TaxHoa",
-    title: "Software Engineer",
+    title: "Software Engineer 2",
     logo: ASSET_PATHS.LOGOS.TAXHOA,
-    start: "Dec. 2022",
+    start: "Dec 2022",
     end: "Present",
     website: EXTERNAL_URLS.TAXHOA,
+    promotions: [
+      { title: "Software Engineer - II", start: "Aug 2024", end: "Present" },
+      { title: "Software Engineer - I", start: "Dec 2022", end: "Aug 2024" },
+    ],
   },
   {
     company: "RingCentral",
-    title: "Software Engineer",
+    title: "Software Engineer - I",
     logo: ASSET_PATHS.LOGOS.RINGCENTRAL,
-    start: "Jul. 2022",
-    end: "Nov. 2022",
+    start: "Jul 2022",
+    end: "Nov 2022",
     website: EXTERNAL_URLS.RINGCENTRAL,
   },
 ] as const;
