@@ -75,7 +75,7 @@ export const resume: readonly Role[] = [
     start: "Dec. 2022",
     end: "Present",
     website: EXTERNAL_URLS.TAXHOA,
-    roles: [
+    promotions: [
       {
         title: "Software Engineer - II",
         start: "Aug. 2024",

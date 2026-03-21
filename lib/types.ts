@@ -13,7 +13,7 @@ export interface Role {
   readonly start: string;
   readonly end: string;
   readonly website: string;
-  readonly roles?: readonly SubRole[];
+  readonly promotions?: readonly SubRole[];
 }
 
 export interface Social {

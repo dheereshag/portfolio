@@ -14,7 +14,7 @@ const LINE_WIDTH = 2;      // px
 const DOT_TOP_OFFSET = 4;  // mt equivalent so dot sits at the same vertical position as before
 
 function CompanyRole({ role, isLast = false }: CompanyRoleProps) {
-  const hasSubRoles = role.roles && role.roles.length > 0;
+  const hasSubpromotions = role.promotions && role.promotions.length > 0;
 
   return (
     <li className={!isLast ? "mb-6" : ""}>
@@ -43,7 +43,7 @@ function CompanyRole({ role, isLast = false }: CompanyRoleProps) {
           </Link>
 
           {/* Single role: show title + dates inline under company */}
-          {!hasSubRoles && (
+          {!hasSubpromotions && (
             <>
               <p className="text-sm text-muted-foreground mt-0.5">{role.title}</p>
               <p className="text-xs text-muted-foreground mt-0.5">
@@ -56,11 +56,11 @@ function CompanyRole({ role, isLast = false }: CompanyRoleProps) {
         </div>
       </div>
 
-      {/* ── Row 2+: Sub-roles timeline ── */}
-      {hasSubRoles && (
+      {/* ── Row 2+: Sub-promotions timeline ── */}
+      {hasSubpromotions && (
         <ol className="mt-2">
-          {role.roles!.map((subRole, idx) => {
-            const isLastSubRole = idx === role.roles!.length - 1;
+          {role.promotions!.map((subRole, idx) => {
+            const isLastSubRole = idx === role.promotions!.length - 1;
             return (
               <li
                 key={`${subRole.title}-${subRole.start}`}
