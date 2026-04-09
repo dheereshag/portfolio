@@ -17,11 +17,6 @@ export const socials: readonly Social[] = [
     icon: SiGithub,
     label: "GitHub",
   },
-  // {
-  //   href: EXTERNAL_URLS.CODEFORCES,
-  //   icon: SiCodeforces,
-  //   label: "Codeforces",
-  // },
   {
     href: EXTERNAL_URLS.LEETCODE,
     icon: SiLeetcode,
@@ -81,8 +76,16 @@ export const resume: readonly Role[] = [
     end: "Present",
     website: EXTERNAL_URLS.TAXHOA,
     promotions: [
-      { title: "Software Engineer - II", start: "Aug 2024", end: "Present" },
-      { title: "Software Engineer - I", start: "Dec 2022", end: "Aug 2024" },
+      {
+        title: "Software Engineer - II",
+        start: "Aug. 2024",
+        end: "Present",
+      },
+      {
+        title: "Software Engineer - I",
+        start: "Dec. 2022",
+        end: "Aug. 2024",
+      },
     ],
   },
   {
@@ -95,7 +98,6 @@ export const resume: readonly Role[] = [
   },
 ] as const;
 
-// Content constants for better maintainability
 export const CONTENT = {
   HERO: {
     TITLE: "Software engineer, learner, and an amateur photographer.",
