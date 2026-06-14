@@ -16,10 +16,10 @@
     "tailwindcss"
   ],
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.12",
