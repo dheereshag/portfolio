@@ -76,7 +76,7 @@ export default function Home() {
             {/* Resume and Contact Section */}
             <aside
               id="contact"
-              className="flex flex-col gap-8 sm:gap-10 items-center"
+              className="flex flex-col gap-8 sm:gap-10 w-full xl:w-auto xl:min-w-[380px]"
               aria-label="Professional information and contact"
             >
               <Resume />
